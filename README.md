@@ -25,7 +25,7 @@ $inventory = $pokemonGoApi->getInventory();
 $pokeBank = $inventory->getItems()->getPokeBank();
 
 // Retrieve a pokemon of type pidgey
- $pokemon = current($pokeBank->getPokemonsByType(PokemonId::PIDGEY));
+$pokemon = current($pokeBank->getPokemonsByType(PokemonId::PIDGEY));
 
 // Transfer / Release the pokemon (Send to the meat grinder)
 $pokemon->transfer();
@@ -40,3 +40,7 @@ $pokemon->transfer();
 
 ## Contributors
   - Nicklas Wallgren
+
+## Credits
+- [Grover-c13](https://github.com/Grover-c13) for the inspiration
+- [AeonLucid](https://github.com/AeonLucid/POGOProtos) for improved protos
