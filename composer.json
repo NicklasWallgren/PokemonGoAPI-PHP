@@ -1,0 +1,31 @@
+{
+    "name": "nicklasw/pkm-go-api",
+    "description": "The Pokemon Go API library.",
+    "keywords": ["Pokemon Go API"],
+    "license": "MIT",
+    "type": "project",
+
+    "require": {
+        "php": ">=5.6"
+        "paquettg/php-html-parser": "1.7",
+        "guzzlehttp/guzzle": "~6.0",
+        "protobuf-php/protobuf": "^0.1.0@dev",
+        "protobuf-php/protobuf-plugin": "^0.1.0@dev",
+        "vlucas/phpdotenv": "^2.3",
+        "monolog/monolog": "^1.20",
+        "jeremeamia/xstatic": "^1.0",
+        "php-di/php-di": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "NicklasW\\PkmGoApi\\": "src/",
+            "POGOProtos\\": "res/POGOProtos/"
+        },
+        "files": [
+            "src/Includes/protocolbuffers.inc.php",
+            "res/POGOProtos/Networking/Envelopes/RequestEnvelope.php",
+            "res/POGOProtos/Networking/Envelopes/ResponseEnvelope.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
