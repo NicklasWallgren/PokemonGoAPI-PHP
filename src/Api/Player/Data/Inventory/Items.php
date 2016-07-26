@@ -20,6 +20,7 @@ use POGOProtos\Inventory\InventoryItemData;
  * @method Pokedex getPokedex()
  * @method EggIncubators getEggIncubators()
  * @method AppliedItems getAppliedItems()
+ * @method Stats getStats()
  */
 class Items extends Data {
 
@@ -52,6 +53,11 @@ class Items extends Data {
      * @var AppliedItems
      */
     protected $appliedItems;
+
+    /**
+     * @var Stats
+     */
+    protected $stats;
 
     /**
      * Items constructor.
@@ -120,11 +126,14 @@ class Items extends Data {
             // Retrieve the applied items data
             $this->appliedItems = AppliedItems::create($itemData->getAppliedItems());
 
+        } elseif (self::isPlayerStats($itemData)) {
+            // Retrieve the applied items data
+            $this->stats = Stats::create($itemData->getPlayerStats());
+
         } else {
 
-//            var_dump($itemData->getPlayerStats());
-//            var_dump($itemData->getEggIncubators());
-//            var_dump($itemData->getPokemonFamily());
+            var_dump($itemData->getPlayerStats());
+            var_dump($itemData->getPokemonFamily());
 
 
             Log::warning('Unknown item type encountered', array('item' => $itemData));
@@ -197,6 +206,17 @@ class Items extends Data {
     protected static function isAppliedItems($itemData)
     {
         return $itemData->getAppliedItems() != null;
+    }
+
+    /**
+     * Returns true if the item data is of type pokedex item, false otherwise.
+     *
+     * @param InventoryItemData $itemData
+     * @return boolean
+     */
+    protected static function isPlayerStats($itemData)
+    {
+        return $itemData->getPlayerStats() != null;
     }
 
 }

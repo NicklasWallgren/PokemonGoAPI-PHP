@@ -38,7 +38,7 @@ class Inventory extends Procedure {
 
         // Retrieve the inventory items
         $inventoryItems = $playerInventory->getInventoryDelta();
-
+        
         // Set the items
         $this->items = Items::create($inventoryItems);
     }
