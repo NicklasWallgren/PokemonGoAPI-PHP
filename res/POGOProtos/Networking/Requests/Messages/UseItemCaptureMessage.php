@@ -15,9 +15,9 @@ namespace POGOProtos\Networking\Requests\Messages {
   final class UseItemCaptureMessage extends ProtobufMessage {
 
     private $_unknown;
-    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId item_id = 1
+    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
     private $encounterId = 0; // optional fixed64 encounter_id = 2
-    private $spawnPointGuid = ""; // optional string spawn_point_guid = 3
+    private $spawnPointId = ""; // optional string spawn_point_id = 3
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
       parent::__construct($in, $limit);
@@ -31,7 +31,7 @@ namespace POGOProtos\Networking\Requests\Messages {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId item_id = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
@@ -49,7 +49,7 @@ namespace POGOProtos\Networking\Requests\Messages {
             $this->encounterId = $tmp;
 
             break;
-          case 3: // optional string spawn_point_guid = 3
+          case 3: // optional string spawn_point_id = 3
             if($wire !== 2) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
@@ -57,7 +57,7 @@ namespace POGOProtos\Networking\Requests\Messages {
             if ($len === false) throw new \Exception('Protobuf::read_varint returned false');
             $tmp = Protobuf::read_bytes($fp, $len, $limit);
             if ($tmp === false) throw new \Exception("read_bytes($len) returned false");
-            $this->spawnPointGuid = $tmp;
+            $this->spawnPointId = $tmp;
 
             break;
           default:
@@ -75,10 +75,10 @@ namespace POGOProtos\Networking\Requests\Messages {
         fwrite($fp, "\x11", 1);
         Protobuf::write_uint64($fp, $this->encounterId);
       }
-      if ($this->spawnPointGuid !== "") {
+      if ($this->spawnPointId !== "") {
         fwrite($fp, "\x1a", 1);
-        Protobuf::write_varint($fp, strlen($this->spawnPointGuid));
-        fwrite($fp, $this->spawnPointGuid);
+        Protobuf::write_varint($fp, strlen($this->spawnPointId));
+        fwrite($fp, $this->spawnPointId);
       }
     }
 
@@ -90,8 +90,8 @@ namespace POGOProtos\Networking\Requests\Messages {
       if ($this->encounterId !== 0) {
         $size += 9;
       }
-      if ($this->spawnPointGuid !== "") {
-        $l = strlen($this->spawnPointGuid);
+      if ($this->spawnPointId !== "") {
+        $l = strlen($this->spawnPointId);
         $size += 1 + Protobuf::size_varint($l) + $l;
       }
       return $size;
@@ -105,15 +105,15 @@ namespace POGOProtos\Networking\Requests\Messages {
     public function getEncounterId() { return $this->encounterId;}
     public function setEncounterId($value) { $this->encounterId = $value; }
 
-    public function clearSpawnPointGuid() { $this->spawnPointGuid = ""; }
-    public function getSpawnPointGuid() { return $this->spawnPointGuid;}
-    public function setSpawnPointGuid($value) { $this->spawnPointGuid = $value; }
+    public function clearSpawnPointId() { $this->spawnPointId = ""; }
+    public function getSpawnPointId() { return $this->spawnPointId;}
+    public function setSpawnPointId($value) { $this->spawnPointId = $value; }
 
     public function __toString() {
       return ''
            . Protobuf::toString('item_id', $this->itemId, ItemId::ITEM_UNKNOWN)
            . Protobuf::toString('encounter_id', $this->encounterId, 0)
-           . Protobuf::toString('spawn_point_guid', $this->spawnPointGuid, "");
+           . Protobuf::toString('spawn_point_id', $this->spawnPointId, "");
     }
 
     // @@protoc_insertion_point(class_scope:POGOProtos.Networking.Requests.Messages.UseItemCaptureMessage)

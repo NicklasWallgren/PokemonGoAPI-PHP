@@ -10,13 +10,15 @@ namespace POGOProtos\Inventory {
   use ProtobufIO;
   use ProtobufMessage;
 
+  use POGOProtos\Inventory\Item\ItemId;
+  use POGOProtos\Inventory\Item\ItemType;
 
   // message POGOProtos.Inventory.AppliedItem
   final class AppliedItem extends ProtobufMessage {
 
     private $_unknown;
-    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId item_id = 1
-    private $itemType = ItemType::ITEM_TYPE_NONE; // optional .POGOProtos.Inventory.ItemType item_type = 2
+    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
+    private $itemType = ItemType::ITEM_TYPE_NONE; // optional .POGOProtos.Inventory.Item.ItemType item_type = 2
     private $expireMs = 0; // optional int64 expire_ms = 3
     private $appliedMs = 0; // optional int64 applied_ms = 4
 
@@ -32,7 +34,7 @@ namespace POGOProtos\Inventory {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId item_id = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
@@ -41,7 +43,7 @@ namespace POGOProtos\Inventory {
             $this->itemId = $tmp;
 
             break;
-          case 2: // optional .POGOProtos.Inventory.ItemType item_type = 2
+          case 2: // optional .POGOProtos.Inventory.Item.ItemType item_type = 2
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }

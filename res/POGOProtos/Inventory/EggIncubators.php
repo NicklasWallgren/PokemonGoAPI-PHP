@@ -15,7 +15,7 @@ namespace POGOProtos\Inventory {
   final class EggIncubators extends ProtobufMessage {
 
     private $_unknown;
-    private $eggIncubator = null; // optional .POGOProtos.Inventory.EggIncubator egg_incubator = 1
+    private $eggIncubator = array(); // repeated .POGOProtos.Inventory.EggIncubator egg_incubator = 1
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
       parent::__construct($in, $limit);
@@ -29,14 +29,14 @@ namespace POGOProtos\Inventory {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.EggIncubator egg_incubator = 1
+          case 1: // repeated .POGOProtos.Inventory.EggIncubator egg_incubator = 1
             if($wire !== 2) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
             $len = Protobuf::read_varint($fp, $limit);
             if ($len === false) throw new \Exception('Protobuf::read_varint returned false');
             $limit -= $len;
-            $this->eggIncubator = new \POGOProtos\Inventory\EggIncubator($fp, $len);
+            $this->eggIncubator[] = new \POGOProtos\Inventory\EggIncubator($fp, $len);
             if ($len !== 0) throw new \Exception('new \POGOProtos\Inventory\EggIncubator did not read the full length');
 
             break;
@@ -47,25 +47,29 @@ namespace POGOProtos\Inventory {
     }
 
     public function write($fp) {
-      if ($this->eggIncubator !== null) {
+      foreach($this->eggIncubator as $v) {
         fwrite($fp, "\x0a", 1);
-        Protobuf::write_varint($fp, $this->eggIncubator->size());
-        $this->eggIncubator->write($fp);
+        Protobuf::write_varint($fp, $v->size());
+        $v->write($fp);
       }
     }
 
     public function size() {
       $size = 0;
-      if ($this->eggIncubator !== null) {
-        $l = $this->eggIncubator->size();
+      foreach($this->eggIncubator as $v) {
+        $l = $v->size();
         $size += 1 + Protobuf::size_varint($l) + $l;
       }
       return $size;
     }
 
-    public function clearEggIncubator() { $this->eggIncubator = null; }
-    public function getEggIncubator() { return $this->eggIncubator;}
-    public function setEggIncubator(\POGOProtos\Inventory\EggIncubator $value) { $this->eggIncubator = $value; }
+    public function clearEggIncubator() { $this->eggIncubator = array(); }
+    public function getEggIncubatorCount() { return count($this->eggIncubator); }
+    public function getEggIncubator($index) { return $this->eggIncubator[$index]; }
+    public function getEggIncubatorArray() { return $this->eggIncubator; }
+    public function setEggIncubator($index, array $value) {$this->eggIncubator[$index] = $value; }
+    public function addEggIncubator(array $value) { $this->eggIncubator[] = $value; }
+    public function addAllEggIncubator(array $values) { foreach($values as $value) {$this->eggIncubator[] = $value; }}
 
     public function __toString() {
       return ''

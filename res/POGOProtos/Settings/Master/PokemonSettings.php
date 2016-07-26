@@ -5,6 +5,7 @@
 
 namespace POGOProtos\Settings\Master {
 
+  use POGOProtos\Enums\PokemonId;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;
@@ -27,7 +28,7 @@ namespace POGOProtos\Settings\Master {
     private $animationTime = array(); // repeated float animation_time = 11
     private $evolutionIds = array(); // repeated .POGOProtos.Enums.PokemonId evolution_ids = 12
     private $evolutionPips = 0; // optional int32 evolution_pips = 13
-    private $class = PokemonClass::NORMAL; // optional .POGOProtos.Enums.PokemonClass class = 14
+    private $rarity = PokemonRarity::NORMAL; // optional .POGOProtos.Enums.PokemonRarity rarity = 14
     private $pokedexHeightM = 0; // optional float pokedex_height_m = 15
     private $pokedexWeightKg = 0; // optional float pokedex_weight_kg = 16
     private $parentPokemonId = PokemonId::MISSINGNO; // optional .POGOProtos.Enums.PokemonId parent_pokemon_id = 17
@@ -199,13 +200,13 @@ namespace POGOProtos\Settings\Master {
             if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->evolutionPips = $tmp;
 
             break;
-          case 14: // optional .POGOProtos.Enums.PokemonClass class = 14
+          case 14: // optional .POGOProtos.Enums.PokemonRarity rarity = 14
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
             $tmp = Protobuf::read_varint($fp, $limit);
             if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            $this->class = $tmp;
+            $this->rarity = $tmp;
 
             break;
           case 15: // optional float pokedex_height_m = 15
@@ -338,9 +339,9 @@ namespace POGOProtos\Settings\Master {
         fwrite($fp, "h", 1);
         Protobuf::write_varint($fp, $this->evolutionPips);
       }
-      if ($this->class !== PokemonClass::NORMAL) {
+      if ($this->rarity !== PokemonRarity::NORMAL) {
         fwrite($fp, "p", 1);
-        Protobuf::write_varint($fp, $this->class);
+        Protobuf::write_varint($fp, $this->rarity);
       }
       if ($this->pokedexHeightM !== 0) {
         fwrite($fp, "}", 1);
@@ -421,8 +422,8 @@ namespace POGOProtos\Settings\Master {
       if ($this->evolutionPips !== 0) {
         $size += 1 + Protobuf::size_varint($this->evolutionPips);
       }
-      if ($this->class !== PokemonClass::NORMAL) {
-        $size += 1 + Protobuf::size_varint($this->class);
+      if ($this->rarity !== PokemonRarity::NORMAL) {
+        $size += 1 + Protobuf::size_varint($this->rarity);
       }
       if ($this->pokedexHeightM !== 0) {
         $size += 5;
@@ -515,9 +516,9 @@ namespace POGOProtos\Settings\Master {
     public function getEvolutionPips() { return $this->evolutionPips;}
     public function setEvolutionPips($value) { $this->evolutionPips = $value; }
 
-    public function clearClass() { $this->class = PokemonClass::NORMAL; }
-    public function getClass() { return $this->class;}
-    public function setClass($value) { $this->class = $value; }
+    public function clearRarity() { $this->rarity = PokemonRarity::NORMAL; }
+    public function getRarity() { return $this->rarity;}
+    public function setRarity($value) { $this->rarity = $value; }
 
     public function clearPokedexHeightM() { $this->pokedexHeightM = 0; }
     public function getPokedexHeightM() { return $this->pokedexHeightM;}
@@ -565,7 +566,7 @@ namespace POGOProtos\Settings\Master {
            . Protobuf::toString('animation_time', $this->animationTime, 0)
            . Protobuf::toString('evolution_ids', $this->evolutionIds, PokemonId::MISSINGNO)
            . Protobuf::toString('evolution_pips', $this->evolutionPips, 0)
-           . Protobuf::toString('class', $this->class, PokemonClass::NORMAL)
+           . Protobuf::toString('rarity', $this->rarity, PokemonRarity::NORMAL)
            . Protobuf::toString('pokedex_height_m', $this->pokedexHeightM, 0)
            . Protobuf::toString('pokedex_weight_kg', $this->pokedexWeightKg, 0)
            . Protobuf::toString('parent_pokemon_id', $this->parentPokemonId, PokemonId::MISSINGNO)

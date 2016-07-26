@@ -15,8 +15,8 @@ namespace POGOProtos\Settings\Master {
   final class ItemSettings extends ProtobufMessage {
 
     private $_unknown;
-    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId item_id = 1
-    private $itemType = ItemType::ITEM_TYPE_NONE; // optional .POGOProtos.Inventory.ItemType item_type = 2
+    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
+    private $itemType = ItemType::ITEM_TYPE_NONE; // optional .POGOProtos.Inventory.Item.ItemType item_type = 2
     private $category = ItemCategory::ITEM_CATEGORY_NONE; // optional .POGOProtos.Enums.ItemCategory category = 3
     private $dropFreq = 0; // optional float drop_freq = 4
     private $dropTrainerLevel = 0; // optional int32 drop_trainer_level = 5
@@ -43,7 +43,7 @@ namespace POGOProtos\Settings\Master {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId item_id = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
@@ -52,7 +52,7 @@ namespace POGOProtos\Settings\Master {
             $this->itemId = $tmp;
 
             break;
-          case 2: // optional .POGOProtos.Inventory.ItemType item_type = 2
+          case 2: // optional .POGOProtos.Inventory.Item.ItemType item_type = 2
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }

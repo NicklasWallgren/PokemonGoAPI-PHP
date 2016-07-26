@@ -44,7 +44,7 @@ namespace POGOProtos\Networking\Responses {
 
     private $_unknown;
     private $result = FortSearchResponse_Result::NO_RESULT_SET; // optional .POGOProtos.Networking.Responses.FortSearchResponse.Result result = 1
-    private $itemsAwarded = array(); // repeated .POGOProtos.Inventory.ItemAward items_awarded = 2
+    private $itemsAwarded = array(); // repeated .POGOProtos.Inventory.Item.ItemAward items_awarded = 2
     private $gemsAwarded = 0; // optional int32 gems_awarded = 3
     private $pokemonDataEgg = null; // optional .POGOProtos.Data.PokemonData pokemon_data_egg = 4
     private $experienceAwarded = 0; // optional int32 experience_awarded = 5
@@ -72,15 +72,15 @@ namespace POGOProtos\Networking\Responses {
             $this->result = $tmp;
 
             break;
-          case 2: // repeated .POGOProtos.Inventory.ItemAward items_awarded = 2
+          case 2: // repeated .POGOProtos.Inventory.Item.ItemAward items_awarded = 2
             if($wire !== 2) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
             $len = Protobuf::read_varint($fp, $limit);
             if ($len === false) throw new \Exception('Protobuf::read_varint returned false');
             $limit -= $len;
-            $this->itemsAwarded[] = new \POGOProtos\Inventory\ItemAward($fp, $len);
-            if ($len !== 0) throw new \Exception('new \POGOProtos\Inventory\ItemAward did not read the full length');
+            $this->itemsAwarded[] = new \POGOProtos\Inventory\Item\ItemAward($fp, $len);
+            if ($len !== 0) throw new \Exception('new \POGOProtos\Inventory\Item\ItemAward did not read the full length');
 
             break;
           case 3: // optional int32 gems_awarded = 3

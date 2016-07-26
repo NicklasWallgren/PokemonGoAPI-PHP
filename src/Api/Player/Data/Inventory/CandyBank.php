@@ -20,14 +20,6 @@ class CandyBank extends Data {
     protected $candies = array();
 
     /**
-     *
-     */
-    public function set()
-    {
-
-    }
-
-    /**
      * @param PokemonFamily $data
      */
     public function add($data)
@@ -45,14 +37,6 @@ class CandyBank extends Data {
         } else {
             $this->candies[$candyItem->getFamilyId()] = $candyItem;
         }
-    }
-
-    /**
-     *
-     */
-    public function remove()
-    {
-
     }
 
     /**

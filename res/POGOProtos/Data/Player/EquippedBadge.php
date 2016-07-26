@@ -5,7 +5,6 @@
 
 namespace POGOProtos\Data\Player {
 
-  use POGOProtos\Enums\BadgeType;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;

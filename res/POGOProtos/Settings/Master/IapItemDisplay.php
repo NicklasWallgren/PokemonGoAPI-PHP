@@ -18,7 +18,7 @@ namespace POGOProtos\Settings\Master {
     private $sku = ""; // optional string sku = 1
     private $category = HoloIapItemCategory::IAP_CATEGORY_NONE; // optional .POGOProtos.Enums.HoloIapItemCategory category = 2
     private $sortOrder = 0; // optional int32 sort_order = 3
-    private $itemIds = array(); // repeated .POGOProtos.Inventory.ItemId item_ids = 4
+    private $itemIds = array(); // repeated .POGOProtos.Inventory.Item.ItemId item_ids = 4
     private $counts = array(); // repeated int32 counts = 5
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
@@ -62,7 +62,7 @@ namespace POGOProtos\Settings\Master {
             if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->sortOrder = $tmp;
 
             break;
-          case 4: // repeated .POGOProtos.Inventory.ItemId item_ids = 4
+          case 4: // repeated .POGOProtos.Inventory.Item.ItemId item_ids = 4
             if($wire !== 2 && $wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 or 0 got: $wire");
             }

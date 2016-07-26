@@ -45,7 +45,7 @@ namespace POGOProtos\Networking\Responses {
     private $_unknown;
     private $status = CatchPokemonResponse_CatchStatus::CATCH_ERROR; // optional .POGOProtos.Networking.Responses.CatchPokemonResponse.CatchStatus status = 1
     private $missPercent = 0; // optional double miss_percent = 2
-    private $capturedPokemonId = 0; // optional uint64 captured_pokemon_id = 3
+    private $capturedPokemonId = 0; // optional fixed64 captured_pokemon_id = 3
     private $captureAward = null; // optional .POGOProtos.Data.Capture.CaptureAward capture_award = 4
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
@@ -78,13 +78,13 @@ namespace POGOProtos\Networking\Responses {
             $this->missPercent = $tmp;
 
             break;
-          case 3: // optional uint64 captured_pokemon_id = 3
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 3: // optional fixed64 captured_pokemon_id = 3
+            if($wire !== 1) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
             }
-            $tmp = Protobuf::read_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_UINT64 || $tmp > Protobuf::MAX_UINT64) throw new \Exception('uint64 out of range');$this->capturedPokemonId = $tmp;
+            $tmp = Protobuf::read_uint64($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
+            $this->capturedPokemonId = $tmp;
 
             break;
           case 4: // optional .POGOProtos.Data.Capture.CaptureAward capture_award = 4
@@ -114,8 +114,8 @@ namespace POGOProtos\Networking\Responses {
         Protobuf::write_double($fp, $this->missPercent);
       }
       if ($this->capturedPokemonId !== 0) {
-        fwrite($fp, "\x18", 1);
-        Protobuf::write_varint($fp, $this->capturedPokemonId);
+        fwrite($fp, "\x19", 1);
+        Protobuf::write_uint64($fp, $this->capturedPokemonId);
       }
       if ($this->captureAward !== null) {
         fwrite($fp, "\"", 1);
@@ -133,7 +133,7 @@ namespace POGOProtos\Networking\Responses {
         $size += 9;
       }
       if ($this->capturedPokemonId !== 0) {
-        $size += 1 + Protobuf::size_varint($this->capturedPokemonId);
+        $size += 9;
       }
       if ($this->captureAward !== null) {
         $l = $this->captureAward->size();

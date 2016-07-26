@@ -14,10 +14,10 @@ namespace POGOProtos\Map\Fort {
   final class FortSummary extends ProtobufMessage {
 
     private $_unknown;
-    private $fortSummaryId = 0; // optional int32 fort_summary_id = 1
-    private $lastModifiedTimestampMs = 0; // optional int32 last_modified_timestamp_ms = 2
-    private $latitude = 0; // optional int32 latitude = 3
-    private $longitude = 0; // optional int32 longitude = 4
+    private $fortSummaryId = ""; // optional string fort_summary_id = 1
+    private $lastModifiedTimestampMs = 0; // optional int64 last_modified_timestamp_ms = 2
+    private $latitude = 0; // optional double latitude = 3
+    private $longitude = 0; // optional double longitude = 4
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
       parent::__construct($in, $limit);
@@ -31,40 +31,42 @@ namespace POGOProtos\Map\Fort {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional int32 fort_summary_id = 1
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 1: // optional string fort_summary_id = 1
+            if($wire !== 2) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
-            $tmp = Protobuf::read_signed_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->fortSummaryId = $tmp;
+            $len = Protobuf::read_varint($fp, $limit);
+            if ($len === false) throw new \Exception('Protobuf::read_varint returned false');
+            $tmp = Protobuf::read_bytes($fp, $len, $limit);
+            if ($tmp === false) throw new \Exception("read_bytes($len) returned false");
+            $this->fortSummaryId = $tmp;
 
             break;
-          case 2: // optional int32 last_modified_timestamp_ms = 2
+          case 2: // optional int64 last_modified_timestamp_ms = 2
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
             $tmp = Protobuf::read_signed_varint($fp, $limit);
             if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->lastModifiedTimestampMs = $tmp;
+            if ($tmp < Protobuf::MIN_INT64 || $tmp > Protobuf::MAX_INT64) throw new \Exception('int64 out of range');$this->lastModifiedTimestampMs = $tmp;
 
             break;
-          case 3: // optional int32 latitude = 3
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 3: // optional double latitude = 3
+            if($wire !== 1) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
             }
-            $tmp = Protobuf::read_signed_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->latitude = $tmp;
+            $tmp = Protobuf::read_double($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_double returned false');
+            $this->latitude = $tmp;
 
             break;
-          case 4: // optional int32 longitude = 4
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 4: // optional double longitude = 4
+            if($wire !== 1) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
             }
-            $tmp = Protobuf::read_signed_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->longitude = $tmp;
+            $tmp = Protobuf::read_double($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_double returned false');
+            $this->longitude = $tmp;
 
             break;
           default:
@@ -74,42 +76,44 @@ namespace POGOProtos\Map\Fort {
     }
 
     public function write($fp) {
-      if ($this->fortSummaryId !== 0) {
-        fwrite($fp, "\x08", 1);
-        Protobuf::write_varint($fp, $this->fortSummaryId);
+      if ($this->fortSummaryId !== "") {
+        fwrite($fp, "\x0a", 1);
+        Protobuf::write_varint($fp, strlen($this->fortSummaryId));
+        fwrite($fp, $this->fortSummaryId);
       }
       if ($this->lastModifiedTimestampMs !== 0) {
         fwrite($fp, "\x10", 1);
         Protobuf::write_varint($fp, $this->lastModifiedTimestampMs);
       }
       if ($this->latitude !== 0) {
-        fwrite($fp, "\x18", 1);
-        Protobuf::write_varint($fp, $this->latitude);
+        fwrite($fp, "\x19", 1);
+        Protobuf::write_double($fp, $this->latitude);
       }
       if ($this->longitude !== 0) {
-        fwrite($fp, " ", 1);
-        Protobuf::write_varint($fp, $this->longitude);
+        fwrite($fp, "!", 1);
+        Protobuf::write_double($fp, $this->longitude);
       }
     }
 
     public function size() {
       $size = 0;
-      if ($this->fortSummaryId !== 0) {
-        $size += 1 + Protobuf::size_varint($this->fortSummaryId);
+      if ($this->fortSummaryId !== "") {
+        $l = strlen($this->fortSummaryId);
+        $size += 1 + Protobuf::size_varint($l) + $l;
       }
       if ($this->lastModifiedTimestampMs !== 0) {
         $size += 1 + Protobuf::size_varint($this->lastModifiedTimestampMs);
       }
       if ($this->latitude !== 0) {
-        $size += 1 + Protobuf::size_varint($this->latitude);
+        $size += 9;
       }
       if ($this->longitude !== 0) {
-        $size += 1 + Protobuf::size_varint($this->longitude);
+        $size += 9;
       }
       return $size;
     }
 
-    public function clearFortSummaryId() { $this->fortSummaryId = 0; }
+    public function clearFortSummaryId() { $this->fortSummaryId = ""; }
     public function getFortSummaryId() { return $this->fortSummaryId;}
     public function setFortSummaryId($value) { $this->fortSummaryId = $value; }
 
@@ -127,7 +131,7 @@ namespace POGOProtos\Map\Fort {
 
     public function __toString() {
       return ''
-           . Protobuf::toString('fort_summary_id', $this->fortSummaryId, 0)
+           . Protobuf::toString('fort_summary_id', $this->fortSummaryId, "")
            . Protobuf::toString('last_modified_timestamp_ms', $this->lastModifiedTimestampMs, 0)
            . Protobuf::toString('latitude', $this->latitude, 0)
            . Protobuf::toString('longitude', $this->longitude, 0);

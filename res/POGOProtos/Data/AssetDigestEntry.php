@@ -17,7 +17,7 @@ namespace POGOProtos\Data {
     private $assetId = ""; // optional string asset_id = 1
     private $bundleName = ""; // optional string bundle_name = 2
     private $version = 0; // optional int64 version = 3
-    private $checksum = 0; // optional uint32 checksum = 4
+    private $checksum = 0; // optional fixed32 checksum = 4
     private $size = 0; // optional int32 size = 5
     private $key = ""; // optional bytes key = 6
 
@@ -64,13 +64,13 @@ namespace POGOProtos\Data {
             if ($tmp < Protobuf::MIN_INT64 || $tmp > Protobuf::MAX_INT64) throw new \Exception('int64 out of range');$this->version = $tmp;
 
             break;
-          case 4: // optional uint32 checksum = 4
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 4: // optional fixed32 checksum = 4
+            if($wire !== 5) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 5 got: $wire");
             }
-            $tmp = Protobuf::read_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_UINT32 || $tmp > Protobuf::MAX_UINT32) throw new \Exception('uint32 out of range');$this->checksum = $tmp;
+            $tmp = Protobuf::read_uint32($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_uint32 returned false');
+            $this->checksum = $tmp;
 
             break;
           case 5: // optional int32 size = 5
@@ -115,8 +115,8 @@ namespace POGOProtos\Data {
         Protobuf::write_varint($fp, $this->version);
       }
       if ($this->checksum !== 0) {
-        fwrite($fp, " ", 1);
-        Protobuf::write_varint($fp, $this->checksum);
+        fwrite($fp, "%", 1);
+        Protobuf::write_uint32($fp, $this->checksum);
       }
       if ($this->size !== 0) {
         fwrite($fp, "(", 1);
@@ -143,7 +143,7 @@ namespace POGOProtos\Data {
         $size += 1 + Protobuf::size_varint($this->version);
       }
       if ($this->checksum !== 0) {
-        $size += 1 + Protobuf::size_varint($this->checksum);
+        $size += 5;
       }
       if ($this->size !== 0) {
         $size += 1 + Protobuf::size_varint($this->size);

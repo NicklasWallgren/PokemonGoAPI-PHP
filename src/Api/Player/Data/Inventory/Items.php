@@ -13,10 +13,13 @@ use POGOProtos\Inventory\InventoryItemData;
  * @method void setItems(Item[] $items)
  * @method void setCandyBank(CandyBank $candyBank)
  * @method void setPokedex(Pokedex $pokedex)
+ * @method void setAppliedItems(AppliedItems $appliedItems)
  * @method PokeBank getPokeBank()
  * @method Item[] getItems()
  * @method CandyBank getCandyBank()
  * @method Pokedex getPokedex()
+ * @method EggIncubators getEggIncubators()
+ * @method AppliedItems getAppliedItems()
  */
 class Items extends Data {
 
@@ -41,6 +44,16 @@ class Items extends Data {
     protected $pokedex;
 
     /**
+     * @var EggIncubators
+     */
+    protected $eggIncubators;
+
+    /**
+     * @var AppliedItems
+     */
+    protected $appliedItems;
+
+    /**
      * Items constructor.
      */
     public function __construct()
@@ -48,6 +61,8 @@ class Items extends Data {
         $this->pokeBank = new PokeBank();
         $this->candyBank = new CandyBank();
         $this->pokedex = new Pokedex();
+        $this->eggIncubators = new EggIncubators();
+        $this->appliedItems = new AppliedItems();
     }
 
     /**
@@ -94,12 +109,28 @@ class Items extends Data {
             $this->candyBank->add($itemData->getPokemonFamily());
 
         } elseif (self::isPokedexItem($itemData)) {
-            // Retrieve the candy item data
+            // Retrieve the pokedex item data
             $this->pokedex->add($itemData->getPokedexEntry());
 
+        } elseif (self::isEggIncubators($itemData)) {
+            // Retrieve the egg incubators item data
+            $this->eggIncubators = EggIncubators::create($itemData->getEggIncubators());
+
+        } elseif (self::isAppliedItems($itemData)) {
+            // Retrieve the applied items data
+            $this->appliedItems = AppliedItems::create($itemData->getAppliedItems());
+
         } else {
+
+//            var_dump($itemData->getPlayerStats());
+//            var_dump($itemData->getEggIncubators());
+//            var_dump($itemData->getPokemonFamily());
+
+
             Log::warning('Unknown item type encountered', array('item' => $itemData));
         }
+
+
     }
 
     /**
@@ -144,6 +175,28 @@ class Items extends Data {
     protected static function isPokedexItem($itemData)
     {
         return $itemData->getPokedexEntry() != null;
+    }
+
+    /**
+     * Returns true if the item data is of type pokedex item, false otherwise.
+     *
+     * @param InventoryItemData $itemData
+     * @return boolean
+     */
+    protected static function isEggIncubators($itemData)
+    {
+        return $itemData->getEggIncubators() != null;
+    }
+
+    /**
+     * Returns true if the item data is of type pokedex item, false otherwise.
+     *
+     * @param InventoryItemData $itemData
+     * @return boolean
+     */
+    protected static function isAppliedItems($itemData)
+    {
+        return $itemData->getAppliedItems() != null;
     }
 
 }

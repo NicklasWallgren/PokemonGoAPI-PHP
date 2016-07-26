@@ -15,7 +15,7 @@ namespace POGOProtos\Networking\Requests\Messages {
 
     private $_unknown;
     private $fortId = ""; // optional string fort_id = 1
-    private $pokemonId = 0; // optional uint64 pokemon_id = 2
+    private $pokemonId = 0; // optional fixed64 pokemon_id = 2
     private $playerLatitude = 0; // optional double player_latitude = 3
     private $playerLongitude = 0; // optional double player_longitude = 4
 
@@ -42,13 +42,13 @@ namespace POGOProtos\Networking\Requests\Messages {
             $this->fortId = $tmp;
 
             break;
-          case 2: // optional uint64 pokemon_id = 2
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 2: // optional fixed64 pokemon_id = 2
+            if($wire !== 1) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
             }
-            $tmp = Protobuf::read_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_UINT64 || $tmp > Protobuf::MAX_UINT64) throw new \Exception('uint64 out of range');$this->pokemonId = $tmp;
+            $tmp = Protobuf::read_uint64($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
+            $this->pokemonId = $tmp;
 
             break;
           case 3: // optional double player_latitude = 3
@@ -82,8 +82,8 @@ namespace POGOProtos\Networking\Requests\Messages {
         fwrite($fp, $this->fortId);
       }
       if ($this->pokemonId !== 0) {
-        fwrite($fp, "\x10", 1);
-        Protobuf::write_varint($fp, $this->pokemonId);
+        fwrite($fp, "\x11", 1);
+        Protobuf::write_uint64($fp, $this->pokemonId);
       }
       if ($this->playerLatitude !== 0) {
         fwrite($fp, "\x19", 1);
@@ -102,7 +102,7 @@ namespace POGOProtos\Networking\Requests\Messages {
         $size += 1 + Protobuf::size_varint($l) + $l;
       }
       if ($this->pokemonId !== 0) {
-        $size += 1 + Protobuf::size_varint($this->pokemonId);
+        $size += 9;
       }
       if ($this->playerLatitude !== 0) {
         $size += 9;

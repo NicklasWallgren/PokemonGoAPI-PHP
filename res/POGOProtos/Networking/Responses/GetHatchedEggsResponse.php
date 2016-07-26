@@ -15,7 +15,7 @@ namespace POGOProtos\Networking\Responses {
 
     private $_unknown;
     private $success = false; // optional bool success = 1
-    private $pokemonId = array(); // repeated uint64 pokemon_id = 2 [packed = true]
+    private $pokemonId = array(); // repeated fixed64 pokemon_id = 2 [packed = true]
     private $experienceAwarded = array(); // repeated int32 experience_awarded = 3
     private $candyAwarded = array(); // repeated int32 candy_awarded = 4
     private $stardustAwarded = array(); // repeated int32 stardust_awarded = 5
@@ -41,20 +41,20 @@ namespace POGOProtos\Networking\Responses {
             $this->success = ($tmp > 0) ? true : false;
 
             break;
-          case 2: // repeated uint64 pokemon_id = 2 [packed = true]
-            if($wire !== 2 && $wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 2 or 0 got: $wire");
+          case 2: // repeated fixed64 pokemon_id = 2 [packed = true]
+            if($wire !== 2 && $wire !== 1) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 2 or 1 got: $wire");
             }
-            if ($wire === 0) {
-              $tmp = Protobuf::read_varint($fp, $limit);
-              if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-              if ($tmp < Protobuf::MIN_UINT64 || $tmp > Protobuf::MAX_UINT64) throw new \Exception('uint64 out of range');$this->pokemonId[] = $tmp;
+            if ($wire === 1) {
+              $tmp = Protobuf::read_uint64($fp, $limit);
+              if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
+              $this->pokemonId[] = $tmp;
             } elseif ($wire === 2) {
               $len = Protobuf::read_varint($fp, $limit);
               while ($len > 0) {
-                $tmp = Protobuf::read_varint($fp, $len);
-                if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-                if ($tmp < Protobuf::MIN_UINT64 || $tmp > Protobuf::MAX_UINT64) throw new \Exception('uint64 out of range');$this->pokemonId[] = $tmp;
+                $tmp = Protobuf::read_uint64($fp, $len);
+                if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
+                $this->pokemonId[] = $tmp;
               }
             }
 
@@ -125,8 +125,8 @@ namespace POGOProtos\Networking\Responses {
         Protobuf::write_varint($fp, $this->success ? 1 : 0);
       }
       foreach($this->pokemonId as $v) {
-        fwrite($fp, "\x10", 1);
-        Protobuf::write_varint($fp, $v);
+        fwrite($fp, "\x11", 1);
+        Protobuf::write_uint64($fp, $v);
       }
       foreach($this->experienceAwarded as $v) {
         fwrite($fp, "\x18", 1);

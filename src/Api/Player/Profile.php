@@ -43,7 +43,7 @@ class Profile extends Procedure {
     /**
      * Returns the request service.
      *
-     * @return RequestService
+     * @return PlayerRequestService
      */
     protected function getRequestService()
     {

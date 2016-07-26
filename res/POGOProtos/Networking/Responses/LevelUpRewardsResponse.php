@@ -40,8 +40,8 @@ namespace POGOProtos\Networking\Responses {
 
     private $_unknown;
     private $result = LevelUpRewardsResponse_Result::UNSET; // optional .POGOProtos.Networking.Responses.LevelUpRewardsResponse.Result result = 1
-    private $itemsAwarded = array(); // repeated .POGOProtos.Inventory.ItemAward items_awarded = 2
-    private $itemsUnlocked = array(); // repeated .POGOProtos.Inventory.ItemId items_unlocked = 4
+    private $itemsAwarded = array(); // repeated .POGOProtos.Inventory.Item.ItemAward items_awarded = 2
+    private $itemsUnlocked = array(); // repeated .POGOProtos.Inventory.Item.ItemId items_unlocked = 4
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
       parent::__construct($in, $limit);
@@ -64,18 +64,18 @@ namespace POGOProtos\Networking\Responses {
             $this->result = $tmp;
 
             break;
-          case 2: // repeated .POGOProtos.Inventory.ItemAward items_awarded = 2
+          case 2: // repeated .POGOProtos.Inventory.Item.ItemAward items_awarded = 2
             if($wire !== 2) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
             $len = Protobuf::read_varint($fp, $limit);
             if ($len === false) throw new \Exception('Protobuf::read_varint returned false');
             $limit -= $len;
-            $this->itemsAwarded[] = new \POGOProtos\Inventory\ItemAward($fp, $len);
-            if ($len !== 0) throw new \Exception('new \POGOProtos\Inventory\ItemAward did not read the full length');
+            $this->itemsAwarded[] = new \POGOProtos\Inventory\Item\ItemAward($fp, $len);
+            if ($len !== 0) throw new \Exception('new \POGOProtos\Inventory\Item\ItemAward did not read the full length');
 
             break;
-          case 4: // repeated .POGOProtos.Inventory.ItemId items_unlocked = 4
+          case 4: // repeated .POGOProtos.Inventory.Item.ItemId items_unlocked = 4
             if($wire !== 2 && $wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 or 0 got: $wire");
             }

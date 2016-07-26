@@ -14,7 +14,7 @@ namespace POGOProtos\Networking\Requests\Messages {
   final class NicknamePokemonMessage extends ProtobufMessage {
 
     private $_unknown;
-    private $pokemonId = 0; // optional uint64 pokemon_id = 1
+    private $pokemonId = 0; // optional fixed64 pokemon_id = 1
     private $nickname = ""; // optional string nickname = 2
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
@@ -29,22 +29,24 @@ namespace POGOProtos\Networking\Requests\Messages {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional uint64 pokemon_id = 1
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 1: // optional fixed64 pokemon_id = 1
+            if($wire !== 1) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
             }
-            $tmp = Protobuf::read_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_UINT64 || $tmp > Protobuf::MAX_UINT64) throw new \Exception('uint64 out of range');$this->pokemonId = $tmp;
+            $tmp = Protobuf::read_uint64($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
+            $this->pokemonId = $tmp;
 
             break;
           case 2: // optional string nickname = 2
             if($wire !== 2) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
-            $tmp = Protobuf::read_uint64($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
-            $this->pokemonId = $tmp;
+            $len = Protobuf::read_varint($fp, $limit);
+            if ($len === false) throw new \Exception('Protobuf::read_varint returned false');
+            $tmp = Protobuf::read_bytes($fp, $len, $limit);
+            if ($tmp === false) throw new \Exception("read_bytes($len) returned false");
+            $this->nickname = $tmp;
 
             break;
           default:
@@ -58,8 +60,6 @@ namespace POGOProtos\Networking\Requests\Messages {
         fwrite($fp, "\x09", 1);
         Protobuf::write_uint64($fp, $this->pokemonId);
       }
-
-
       if ($this->nickname !== "") {
         fwrite($fp, "\x12", 1);
         Protobuf::write_varint($fp, strlen($this->nickname));
@@ -70,7 +70,7 @@ namespace POGOProtos\Networking\Requests\Messages {
     public function size() {
       $size = 0;
       if ($this->pokemonId !== 0) {
-        $size += 1 + Protobuf::size_varint($this->pokemonId);
+        $size += 9;
       }
       if ($this->nickname !== "") {
         $l = strlen($this->nickname);

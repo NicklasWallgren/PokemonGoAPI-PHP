@@ -7,6 +7,7 @@ namespace POGOProtos\Data {
 
   use POGOProtos\Enums\PokemonId;
   use POGOProtos\Enums\PokemonMove;
+  use POGOProtos\Inventory\Item\ItemId;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;
@@ -24,7 +25,7 @@ namespace POGOProtos\Data {
     private $staminaMax = 0; // optional int32 stamina_max = 5
     private $move1 = PokemonMove::MOVE_UNSET; // optional .POGOProtos.Enums.PokemonMove move_1 = 6
     private $move2 = PokemonMove::MOVE_UNSET; // optional .POGOProtos.Enums.PokemonMove move_2 = 7
-    private $deployedFortId = 0; // optional int32 deployed_fort_id = 8
+    private $deployedFortId = ""; // optional string deployed_fort_id = 8
     private $ownerName = ""; // optional string owner_name = 9
     private $isEgg = false; // optional bool is_egg = 10
     private $eggKmWalkedTarget = 0; // optional double egg_km_walked_target = 11
@@ -36,14 +37,14 @@ namespace POGOProtos\Data {
     private $individualDefense = 0; // optional int32 individual_defense = 18
     private $individualStamina = 0; // optional int32 individual_stamina = 19
     private $cpMultiplier = 0; // optional float cp_multiplier = 20
-    private $pokeball = 0; // optional int32 pokeball = 21
+    private $pokeball = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId pokeball = 21
     private $capturedCellId = 0; // optional uint64 captured_cell_id = 22
     private $battlesAttacked = 0; // optional int32 battles_attacked = 23
     private $battlesDefended = 0; // optional int32 battles_defended = 24
     private $eggIncubatorId = ""; // optional string egg_incubator_id = 25
     private $creationTimeMs = 0; // optional uint64 creation_time_ms = 26
     private $numUpgrades = 0; // optional int32 num_upgrades = 27
-    private $additionalCpMultiplier = 0; // optional int32 additional_cp_multiplier = 28
+    private $additionalCpMultiplier = 0; // optional float additional_cp_multiplier = 28
     private $favorite = 0; // optional int32 favorite = 29
     private $nickname = ""; // optional string nickname = 30
     private $fromFort = 0; // optional int32 from_fort = 31
@@ -123,7 +124,7 @@ namespace POGOProtos\Data {
             $this->move2 = $tmp;
 
             break;
-          case 8: // optional int32 deployed_fort_id = 8
+          case 8: // optional string deployed_fort_id = 8
             if($wire !== 2) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
@@ -235,13 +236,13 @@ namespace POGOProtos\Data {
             $this->cpMultiplier = $tmp;
 
             break;
-          case 21: // optional int32 pokeball = 21
+          case 21: // optional .POGOProtos.Inventory.Item.ItemId pokeball = 21
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
-            $tmp = Protobuf::read_signed_varint($fp, $limit);
+            $tmp = Protobuf::read_varint($fp, $limit);
             if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->pokeball = $tmp;
+            $this->pokeball = $tmp;
 
             break;
           case 22: // optional uint64 captured_cell_id = 22
@@ -273,7 +274,6 @@ namespace POGOProtos\Data {
             break;
           case 25: // optional string egg_incubator_id = 25
             if($wire !== 2) {
-
               throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
             $len = Protobuf::read_varint($fp, $limit);
@@ -301,13 +301,14 @@ namespace POGOProtos\Data {
             if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->numUpgrades = $tmp;
 
             break;
-          case 28: // optional int32 additional_cp_multiplier = 28
+          case 28: // optional float additional_cp_multiplier = 28
             if($wire !== 5) {
               throw new \Exception("Incorrect wire format for field $field, expected: 5 got: $wire");
             }
             $tmp = Protobuf::read_float($fp, $limit);
             if ($tmp === false) throw new \Exception('Protobuf::read_float returned false');
             $this->additionalCpMultiplier = $tmp;
+
             break;
           case 29: // optional int32 favorite = 29
             if($wire !== 0) {
@@ -373,9 +374,10 @@ namespace POGOProtos\Data {
         fwrite($fp, "8", 1);
         Protobuf::write_varint($fp, $this->move2);
       }
-      if ($this->deployedFortId !== 0) {
-        fwrite($fp, "@", 1);
-        Protobuf::write_varint($fp, $this->deployedFortId);
+      if ($this->deployedFortId !== "") {
+        fwrite($fp, "B", 1);
+        Protobuf::write_varint($fp, strlen($this->deployedFortId));
+        fwrite($fp, $this->deployedFortId);
       }
       if ($this->ownerName !== "") {
         fwrite($fp, "J", 1);
@@ -422,7 +424,7 @@ namespace POGOProtos\Data {
         fwrite($fp, "\xa5\x01", 2);
         Protobuf::write_float($fp, $this->cpMultiplier);
       }
-      if ($this->pokeball !== 0) {
+      if ($this->pokeball !== ItemId::ITEM_UNKNOWN) {
         fwrite($fp, "\xa8\x01", 2);
         Protobuf::write_varint($fp, $this->pokeball);
       }
@@ -452,8 +454,8 @@ namespace POGOProtos\Data {
         Protobuf::write_varint($fp, $this->numUpgrades);
       }
       if ($this->additionalCpMultiplier !== 0) {
-        fwrite($fp, "\xe0\x01", 2);
-        Protobuf::write_varint($fp, $this->additionalCpMultiplier);
+        fwrite($fp, "\xe5\x01", 2);
+        Protobuf::write_float($fp, $this->additionalCpMultiplier);
       }
       if ($this->favorite !== 0) {
         fwrite($fp, "\xe8\x01", 2);
@@ -493,8 +495,9 @@ namespace POGOProtos\Data {
       if ($this->move2 !== PokemonMove::MOVE_UNSET) {
         $size += 1 + Protobuf::size_varint($this->move2);
       }
-      if ($this->deployedFortId !== 0) {
-        $size += 1 + Protobuf::size_varint($this->deployedFortId);
+      if ($this->deployedFortId !== "") {
+        $l = strlen($this->deployedFortId);
+        $size += 1 + Protobuf::size_varint($l) + $l;
       }
       if ($this->ownerName !== "") {
         $l = strlen($this->ownerName);
@@ -530,7 +533,7 @@ namespace POGOProtos\Data {
       if ($this->cpMultiplier !== 0) {
         $size += 6;
       }
-      if ($this->pokeball !== 0) {
+      if ($this->pokeball !== ItemId::ITEM_UNKNOWN) {
         $size += 2 + Protobuf::size_varint($this->pokeball);
       }
       if ($this->capturedCellId !== 0) {
@@ -553,7 +556,7 @@ namespace POGOProtos\Data {
         $size += 2 + Protobuf::size_varint($this->numUpgrades);
       }
       if ($this->additionalCpMultiplier !== 0) {
-        $size += 2 + Protobuf::size_varint($this->additionalCpMultiplier);
+        $size += 6;
       }
       if ($this->favorite !== 0) {
         $size += 2 + Protobuf::size_varint($this->favorite);
@@ -596,7 +599,7 @@ namespace POGOProtos\Data {
     public function getMove2() { return $this->move2;}
     public function setMove2($value) { $this->move2 = $value; }
 
-    public function clearDeployedFortId() { $this->deployedFortId = 0; }
+    public function clearDeployedFortId() { $this->deployedFortId = ""; }
     public function getDeployedFortId() { return $this->deployedFortId;}
     public function setDeployedFortId($value) { $this->deployedFortId = $value; }
 
@@ -644,7 +647,7 @@ namespace POGOProtos\Data {
     public function getCpMultiplier() { return $this->cpMultiplier;}
     public function setCpMultiplier($value) { $this->cpMultiplier = $value; }
 
-    public function clearPokeball() { $this->pokeball = 0; }
+    public function clearPokeball() { $this->pokeball = ItemId::ITEM_UNKNOWN; }
     public function getPokeball() { return $this->pokeball;}
     public function setPokeball($value) { $this->pokeball = $value; }
 
@@ -697,7 +700,7 @@ namespace POGOProtos\Data {
            . Protobuf::toString('stamina_max', $this->staminaMax, 0)
            . Protobuf::toString('move_1', $this->move1, PokemonMove::MOVE_UNSET)
            . Protobuf::toString('move_2', $this->move2, PokemonMove::MOVE_UNSET)
-           . Protobuf::toString('deployed_fort_id', $this->deployedFortId, 0)
+           . Protobuf::toString('deployed_fort_id', $this->deployedFortId, "")
            . Protobuf::toString('owner_name', $this->ownerName, "")
            . Protobuf::toString('is_egg', $this->isEgg, false)
            . Protobuf::toString('egg_km_walked_target', $this->eggKmWalkedTarget, 0)
@@ -709,7 +712,7 @@ namespace POGOProtos\Data {
            . Protobuf::toString('individual_defense', $this->individualDefense, 0)
            . Protobuf::toString('individual_stamina', $this->individualStamina, 0)
            . Protobuf::toString('cp_multiplier', $this->cpMultiplier, 0)
-           . Protobuf::toString('pokeball', $this->pokeball, 0)
+           . Protobuf::toString('pokeball', $this->pokeball, ItemId::ITEM_UNKNOWN)
            . Protobuf::toString('captured_cell_id', $this->capturedCellId, 0)
            . Protobuf::toString('battles_attacked', $this->battlesAttacked, 0)
            . Protobuf::toString('battles_defended', $this->battlesDefended, 0)

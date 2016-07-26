@@ -5,16 +5,18 @@
 
 namespace POGOProtos\Data {
 
+  use POGOProtos\Enums\PokemonId;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;
   use ProtobufMessage;
 
+
   // message POGOProtos.Data.PokedexEntry
   final class PokedexEntry extends ProtobufMessage {
 
     private $_unknown;
-    private $pokedexEntryNumber = 0; // optional int32 pokedex_entry_number = 1
+    private $pokemonId = PokemonId::MISSINGNO; // optional .POGOProtos.Enums.PokemonId pokemon_id = 1
     private $timesEncountered = 0; // optional int32 times_encountered = 2
     private $timesCaptured = 0; // optional int32 times_captured = 3
     private $evolutionStonePieces = 0; // optional int32 evolution_stone_pieces = 4
@@ -32,13 +34,13 @@ namespace POGOProtos\Data {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional int32 pokedex_entry_number = 1
+          case 1: // optional .POGOProtos.Enums.PokemonId pokemon_id = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
-            $tmp = Protobuf::read_signed_varint($fp, $limit);
+            $tmp = Protobuf::read_varint($fp, $limit);
             if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->pokedexEntryNumber = $tmp;
+            $this->pokemonId = $tmp;
 
             break;
           case 2: // optional int32 times_encountered = 2
@@ -84,9 +86,9 @@ namespace POGOProtos\Data {
     }
 
     public function write($fp) {
-      if ($this->pokedexEntryNumber !== 0) {
+      if ($this->pokemonId !== PokemonId::MISSINGNO) {
         fwrite($fp, "\x08", 1);
-        Protobuf::write_varint($fp, $this->pokedexEntryNumber);
+        Protobuf::write_varint($fp, $this->pokemonId);
       }
       if ($this->timesEncountered !== 0) {
         fwrite($fp, "\x10", 1);
@@ -108,8 +110,8 @@ namespace POGOProtos\Data {
 
     public function size() {
       $size = 0;
-      if ($this->pokedexEntryNumber !== 0) {
-        $size += 1 + Protobuf::size_varint($this->pokedexEntryNumber);
+      if ($this->pokemonId !== PokemonId::MISSINGNO) {
+        $size += 1 + Protobuf::size_varint($this->pokemonId);
       }
       if ($this->timesEncountered !== 0) {
         $size += 1 + Protobuf::size_varint($this->timesEncountered);
@@ -126,9 +128,9 @@ namespace POGOProtos\Data {
       return $size;
     }
 
-    public function clearPokedexEntryNumber() { $this->pokedexEntryNumber = 0; }
-    public function getPokedexEntryNumber() { return $this->pokedexEntryNumber;}
-    public function setPokedexEntryNumber($value) { $this->pokedexEntryNumber = $value; }
+    public function clearPokemonId() { $this->pokemonId = PokemonId::MISSINGNO; }
+    public function getPokemonId() { return $this->pokemonId;}
+    public function setPokemonId($value) { $this->pokemonId = $value; }
 
     public function clearTimesEncountered() { $this->timesEncountered = 0; }
     public function getTimesEncountered() { return $this->timesEncountered;}
@@ -148,7 +150,7 @@ namespace POGOProtos\Data {
 
     public function __toString() {
       return ''
-           . Protobuf::toString('pokedex_entry_number', $this->pokedexEntryNumber, 0)
+           . Protobuf::toString('pokemon_id', $this->pokemonId, PokemonId::MISSINGNO)
            . Protobuf::toString('times_encountered', $this->timesEncountered, 0)
            . Protobuf::toString('times_captured', $this->timesCaptured, 0)
            . Protobuf::toString('evolution_stone_pieces', $this->evolutionStonePieces, 0)

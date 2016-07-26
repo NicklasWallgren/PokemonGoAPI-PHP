@@ -14,7 +14,7 @@ namespace POGOProtos\Networking\Requests\Messages {
   final class DiskEncounterMessage extends ProtobufMessage {
 
     private $_unknown;
-    private $encounterId = 0; // optional fixed64 encounter_id = 1
+    private $encounterId = 0; // optional uint64 encounter_id = 1
     private $fortId = ""; // optional string fort_id = 2
     private $playerLatitude = 0; // optional double player_latitude = 3
     private $playerLongitude = 0; // optional double player_longitude = 4
@@ -31,13 +31,13 @@ namespace POGOProtos\Networking\Requests\Messages {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional fixed64 encounter_id = 1
-            if($wire !== 1) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
+          case 1: // optional uint64 encounter_id = 1
+            if($wire !== 0) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
-            $tmp = Protobuf::read_uint64($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
-            $this->encounterId = $tmp;
+            $tmp = Protobuf::read_varint($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
+            if ($tmp < Protobuf::MIN_UINT64 || $tmp > Protobuf::MAX_UINT64) throw new \Exception('uint64 out of range');$this->encounterId = $tmp;
 
             break;
           case 2: // optional string fort_id = 2
@@ -77,8 +77,8 @@ namespace POGOProtos\Networking\Requests\Messages {
 
     public function write($fp) {
       if ($this->encounterId !== 0) {
-        fwrite($fp, "\x09", 1);
-        Protobuf::write_uint64($fp, $this->encounterId);
+        fwrite($fp, "\x08", 1);
+        Protobuf::write_varint($fp, $this->encounterId);
       }
       if ($this->fortId !== "") {
         fwrite($fp, "\x12", 1);
@@ -98,7 +98,7 @@ namespace POGOProtos\Networking\Requests\Messages {
     public function size() {
       $size = 0;
       if ($this->encounterId !== 0) {
-        $size += 9;
+        $size += 1 + Protobuf::size_varint($this->encounterId);
       }
       if ($this->fortId !== "") {
         $l = strlen($this->fortId);
