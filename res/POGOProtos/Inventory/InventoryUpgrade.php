@@ -5,6 +5,7 @@
 
 namespace POGOProtos\Inventory {
 
+  use POGOProtos\Inventory\Item\ItemId;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;
