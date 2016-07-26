@@ -27,5 +27,6 @@
             "res/POGOProtos/Networking/Envelopes/ResponseEnvelope.php"
         ]
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
