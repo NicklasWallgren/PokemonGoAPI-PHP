@@ -1,4 +1,4 @@
-src/.env
+.env
 vendor
 composer.lock
 storage/logs
