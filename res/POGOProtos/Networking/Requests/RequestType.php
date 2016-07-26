@@ -73,7 +73,7 @@ namespace POGOProtos\Networking\Requests {
     const SET_PLAYER_TEAM = 405;
     const MARK_TUTORIAL_COMPLETE = 406;
     const LOAD_SPAWN_POINTS = 500;
-    const ECHO = 666;
+    const ECHO_REQUEST = 666;
     const DEBUG_UPDATE_INVENTORY = 700;
     const DEBUG_DELETE_PLAYER = 701;
     const SFIDA_REGISTRATION = 800;

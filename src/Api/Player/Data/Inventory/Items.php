@@ -131,14 +131,8 @@ class Items extends Data {
             $this->stats = Stats::create($itemData->getPlayerStats());
 
         } else {
-
-            var_dump($itemData->getPlayerStats());
-            var_dump($itemData->getPokemonFamily());
-
-
             Log::warning('Unknown item type encountered', array('item' => $itemData));
         }
-
 
     }
 
