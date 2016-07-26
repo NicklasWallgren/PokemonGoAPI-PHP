@@ -12,10 +12,11 @@ use POGOProtos\Inventory\InventoryItemData;
  * @method void setPokeBank(PokeBank $pokeBank)
  * @method void setItems(Item[] $items)
  * @method void setCandyBank(CandyBank $candyBank)
- *
+ * @method void setPokedex(Pokedex $pokedex)
  * @method PokeBank getPokeBank()
  * @method Item[] getItems()
  * @method CandyBank getCandyBank()
+ * @method Pokedex getPokedex()
  */
 class Items extends Data {
 
@@ -35,12 +36,18 @@ class Items extends Data {
     protected $candyBank;
 
     /**
+     * @var Pokedex
+     */
+    protected $pokedex;
+
+    /**
      * Items constructor.
      */
     public function __construct()
     {
         $this->pokeBank = new PokeBank();
         $this->candyBank = new CandyBank();
+        $this->pokedex = new Pokedex();
     }
 
     /**
@@ -86,6 +93,10 @@ class Items extends Data {
             // Retrieve the candy item data
             $this->candyBank->add($itemData->getPokemonFamily());
 
+        } elseif (self::isPokedexItem($itemData)) {
+            // Retrieve the candy item data
+            $this->pokedex->add($itemData->getPokedexEntry());
+
         } else {
             Log::warning('Unknown item type encountered', array('item' => $itemData));
         }
@@ -119,10 +130,20 @@ class Items extends Data {
      * @param InventoryItemData $itemData
      * @return boolean
      */
-
     protected static function isCandy($itemData)
     {
         return $itemData->getPokemonFamily() != null;
+    }
+
+    /**
+     * Returns true if the item data is of type pokedex item, false otherwise.
+     *
+     * @param InventoryItemData $itemData
+     * @return boolean
+     */
+    protected static function isPokedexItem($itemData)
+    {
+        return $itemData->getPokedexEntry() != null;
     }
 
 }

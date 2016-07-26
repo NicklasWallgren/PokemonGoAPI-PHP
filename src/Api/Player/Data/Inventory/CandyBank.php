@@ -37,7 +37,6 @@ class CandyBank extends Data {
 
         // Check if a candy item with the family id already exists
         if (array_key_exists($candyItem->getFamilyId(), $this->candies)) {
-
             // Retrieve the candy item
             $storedCandyItem = $this->candies[$candyItem->getFamilyId()];
 
