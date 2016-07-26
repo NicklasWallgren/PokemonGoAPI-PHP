@@ -17,8 +17,8 @@ namespace POGOProtos\Data {
     private $_unknown;
     private $creationTimestampMs = 0; // optional int64 creation_timestamp_ms = 1
     private $username = ""; // optional string username = 2
-    private $team = 0; // optional int32 team = 5
-    private $tutorialState = array(); // repeated .POGOProtos.Enums.TutorialState tutorial_state = 7
+    private $team = TeamColor::NEUTRAL; // optional .POGOProtos.Enums.TeamColor team = 5
+    private $tutorialState = array(); // repeated .POGOProtos.Enums.TutorialState tutorial_state = 7 [packed = true]
     private $avatar = null; // optional .POGOProtos.Data.Player.PlayerAvatar avatar = 8
     private $maxPokemonStorage = 0; // optional int32 max_pokemon_storage = 9
     private $maxItemStorage = 0; // optional int32 max_item_storage = 10
@@ -59,16 +59,16 @@ namespace POGOProtos\Data {
             $this->username = $tmp;
 
             break;
-          case 5: // optional int32 team = 5
+          case 5: // optional .POGOProtos.Enums.TeamColor team = 5
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
-            $tmp = Protobuf::read_signed_varint($fp, $limit);
+            $tmp = Protobuf::read_varint($fp, $limit);
             if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_INT32 || $tmp > Protobuf::MAX_INT32) throw new \Exception('int32 out of range');$this->team = $tmp;
+            $this->team = $tmp;
 
             break;
-          case 7: // repeated .POGOProtos.Enums.TutorialState tutorial_state = 7
+          case 7: // repeated .POGOProtos.Enums.TutorialState tutorial_state = 7 [packed = true]
             if($wire !== 2 && $wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 or 0 got: $wire");
             }
@@ -163,8 +163,6 @@ namespace POGOProtos\Data {
             $limit -= Protobuf::skip_field($fp, $wire);
         }
       }
-
-      $limit = 0;
     }
 
     public function write($fp) {
@@ -177,7 +175,7 @@ namespace POGOProtos\Data {
         Protobuf::write_varint($fp, strlen($this->username));
         fwrite($fp, $this->username);
       }
-      if ($this->team !== 0) {
+      if ($this->team !== TeamColor::NEUTRAL) {
         fwrite($fp, "(", 1);
         Protobuf::write_varint($fp, $this->team);
       }
@@ -229,7 +227,7 @@ namespace POGOProtos\Data {
         $l = strlen($this->username);
         $size += 1 + Protobuf::size_varint($l) + $l;
       }
-      if ($this->team !== 0) {
+      if ($this->team !== TeamColor::NEUTRAL) {
         $size += 1 + Protobuf::size_varint($this->team);
       }
       foreach($this->tutorialState as $v) {
@@ -273,7 +271,7 @@ namespace POGOProtos\Data {
     public function getUsername() { return $this->username;}
     public function setUsername($value) { $this->username = $value; }
 
-    public function clearTeam() { $this->team = 0; }
+    public function clearTeam() { $this->team = TeamColor::NEUTRAL; }
     public function getTeam() { return $this->team;}
     public function setTeam($value) { $this->team = $value; }
 
@@ -321,7 +319,7 @@ namespace POGOProtos\Data {
       return ''
            . Protobuf::toString('creation_timestamp_ms', $this->creationTimestampMs, 0)
            . Protobuf::toString('username', $this->username, "")
-           . Protobuf::toString('team', $this->team, 0)
+           . Protobuf::toString('team', $this->team, TeamColor::NEUTRAL)
            . Protobuf::toString('tutorial_state', $this->tutorialState, TutorialState::LEGAL_SCREEN)
            . Protobuf::toString('avatar', $this->avatar, null)
            . Protobuf::toString('max_pokemon_storage', $this->maxPokemonStorage, 0)

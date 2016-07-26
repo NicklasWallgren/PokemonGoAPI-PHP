@@ -15,7 +15,7 @@ namespace POGOProtos\Networking\Requests\Messages {
   final class AddFortModifierMessage extends ProtobufMessage {
 
     private $_unknown;
-    private $modifierType = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId modifier_type = 1
+    private $modifierType = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId modifier_type = 1
     private $fortId = ""; // optional string fort_id = 2
     private $playerLatitude = 0; // optional double player_latitude = 3
     private $playerLongitude = 0; // optional double player_longitude = 4
@@ -32,7 +32,7 @@ namespace POGOProtos\Networking\Requests\Messages {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId modifier_type = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId modifier_type = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }

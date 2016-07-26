@@ -15,8 +15,8 @@ namespace POGOProtos\Data\Capture {
   final class CaptureProbability extends ProtobufMessage {
 
     private $_unknown;
-    private $pokeballType = array(); // repeated .POGOProtos.Inventory.ItemId pokeball_type = 1
-    private $captureProbability = array(); // repeated float capture_probability = 2
+    private $pokeballType = array(); // repeated .POGOProtos.Inventory.Item.ItemId pokeball_type = 1 [packed = true]
+    private $captureProbability = array(); // repeated float capture_probability = 2 [packed = true]
     private $reticleDifficultyScale = 0; // optional double reticle_difficulty_scale = 12
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
@@ -31,7 +31,7 @@ namespace POGOProtos\Data\Capture {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // repeated .POGOProtos.Inventory.ItemId pokeball_type = 1
+          case 1: // repeated .POGOProtos.Inventory.Item.ItemId pokeball_type = 1 [packed = true]
             if($wire !== 2 && $wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 or 0 got: $wire");
             }
@@ -49,7 +49,7 @@ namespace POGOProtos\Data\Capture {
             }
 
             break;
-          case 2: // repeated float capture_probability = 2
+          case 2: // repeated float capture_probability = 2 [packed = true]
             if($wire !== 2 && $wire !== 5) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 or 5 got: $wire");
             }

@@ -15,8 +15,8 @@ namespace POGOProtos\Networking\Requests\Messages {
   final class UseItemReviveMessage extends ProtobufMessage {
 
     private $_unknown;
-    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId item_id = 1
-    private $pokemonId = 0; // optional uint64 pokemon_id = 2
+    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
+    private $pokemonId = 0; // optional fixed64 pokemon_id = 2
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
       parent::__construct($in, $limit);
@@ -30,7 +30,7 @@ namespace POGOProtos\Networking\Requests\Messages {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId item_id = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }
@@ -39,13 +39,13 @@ namespace POGOProtos\Networking\Requests\Messages {
             $this->itemId = $tmp;
 
             break;
-          case 2: // optional uint64 pokemon_id = 2
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 2: // optional fixed64 pokemon_id = 2
+            if($wire !== 1) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
             }
-            $tmp = Protobuf::read_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_UINT64 || $tmp > Protobuf::MAX_UINT64) throw new \Exception('uint64 out of range');$this->pokemonId = $tmp;
+            $tmp = Protobuf::read_uint64($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
+            $this->pokemonId = $tmp;
 
             break;
           default:
@@ -60,8 +60,8 @@ namespace POGOProtos\Networking\Requests\Messages {
         Protobuf::write_varint($fp, $this->itemId);
       }
       if ($this->pokemonId !== 0) {
-        fwrite($fp, "\x10", 1);
-        Protobuf::write_varint($fp, $this->pokemonId);
+        fwrite($fp, "\x11", 1);
+        Protobuf::write_uint64($fp, $this->pokemonId);
       }
     }
 
@@ -71,7 +71,7 @@ namespace POGOProtos\Networking\Requests\Messages {
         $size += 1 + Protobuf::size_varint($this->itemId);
       }
       if ($this->pokemonId !== 0) {
-        $size += 1 + Protobuf::size_varint($this->pokemonId);
+        $size += 9;
       }
       return $size;
     }

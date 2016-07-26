@@ -15,7 +15,7 @@ namespace POGOProtos\Networking\Requests\Messages {
   final class UseIncenseMessage extends ProtobufMessage {
 
     private $_unknown;
-    private $incenseType = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId incense_type = 1
+    private $incenseType = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId incense_type = 1
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
       parent::__construct($in, $limit);
@@ -29,7 +29,7 @@ namespace POGOProtos\Networking\Requests\Messages {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId incense_type = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId incense_type = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }

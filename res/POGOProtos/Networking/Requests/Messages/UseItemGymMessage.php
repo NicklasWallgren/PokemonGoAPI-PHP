@@ -15,7 +15,7 @@ namespace POGOProtos\Networking\Requests\Messages {
   final class UseItemGymMessage extends ProtobufMessage {
 
     private $_unknown;
-    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId item_id = 1
+    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
     private $gymId = ""; // optional string gym_id = 2
     private $playerLatitude = 0; // optional double player_latitude = 3
     private $playerLongitude = 0; // optional double player_longitude = 4
@@ -32,7 +32,7 @@ namespace POGOProtos\Networking\Requests\Messages {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId item_id = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }

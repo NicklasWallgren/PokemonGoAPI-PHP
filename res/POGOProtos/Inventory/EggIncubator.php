@@ -10,13 +10,14 @@ namespace POGOProtos\Inventory {
   use ProtobufIO;
   use ProtobufMessage;
 
+  use \POGOProtos\Inventory\Item\ItemId as ItemId;
 
   // message POGOProtos.Inventory.EggIncubator
   final class EggIncubator extends ProtobufMessage {
 
     private $_unknown;
     private $id = ""; // optional string id = 1
-    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId item_id = 2
+    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId item_id = 2
     private $incubatorType = EggIncubatorType::INCUBATOR_UNSET; // optional .POGOProtos.Inventory.EggIncubatorType incubator_type = 3
     private $usesRemaining = 0; // optional int32 uses_remaining = 4
     private $pokemonId = 0; // optional uint64 pokemon_id = 5
@@ -46,7 +47,7 @@ namespace POGOProtos\Inventory {
             $this->id = $tmp;
 
             break;
-          case 2: // optional .POGOProtos.Inventory.ItemId item_id = 2
+          case 2: // optional .POGOProtos.Inventory.Item.ItemId item_id = 2
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }

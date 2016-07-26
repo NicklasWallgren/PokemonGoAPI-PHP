@@ -15,7 +15,7 @@ namespace POGOProtos\Inventory {
   final class InventoryUpgrade extends ProtobufMessage {
 
     private $_unknown;
-    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId item_id = 1
+    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
     private $upgradeType = InventoryUpgradeType::UPGRADE_UNSET; // optional .POGOProtos.Inventory.InventoryUpgradeType upgrade_type = 2
     private $additionalStorage = 0; // optional int32 additional_storage = 3
 
@@ -31,7 +31,7 @@ namespace POGOProtos\Inventory {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId item_id = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }

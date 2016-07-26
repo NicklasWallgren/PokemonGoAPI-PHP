@@ -43,7 +43,7 @@ namespace POGOProtos\Networking\Responses {
     private $latitude = 0; // optional double latitude = 3
     private $longitude = 0; // optional double longitude = 4
     private $encounterLocation = ""; // optional string encounter_location = 5
-    private $encounterId = 0; // optional uint64 encounter_id = 6
+    private $encounterId = 0; // optional fixed64 encounter_id = 6
     private $disappearTimestampMs = 0; // optional int64 disappear_timestamp_ms = 7
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
@@ -105,13 +105,13 @@ namespace POGOProtos\Networking\Responses {
             $this->encounterLocation = $tmp;
 
             break;
-          case 6: // optional uint64 encounter_id = 6
-            if($wire !== 0) {
-              throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
+          case 6: // optional fixed64 encounter_id = 6
+            if($wire !== 1) {
+              throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
             }
-            $tmp = Protobuf::read_varint($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_varint returned false');
-            if ($tmp < Protobuf::MIN_UINT64 || $tmp > Protobuf::MAX_UINT64) throw new \Exception('uint64 out of range');$this->encounterId = $tmp;
+            $tmp = Protobuf::read_uint64($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
+            $this->encounterId = $tmp;
 
             break;
           case 7: // optional int64 disappear_timestamp_ms = 7
@@ -152,8 +152,8 @@ namespace POGOProtos\Networking\Responses {
         fwrite($fp, $this->encounterLocation);
       }
       if ($this->encounterId !== 0) {
-        fwrite($fp, "0", 1);
-        Protobuf::write_varint($fp, $this->encounterId);
+        fwrite($fp, "1", 1);
+        Protobuf::write_uint64($fp, $this->encounterId);
       }
       if ($this->disappearTimestampMs !== 0) {
         fwrite($fp, "8", 1);
@@ -180,7 +180,7 @@ namespace POGOProtos\Networking\Responses {
         $size += 1 + Protobuf::size_varint($l) + $l;
       }
       if ($this->encounterId !== 0) {
-        $size += 1 + Protobuf::size_varint($this->encounterId);
+        $size += 9;
       }
       if ($this->disappearTimestampMs !== 0) {
         $size += 1 + Protobuf::size_varint($this->disappearTimestampMs);

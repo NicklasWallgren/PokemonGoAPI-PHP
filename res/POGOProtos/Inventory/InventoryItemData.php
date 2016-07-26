@@ -16,7 +16,7 @@ namespace POGOProtos\Inventory {
 
     private $_unknown;
     private $pokemonData = null; // optional .POGOProtos.Data.PokemonData pokemon_data = 1
-    private $item = null; // optional .POGOProtos.Inventory.Item item = 2
+    private $item = null; // optional .POGOProtos.Inventory.Item.ItemData item = 2
     private $pokedexEntry = null; // optional .POGOProtos.Data.PokedexEntry pokedex_entry = 3
     private $playerStats = null; // optional .POGOProtos.Data.Player.PlayerStats player_stats = 4
     private $playerCurrency = null; // optional .POGOProtos.Data.Player.PlayerCurrency player_currency = 5
@@ -49,15 +49,15 @@ namespace POGOProtos\Inventory {
             if ($len !== 0) throw new \Exception('new \POGOProtos\Data\PokemonData did not read the full length');
 
             break;
-          case 2: // optional .POGOProtos.Inventory.Item item = 2
+          case 2: // optional .POGOProtos.Inventory.Item.ItemData item = 2
             if($wire !== 2) {
               throw new \Exception("Incorrect wire format for field $field, expected: 2 got: $wire");
             }
             $len = Protobuf::read_varint($fp, $limit);
             if ($len === false) throw new \Exception('Protobuf::read_varint returned false');
             $limit -= $len;
-            $this->item = new \POGOProtos\Inventory\Item($fp, $len);
-            if ($len !== 0) throw new \Exception('new \POGOProtos\Inventory\Item did not read the full length');
+            $this->item = new \POGOProtos\Inventory\Item\ItemData($fp, $len);
+            if ($len !== 0) throw new \Exception('new \POGOProtos\Inventory\Item\ItemData did not read the full length');
 
             break;
           case 3: // optional .POGOProtos.Data.PokedexEntry pokedex_entry = 3
@@ -258,7 +258,7 @@ namespace POGOProtos\Inventory {
 
     public function clearItem() { $this->item = null; }
     public function getItem() { return $this->item;}
-    public function setItem(\POGOProtos\Inventory\Item $value) { $this->item = $value; }
+    public function setItem(\POGOProtos\Inventory\Item\ItemData $value) { $this->item = $value; }
 
     public function clearPokedexEntry() { $this->pokedexEntry = null; }
     public function getPokedexEntry() { return $this->pokedexEntry;}

@@ -15,7 +15,7 @@ namespace POGOProtos\Networking\Requests\Messages {
   final class RecycleInventoryItemMessage extends ProtobufMessage {
 
     private $_unknown;
-    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.ItemId item_id = 1
+    private $itemId = ItemId::ITEM_UNKNOWN; // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
     private $count = 0; // optional int32 count = 2
 
     public function __construct($in = null, &$limit = PHP_INT_MAX) {
@@ -30,7 +30,7 @@ namespace POGOProtos\Networking\Requests\Messages {
         $wire  = $tag & 0x07;
         $field = $tag >> 3;
         switch($field) {
-          case 1: // optional .POGOProtos.Inventory.ItemId item_id = 1
+          case 1: // optional .POGOProtos.Inventory.Item.ItemId item_id = 1
             if($wire !== 0) {
               throw new \Exception("Incorrect wire format for field $field, expected: 0 got: $wire");
             }

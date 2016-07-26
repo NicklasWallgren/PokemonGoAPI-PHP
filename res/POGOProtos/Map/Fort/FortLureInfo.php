@@ -16,7 +16,7 @@ namespace POGOProtos\Map\Fort {
 
     private $_unknown;
     private $fortId = ""; // optional string fort_id = 1
-    private $unknown2 = 0; // optional double unknown2 = 2
+    private $encounterId = 0; // optional fixed64 encounter_id = 2
     private $activePokemonId = PokemonId::MISSINGNO; // optional .POGOProtos.Enums.PokemonId active_pokemon_id = 3
     private $lureExpiresTimestampMs = 0; // optional int64 lure_expires_timestamp_ms = 4
 
@@ -43,13 +43,13 @@ namespace POGOProtos\Map\Fort {
             $this->fortId = $tmp;
 
             break;
-          case 2: // optional double unknown2 = 2
+          case 2: // optional fixed64 encounter_id = 2
             if($wire !== 1) {
               throw new \Exception("Incorrect wire format for field $field, expected: 1 got: $wire");
             }
-            $tmp = Protobuf::read_double($fp, $limit);
-            if ($tmp === false) throw new \Exception('Protobuf::read_double returned false');
-            $this->unknown2 = $tmp;
+            $tmp = Protobuf::read_uint64($fp, $limit);
+            if ($tmp === false) throw new \Exception('Protobuf::read_unint64 returned false');
+            $this->encounterId = $tmp;
 
             break;
           case 3: // optional .POGOProtos.Enums.PokemonId active_pokemon_id = 3
@@ -82,9 +82,9 @@ namespace POGOProtos\Map\Fort {
         Protobuf::write_varint($fp, strlen($this->fortId));
         fwrite($fp, $this->fortId);
       }
-      if ($this->unknown2 !== 0) {
+      if ($this->encounterId !== 0) {
         fwrite($fp, "\x11", 1);
-        Protobuf::write_double($fp, $this->unknown2);
+        Protobuf::write_uint64($fp, $this->encounterId);
       }
       if ($this->activePokemonId !== PokemonId::MISSINGNO) {
         fwrite($fp, "\x18", 1);
@@ -102,7 +102,7 @@ namespace POGOProtos\Map\Fort {
         $l = strlen($this->fortId);
         $size += 1 + Protobuf::size_varint($l) + $l;
       }
-      if ($this->unknown2 !== 0) {
+      if ($this->encounterId !== 0) {
         $size += 9;
       }
       if ($this->activePokemonId !== PokemonId::MISSINGNO) {
@@ -118,9 +118,9 @@ namespace POGOProtos\Map\Fort {
     public function getFortId() { return $this->fortId;}
     public function setFortId($value) { $this->fortId = $value; }
 
-    public function clearUnknown2() { $this->unknown2 = 0; }
-    public function getUnknown2() { return $this->unknown2;}
-    public function setUnknown2($value) { $this->unknown2 = $value; }
+    public function clearEncounterId() { $this->encounterId = 0; }
+    public function getEncounterId() { return $this->encounterId;}
+    public function setEncounterId($value) { $this->encounterId = $value; }
 
     public function clearActivePokemonId() { $this->activePokemonId = PokemonId::MISSINGNO; }
     public function getActivePokemonId() { return $this->activePokemonId;}
@@ -133,7 +133,7 @@ namespace POGOProtos\Map\Fort {
     public function __toString() {
       return ''
            . Protobuf::toString('fort_id', $this->fortId, "")
-           . Protobuf::toString('unknown2', $this->unknown2, 0)
+           . Protobuf::toString('encounter_id', $this->encounterId, 0)
            . Protobuf::toString('active_pokemon_id', $this->activePokemonId, PokemonId::MISSINGNO)
            . Protobuf::toString('lure_expires_timestamp_ms', $this->lureExpiresTimestampMs, 0);
     }
