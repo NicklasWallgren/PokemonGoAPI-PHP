@@ -16,7 +16,7 @@ class RetrievePokemonCountExample {
     {
         // Initialize the pokemon go application
         $application = new ApplicationKernel(
-            'walle.sthlm@gmail.com', 'nicklasintelligentochsmart', Factory::AUTHENTICATION_TYPE_GOOGLE);
+            'INSERT_EMAIL', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
 
         // Retrieve the pokemon go api instance
         $pokemonGoApi = $application->getPokemonGoApi();
