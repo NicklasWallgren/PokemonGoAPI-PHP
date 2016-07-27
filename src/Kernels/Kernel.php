@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Kernels;
 use DI\Container;
 use DI\ContainerBuilder;
 use Dotenv\Dotenv;
+use Exception;
 use Interop\Container\ContainerInterface;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -190,13 +191,20 @@ class Kernel implements ContainerInterface {
      * Returns the log file path.
      *
      * @return string
+     * @throws Exception
      */
     protected function getLogFilePath()
     {
         // Retrieve the log file path
         $logFilePath = getenv('LOG_FILE_PATH');
 
-        // TODO check if the log path exists, and is writable
+        // Retrieve the directory path
+        $directory = dirname($logFilePath);
+
+        // Check if the directory is writable
+        if (!is_writeable($directory)) {
+            throw new Exception('Please check your environment configuration. The log directory is not writable.');
+        }
 
         return $logFilePath;
     }
