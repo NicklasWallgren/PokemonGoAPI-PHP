@@ -30,7 +30,7 @@
  */
 
 // If you don't care about large numbers, this line can be removed
-assert(PHP_INT_SIZE === 8, 'For now we only support PHP on 64bit platforms');
+//assert(PHP_INT_SIZE === 8, 'For now we only support PHP on 64bit platforms');
 
 function checkArgument($exp, $message) {
 	if (!$exp) {
