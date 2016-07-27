@@ -42,14 +42,14 @@ class AuthenticationClient {
      */
     public function authenticationInformation()
     {
-        // Retrieve the content.
-        $content = $this->get(self::$URL_ENDPOINT_LOGIN, array('headers' => array('User-Agent' => 'niantic')));
+        // Retrieve the response
+        $response = $this->get(self::$URL_ENDPOINT_LOGIN, array('headers' => array('User-Agent' => 'niantic')));
 
         // Get the authentication information parser
         $parser = new AuthenticationInformationParser();
 
         // Parse the content
-        return $parser->parse($content->getBody()->getContents());
+        return $parser->parse($response);
     }
 
     /**
@@ -72,14 +72,14 @@ class AuthenticationClient {
         );
 
         // Retrieve the content.
-        $content = $this->post(self::$URL_ENDPOINT_LOGIN,
+        $response = $this->post(self::$URL_ENDPOINT_LOGIN,
             array('headers' => array('User-Agent' => 'niantic'), 'form_params' => $parameters, 'allow_redirects' => false));
 
         // Get the authentication ticket parser
         $parser = new TicketParser();
 
         // Parse the content
-        return $parser->parse($content);
+        return $parser->parse($response);
     }
 
     /**

@@ -2,6 +2,8 @@
 
 namespace NicklasW\PkmGoApi\Authenticators\PTC\Parsers;
 
+use NicklasW\PkmGoApi\Authenticators\Exceptions\AuthenticationException;
+use NicklasW\PkmGoApi\Authenticators\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\Results\AuthenticationInformationResult;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\Results\TicketResult;
 use PHPHtmlParser\Dom;
@@ -20,15 +22,53 @@ class TicketParser extends Parser {
     /**
      * The method which parses the content.
      *
-     * @param ResponseInterface $content
+     * @param ResponseInterface $response
      * @return AuthenticationInformationResult
+     * @throws AuthenticationException
+     * @throws ResponseException
      */
-    public function parse($content)
+    public function parse($response)
     {
+        // Validate the retrieved response
+        $this->validateResponse($response);
+
+        // Parse the content
+        $content = $this->parseContent($response);
+
+        // Check if the response includes any error messages
+        if (array_key_exists('errors', $content)) {
+            // Retrieve the error messages
+            $errors = $content['errors'];
+
+            // Check if there are any available error messages
+            if (sizeof($errors) > 0) {
+                throw new AuthenticationException(current($errors));
+            }
+        }
+
         // Retrieves the location header
-        $location = current($content->getHeader('Location'));
+        $location = current($response->getHeader('Location'));
 
         return new TicketResult(array('ticket' => $this->parseTicket($location)));
+    }
+
+    /**
+     * Returns the parsed content.
+     *
+     * @param ResponseInterface $response
+     * @return array
+     */
+    protected function parseContent($response)
+    {
+        // Decode the response body
+        $content = json_decode($response->getBody()->getContents(), true);
+
+        // Check if the response body is null
+        if ($content === null) {
+            return array();
+        }
+
+        return $content;
     }
 
     /**
