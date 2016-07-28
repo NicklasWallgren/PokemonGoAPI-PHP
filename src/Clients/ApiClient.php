@@ -38,7 +38,7 @@ class ApiClient {
 
     public function profile($token)
     {
-        
+
 
 
 
@@ -126,7 +126,8 @@ class ApiClient {
             // Apply request query middleware
             $stack->push(Middleware::mapRequest($this->queryRequestMiddleware()));
 
-            $this->client = new Client(array('cookies' => new CookieJar(), 'http_errors' => false, 'handler' => $stack));
+            $this->client = new Client(
+                array('cookies' => new CookieJar(), 'http_errors' => false, 'handler' => $stack, 'verify' => Config::get('config.ssl_verification')));
         }
 
         return $this->client;

@@ -163,7 +163,8 @@ class AuthenticationClient {
     protected function client()
     {
         if ($this->client == null) {
-            $this->client = new Client(array('cookies' => new CookieJar(), 'http_errors' => false));
+            $this->client = new Client(
+                array('cookies' => new CookieJar(), 'http_errors' => false, 'verify' => Config::get('config.ssl_verification')));
         }
 
         return $this->client;
