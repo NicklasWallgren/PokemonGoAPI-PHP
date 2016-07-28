@@ -6,6 +6,7 @@ use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
+use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Requests\Request;
 use POGOProtos\Networking\Envelopes\RequestEnvelope;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
@@ -53,6 +54,11 @@ class RequestHandler {
      * @var Session
      */
     protected $session;
+
+    /**
+     * @var Client
+     */
+    protected $client;
 
     /**
      * RequestHandler constructor.
@@ -136,9 +142,6 @@ class RequestHandler {
      */
     protected function call($requestEnvelope)
     {
-        // Initialize the HTTP client
-        $client = new Client();
-
         // Set the API URL
         $url = $this->session->getApiUrl();
 
@@ -153,8 +156,14 @@ class RequestHandler {
         // Prepare the HTTP request
         $request = new HttpRequest('POST', $url, array(), $requestEnvelope->toProtobuf());
 
-        // Execute the HTTP request
-        return $this->unmarshall($client->send($request));
+        // Execute the request
+        $response = $this->client()->send($request);
+
+        // Validate the retrieved response
+        $this->validateResponse($response);
+
+        // Unmarshall the response
+        return $this->unmarshall($response);
     }
 
     /**
@@ -233,6 +242,37 @@ class RequestHandler {
     }
 
     /**
+     * Returns true if the status code corresponds to a server error, false otherwise.
+     *
+     * @param ResponseInterface $response
+     * @return boolean
+     */
+    protected function isServerError($response)
+    {
+        // Retrieve the initial integer from the status code
+        $responseCode = substr($response->getStatusCode(), 0, 1);
+
+        return $responseCode === 5;
+    }
+
+    /**
+     * Validate the request response.
+     *
+     * @param ResponseInterface $response
+     * @throws ResponseException
+     */
+    protected function validateResponse($response)
+    {
+        // Check if the response corresponds to a server error
+        if (!$this->isServerError($response)) {
+            return;
+        }
+
+        throw new ResponseException(
+            sprintf('Retrieved a invalid response. Response: \'%s\'', $response->getBody()->getContents()));
+    }
+
+    /**
      * Prepares the user authentication.
      *
      * @param RequestEnvelope $requestEnvelope
@@ -247,6 +287,22 @@ class RequestHandler {
         }
 
         $requestEnvelope->setAuthTicket($this->session->getAuthenticationTicket());
+    }
+
+    /**
+     * Returns the client.
+     *
+     * @returns Client
+     */
+    protected function client()
+    {
+        // Check if the client has been initialized
+        if ($this->client == null) {
+            // Initialize the HTTP client
+            $this->client = new Client(array('http_errors' => false));
+        }
+
+        return $this->client;
     }
 
 }
