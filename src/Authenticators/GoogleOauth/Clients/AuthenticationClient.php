@@ -4,42 +4,36 @@ namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Clients;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
-use GuzzleHttp\HandlerStack;
-use GuzzleHttp\Middleware;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\AccountLoginInformationParser;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\AuthenticationConfirmationInformationParser;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\AuthenticationInformationParser;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\AuthenticationCodeParser;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AccountInformationResult;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationConfirmationInformationResult;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationInformationResult;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationCodeResult;
+use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\OauthTokenParser;
+use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\TokenParser;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Support\Signature;
 use PHPHtmlParser\Dom;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class AuthenticationClient {
 
-    /**
-     * @var string The authentication information url
-     */
-    protected static $URL_AUTHENTICATION_INFORMATION = 'https://accounts.google.com/o/oauth2/auth?client_id=848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&response_type=code&scope=openid%20email%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email';
-
-    /**
-     * @var string The account login info url
-     */
-    protected static $URL_ACCOUNT_LOGIN_INFORMATION = 'https://accounts.google.com/AccountLoginInfo';
-
-    /**
-     * @var string The password challenge url
-     */
-    protected static $URL_PASSWORD_CHALLENGE_URL = 'https://accounts.google.com/signin/challenge/sl/password';
 
     /**
      * @var string The authentication token url
      */
-    protected static $URL_TOKEN_URL = 'https://accounts.google.com/o/oauth2/token';
+    protected static $URL_TOKEN_URL = 'https://android.clients.google.com/auth';
+
+    /**
+     * @var string The oauth login service
+     */
+    protected static $OAUTH_LOGIN_SERVICE = 'audience:server:client_id:848232511240-7so421jotr2609rmqakceuu1luuq0ptb.apps.googleusercontent.com';
+
+    /**
+     * @var string The oauth login application
+     */
+    protected static $OAUTH_LOGIN_APPLICATION = 'com.nianticlabs.pokemongo';
+
+    /**
+     * @var string The oauth login client signature
+     */
+    protected static $OAUTH_LOGIN_CLIENT_SIGNATURE = '321187995bc7cdc2b5fc91b11a96e2baa8602c62';
 
     /**
      * @var Client
@@ -47,161 +41,75 @@ class AuthenticationClient {
     protected $client;
 
     /**
-     * Returns the authentication information.
+     * Returns the authentication token.
      *
-     * @returns AuthenticationInformationResult
-     */
-    public function authenticationInformation()
-    {
-        // Retrieve the content.
-        $content = $this->content(self::$URL_AUTHENTICATION_INFORMATION);
-
-        // Get the authentication information parser
-        $parser = new AuthenticationInformationParser(new Dom());
-
-        // Parse the content
-        return $parser->parse($content);
-    }
-
-    /**
-     * Returns the account information.
-     *
-     * @param string $galx
-     * @param string $gxf
-     * @param string $continue
      * @param string $email
-     * @return AccountInformationResult
+     * @param string $password
+     * @return AuthenticationTokenResult
      */
-    public function accountInformation($galx, $gxf, $continue, $email)
+    public function token($email, $password)
     {
+        // Retrieve the encrypted password
+        $encryptedPassword = Signature::create($email, $password);
 
-        // The parameters to be posted
         $parameters = array(
-            'Page'               => 'PasswordSeparationSignIn',
-            'GALX'               => $galx,
-            'gxf'                => $gxf,
-            'continue'           => $continue,
-            'ltmpl'              => 'embedded',
-            'scc'                => '1',
-            'sarp'               => '1',
-            'oauth'              => '1',
-            'ProfileInformation' => '',
-            '_utf8'              => '?',
-            'bgresponse'         => 'js_disabled',
-            'Email'              => $email,
-            'signIn'             => 'Next',
+            'accountType'     => 'HOSTED_OR_GOOGLE',
+            'Email'           => $email,
+            'has_permission'  => 1,
+            'add_account'     => 1,
+            'EncryptedPasswd' => $encryptedPassword,
+            'service'         => 'ac2dm',
+            'source'          => 'android',
+            'device_country'  => 'us',
+            'operatorCountry' => 'us',
+            'lang'            => 'en',
+            'sdk_version'     => '17',
         );
 
         // Retrieve the response
-        $response = $this->post(self::$URL_ACCOUNT_LOGIN_INFORMATION, array('form_params' => $parameters));
+        $response = $this->post(self::$URL_TOKEN_URL,
+            array('headers' => array('User-Agent' => 'gpsoauth/0.0.5'), 'form_params' => $parameters));
 
-        // Get the authentication information parser
-        $parser = new AccountLoginInformationParser(new Dom());
+        // Get the authentication token parser
+        $parser = new TokenParser();
 
         // Parse the content
-        return $parser->parse($response->getBody()->getContents());
+        return $parser->parse($response);
     }
 
     /**
-     * Returns the authentication confirmation information.
+     * Returns the oauth token.
      *
-     * @param string $galx
-     * @param string $gxf
-     * @param string $continue
-     * @param string $profileId
      * @param string $email
-     * @param string $password
-     * @return AuthenticationConfirmationInformationResult
-     */
-    public function authenticationConfirmationInformation($galx, $gxf, $continue, $profileId, $email, $password)
-    {
-        $parameters = array(
-            'Page'               => 'PasswordSeparationSignIn',
-            'GALX'               => $galx,
-            'gxf'                => $gxf,
-            'continue'           => $continue,
-            'ltmpl'              => 'embedded',
-            'scc'                => '1',
-            'sarp'               => '1',
-            'oauth'              => '1',
-            'ProfileInformation' => $profileId,
-            '_utf8'              => '?',
-            'bgresponse'         => 'js_disabled',
-            'Email'              => $email,
-            'Passwd'             => $password,
-            'signIn'             => 'Sign in',
-            'PersistentCookie'   => 'yes',
-            'response_type'      => 'access_token',
-            'acu'                => '1',
-            'ignoreShadow'       => 0,
-            'checkedDomains'     => 'youtube',
-            'checkConnection'    => '',
-            'pstMsg'             => '0',
-            'dnConn'             => '',
-
-        );
-
-        // Retrieve the content
-        $response = $this->post(self::$URL_PASSWORD_CHALLENGE_URL, array('form_params' => $parameters));
-
-        // Get the authentication confirmation information parser
-        $parser = new AuthenticationConfirmationInformationParser(new Dom());
-
-        // Parse the content
-        return $parser->parse($response->getBody()->getContents());
-    }
-
-
-    /**
-     * Returns the authentication code.
-     *
-     * @param string $stateWrapperId
-     * @param string $approveUrl
-     * @return AuthenticationCodeResult
-     */
-    public function code($stateWrapperId, $approveUrl)
-    {
-        // Remove and strip unwanted chars
-        $approveUrl = str_replace('amp;', '', $approveUrl);
-
-        $parameters = array(
-            '_utf8'         => '?',
-            'bgresponse'    => 'js_disabled',
-            'state_wrapper' => $stateWrapperId,
-            'submit_access' => 'true',
-        );
-
-        // Retrieve the content
-        $response = $this->post($approveUrl, array('form_params' => $parameters));
-
-        // Get the authentication code parser
-        $parser = new AuthenticationCodeParser(new Dom());
-
-        // Parse the content
-        return $parser->parse($response->getBody()->getContents());
-    }
-
-    /**
-     * Returns the authentication token.
-     *
-     * @param string $code
+     * @param string $token
      * @return AuthenticationTokenResult
      */
-    public function token($code)
+    public function oauthToken($email, $token)
     {
         $parameters = array(
-            'client_id'     => '848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com',
-            'client_secret' => 'NCjF1TLi2CcY6t5mt0ZveuL7',
-            'code'          => $code,
-            'grant_type'    => 'authorization_code',
-            'redirect_uri'  => 'urn:ietf:wg:oauth:2.0:oob',
-            'scope'         => 'openid email https://www.googleapis.com/auth/userinfo.email',
+            'accountType'     => 'HOSTED_OR_GOOGLE',
+            'Email'           => $email,
+            'has_permission'  => 1,
+            'EncryptedPasswd' => $token,
+            'service'         => self::$OAUTH_LOGIN_SERVICE,
+            'source'          => 'android',
+            'app'             => self::$OAUTH_LOGIN_APPLICATION,
+            'client_sig'      => self::$OAUTH_LOGIN_CLIENT_SIGNATURE,
+            'device_country'  => 'us',
+            'operatorCountry' => 'us',
+            'lang'            => 'en',
+            'sdk_version'     => '17',
         );
 
-        // Retrieve the content
-        $response = $this->post(self::$URL_TOKEN_URL, array('form_params' => $parameters));
+        // Retrieve the response
+        $response = $this->post(self::$URL_TOKEN_URL,
+            array('headers' => array('User-Agent' => 'gpsoauth/0.0.5'), 'form_params' => $parameters));
 
-        return new AuthenticationTokenResult(json_decode($response->getBody()->getContents()));
+        // Get the authentication token parser
+        $parser = new OauthTokenParser();
+
+        // Parse the content
+        return $parser->parse($response);
     }
 
     /**
@@ -252,27 +160,6 @@ class AuthenticationClient {
     }
 
     /**
-     * Returns a Request Middleware which manipulates the request URI.
-     *
-     * @return \Closure
-     */
-    protected function queryRequestMiddleware()
-    {
-        return function (RequestInterface $request) {
-            // Retrieve the uri
-            $uri = $request->getUri();
-
-            // Remove and strip unwanted chars
-            $query = str_replace('amp%3B', '', $uri->getQuery());
-
-            // Update the URI query
-            $uri = $uri->withQuery($query);
-
-            return $request->withUri($uri);
-        };
-    }
-
-    /**
      * Returns the Client.
      *
      * @return Client
@@ -280,12 +167,7 @@ class AuthenticationClient {
     protected function client()
     {
         if ($this->client == null) {
-            $stack = HandlerStack::create();
-
-            // Apply request query middleware
-            $stack->push(Middleware::mapRequest($this->queryRequestMiddleware()));
-
-            $this->client = new Client(array('cookies' => new CookieJar(), 'http_errors' => false, 'handler' => $stack));
+            $this->client = new Client(array('cookies' => new CookieJar(), 'http_errors' => false));
         }
 
         return $this->client;

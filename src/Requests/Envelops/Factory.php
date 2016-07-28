@@ -46,6 +46,7 @@ class Factory {
     {
         $authInfoJWT = new RequestEnvelope_AuthInfo_JWT();
         $authInfoJWT->setContents($token);
+        $authInfoJWT->setUnknown2(59);
 
         $authInfoEnvelope = new RequestEnvelope_AuthInfo();
         $authInfoEnvelope->setProvider($type);

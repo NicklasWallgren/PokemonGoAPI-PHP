@@ -14,7 +14,8 @@
         "vlucas/phpdotenv": "^2.3",
         "monolog/monolog": "^1.20",
         "jeremeamia/xstatic": "^1.0",
-        "php-di/php-di": "^5.3"
+        "php-di/php-di": "^5.3",
+        "phpseclib/phpseclib": "^2.0"
     },
     "autoload": {
         "psr-4": {

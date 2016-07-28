@@ -37,13 +37,23 @@ class AuthenticationTokenResult {
     }
 
     /**
-     * Returns the id token.
+     * Returns the token.
      *
-     * @return mixed
+     * @return string
      */
-    public function getIdToken()
+    public function getToken()
     {
-        return $this->data->id_token;
+        return $this->data['token'];
+    }
+
+    /**
+     * Returns the auth id.
+     *
+     * @return string
+     */
+    public function getAuthId()
+    {
+        return $this->data['auth'];
     }
 
 }
