@@ -43,7 +43,7 @@ class AuthenticationClient {
     public function authenticationInformation()
     {
         // Retrieve the response
-        $response = $this->get(self::$URL_ENDPOINT_LOGIN, array('headers' => array('User-Agent' => 'niantic')));
+        $response = $this->get(self::$URL_ENDPOINT_LOGIN, array('headers' => array('User-Agent' => 'Niantic App')));
 
         // Get the authentication information parser
         $parser = new AuthenticationInformationParser();
