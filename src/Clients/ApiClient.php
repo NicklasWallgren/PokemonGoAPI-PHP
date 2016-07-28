@@ -126,7 +126,13 @@ class ApiClient {
             // Apply request query middleware
             $stack->push(Middleware::mapRequest($this->queryRequestMiddleware()));
 
-            $this->client = new Client(array('cookies' => new CookieJar(), 'http_errors' => false, 'handler' => $stack));
+            $clientData = ['cookies' => new CookieJar(), 'http_errors' => false, 'handler' => $stack];
+
+            if(!isset($_SERVER['HTTPS']) || !$_SERVER['HTTPS']) {
+                $clientData['verify'] = false;
+            }
+
+            $this->client = new Client($clientData);
         }
 
         return $this->client;

@@ -43,7 +43,7 @@ class AuthenticationClient {
     public function authenticationInformation()
     {
         // Retrieve the response
-        $response = $this->get(self::$URL_ENDPOINT_LOGIN, array('headers' => array('User-Agent' => 'niantic')));
+        $response = $this->get(self::$URL_ENDPOINT_LOGIN, array('headers' => array('User-Agent' => 'Niantic App')));
 
         // Get the authentication information parser
         $parser = new AuthenticationInformationParser();
@@ -163,7 +163,13 @@ class AuthenticationClient {
     protected function client()
     {
         if ($this->client == null) {
-            $this->client = new Client(array('cookies' => new CookieJar(), 'http_errors' => false));
+            $clientData = ['cookies' => new CookieJar(), 'http_errors' => false, 'verify' => false];
+
+            if(!isset($_SERVER['HTTPS']) || !$_SERVER['HTTPS']) {
+                $clientData['verify'] = false;
+            }
+
+            $this->client = new Client($clientData);
         }
 
         return $this->client;
