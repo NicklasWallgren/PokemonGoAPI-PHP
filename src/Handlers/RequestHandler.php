@@ -40,9 +40,9 @@ class RequestHandler {
     protected static $RESPONSE_STATUS_HANDSHAKE = 53;
 
     /**
-     * @var string The unknown response status
+     * @var string The unknown response statuses
      */
-    protected static $RESPONSE_STATUS_UNKNOWN = 52;
+    protected static $RESPONSE_STATUS_UNKNOWN = array(52, 100);
 
     /**
      * @var Request[] The list of requests to be handled
@@ -229,7 +229,7 @@ class RequestHandler {
      */
     protected function isUnknownResponse($responseEnvelop)
     {
-        return $responseEnvelop->getStatusCode() === self::$RESPONSE_STATUS_UNKNOWN;
+        return in_array($responseEnvelop->getStatusCode(), self::$RESPONSE_STATUS_UNKNOWN);
     }
 
     /**
