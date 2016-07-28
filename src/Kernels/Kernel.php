@@ -10,6 +10,7 @@ use Interop\Container\ContainerInterface;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use NicklasW\PkmGoApi\Config\Config;
 use NicklasW\PkmGoApi\Providers\ServiceProvider;
 use XStatic\ProxyManager;
 
@@ -85,6 +86,9 @@ class Kernel implements ContainerInterface {
         // Load the environment variables
         $this->loadEnvironmentVariables();
 
+        // Initialize the configuration
+        $this->initializeConfig();
+
         // Initialize the proxy manager
         $this->initializeProxyManager();
 
@@ -101,7 +105,7 @@ class Kernel implements ContainerInterface {
     protected function loadEnvironmentVariables()
     {
         // Initialize the environment instance
-        $dotenv = new Dotenv($this->getEnviromentLogPath());
+        $dotenv = new Dotenv($this->basePath());
 
         // Load environment file in given directory.
         $dotenv->load();
@@ -114,6 +118,9 @@ class Kernel implements ContainerInterface {
     {
         // Add the Log facade
         $this->proxyManager->addProxy('Log', 'NicklasW\PkmGoApi\Facades\LogFacade');
+
+        // Add the Config facade
+        $this->proxyManager->addProxy('Config', 'NicklasW\PkmGoApi\Facades\ConfigFacade');
     }
 
     /**
@@ -153,6 +160,26 @@ class Kernel implements ContainerInterface {
     }
 
     /**
+     * Returns the base path.
+     *
+     * @return string
+     */
+    public function basePath()
+    {
+        return __DIR__ . '/../../';
+    }
+
+    /**
+     * Returns the config path.
+     *
+     * @return string
+     */
+    public function configPath()
+    {
+        return $this->basePath() . 'config';
+    }
+
+    /**
      * Initialize the service providers.
      */
     protected function initializeServiceProviders()
@@ -163,6 +190,18 @@ class Kernel implements ContainerInterface {
             // Register the service provider
             $serviceProvider->register();
         }
+    }
+
+    /**
+     * Initialize configuration.
+     */
+    protected function initializeConfig()
+    {
+        // Initialize the config
+        $config = new Config();
+        $config->bootstrap($this);
+
+        $this->container->set('config', $config);
     }
 
     /**
@@ -180,21 +219,11 @@ class Kernel implements ContainerInterface {
         if ($filePath == null) {
             $logger->pushHandler(new NullHandler(getenv('LOG_LEVEL')));
         } else {
-            $logger->pushHandler(new StreamHandler($this->getLogFilePath(), getenv('LOG_LEVEL')));
+            $logger->pushHandler(new StreamHandler($filePath, getenv('LOG_LEVEL')));
         }
 
         // Add the logger instance to the container
         $this->container->set('log', $logger);
-    }
-
-    /**
-     * Returns the enviroment log path.
-     *
-     * @return string
-     */
-    protected function getEnviromentLogPath()
-    {
-        return dirname(__DIR__ . '/../../../');
     }
 
     /**

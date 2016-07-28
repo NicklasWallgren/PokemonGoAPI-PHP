@@ -2,16 +2,9 @@
 
 namespace NicklasW\PkmGoApi\Kernels;
 
-use DI\Container;
-use DI\ContainerBuilder;
-use Dotenv\Dotenv;
-use Interop\Container\ContainerInterface;
-use Monolog\Handler\StreamHandler;
-use Monolog\Logger;
 use NicklasW\PkmGoApi\Api\PokemonGoApi;
 use NicklasW\PkmGoApi\Providers\PokemonGoApiServiceProvider;
 use NicklasW\PkmGoApi\Providers\RequestHandlerServiceProvider;
-use XStatic\ProxyManager;
 
 class ApplicationKernel extends Kernel {
 

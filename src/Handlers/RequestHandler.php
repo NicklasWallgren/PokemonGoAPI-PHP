@@ -299,7 +299,8 @@ class RequestHandler {
         // Check if the client has been initialized
         if ($this->client == null) {
             // Initialize the HTTP client
-            $this->client = new Client(array('http_errors' => false));
+            $this->client = new Client(
+                array('http_errors' => false, 'verify' => Config::get('config.ssl_verification')));
         }
 
         return $this->client;
