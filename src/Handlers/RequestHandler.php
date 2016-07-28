@@ -137,7 +137,13 @@ class RequestHandler {
     protected function call($requestEnvelope)
     {
         // Initialize the HTTP client
-        $client = new Client();
+        $this->client = new Client($clientData);
+        if(!isset($_SERVER['HTTPS']) || !$_SERVER['HTTPS']) {
+            $client = new Client(['verify' => false]);
+        } else {
+            $client = new Client();
+        }
+        
 
         // Set the API URL
         $url = $this->session->getApiUrl();
