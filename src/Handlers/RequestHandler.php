@@ -128,6 +128,9 @@ class RequestHandler {
         $requestEnvelope->setRequestId(self::$REQUEST_ID);
         $requestEnvelope->setUnknown12(989);
 
+        $requestEnvelope->setLatitude(40.7143528);
+        $requestEnvelope->setLongitude(-74.0059731);
+
         // Add request
         $requestEnvelope->addAllRequests(array($networkRequest));
 
