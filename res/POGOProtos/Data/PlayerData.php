@@ -5,6 +5,7 @@
 
 namespace POGOProtos\Data {
 
+  use POGOProtos\Enums\TeamColor;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;

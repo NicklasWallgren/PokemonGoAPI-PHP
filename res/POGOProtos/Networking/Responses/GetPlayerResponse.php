@@ -47,6 +47,9 @@ namespace POGOProtos\Networking\Responses {
             if ($len === false) throw new \Exception('Protobuf::read_varint returned false');
             $limit -= $len;
             $this->playerData = new \POGOProtos\Data\PlayerData($fp, $len);
+
+            $len = 0;
+
             if ($len !== 0) throw new \Exception('new \POGOProtos\Data\PlayerData did not read the full length');
 
             break;

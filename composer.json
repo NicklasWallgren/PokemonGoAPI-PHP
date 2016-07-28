@@ -16,7 +16,8 @@
         "jeremeamia/xstatic": "^1.0",
         "php-di/php-di": "^5.3",
         "phpseclib/phpseclib": "^2.0",
-        "illuminate/config": "^5.2"
+        "illuminate/config": "^5.2",
+        "nicklasw/s2-geometry-library-php": "dev-master"
     },
     "autoload": {
         "psr-4": {
