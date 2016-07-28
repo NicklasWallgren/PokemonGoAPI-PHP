@@ -6,6 +6,31 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Profile;
 use NicklasW\PkmGoApi\Api\Data\Data as ApiData;
 use POGOProtos\Data\PlayerData;
 
+/**
+ * @method void setCreationTime(string $creationTime)
+ * @method void setUsername(string $username)
+ * @method void setTeam(integer $team)
+ * @method void setTutorialState(TutorialState $tutorialState)
+ * @method void setAvatar(Avatar $avatar)
+ * @method void setPokemonStorage(array $pokemonStorage)
+ * @method void setItemStorage(array $itemStorage)
+ * @method void setDailyBonus(DailyBonus $dailyBonus)
+ * @method void setBadge(Badge $badge)
+ * @method void setContactSettings(ContactSettings $state)
+ * @method void setCurrencies(Currencies $currencies)
+
+ * @method void getCreationTime()
+ * @method void getUsername()
+ * @method void getTeam()
+ * @method void getTutorialState()
+ * @method void getAvatar()
+ * @method void getPokemonStorage()
+ * @method void getItemStorage()
+ * @method void getDailyBonus()
+ * @method void getBadge()
+ * @method void getContactSettings()
+ * @method void getCurrencies()
+ */
 class ProfileData extends ApiData {
 
     /**

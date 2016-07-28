@@ -5,6 +5,7 @@
 
 namespace POGOProtos\Data\Player {
 
+  use POGOProtos\Enums\Gender;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;
