@@ -7,6 +7,7 @@ use DI\ContainerBuilder;
 use Dotenv\Dotenv;
 use Exception;
 use Interop\Container\ContainerInterface;
+use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use NicklasW\PkmGoApi\Providers\ServiceProvider;
@@ -171,7 +172,16 @@ class Kernel implements ContainerInterface {
     {
         // Initialize the logger
         $logger = new Logger(self::class);
-        $logger->pushHandler(new StreamHandler($this->getLogFilePath(), getenv('LOG_LEVEL')));
+
+        // Retrieve the log file path.
+        $filePath = $this->getLogFilePath();
+
+        // Check if we retrieved a valid file path
+        if ($filePath == null) {
+            $logger->pushHandler(new NullHandler(getenv('LOG_LEVEL')));
+        } else {
+            $logger->pushHandler(new StreamHandler($this->getLogFilePath(), getenv('LOG_LEVEL')));
+        }
 
         // Add the logger instance to the container
         $this->container->set('log', $logger);
@@ -203,7 +213,7 @@ class Kernel implements ContainerInterface {
 
         // Check if the directory is writable
         if (!is_writeable($directory)) {
-            throw new Exception('Please check your environment configuration. The log directory is not writable.');
+            return null;
         }
 
         return $logFilePath;
