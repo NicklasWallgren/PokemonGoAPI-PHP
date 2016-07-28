@@ -163,7 +163,13 @@ class AuthenticationClient {
     protected function client()
     {
         if ($this->client == null) {
-            $this->client = new Client(array('cookies' => new CookieJar(), 'http_errors' => false));
+            $clientData = ['cookies' => new CookieJar(), 'http_errors' => false, 'verify' => false];
+
+            if(!isset($_SERVER['HTTPS']) || !$_SERVER['HTTPS']) {
+                $clientData['verify'] = false;
+            }
+
+            $this->client = new Client($clientData);
         }
 
         return $this->client;
