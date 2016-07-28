@@ -4,10 +4,6 @@ namespace NicklasW\PkmGoApi\Authenticators;
 
 use NicklasW\PkmGoApi\Authenticators\Contracts\Authenticator;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Clients\AuthenticationClient;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AccountInformationResult;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationConfirmationInformationResult;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationInformationResult;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationCodeResult;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationTokenResult;
 
 class GoogleAuthenticator implements Authenticator {
@@ -26,25 +22,14 @@ class GoogleAuthenticator implements Authenticator {
      */
     public function login($email, $password)
     {
-        // Retrieves the authentication metadata
-        $authenticationMetadata = $this->getAuthenticationMetadata();
+        // Retrieve the authentication token result
+        $tokenResult = $this->getToken($email, $password);
 
-        // Retrieves the account information metadata
-        $accountInformation = $this->getAccountInformationMetadata($authenticationMetadata, $email);
+        // Retrieve the oauth token
+        $oauthToken = $this->getOauthToken($email, $tokenResult->getToken());
 
-        // Retrieves the authentication confirmation information metadata
-        $authenticationConfirmationInformation = $this->getAuthenticationConfirmationInformationMetadata(
-            $authenticationMetadata, $accountInformation, $email, $password);
-
-        // Retrieves the authentication code
-        $authenticationCode = $this->getAuthenticationCode($authenticationConfirmationInformation);
-
-        // Retrieves the authentication token
-        $authenticationToken = $this->getAuthenticationToken($authenticationCode);
-
-        return $authenticationToken->getIdToken();
+        return $oauthToken->getAuthId();
     }
-
 
     /**
      * Returns the authentication identifier.
@@ -57,76 +42,27 @@ class GoogleAuthenticator implements Authenticator {
     }
 
     /**
-     * Returns the authentication metadata.
-     *
-     * @return AuthenticationInformationResult
-     */
-    protected function getAuthenticationMetadata()
-    {
-        return $this->client()->authenticationInformation();
-    }
-
-    /**
-     * Returns the account information.
-     *
-     * @param AuthenticationInformationResult $authenticationInformation
-     * @param string                          $email
-     * @return AccountInformationResult
-     */
-    protected function getAccountInformationMetadata($authenticationInformation, $email)
-    {
-        return $this->client()->accountInformation(
-            $authenticationInformation->getGalx(),
-            $authenticationInformation->getGXF(),
-            $authenticationInformation->getContinue(),
-            $email
-        );
-    }
-
-    /**
-     * Returns the authentication confirmation information metadata.
-     *
-     * @param AuthenticationInformationResult $authenticationInformation
-     * @param AccountInformationResult        $accountInformation
-     * @param string                          $email
-     * @param string                          $password
-     * @return AuthenticationConfirmationInformationResult
-     */
-    protected function getAuthenticationConfirmationInformationMetadata($authenticationInformation, $accountInformation, $email, $password)
-    {
-        return $this->client()->authenticationConfirmationInformation(
-            $authenticationInformation->getGalx(),
-            $accountInformation->getGXF(),
-            $authenticationInformation->getContinue(),
-            $accountInformation->getProfileId(),
-            $email,
-            $password
-        );
-    }
-
-    /**
-     * Returns the authentication code.
-     *
-     * @param AuthenticationConfirmationInformationResult $authenticationConfirmationInformation
-     * @return AuthenticationCodeResult
-     */
-    protected function getAuthenticationCode($authenticationConfirmationInformation)
-    {
-        return $this->client()->code(
-            $authenticationConfirmationInformation->getStateWrapperId(),
-            $authenticationConfirmationInformation->getApproveUrl()
-        );
-    }
-
-    /**
      * Returns the authentication token.
      *
-     * @param AuthenticationCodeResult $authenticationCode
+     * @param $email
+     * @param $password
      * @return AuthenticationTokenResult
      */
-    protected function getAuthenticationToken($authenticationCode)
+    protected function getToken($email, $password)
     {
-        return $this->client()->token($authenticationCode->getCode());
+        return $this->client()->token($email, $password);
+    }
+
+    /**
+     * Returns the oauth token.
+     *
+     * @param string $email
+     * @param string $token
+     * @return AuthenticationTokenResult
+     */
+    protected function getOauthToken($email, $token)
+    {
+        return $this->client()->oauthToken($email, $token);
     }
 
     /**
