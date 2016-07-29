@@ -4,6 +4,7 @@ namespace NicklasW\PkmGoApi\Authenticators;
 
 use NicklasW\PkmGoApi\Authenticators\Contracts\Authenticator;
 use NicklasW\PkmGoApi\Authenticators\PTC\Clients\AuthenticationClient;
+use NicklasW\PkmGoApi\Facades\Log;
 
 class PTCAuthenticator implements Authenticator {
 
@@ -27,8 +28,12 @@ class PTCAuthenticator implements Authenticator {
         // Retrieve the authentication ticket
         $ticketInformation = $this->client()->ticket($username, $password, $authenticationInformation);
 
+        Log::debug(sprintf('[#%s] Retrieved ticket: \'%s\'', __CLASS__, $ticketInformation->getTicket()));
+
         // Retrieve the authentication token
         $tokenInformation = $this->client()->token($ticketInformation->getTicket());
+
+        Log::debug(sprintf('[#%s] Retrieved token: \'%s\'', __CLASS__, $tokenInformation->getToken()));
 
         return $tokenInformation->getToken();
     }

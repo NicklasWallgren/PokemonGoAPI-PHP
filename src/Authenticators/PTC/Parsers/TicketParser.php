@@ -6,6 +6,7 @@ use NicklasW\PkmGoApi\Authenticators\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Authenticators\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\Results\AuthenticationInformationResult;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\Results\TicketResult;
+use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
@@ -32,6 +33,8 @@ class TicketParser extends Parser {
         // Validate the retrieved response
         $this->validateResponse($response);
 
+        Log::debug(sprintf('[#%s] Retrieved content: \'%s\'', __CLASS__, $response->getBody()));
+
         // Parse the content
         $content = $this->parseContent($response);
 
@@ -42,12 +45,17 @@ class TicketParser extends Parser {
 
             // Check if there are any available error messages
             if (sizeof($errors) > 0) {
+                Log::debug(sprintf('[#%s] Error messages in response. Errors: \'%s\'', __CLASS__,
+                    print_r($errors, true)));
+
                 throw new AuthenticationException(current($errors));
             }
         }
 
         // Retrieves the location header
         $location = current($response->getHeader('Location'));
+
+        Log::debug(sprintf('[#%s] Retrieved location header: \'%s\'', __CLASS__, $location));
 
         return new TicketResult(array('ticket' => $this->parseTicket($location)));
     }

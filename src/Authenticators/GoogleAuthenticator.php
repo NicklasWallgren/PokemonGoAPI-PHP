@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Authenticators;
 use NicklasW\PkmGoApi\Authenticators\Contracts\Authenticator;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Clients\AuthenticationClient;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Facades\Log;
 
 class GoogleAuthenticator implements Authenticator {
 
@@ -25,8 +26,12 @@ class GoogleAuthenticator implements Authenticator {
         // Retrieve the authentication token result
         $tokenResult = $this->getToken($email, $password);
 
+        Log::debug(sprintf('[#%s] Token: \'%s\'', __CLASS__, $tokenResult->getToken()));
+
         // Retrieve the oauth token
         $oauthToken = $this->getOauthToken($email, $tokenResult->getToken());
+
+        Log::debug(sprintf('[#%s] OAuth token: \'%s\'', __CLASS__, $oauthToken->getAuthId()));
 
         return $oauthToken->getAuthId();
     }

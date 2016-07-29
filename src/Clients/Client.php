@@ -17,7 +17,7 @@ class Client extends GuzzleClient {
     /**
      * @var string The logger message format
      */
-    protected static $LOGGER_MESSAGE_FORMAT = "Request: \n{request}\n Response: {response}\n Error: {error} \n";
+    protected static $LOGGER_MESSAGE_FORMAT = "\nRequest: %1$1 {request} \nResponse: {response} \nError: {error} \n";
 
     /**
      * Clients accept an array of constructor parameters.

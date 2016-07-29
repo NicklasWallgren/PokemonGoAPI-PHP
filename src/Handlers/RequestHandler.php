@@ -5,6 +5,8 @@ namespace NicklasW\PkmGoApi\Handlers;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
+use NicklasW\PkmGoApi\Facades\Log;
+use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Requests\Request;
 use POGOProtos\Networking\Envelopes\RequestEnvelope;
@@ -76,16 +78,17 @@ class RequestHandler {
 
         // Set the initial request id
         $this->requestId = rand(100000000, 999999999);
-
     }
 
     /**
      * Handles a request.
      *
      * @param Request $request
+     * @param integer $retry
+     * @throws AuthenticationException
      * @throws Exception
      */
-    public function handle($request)
+    public function handle($request, $retry = 0)
     {
         // Build and populate request envelope
         $requestEnvelope = $this->build($request);
@@ -95,13 +98,10 @@ class RequestHandler {
 
         // Check authentication status
         if ($this->hasAuthenticationError($response)) {
+            Log::debug(sprintf('Authentication error. Status code: \'%s\' Error message: \'%s\'',
+                $response->getStatusCode(), print_r($response->getError(), true)));
 
-
-            throw new ResponseException(sprintf('Error in response. Cause: \'%s\' URL: \'%s\'',
-                $response->getError(), $response->getApiUrl()));
-
-
-//            throw new AuthenticationException('Invalid authentication token provided');
+            throw new AuthenticationException('Invalid authentication token provided');
         }
 
         // Initialize session
@@ -109,6 +109,9 @@ class RequestHandler {
 
         // Check if the request corresponds to a handshake
         if ($this->isHandshake($response)) {
+            Log::debug(sprintf('Handshake response. Status code: \'%s\'',
+                $response->getStatusCode(), print_r($response->getError(), true)));
+
             $this->handle($request);
 
             return;
@@ -116,6 +119,18 @@ class RequestHandler {
 
         // Check if the request corresponds to a throttled response
         if ($this->isThrottledResponse($response)) {
+            // Check the number of retries, only retry twice
+            if ($retry < 2) {
+                Log::debug(sprintf('Throttle response. Retrying. Number of retries: \'%s\'', $retry));
+
+                // Only one or two request per second is allowed, sleep one second before retrying
+                sleep(1);
+
+                $this->handle($request, ++$retry);
+
+                return;
+            }
+
             throw new Exception(sprintf('The server is to busy. Please try again later', $response->getStatusCode()));
         }
 
@@ -147,7 +162,6 @@ class RequestHandler {
 
         // Sets the request id
         $requestEnvelope->setRequestId($this->requestId());
-
         $requestEnvelope->setUnknown12(989);
 
         // Sets the location
@@ -178,6 +192,8 @@ class RequestHandler {
 
         // Prepare the authentication
         $this->prepareAuthentication($requestEnvelope);
+
+        Log::debug(sprintf('The request envelope. Content: \'%s\'', print_r($requestEnvelope, true)));
 
         // Prepare the HTTP request
         $request = new HttpRequest('POST', $url, array(), $requestEnvelope->toProtobuf());

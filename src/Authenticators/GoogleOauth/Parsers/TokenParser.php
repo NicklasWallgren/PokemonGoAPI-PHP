@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers;
 use NicklasW\PkmGoApi\Authenticators\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Authenticators\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
@@ -36,9 +37,14 @@ class TokenParser extends Parser {
 
         // Check if we provided valid user credentials
         if ($response->getStatusCode() === self::$RESPONSE_STATUS_FORBIDDEN) {
+            Log::debug(sprintf('[#%s] Retrieved invalid response. Content: \'%s\' Status code: \'%s\' ',
+                __CLASS__, $content, $response->getStatusCode()));
+
             throw new AuthenticationException(
                 sprintf('Invalid user credentials. Response: \'%s\'', $content));
         }
+
+        Log::debug(sprintf('[#%s] Response content: \'%s\'', __CLASS__, $content));
 
         return new AuthenticationTokenResult(array('token' => $this->parseToken($content)));
     }

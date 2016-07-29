@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers;
 use NicklasW\PkmGoApi\Authenticators\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Authenticators\Exceptions\ServerResponseException;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\Result;
+use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
@@ -56,10 +57,14 @@ abstract class Parser {
      */
     protected function validateResponse($response)
     {
+        Log::debug(sprintf('[#%s] Validating response. Status code: \'%s\'', __CLASS__, $response->getStatusCode()));
+
         // Check if the response corresponds to a server error
         if (!$this->isServerError($response)) {
             return;
         }
+
+        Log::debug(sprintf('[#%s] Retrieved a invalid response. Content: \'%s\'', __CLASS__, $response->getBody()));
 
         throw new ResponseException(
             sprintf('Retrieved a invalid response. Response: \'%s\'', (string)$response->getBody()));
