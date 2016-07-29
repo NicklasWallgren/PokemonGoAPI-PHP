@@ -5,6 +5,7 @@
 
 namespace POGOProtos\Networking\Responses {
 
+  use POGOProtos\Map\MapObjectsStatus;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;

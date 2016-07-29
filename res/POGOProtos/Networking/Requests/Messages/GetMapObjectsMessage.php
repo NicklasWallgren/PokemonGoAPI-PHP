@@ -142,7 +142,7 @@ namespace POGOProtos\Networking\Requests\Messages {
     public function getSinceTimestampMs($index) { return $this->sinceTimestampMs[$index]; }
     public function getSinceTimestampMsArray() { return $this->sinceTimestampMs; }
     public function setSinceTimestampMs($index, array $value) {$this->sinceTimestampMs[$index] = $value; }
-    public function addSinceTimestampMs(array $value) { $this->sinceTimestampMs[] = $value; }
+    public function addSinceTimestampMs($value) { $this->sinceTimestampMs[] = $value; }
     public function addAllSinceTimestampMs(array $values) { foreach($values as $value) {$this->sinceTimestampMs[] = $value; }}
 
     public function clearLatitude() { $this->latitude = 0; }
