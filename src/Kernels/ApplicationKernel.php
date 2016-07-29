@@ -2,6 +2,7 @@
 
 namespace NicklasW\PkmGoApi\Kernels;
 
+use DI\NotFoundException;
 use NicklasW\PkmGoApi\Api\PokemonGoApi;
 use NicklasW\PkmGoApi\Providers\PokemonGoApiServiceProvider;
 use NicklasW\PkmGoApi\Providers\RequestHandlerServiceProvider;
@@ -57,7 +58,7 @@ class ApplicationKernel extends Kernel {
      * Returns the pokemon go api.
      *
      * @return PokemonGoApi
-     * @throws \DI\NotFoundException
+     * @throws NotFoundException
      */
     public function getPokemonGoApi()
     {

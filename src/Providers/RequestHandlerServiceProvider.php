@@ -3,6 +3,7 @@
 
 namespace NicklasW\PkmGoApi\Providers;
 
+use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler;
 
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
@@ -61,12 +62,15 @@ class RequestHandlerServiceProvider extends ServiceProvider {
      */
     protected function authenticate($authType, $user, $password)
     {
+        Log::debug(sprintf('Authentication user. User: \'%s\' Password: \'%s\' Authentication type: \'%s\'',
+            $user, $password, $authType));
+
         // Retrieve the authenticator
         $authenticator = $this->authenticatorFactory->create($authType);
 
         // Authenticate the user and retrieve the auth token
         $token = $authenticator->login($user, $password);
-
+        
         return $this->envelopeFactory->create(EnvelopeFactory::$TYPE_AUTHINFO, $authenticator->identifier(), $token);
     }
 

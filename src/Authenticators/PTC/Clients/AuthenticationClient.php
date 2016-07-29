@@ -10,6 +10,7 @@ use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\Results\TokenResult;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\TicketParser;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\TokenParser;
 use NicklasW\PkmGoApi\Clients\Client;
+use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
@@ -97,6 +98,8 @@ class AuthenticationClient {
             'grant_type'    => 'refresh_token',
             'code'          => $ticket,
         );
+
+        Log::debug(sprintf('[#%s] Ticket: \'%s\'', __CLASS__, $ticket));
 
         // Retrieve the content.
         $content = $this->post(self::$URL_ENDPOINT_OAUTH, array('form_params' => $parameters));

@@ -4,6 +4,7 @@ namespace NicklasW\PkmGoApi\Services\Request;
 
 use NicklasW\PkmGoApi\Requests\GetInventoryRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
+use POGOProtos\Networking\Responses\GetInventoryResponse;
 
 class InventoryRequestService extends RequestService {
 

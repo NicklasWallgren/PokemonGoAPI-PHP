@@ -29,6 +29,8 @@ class TokenParser extends Parser {
         // Retrieve the content
         $content = (string)$response->getBody();
 
+        Log::debug(sprintf('[#%s] Retrieved content: \'%s\'', __CLASS__, $content));
+
         return new TokenResult(array('token' => $this->parseToken($content)));
     }
 

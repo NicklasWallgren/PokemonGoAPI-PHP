@@ -7,6 +7,7 @@ use DI\ContainerBuilder;
 use Dotenv\Dotenv;
 use Exception;
 use Interop\Container\ContainerInterface;
+use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -219,7 +220,13 @@ class Kernel implements ContainerInterface {
         if ($filePath == null) {
             $logger->pushHandler(new NullHandler(getenv('LOG_LEVEL')));
         } else {
-            $logger->pushHandler(new StreamHandler($filePath, getenv('LOG_LEVEL')));
+            // Create the stream handler
+            $handler = new StreamHandler($filePath, getenv('LOG_LEVEL'));
+
+            // Create the formatter
+            $handler->setFormatter(new LineFormatter(null, null, true, true));
+
+            $logger->pushHandler($handler);
         }
 
         // Add the logger instance to the container
