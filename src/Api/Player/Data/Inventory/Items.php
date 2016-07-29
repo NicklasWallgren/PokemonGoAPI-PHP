@@ -4,6 +4,7 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 
 use Exception;
 use NicklasW\PkmGoApi\Api\Data\Data;
+use NicklasW\PkmGoApi\Facades\Log;
 use POGOProtos\Inventory\InventoryDelta;
 use POGOProtos\Inventory\InventoryItem;
 use POGOProtos\Inventory\InventoryItemData;

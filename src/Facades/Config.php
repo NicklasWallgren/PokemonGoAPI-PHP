@@ -4,7 +4,7 @@ namespace NicklasW\PkmGoApi\Facades;
 
 use XStatic\StaticProxy;
 
-class LogFacade extends StaticProxy {
+class Config extends StaticProxy {
 
     /**
      * Retrieves the Instance Identifier that is used to retrieve the Proxy Subject from the Container
@@ -14,7 +14,7 @@ class LogFacade extends StaticProxy {
      */
     public static function getInstanceIdentifier()
     {
-        return 'log';
+        return 'config';
     }
 
 }

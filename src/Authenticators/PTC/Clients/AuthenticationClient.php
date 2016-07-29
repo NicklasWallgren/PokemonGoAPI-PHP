@@ -2,7 +2,6 @@
 
 namespace NicklasW\PkmGoApi\Authenticators\PTC\Clients;
 
-use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\AuthenticationInformationParser;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\Results\AuthenticationInformationResult;
@@ -10,6 +9,7 @@ use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\Results\TicketResult;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\Results\TokenResult;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\TicketParser;
 use NicklasW\PkmGoApi\Authenticators\PTC\Parsers\TokenParser;
+use NicklasW\PkmGoApi\Clients\Client;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
@@ -163,8 +163,7 @@ class AuthenticationClient {
     protected function client()
     {
         if ($this->client == null) {
-            $this->client = new Client(
-                array('cookies' => new CookieJar(), 'http_errors' => false, 'verify' => Config::get('config.ssl_verification')));
+            $this->client = new Client(array('cookies' => new CookieJar()));
         }
 
         return $this->client;

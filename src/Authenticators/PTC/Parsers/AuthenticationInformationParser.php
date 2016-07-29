@@ -29,8 +29,11 @@ class AuthenticationInformationParser extends Parser {
         // Validate the retrieved response
         $this->validateResponse($response);
 
+        // Retrieve the content
+        $content = (string)$response->getBody();
+
         // Decode the content
-        $content = $this->content($response->getBody()->getContents());
+        $content = $this->content($content);
 
         return new AuthenticationInformationResult(array('lt' => $content->lt, 'execution' => $content->execution));
     }

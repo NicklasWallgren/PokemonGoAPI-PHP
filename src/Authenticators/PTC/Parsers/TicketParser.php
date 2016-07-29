@@ -60,8 +60,11 @@ class TicketParser extends Parser {
      */
     protected function parseContent($response)
     {
+        // Retrieve the content
+        $content = (string)$response->getBody();
+
         // Decode the response body
-        $content = json_decode($response->getBody()->getContents(), true);
+        $content = json_decode($content, true);
 
         // Check if the response body is null
         if ($content === null) {
