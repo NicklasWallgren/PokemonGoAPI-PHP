@@ -16,6 +16,11 @@ abstract class Data {
      */
     public static function create($data)
     {
+        // Check if we retrieved valid data
+        if ($data == null) {
+            return;
+        }
+
         $instance = new static();
 
         // Retrieve the properties within the protobuf message class
