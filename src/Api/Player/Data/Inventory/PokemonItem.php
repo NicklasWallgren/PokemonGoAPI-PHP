@@ -224,5 +224,5 @@ class PokemonItem extends Data {
      * @var int
      */
     protected $fromFort = 0;
-
+    
 }

@@ -59,7 +59,6 @@ abstract class Data {
         } elseif ($this->isGetMethod($name)) {
             $attribute = $this->getAttribute($name);
 
-
             return $this->{$attribute};
         }
     }
