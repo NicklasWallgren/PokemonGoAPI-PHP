@@ -8,6 +8,7 @@ use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokemonItem;
 use NicklasW\PkmGoApi\Api\Player\Inventory;
 use NicklasW\PkmGoApi\Api\Procedure;
 use NicklasW\PkmGoApi\Services\Request\PokemonRequestService;
+use POGOProtos\Enums\PokemonId;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
 use POGOProtos\Networking\Responses\NicknamePokemonResponse_Result;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse_Result;
@@ -37,6 +38,24 @@ class Pokemon extends Procedure {
     public function getPokemonData()
     {
         return $this->pokemonData;
+    }
+
+    /**
+     * Returns the pokemon name.
+     *
+     * @return mixed|string
+     */
+    public function getName()
+    {
+        // Retrieve the pokemon data
+        $data = $this->getPokemonData();
+
+        // Check if the pokemon has a nickname
+        if ($data->getNickname() != null) {
+            return $data->getNickname();
+        }
+
+        return PokemonId::toString($this->getPokemonData()->getPokemonId());
     }
 
     /**
