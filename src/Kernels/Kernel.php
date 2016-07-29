@@ -242,6 +242,8 @@ class Kernel implements ContainerInterface {
 
         // Check if the directory is writable
         if (!is_writeable($directory)) {
+            echo sprintf('WARNING. Invalid log file path provided. \'%s\' %s', $logFilePath, PHP_EOL);
+
             return null;
         }
 
