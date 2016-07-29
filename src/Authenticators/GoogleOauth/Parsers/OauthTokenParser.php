@@ -29,7 +29,7 @@ class OauthTokenParser extends Parser {
         $this->validateResponse($response);
 
         // Retrieve the content
-        $content = $response->getBody()->getContents();
+        $content = (string)$response->getBody();
 
         return new AuthenticationTokenResult(array('auth' => $this->parseAuthId($content)));
     }

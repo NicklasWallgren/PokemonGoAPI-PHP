@@ -32,7 +32,7 @@ class TokenParser extends Parser {
         $this->validateResponse($response);
 
         // Retrieve the content
-        $content = $response->getBody()->getContents();
+        $content = (string)$response->getBody();
 
         // Check if we provided valid user credentials
         if ($response->getStatusCode() === self::$RESPONSE_STATUS_FORBIDDEN) {

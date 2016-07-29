@@ -2,13 +2,13 @@
 
 namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Clients;
 
-use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\AuthenticationInformationParser;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\OauthTokenParser;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\TokenParser;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationTokenResult;
 use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Support\Signature;
+use NicklasW\PkmGoApi\Clients\Client;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
@@ -124,7 +124,7 @@ class AuthenticationClient {
         $response = $this->client()->get($url);
 
         // Retrieve the content
-        return $response->getBody()->getContents();
+        return (string)$response->getBody();
     }
 
     /**
@@ -167,8 +167,7 @@ class AuthenticationClient {
     protected function client()
     {
         if ($this->client == null) {
-            $this->client = new Client(
-                array('cookies' => new CookieJar(), 'http_errors' => false, 'verify' => Config::get('config.ssl_verification')));
+            $this->client = new Client(array('cookies' => new CookieJar()));
         }
 
         return $this->client;

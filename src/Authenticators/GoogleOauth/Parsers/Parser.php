@@ -62,7 +62,7 @@ abstract class Parser {
         }
 
         throw new ResponseException(
-            sprintf('Retrieved a invalid response. Response: \'%s\'', $response->getBody()->getContents()));
+            sprintf('Retrieved a invalid response. Response: \'%s\'', (string)$response->getBody()));
     }
 
     /**

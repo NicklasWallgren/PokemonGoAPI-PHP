@@ -92,11 +92,11 @@ class Kernel implements ContainerInterface {
         // Initialize the proxy manager
         $this->initializeProxyManager();
 
-        // Initialize the service providers
-        $this->initializeServiceProviders();
-
         // Initialize the logger
         $this->initializeLogger();
+
+        // Initialize the service providers
+        $this->initializeServiceProviders();
     }
 
     /**
@@ -117,10 +117,10 @@ class Kernel implements ContainerInterface {
     protected function addFacades()
     {
         // Add the Log facade
-        $this->proxyManager->addProxy('Log', 'NicklasW\PkmGoApi\Facades\LogFacade');
+        $this->proxyManager->addProxy('Log', 'NicklasW\PkmGoApi\Facades\Log');
 
         // Add the Config facade
-        $this->proxyManager->addProxy('Config', 'NicklasW\PkmGoApi\Facades\ConfigFacade');
+        $this->proxyManager->addProxy('Config', 'NicklasW\PkmGoApi\Facades\Config');
     }
 
     /**

@@ -41,9 +41,14 @@ class RequestHandler {
     protected static $RESPONSE_STATUS_HANDSHAKE = 53;
 
     /**
+     * @var string The handskake response status
+     */
+    protected static $RESPONSE_STATUS_THROTTLED = 52;
+
+    /**
      * @var string The unknown response statuses
      */
-    protected static $RESPONSE_STATUS_UNKNOWN = array(52, 100);
+    protected static $RESPONSE_STATUS_UNKNOWN = array(100);
 
     /**
      * @var Request[] The list of requests to be handled
@@ -98,6 +103,11 @@ class RequestHandler {
             $this->handle($request);
 
             return;
+        }
+
+        // Check if the request corresponds to a throttled response
+        if ($this->isThrottledResponse($response)) {
+            throw new Exception(sprintf('The server is to busy. Please try again later', $response->getStatusCode()));
         }
 
         // Check if the request corresponds to a unknown response
@@ -231,6 +241,17 @@ class RequestHandler {
     protected function isHandshake($responseEnvelop)
     {
         return $responseEnvelop->getStatusCode() === self::$RESPONSE_STATUS_HANDSHAKE;
+    }
+
+    /**
+     * Returns true if the request status code is unknown, false otherwise.
+     *
+     * @param ResponseEnvelope $responseEnvelop
+     * @return boolean
+     */
+    protected function isThrottledResponse($responseEnvelop)
+    {
+        return $responseEnvelop->getStatusCode() === self::$RESPONSE_STATUS_THROTTLED;
     }
 
     /**
