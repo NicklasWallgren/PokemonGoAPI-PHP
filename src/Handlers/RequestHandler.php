@@ -5,7 +5,6 @@ namespace NicklasW\PkmGoApi\Handlers;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
-use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Requests\Request;
 use POGOProtos\Networking\Envelopes\RequestEnvelope;
@@ -24,11 +23,6 @@ class RequestHandler {
      * @var int The request code
      */
     protected static $REQUEST_STATUS_CODE = 2;
-
-    /**
-     * @var int The request id
-     */
-    protected static $REQUEST_ID = 8145806132888207460;
 
     /**
      * @var string Authentication error response status
@@ -66,6 +60,11 @@ class RequestHandler {
     protected $client;
 
     /**
+     * @var integer The request id
+     */
+    protected $requestId;
+
+    /**
      * RequestHandler constructor.
      *
      * @param RequestEnvelope_AuthInfo $authenticationInformation
@@ -74,6 +73,10 @@ class RequestHandler {
     {
         $this->session = new Session();
         $this->session->setAuthenticationInformation($authenticationInformation);
+
+        // Set the initial request id
+        $this->requestId = rand(100000000, 999999999);
+
     }
 
     /**
@@ -92,7 +95,13 @@ class RequestHandler {
 
         // Check authentication status
         if ($this->hasAuthenticationError($response)) {
-            throw new AuthenticationException('Invalid authentication token provided');
+
+
+            throw new ResponseException(sprintf('Error in response. Cause: \'%s\' URL: \'%s\'',
+                $response->getError(), $response->getApiUrl()));
+
+
+//            throw new AuthenticationException('Invalid authentication token provided');
         }
 
         // Initialize session
@@ -135,9 +144,13 @@ class RequestHandler {
         // Prepare the request envelope
         $requestEnvelope = new RequestEnvelope();
         $requestEnvelope->setStatusCode(self::$REQUEST_STATUS_CODE);
-        $requestEnvelope->setRequestId(self::$REQUEST_ID);
+
+        // Sets the request id
+        $requestEnvelope->setRequestId($this->requestId());
+
         $requestEnvelope->setUnknown12(989);
 
+        // Sets the location
         $requestEnvelope->setLatitude(40.7143528);
         $requestEnvelope->setLongitude(-74.0059731);
 
@@ -280,6 +293,16 @@ class RequestHandler {
     }
 
     /**
+     * Returns the request id.
+     *
+     * @return integer
+     */
+    protected function requestId()
+    {
+        return ++$this->requestId;
+    }
+
+    /**
      * Validate the request response.
      *
      * @param ResponseInterface $response
@@ -324,7 +347,7 @@ class RequestHandler {
         if ($this->client == null) {
             // Initialize the HTTP client
             $this->client = new Client(
-                array('http_errors' => false, 'verify' => Config::get('config.ssl_verification')));
+                array('headers' => array('User-Agent' => 'Niantic App'), 'http_errors' => false, 'verify' => Config::get('config.ssl_verification')));
         }
 
         return $this->client;
