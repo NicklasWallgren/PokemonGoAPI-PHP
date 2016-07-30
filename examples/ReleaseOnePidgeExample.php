@@ -27,7 +27,7 @@ class ReleaseOnePidgeExample {
         $pokeBank = $inventory->getItems()->getPokeBank();
 
         // Retrieve a pokemon of type pidgey
-        $pokemon = current($pokeBank->getPokemonsByType(PokemonId::PIDGEY));
+        $pokemon = $pokeBank->getPokemonsByType(PokemonId::PIDGEY)->first();
 
         // Check if we retireved a pokemon
         if (!$pokemon) {
