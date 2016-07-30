@@ -19,17 +19,17 @@ use POGOProtos\Data\PlayerData;
  * @method void setContactSettings(ContactSettings $state)
  * @method void setCurrencies(Currencies $currencies)
 
- * @method void getCreationTime()
- * @method void getUsername()
- * @method void getTeam()
- * @method void getTutorialState()
- * @method void getAvatar()
- * @method void getPokemonStorage()
- * @method void getItemStorage()
- * @method void getDailyBonus()
- * @method void getBadge()
- * @method void getContactSettings()
- * @method void getCurrencies()
+ * @method string getCreationTime()
+ * @method string getUsername()
+ * @method integer getTeam()
+ * @method TutorialState getTutorialState()
+ * @method Avatar getAvatar()
+ * @method array getPokemonStorage()
+ * @method array getItemStorage()
+ * @method DailyBonus getDailyBonus()
+ * @method setContactSettings getBadge()
+ * @method ContactSettings getContactSettings()
+ * @method Currencies getCurrencies()
  */
 class ProfileData extends ApiData {
 
