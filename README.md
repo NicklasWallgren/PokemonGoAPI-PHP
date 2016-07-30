@@ -6,8 +6,6 @@ Pokemon GO PHP API library
   - `` git clone <repo> ``
   - Install the dependencies
   - `` composer install ``
-  - Configure the enviroment file
-  - ``cp .env.example .env``
 
 # Usage
 EG:
@@ -33,9 +31,7 @@ $pokemon->transfer();
 
 ## TODO
   - Implement the Map API
-  - Improve Google Oauth
   - Improve logging
-  - Improve PTC authentication error handling
 
 
 ## Contributors

@@ -27,17 +27,18 @@ class ApplicationKernel extends Kernel {
     /**
      * Kernel constructor.
      *
-     * @param string  $user
-     * @param string  $password
-     * @param integer $authenticationType
+     * @param string      $user
+     * @param string      $password
+     * @param integer     $authenticationType
+     * @param string|null $environmentFilePath
      */
-    public function __construct($user, $password, $authenticationType)
+    public function __construct($user, $password, $authenticationType, $environmentFilePath = null)
     {
         $this->user = $user;
         $this->password = $password;
         $this->authenticationType = $authenticationType;
 
-        parent::__construct();
+        parent::__construct($environmentFilePath);
     }
 
     /**
