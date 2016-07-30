@@ -33,10 +33,19 @@ class Kernel implements ContainerInterface {
     protected $serviceProviders;
 
     /**
-     * Kernel constructor.
+     * @var
      */
-    public function __construct()
+    protected $environmentFilePath;
+
+    /**
+     * Kernel constructor.
+     *
+     * @param string|null $environmentFilePath
+     */
+    public function __construct($environmentFilePath = null)
     {
+        $this->environmentFilePath = $environmentFilePath;
+
         // Initialize the container
         $this->initializeContainer();
 
@@ -105,11 +114,17 @@ class Kernel implements ContainerInterface {
      */
     protected function loadEnvironmentVariables()
     {
+        // Check if the environment file path is defined
+        if ($this->environmentFilePath === null) {
+            return;
+        }
+
         // Initialize the environment instance
-        $dotenv = new Dotenv($this->basePath());
+        $dotenv = new Dotenv($this->environmentFilePath);
 
         // Load environment file in given directory.
         $dotenv->load();
+
     }
 
     /**
