@@ -67,4 +67,14 @@ class Currencies extends Data {
         return $this->currencies[$type];
     }
 
+    /**
+     * Returns all currency types.
+     *
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->currencies;
+    }
+
 }
