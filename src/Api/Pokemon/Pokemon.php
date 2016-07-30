@@ -47,7 +47,6 @@ use POGOProtos\Networking\Responses\ReleasePokemonResponse_Result;
  * @method void setFavorite(int $favorite)
  * @method void setNickname(string $nickname)
  * @method void setFromFort(int $fromFort)
- *
  * @method int getId()
  * @method int getPokemonId()
  * @method int getCp()
@@ -89,6 +88,21 @@ class Pokemon extends Procedure {
     protected $data;
 
     /**
+     * @var float The calculated level
+     */
+    protected $level;
+
+    /**
+     * @var string The pokemon name.
+     */
+    protected $name;
+
+    /**
+     * @var double The IV ratio.
+     */
+    protected $ivRatio;
+
+    /**
      * Pokemon constructor.
      *
      * @param array $pokemonData
@@ -96,6 +110,9 @@ class Pokemon extends Procedure {
     public function __construct($pokemonData)
     {
         $this->data = $pokemonData;
+
+        // Initialize the transient values
+        $this->initializeTransientValues();
     }
 
     /**
@@ -115,26 +132,25 @@ class Pokemon extends Procedure {
      */
     public function getName()
     {
-        // Retrieve the pokemon data
-        $data = $this->getPokemonData();
-
-        // Check if the pokemon has a nickname
-        if ($data->getNickname() !== null) {
-            return $data->getNickname();
-        }
-
-        return PokemonId::toString($this->getPokemonData()->getPokemonId());
+        return $this->name;
     }
 
     /**
      * Returns the level.
-     * 
+     *
      * @return float
      */
     public function getLevel()
     {
-        return CombatPointsCalculator::getLevel(
-            $this->getPokemonData()->getCpMultiplier() + $this->getPokemonData()->getAdditionalCpMultiplier());
+        return $this->level;
+    }
+
+    /**
+     * @return float
+     */
+    public function getIvRatio()
+    {
+        return $this->ivRatio;
     }
 
     /**
@@ -196,6 +212,41 @@ class Pokemon extends Procedure {
         // Update the inventory
         $this->getInventory()->update();
 
+    }
+
+    /**
+     * Initialize the transient values.
+     */
+    protected function initializeTransientValues()
+    {
+        // Initialize the pokemon level
+        $this->level = CombatPointsCalculator::getLevel(
+            $this->getPokemonData()->getCpMultiplier() + $this->getPokemonData()->getAdditionalCpMultiplier());
+
+        // Initialize the pokemon name
+        $this->name = $this->getNameOrNickname();
+
+        // Calculates the IV ratio
+        $this->ivRatio = ($this->getIndividualAttack() +
+                $this->getIndividualDefense() + $this->getIndividualStamina()) / 45.0;
+    }
+
+    /**
+     * Returns the pokemon name or nickname.
+     *
+     * @return string
+     */
+    protected function getNameOrNickname()
+    {
+        // Retrieve the pokemon data
+        $data = $this->getPokemonData();
+
+        // Check if the pokemon has a nickname
+        if ($data->getNickname() != null) {
+            return $data->getNickname();
+        }
+
+        return PokemonId::toString($this->getPokemonData()->getPokemonId());
     }
 
     /**
