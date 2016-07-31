@@ -7,7 +7,7 @@ use POGOProtos\Inventory\EggIncubatorType;
 use POGOProtos\Inventory\Item\ItemId;
 
 /**
- * @method void set$id(string $id)
+ * @method void setIdd(string $id)
  * @method void setItemId(int $itemId)
  * @method void setIncubatorType(int $incubatorType)
  * @method void setUsesRemaining(int $usesRemaining)

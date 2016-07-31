@@ -15,6 +15,9 @@ use POGOProtos\Inventory\InventoryItemData;
  * @method void setCandyBank(CandyBank $candyBank)
  * @method void setPokedex(Pokedex $pokedex)
  * @method void setAppliedItems(AppliedItems $appliedItems)
+ * @method void setStats(Stats $stats)
+ * @method void setEggPokemon(EggPokemon[] $eggPokemon)
+ *
  * @method PokeBank getPokeBank()
  * @method Item[] getItems()
  * @method CandyBank getCandyBank()
@@ -22,6 +25,7 @@ use POGOProtos\Inventory\InventoryItemData;
  * @method EggIncubators getEggIncubators()
  * @method AppliedItems getAppliedItems()
  * @method Stats getStats()
+ * @method EggPokemon[] getEggPokemon()
  */
 class Items extends Data {
 
@@ -59,6 +63,11 @@ class Items extends Data {
      * @var Stats
      */
     protected $stats;
+
+    /**
+     * @var EggPokemon[]
+     */
+    protected $eggPokemon = array();
 
     /**
      * Items constructor.
@@ -106,6 +115,9 @@ class Items extends Data {
         if (self::isItem($itemData)) {
             // Retrieve the item data
             $this->items[] = Item::create($itemData->getItem());
+        } elseif (self::isEggPokemon($itemData)) {
+            // Retrieve the applied items data
+            $this->eggPokemon[] = EggPokemon::create($itemData->getPokemonData());
 
         } elseif (self::isPokemon($itemData)) {
             // Retrieve the pokemon data
@@ -130,7 +142,6 @@ class Items extends Data {
         } elseif (self::isPlayerStats($itemData)) {
             // Retrieve the applied items data
             $this->stats = Stats::create($itemData->getPlayerStats());
-
         } else {
             Log::warning('Unknown item type encountered', array('item' => $itemData));
         }
@@ -212,6 +223,17 @@ class Items extends Data {
     protected static function isPlayerStats($itemData)
     {
         return $itemData->getPlayerStats() != null;
+    }
+
+    /**
+     * Returns true if the item data is of type egg pokemon item, false otherwise.
+     *
+     * @param InventoryItemData $itemData
+     * @return boolean
+     */
+    protected static function isEggPokemon($itemData)
+    {
+        return $itemData->getPokemonData() != null && $itemData->getPokemonData()->getIsEgg();
     }
 
 }
