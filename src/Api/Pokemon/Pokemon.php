@@ -3,9 +3,12 @@
 namespace NicklasW\PkmGoApi\Api\Pokemon;
 
 use Exception;
+use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyBank;
+use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyItem;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokeBank;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokemonItem;
 use NicklasW\PkmGoApi\Api\Player\Inventory;
+use NicklasW\PkmGoApi\Api\Pokemon\Support\BasePokemonRetriever;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\CombatPointsCalculator;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonCombatPointsCalculator;
 use NicklasW\PkmGoApi\Api\Procedure;
@@ -103,6 +106,11 @@ class Pokemon extends Procedure {
     protected $ivRatio;
 
     /**
+     * @var integer The pokemon family id
+     */
+    protected $pokemonFamilyId;
+
+    /**
      * Pokemon constructor.
      *
      * @param array $pokemonData
@@ -151,6 +159,16 @@ class Pokemon extends Procedure {
     public function getIvRatio()
     {
         return $this->ivRatio;
+    }
+
+    /**
+     * Returns the number of candies.
+     *
+     * @return CandyItem
+     */
+    public function getCandies()
+    {
+        return $this->getCandyBank()->get($this->pokemonFamilyId);
     }
 
     /**
@@ -229,6 +247,10 @@ class Pokemon extends Procedure {
         // Calculates the IV ratio
         $this->ivRatio = ($this->getIndividualAttack() +
                 $this->getIndividualDefense() + $this->getIndividualStamina()) / 45.0;
+
+        // Retrieve the pokemon family id
+        $this->pokemonFamilyId = BasePokemonRetriever::getPokemonFamilyId($this->getPokemonId());
+
     }
 
     /**
@@ -270,6 +292,16 @@ class Pokemon extends Procedure {
     }
 
     /**
+     * Returns the candy bank.
+     *
+     * @return CandyBank
+     */
+    protected function getCandyBank()
+    {
+        return $this->getInventory()->getItems()->getCandyBank();
+    }
+    /**
+     *
      * Returns the poke bank.
      *
      * @return PokeBank
@@ -277,6 +309,16 @@ class Pokemon extends Procedure {
     protected function getPokeBank()
     {
         return $this->getPokemonGoApi()->getInventory()->getItems()->getPokeBank();
+    }
+
+    /**
+     * Returns the pokemon family id.
+     *
+     * @return integer
+     */
+    public function getPokemonFamilyId()
+    {
+        return $this->pokemonFamilyId;
     }
 
 }

@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Services\Request;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Requests\GetMapResourcesRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
+use POGOProtos\Networking\Responses\GetMapObjectsResponse;
 
 class MapRequestService extends RequestService {
 
@@ -14,7 +15,7 @@ class MapRequestService extends RequestService {
      * @param double $latitude
      * @param double $longitude
      * @param array $mapCellIds
-     * @return mixed
+     * @return GetMapObjectsResponse
      * @throws \Exception
      * @throws AuthenticationException
      */

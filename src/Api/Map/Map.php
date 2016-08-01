@@ -3,39 +3,47 @@
 namespace NicklasW\PkmGoApi\Api\Map;
 
 use Exception;
+use NicklasW\PkmGoApi\Api\Map\Data\Resource;
+use NicklasW\PkmGoApi\Api\Map\Data\Resources\Fort;
 use NicklasW\PkmGoApi\Api\Map\Support\S2;
 use NicklasW\PkmGoApi\Api\Procedure;
 use NicklasW\PkmGoApi\Services\Request\MapRequestService;
+use POGOProtos\Networking\Responses\GetMapObjectsResponse;
 
 class Map extends Procedure {
 
     /**
-     * Returns the map resources.
-     *
-     * @param double $latitude
-     * @param double $longitude
-     * @throws Exception
+     * @var Resource
      */
-    public function getResources($latitude, $longitude)
+    protected $data;
+
+    /**
+     * Map constructor.
+     */
+    public function __construct()
     {
-        // Retrieve a list of cell ids from the latitude and longitude
-        $cellIds = S2::getCellIds($latitude, $longitude);
-
-        // Retrieve the map resources
-        $resources = $this->getRequestService()->getResources($latitude, $longitude, $cellIds);
-
-        print_r($resources);
-
-        die();
-
-        
-        
-        throw new Exception('To be implemented');
+        $this->data = new Resource();
     }
 
+    /**
+     * Returns the pokestops.
+     *
+     * @return Fort[]
+     */
+    public function getPokestops()
+    {
+        return $this->data->getPokestops();
+    }
 
-
-
+    /**
+     * Returns gyms.
+     *
+     * @return Fort[]
+     */
+    public function getGyms()
+    {
+        return $this->data->getGyms();
+    }
 
     /**
      * Returns the catchable pokemons located on the map.
@@ -45,7 +53,45 @@ class Map extends Procedure {
         throw new Exception('To be implemented');
     }
 
+    /**
+     * Returns the map resources.
+     *
+     * @throws Exception
+     */
+    public function update()
+    {
+        // Retrieve the map resources
+        $resources = $this->getMapResources();
 
+        // Iterate through the list of map cells
+        foreach ($resources->getMapCellsArray() as $mapCell) {
+            // Add forts to the list of resource
+            $this->data->addForts($mapCell->getFortsArray());
+
+            // Add spawn points to the list of spawn points
+            $this->data->addSpawnPoints($mapCell->getSpawnPointsArray());
+        }
+    }
+
+    /**
+     * Returns the map resources.
+     *
+     * @return GetMapObjectsResponse
+     */
+    protected function getMapResources()
+    {
+        // Retrieved the latitude
+        $latitude = $this->getApplication()->getLatitude();
+
+        // Retrieved the longitude
+        $longitude = $this->getApplication()->getLongitude();
+
+        // Retrieve a list of cell ids from the latitude and longitude
+        $cellIds = S2::getCellIds($latitude, $longitude);
+
+        // Retrieve the map resources
+        return $this->getRequestService()->getResources($latitude, $longitude, $cellIds);
+    }
 
     /**
      * Returns the request service.
@@ -56,11 +102,5 @@ class Map extends Procedure {
     {
         return new MapRequestService();
     }
-
-
-
-
-
-
 
 }

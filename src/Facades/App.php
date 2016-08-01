@@ -4,7 +4,7 @@ namespace NicklasW\PkmGoApi\Facades;
 
 use XStatic\StaticProxy;
 
-class ApplicationFacade extends StaticProxy {
+class App extends StaticProxy {
 
     /**
      * Retrieves the Instance Identifier that is used to retrieve the Proxy Subject from the Container

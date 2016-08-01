@@ -8,6 +8,7 @@ use GuzzleHttp\Psr7\Request as HttpRequest;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
+use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 use NicklasW\PkmGoApi\Requests\Request;
 use POGOProtos\Networking\Envelopes\RequestEnvelope;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
@@ -67,17 +68,25 @@ class RequestHandler {
     protected $requestId;
 
     /**
+     * @var ApplicationKernel
+     */
+    protected $application;
+
+    /**
      * RequestHandler constructor.
      *
      * @param RequestEnvelope_AuthInfo $authenticationInformation
      */
-    public function __construct($authenticationInformation)
+    public function __construct($authenticationInformation, $application)
     {
         $this->session = new Session();
         $this->session->setAuthenticationInformation($authenticationInformation);
 
         // Set the initial request id
         $this->requestId = rand(100000000, 999999999);
+
+        // Set the application
+        $this->application = $application;
     }
 
     /**
@@ -165,8 +174,9 @@ class RequestHandler {
         $requestEnvelope->setUnknown12(989);
 
         // Sets the location
-        $requestEnvelope->setLatitude(40.7143528);
-        $requestEnvelope->setLongitude(-74.0059731);
+        $requestEnvelope->setLatitude($this->application->getLatitude());
+        $requestEnvelope->setLongitude($this->application->getLongitude());
+        $requestEnvelope->setAltitude(0);
 
         // Add request
         $requestEnvelope->addAllRequests(array($networkRequest));

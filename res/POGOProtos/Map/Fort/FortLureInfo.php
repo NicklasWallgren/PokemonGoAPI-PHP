@@ -5,6 +5,7 @@
 
 namespace POGOProtos\Map\Fort {
 
+  use POGOProtos\Enums\PokemonId;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;

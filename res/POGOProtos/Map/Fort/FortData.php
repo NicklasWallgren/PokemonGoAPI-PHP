@@ -5,6 +5,8 @@
 
 namespace POGOProtos\Map\Fort {
 
+  use POGOProtos\Enums\PokemonId;
+  use POGOProtos\Enums\TeamColor;
   use Protobuf;
   use ProtobufEnum;
   use ProtobufIO;
