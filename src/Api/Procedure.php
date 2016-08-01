@@ -3,6 +3,8 @@
 
 namespace NicklasW\PkmGoApi\Api;
 
+use NicklasW\PkmGoApi\Facades\App;
+use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 use NicklasW\PkmGoApi\Services\RequestService;
 
 abstract class Procedure {
@@ -25,6 +27,16 @@ abstract class Procedure {
     protected function getPokemonGoApi()
     {
         return App::getPokemonGoApi();
+    }
+
+    /**
+     * Returns the application.
+     *
+     * @return ApplicationKernel
+     */
+    protected function getApplication()
+    {
+        return App::getInstance();
     }
 
 }

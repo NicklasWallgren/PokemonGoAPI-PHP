@@ -134,7 +134,7 @@ namespace POGOProtos\Networking\Requests\Messages {
     public function getCellId($index) { return $this->cellId[$index]; }
     public function getCellIdArray() { return $this->cellId; }
     public function setCellId($index, array $value) {$this->cellId[$index] = $value; }
-    public function addCellId(array $value) { $this->cellId[] = $value; }
+    public function addCellId($value) { $this->cellId[] = $value; }
     public function addAllCellId(array $values) { foreach($values as $value) {$this->cellId[] = $value; }}
 
     public function clearSinceTimestampMs() { $this->sinceTimestampMs = array(); }

@@ -25,6 +25,16 @@ class ApplicationKernel extends Kernel {
     protected $authenticationType;
 
     /**
+     * @var double
+     */
+    protected $latitude = 0;
+
+    /**
+     * @var double
+     */
+    protected $longitude = 0;
+
+    /**
      * Kernel constructor.
      *
      * @param string      $user
@@ -97,11 +107,39 @@ class ApplicationKernel extends Kernel {
     }
 
     /**
+     * Sets the location.
+     *
+     * @param double $latitude
+     * @param double $longitude
+     */
+    public function setLocation($latitude, $longitude)
+    {
+        $this->latitude = $latitude;
+        $this->longitude = $longitude;
+    }
+
+    /**
+     * @return float
+     */
+    public function getLatitude()
+    {
+        return $this->latitude;
+    }
+
+    /**
+     * @return float
+     */
+    public function getLongitude()
+    {
+        return $this->longitude;
+    }
+
+    /**
      * Add the facades classes.
      */
     protected function addFacades()
     {
-        $this->proxyManager->addProxy('App', 'NicklasW\PkmGoApi\Facades\ApplicationFacade');
+        $this->proxyManager->addProxy('App', 'NicklasW\PkmGoApi\Facades\App');
 
         parent::addFacades();
     }

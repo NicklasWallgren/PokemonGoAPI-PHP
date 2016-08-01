@@ -48,8 +48,8 @@ class RequestHandlerServiceProvider extends ServiceProvider {
     public function register()
     {
         // Create the RequestHandler instance
-        $this->app->container()->set('RequestHandler',
-            new RequestHandler($this->authenticate($this->authenticationType(), $this->user(), $this->password())));
+        $this->app->container()->set('RequestHandler',new RequestHandler(
+            $this->authenticate($this->authenticationType(), $this->user(), $this->password()), $this->app));
     }
 
     /**
