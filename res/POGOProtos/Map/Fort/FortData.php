@@ -30,7 +30,7 @@ namespace POGOProtos\Map\Fort {
     private $isInBattle = false; // optional bool is_in_battle = 11
     private $cooldownCompleteTimestampMs = 0; // optional int64 cooldown_complete_timestamp_ms = 14
     private $sponsor = FortSponsor::UNSET_SPONSOR; // optional .POGOProtos.Map.Fort.FortSponsor sponsor = 15
-    private $renderingType = FortRenderingType::DEFAULT; // optional .POGOProtos.Map.Fort.FortRenderingType rendering_type = 16
+    private $renderingType = FortRenderingType::NONE; // optional .POGOProtos.Map.Fort.FortRenderingType rendering_type = 16
     private $activeFortModifier = ""; // optional bytes active_fort_modifier = 12
     private $lureInfo = null; // optional .POGOProtos.Map.Fort.FortLureInfo lure_info = 13
 
@@ -256,7 +256,7 @@ namespace POGOProtos\Map\Fort {
         fwrite($fp, "x", 1);
         Protobuf::write_varint($fp, $this->sponsor);
       }
-      if ($this->renderingType !== FortRenderingType::DEFAULT) {
+      if ($this->renderingType !== FortRenderingType::NONE) {
         fwrite($fp, "\x80\x01", 2);
         Protobuf::write_varint($fp, $this->renderingType);
       }
@@ -314,7 +314,7 @@ namespace POGOProtos\Map\Fort {
       if ($this->sponsor !== FortSponsor::UNSET_SPONSOR) {
         $size += 1 + Protobuf::size_varint($this->sponsor);
       }
-      if ($this->renderingType !== FortRenderingType::DEFAULT) {
+      if ($this->renderingType !== FortRenderingType::NONE) {
         $size += 2 + Protobuf::size_varint($this->renderingType);
       }
       if ($this->activeFortModifier !== "") {
@@ -380,7 +380,7 @@ namespace POGOProtos\Map\Fort {
     public function getSponsor() { return $this->sponsor;}
     public function setSponsor($value) { $this->sponsor = $value; }
 
-    public function clearRenderingType() { $this->renderingType = FortRenderingType::DEFAULT; }
+    public function clearRenderingType() { $this->renderingType = FortRenderingType::NONE; }
     public function getRenderingType() { return $this->renderingType;}
     public function setRenderingType($value) { $this->renderingType = $value; }
 
@@ -407,7 +407,7 @@ namespace POGOProtos\Map\Fort {
            . Protobuf::toString('is_in_battle', $this->isInBattle, false)
            . Protobuf::toString('cooldown_complete_timestamp_ms', $this->cooldownCompleteTimestampMs, 0)
            . Protobuf::toString('sponsor', $this->sponsor, FortSponsor::UNSET_SPONSOR)
-           . Protobuf::toString('rendering_type', $this->renderingType, FortRenderingType::DEFAULT)
+           . Protobuf::toString('rendering_type', $this->renderingType, FortRenderingType::NONE)
            . Protobuf::toString('active_fort_modifier', $this->activeFortModifier, "")
            . Protobuf::toString('lure_info', $this->lureInfo, null);
     }
