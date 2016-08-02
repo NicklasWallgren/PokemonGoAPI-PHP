@@ -46,11 +46,12 @@ class Map extends Procedure {
     }
 
     /**
-     * Returns the catchable pokemons located on the map.
+     * Returns the catchable pokemon located on the map.
      */
-    public function getCatchablePokemons()
+    public function getCatchablePokemon()
     {
-        throw new Exception('To be implemented');
+
+
     }
 
     /**
@@ -63,14 +64,8 @@ class Map extends Procedure {
         // Retrieve the map resources
         $resources = $this->getMapResources();
 
-        // Iterate through the list of map cells
-        foreach ($resources->getMapCellsArray() as $mapCell) {
-            // Add forts to the list of resource
-            $this->data->addForts($mapCell->getFortsArray());
-
-            // Add spawn points to the list of spawn points
-            $this->data->addSpawnPoints($mapCell->getSpawnPointsArray());
-        }
+        // Create the resource data instance
+        $this->data = Resource::create($resources);
     }
 
     /**

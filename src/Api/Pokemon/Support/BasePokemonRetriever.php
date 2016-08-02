@@ -15,9 +15,9 @@ class BasePokemonRetriever {
      */
     public static function getPokemonFamilyId($pokemonId)
     {
-        // Check if valid pokemon family id
+        // Check if the pokemon id is a valid pokemon family id
         if (!PokemonFamilyId::isValid($pokemonId)) {
-            self::getPokemonFamilyId(--$pokemonId);
+            return self::getPokemonFamilyId(--$pokemonId);
         }
 
         return $pokemonId;
