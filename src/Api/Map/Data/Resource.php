@@ -2,11 +2,17 @@
 
 namespace NicklasW\PkmGoApi\Api\Map\Data;
 
+use GetMapObjectsResponse;
 use NicklasW\PkmGoApi\Api\Data\Data;
+use NicklasW\PkmGoApi\Api\Map\Data\Resources\CatchablePokemon;
 use NicklasW\PkmGoApi\Api\Map\Data\Resources\Fort;
+use NicklasW\PkmGoApi\Api\Map\Data\Resources\NearbyPokemon;
 use NicklasW\PkmGoApi\Api\Map\Data\Resources\SpawnPoint;
+use NicklasW\PkmGoApi\Api\Map\Data\Resources\WildPokemon as WildPokemonData;
 use POGOProtos\Map\Fort\FortData;
 use POGOProtos\Map\Fort\FortType;
+use POGOProtos\Map\Pokemon\MapPokemon;
+use POGOProtos\Map\Pokemon\WildPokemon;
 use POGOProtos\Map\SpawnPoint as SpawnPointData;
 
 class Resource extends Data {
@@ -22,24 +28,59 @@ class Resource extends Data {
     protected $gyms = array();
 
     /**
-     * @var
+     * @var SpawnPoint[]
      */
     protected $spawnPoints = array();
 
     /**
-     * @var
+     * @var CatchablePokemon[]
      */
-    protected $catchablePokemons;
+    protected $catchablePokemons = array();
 
     /**
-     * @var
+     * @var WildPokemonData[]
      */
-    protected $wildPokemons;
+    protected $wildPokemons = array();
 
     /**
-     * @var
+     * @var NearbyPokemon[]
      */
-    protected $nearbyPokemons;
+    protected $nearbyPokemons = array();
+
+    /**
+     * Creates a data instance from a Protobuf Message.
+     *
+     * @param GetMapObjectsResponse $data
+     * @return static
+     */
+    public static function create($data)
+    {
+        $instance = new static();
+
+        // Iterate through the list of map cells
+        foreach ($data->getMapCellsArray() as $mapCell) {
+            // Add forts to the list of forts
+            $instance->addForts($mapCell->getFortsArray());
+
+            // Add spawn points to the list of spawn points
+            $instance->addSpawnPoints($mapCell->getSpawnPointsArray());
+
+            // Add catchable pokemons to the list of catchable pokemons
+            $instance->addCatchablePokemons($mapCell->getCatchablePokemonsArray());
+
+            // Add wild pokemons to the list of catchable pokemons
+            $instance->addCatchablePokemons($mapCell->getWildPokemonsArray());
+
+            // Add wild pokemons to the list of wild pokemons
+            $instance->addWildPokemons($mapCell->getWildPokemonsArray());
+
+            // Add nearby pokemons to the list of nearby pokemons
+            $instance->addNearbyPokemons($mapCell->getNearbyPokemonsArray());
+
+        }
+
+        return $instance;
+    }
 
     /**
      * Add a new fort.
@@ -59,7 +100,7 @@ class Resource extends Data {
 
                     break;
                 case FortType::GYM:
-                    // Add the fort to the list of pokestop
+                    // Add the fort to the list of gym
                     $this->gyms[] = $instance;
 
                     break;
@@ -81,29 +122,38 @@ class Resource extends Data {
     }
 
     /**
+     * Adds catchable pokemon to the list of catchable pokemons.
      *
+     * @param MapPokemon $catchablePokemons
      */
-    public function addCatchablePokemons()
+    public function addCatchablePokemons($catchablePokemons)
     {
-
+        foreach ($catchablePokemons as $catchablePokemon) {
+            $this->catchablePokemons[] = CatchablePokemon::create($catchablePokemon);
+        }
+    }
+    /**
+     * Adds catchable pokemon to the list of catchable pokemons.
+     *
+     * @param WildPokemon $wildPokemons
+     */
+    public function addWildPokemons($wildPokemons)
+    {
+        foreach ($wildPokemons as $wildPokemon) {
+            $this->wildPokemons[] = WildPokemonData::create($wildPokemon);
+        }
     }
 
     /**
+     * Adds nearby pokemon to the list of nearby pokemons.
      *
+     * @param MapPokemon $nearbyPokemons
      */
-    public function addWildPokemons()
+    public function addNearbyPokemons($nearbyPokemons)
     {
-
-
+        foreach ($nearbyPokemons as $nearbyPokemon) {
+            $this->nearbyPokemons[] = NearbyPokemon::create($nearbyPokemon);
+        }
     }
-
-    /**
-     *
-     */
-    public function addNearbyPokemons()
-    {
-
-    }
-
 
 }
