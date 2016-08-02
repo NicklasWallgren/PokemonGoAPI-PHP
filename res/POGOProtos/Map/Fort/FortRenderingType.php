@@ -12,7 +12,7 @@ namespace POGOProtos\Map\Fort {
 
   // enum POGOProtos.Map.Fort.FortRenderingType
   abstract class FortRenderingType extends ProtobufEnum {
-    const DEFAULT = 0;
+    const NONE = 0;
     const INTERNAL_TEST = 1;
 
     public static $_values = array(
