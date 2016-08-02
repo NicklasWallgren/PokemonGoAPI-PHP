@@ -7,13 +7,13 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 use NicklasW\PkmGoApi\Api\Data\Data;
 
 /**
- * @method void setPokedexEntryNumber(integer $pokedexEntryNumber)
+ * @method void setPokemonId(integer $pokemonId)
  * @method void setTimesEncountered(integer $timesEncountered)
  * @method void setTimesCaptured(integer $timesCaptured)
  * @method void setEvolutionStonePieces(integer $evolutionStonePieces)
  * @method void setEvolutionStones(integer $evolutionStones)
  *
- * @method int getPokedexEntryNumber()
+ * @method int getPokemonId()
  * @method int getTimesEncountered()
  * @method int getTimesCaptured()
  * @method int getEvolutionStonePieces()
@@ -24,7 +24,7 @@ class PokedexItem extends Data {
     /**
      * @var int
      */
-    protected $pokedexEntryNumber = 0;
+    protected $pokemonId = 0;
 
     /**
      * @var int

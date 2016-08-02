@@ -6,6 +6,8 @@ use Exception;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyBank;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyItem;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokeBank;
+use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Pokedex;
+use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokedexItem;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokemonItem;
 use NicklasW\PkmGoApi\Api\Player\Inventory;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\BasePokemonRetriever;
@@ -172,6 +174,16 @@ class Pokemon extends Procedure {
     }
 
     /**
+     * Returns the pokedex entry.
+     *
+     * @return PokedexItem
+     */
+    public function getPokedexEntry()
+    {
+        return $this->getPokedex()->get($this->getPokemonId());
+    }
+
+    /**
      * Transfers the pokemon.
      */
     public function transfer()
@@ -300,8 +312,18 @@ class Pokemon extends Procedure {
     {
         return $this->getInventory()->getItems()->getCandyBank();
     }
+
     /**
+     * Returns the candy bank.
      *
+     * @return Pokedex
+     */
+    protected function getPokedex()
+    {
+        return $this->getInventory()->getItems()->getPokedex();
+    }
+
+    /**
      * Returns the poke bank.
      *
      * @return PokeBank

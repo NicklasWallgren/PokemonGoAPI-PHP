@@ -6,12 +6,16 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 use NicklasW\PkmGoApi\Api\Data\Data;
 use POGOProtos\Data\PokedexEntry;
 
+/**
+ * @method void setItems(PokedexItem[] $items)
+ * @method PokedexItem[] getItems()
+ */
 class Pokedex extends Data {
 
     /**
      * @var array
      */
-    protected $pokedexItems = array();
+    protected $items = array();
 
     /**
      * Add pokedex item.
@@ -21,10 +25,10 @@ class Pokedex extends Data {
     public function add($pokedexEntry)
     {
         // Create the pokedex item
-        $pokedexItem = PokedexItem::create($pokedexEntry);
+        $item = PokedexItem::create($pokedexEntry);
 
         // Add the pokedex item to the list of pokedex items
-        $this->pokedexItems[$pokedexItem->getPokedexEntryNumber()] = $pokedexItem;
+        $this->items[$item->getPokemonId()] = $item;
     }
 
     /**
@@ -35,7 +39,7 @@ class Pokedex extends Data {
      */
     public function get($pokemonId)
     {
-        return $this->pokedexItems[$pokemonId];
+        return $this->items[$pokemonId];
     }
 
 }
