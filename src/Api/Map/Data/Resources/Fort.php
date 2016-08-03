@@ -113,7 +113,7 @@ class Fort extends Data {
     /**
      * @var
      */
-    protected $renderingType = FortRenderingType::NONE;
+    protected $renderingType = FortRenderingType::DEFAULT;
 
     /**
      * @var string
