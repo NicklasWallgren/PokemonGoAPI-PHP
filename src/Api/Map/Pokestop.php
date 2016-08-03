@@ -3,10 +3,46 @@
 namespace NicklasW\PkmGoApi\Api\Map;
 
 use NicklasW\PkmGoApi\Api\Map\Data\Resources\Fort;
+use NicklasW\PkmGoApi\Api\Map\Data\Results\PokestopSpinResult;
 use NicklasW\PkmGoApi\Api\Procedure;
+use NicklasW\PkmGoApi\Api\Support\MakeDataPropertiesCallable;
 use NicklasW\PkmGoApi\Services\Request\MapRequestService;
+use NicklasW\PkmGoApi\Services\Request\PokestopRequestService;
+use POGOProtos\Networking\Responses\FortSearchResponse_Result;
 use S2\S2LatLng;
 
+/**
+ * @method void setId(string $id)
+ * @method void setLastModifiedTimestampMs(int $lastModifiedTimestampMs)
+ * @method void setLatitude(int $latitude)
+ * @method void setLongitude(int $longitude)
+ * @method void setEnabled(boolean $enabled)
+ * @method void setType(int $type)
+ * @method void setOwnedByTeam(int $ownedByTeam)
+ * @method void setGuardPokemonId(int $candies)
+ * @method void setGuardPokemonCp(int $candies)
+ * @method void setGymPoints(int $gymPoints)
+ * @method void setIsInBattle(boolean $isInBattle)
+ * @method void setCooldownCompleteTimestampMs(int $cooldownCompleteTimestampMs)
+ * @method void setRenderingType(int $candies)
+ * @method void setActiveFortModifier(int $activeFortModifier)
+ * @method void setLureInfo($lureInfo)
+ * @method string getId()
+ * @method int getLastModifiedTimestampMs()
+ * @method int getLatitude()
+ * @method int getLongitude()
+ * @method boolean getEnabled()
+ * @method int getType()
+ * @method int getOwnedByTeam()
+ * @method int getGuardPokemonId()
+ * @method int getGuardPokemonCp()
+ * @method int getGymPoints()
+ * @method boolean getIsInBattle()
+ * @method int getCooldownCompleteTimestampMs()
+ * @method int getRenderingType()
+ * @method int getActiveFortModifier()
+ * @method void getLureInfo()
+ */
 class Pokestop extends Procedure {
 
     use MakeDataPropertiesCallable;
@@ -49,16 +85,18 @@ class Pokestop extends Procedure {
         // The current player location
         $playerLocation = S2LatLng::fromDegrees($this->getCurrentLatitude(), $this->getCurrentLongitude());
 
+        var_dump($pokestopLocation->getEarthDistance($playerLocation));
+
         // Check if the distance is within the loot interval
         return $pokestopLocation->getEarthDistance($playerLocation) < self::$LOOT_DISTANCE;
     }
 
     /**
-     * Returns true if available for looting, false otherwise.
+     * Returns true if available for spin, false otherwise.
      *
      * @return boolean
      */
-    public function canLoot()
+    public function canSpin()
     {
         // Check if the pokestop is on cooldown
         $active = $this->cooldownTimestamp < microtime();
@@ -67,11 +105,28 @@ class Pokestop extends Procedure {
     }
 
     /**
-     * Loot the pokestop.
+     * Spin the pokestop.
+     *
+     * @return PokestopSpinResult
      */
-    public function loot()
+    public function spin()
     {
+        // Retrieve the map resources
+        $fortResponse = $this->getRequestService()->spin($this->getId(),
+            $this->getLatitude(), $this->getLongitude());
 
+        switch ($fortResponse->getResult()) {
+
+            case FortSearchResponse_Result::SUCCESS:
+                // Update inventory
+
+                // Set the cooldown timestamp
+                $this->cooldownTimestamp = $fortResponse->getCooldownCompleteTimestampMs();
+
+                break;
+        }
+
+        return PokestopSpinResult::create($fortResponse);
     }
 
     public function hasLure()
@@ -84,6 +139,9 @@ class Pokestop extends Procedure {
 
     }
 
+    /**
+     * Returns the pokestop details.
+     */
     public function getDetails()
     {
 
@@ -109,16 +167,14 @@ class Pokestop extends Procedure {
         return $this->getApplication()->getLongitude();
     }
 
-
     /**
      * Returns the request service.
      *
-     * @return MapRequestService
+     * @return PokestopRequestService
      */
     protected function getRequestService()
     {
-        return new MapRequestService();
+        return new PokestopRequestService();
     }
-
 
 }

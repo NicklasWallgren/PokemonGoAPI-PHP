@@ -9,6 +9,7 @@ use NicklasW\PkmGoApi\Api\Map\Data\Resources\Fort;
 use NicklasW\PkmGoApi\Api\Map\Data\Resources\NearbyPokemon;
 use NicklasW\PkmGoApi\Api\Map\Data\Resources\SpawnPoint;
 use NicklasW\PkmGoApi\Api\Map\Data\Resources\WildPokemon as WildPokemonData;
+use NicklasW\PkmGoApi\Api\Map\Pokestop;
 use POGOProtos\Map\Fort\FortData;
 use POGOProtos\Map\Fort\FortType;
 use POGOProtos\Map\Pokemon\MapPokemon;
@@ -96,7 +97,7 @@ class Resource extends Data {
             switch ($fort->getType()) {
                 case FortType::CHECKPOINT:
                     // Add the fort to the list of pokestop
-                    $this->pokestops[] = $instance;
+                    $this->pokestops[] = new Pokestop($instance);
 
                     break;
                 case FortType::GYM:
