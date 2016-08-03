@@ -4,6 +4,7 @@ namespace NicklasW\PkmGoApi\Api\Map;
 
 use NicklasW\PkmGoApi\Api\Map\Data\Resources\Fort;
 use NicklasW\PkmGoApi\Api\Procedure;
+use NicklasW\PkmGoApi\Services\Request\MapRequestService;
 use S2\S2LatLng;
 
 class Pokestop extends Procedure {
@@ -53,15 +54,23 @@ class Pokestop extends Procedure {
     }
 
     /**
+     * Returns true if available for looting, false otherwise.
+     *
+     * @return boolean
      */
     public function canLoot()
     {
+        // Check if the pokestop is on cooldown
+        $active = $this->cooldownTimestamp < microtime();
 
+        return $this->isInRange() && $active;
     }
 
+    /**
+     * Loot the pokestop.
+     */
     public function loot()
     {
-
 
     }
 
@@ -99,5 +108,17 @@ class Pokestop extends Procedure {
     {
         return $this->getApplication()->getLongitude();
     }
+
+
+    /**
+     * Returns the request service.
+     *
+     * @return MapRequestService
+     */
+    protected function getRequestService()
+    {
+        return new MapRequestService();
+    }
+
 
 }

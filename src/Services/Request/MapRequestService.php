@@ -14,7 +14,7 @@ class MapRequestService extends RequestService {
      *
      * @param double $latitude
      * @param double $longitude
-     * @param array $mapCellIds
+     * @param array  $mapCellIds
      * @return GetMapObjectsResponse
      * @throws \Exception
      * @throws AuthenticationException
