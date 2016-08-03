@@ -6,6 +6,7 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 use Exception;
 use NicklasW\PkmGoApi\Api\Data\Data;
 use POGOProtos\Enums\PokemonFamilyId;
+use POGOProtos\Inventory\Candy;
 use POGOProtos\Inventory\PokemonFamily;
 
 /**
@@ -20,7 +21,7 @@ class CandyBank extends Data {
     protected $candies = array();
 
     /**
-     * @param PokemonFamily $data
+     * @param Candy $data
      */
     public function add($data)
     {
