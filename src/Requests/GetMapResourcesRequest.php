@@ -68,30 +68,11 @@ class GetMapResourcesRequest extends Request {
 
         $message->setLatitude($this->latitude);
         $message->setLongitude($this->longitude);
-//        $message->addAllCellId($this->cellIds);
-
-
-
-
-//        var_dump($message->getCellIdArray());
-
-//        die();
-
 
         foreach ($this->cellIds as $cellId) {
-
-//            var_dump($cellId);
-
             $message->addCellId($cellId);
-
             $message->addSinceTimestampMs(0);
         }
-
-//        print_r($message);
-
-//        die();
-
-
 
         return $message;
     }
