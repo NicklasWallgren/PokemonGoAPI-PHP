@@ -125,7 +125,7 @@ class Items extends Data {
 
         } elseif (self::isCandy($itemData)) {
             // Retrieve the candy item data
-            $this->candyBank->add($itemData->getPokemonFamily());
+            $this->candyBank->add($itemData->getCandy());
 
         } elseif (self::isPokedexItem($itemData)) {
             // Retrieve the pokedex item data
@@ -178,7 +178,7 @@ class Items extends Data {
      */
     protected static function isCandy($itemData)
     {
-        return $itemData->getPokemonFamily() != null;
+        return $itemData->getCandy() != null;
     }
 
     /**
