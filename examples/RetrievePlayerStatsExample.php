@@ -14,7 +14,7 @@ class RetrievePlayerStatsExample {
     {
         // Initialize the pokemon go application
         $application = new ApplicationKernel(
-            'INSERT_EMAIL', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
+            'INSERT_USER', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
 
         // Retrieve the pokemon go api instance
         $pokemonGoApi = $application->getPokemonGoApi();
@@ -23,7 +23,7 @@ class RetrievePlayerStatsExample {
         $inventory = $pokemonGoApi->getInventory();
 
         // Retrieve the player stats
-        $playerStats = $inventory->getItems()->getStats();
+        $playerStats = $inventory->getStats();
 
         echo sprintf('The player level: %s', $playerStats->getLevel());
     }

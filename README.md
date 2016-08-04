@@ -20,10 +20,10 @@ $pokemonGoApi = $application->getPokemonGoApi();
 $inventory = $pokemonGoApi->getInventory();
 
 // Retrieve the poke bank
-$pokeBank = $inventory->getItems()->getPokeBank();
+$pokeBank = $inventory->getPokeBank();
 
 // Retrieve a pokemon of type pidgey
-$pokemon = current($pokeBank->getPokemonsByType(PokemonId::PIDGEY));
+$pokemon = $pokeBank->getPokemonsByType(PokemonId::PIDGEY)->first();
 
 // Transfer / Release the pokemon (Send to the meat grinder)
 $pokemon->transfer();
@@ -32,7 +32,6 @@ $pokemon->transfer();
 ## TODO
   - Implement the Map API
   - Improve logging
-
 
 ## Contributors
   - Nicklas Wallgren
