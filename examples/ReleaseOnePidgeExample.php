@@ -15,7 +15,7 @@ class ReleaseOnePidgeExample {
     {
         // Initialize the pokemon go application
         $application = new ApplicationKernel(
-            'INSERT_EMAIL', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
+            'INSERT_USER', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
 
         // Retrieve the pokemon go api instance
         $pokemonGoApi = $application->getPokemonGoApi();
@@ -24,12 +24,12 @@ class ReleaseOnePidgeExample {
         $inventory = $pokemonGoApi->getInventory();
 
         // Retrieve the poke bank
-        $pokeBank = $inventory->getItems()->getPokeBank();
+        $pokeBank = $inventory->getPokeBank();
 
         // Retrieve a pokemon of type pidgey
         $pokemon = $pokeBank->getPokemonsByType(PokemonId::PIDGEY)->first();
 
-        // Check if we retireved a pokemon
+        // Check if we retrieved a pokemon
         if (!$pokemon) {
             throw new Exception('No pokemon of type pidgey found. Please check your inventory');
         }

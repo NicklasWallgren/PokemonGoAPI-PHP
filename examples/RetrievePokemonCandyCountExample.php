@@ -16,7 +16,7 @@ class RetrievePokemonCandyCountExample {
     {
         // Initialize the pokemon go application
         $application = new ApplicationKernel(
-            'INSERT_EMAIL', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
+            'INSERT_USER', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
 
         // Retrieve the pokemon go api instance
         $pokemonGoApi = $application->getPokemonGoApi();
@@ -25,7 +25,7 @@ class RetrievePokemonCandyCountExample {
         $inventory = $pokemonGoApi->getInventory();
 
         // Retrieve the candy bank
-        $candyBank = $inventory->getItems()->getCandyBank();
+        $candyBank = $inventory->getCandyBank();
 
         // Retrieve the pidgey candy item
         $candyItem = $candyBank->get(PokemonFamilyId::FAMILY_PIDGEY);

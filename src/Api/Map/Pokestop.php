@@ -85,8 +85,6 @@ class Pokestop extends Procedure {
         // The current player location
         $playerLocation = S2LatLng::fromDegrees($this->getCurrentLatitude(), $this->getCurrentLongitude());
 
-        var_dump($pokestopLocation->getEarthDistance($playerLocation));
-
         // Check if the distance is within the loot interval
         return $pokestopLocation->getEarthDistance($playerLocation) < self::$LOOT_DISTANCE;
     }
