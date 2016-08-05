@@ -38,6 +38,131 @@ class CombatPointsCalculator {
         return (int)($attack * pow($defense, 0.5) * pow($stamina, 0.5) * pow($maxCpMultplier, 2) / 10);
     }
 
+
+    /**
+     * Returns the combat points after powerup.
+     *
+     * @param float $cp
+     * @param float $cpMultiplier
+     * @return integer
+     */
+    public static function getCpAfterPowerup($cp, $cpMultiplier)
+    {
+        $level = self::getLevel($cpMultiplier);
+
+        if ($level <= 10) {
+            return (int)(($cp * 0.009426125469) / pow($cpMultiplier, 2));
+        }
+        if ($level <= 20) {
+            return (int)(($cp * 0.008919025675) / pow($cpMultiplier, 2));
+        }
+        if ($level <= 30) {
+            return (int)(($cp * 0.008924905903) / pow($cpMultiplier, 2));
+        }
+
+        return (int)(($cp * 0.00445946079) / pow($cpMultiplier, 2));
+    }
+
+    /**
+     * Returns the candy cost for powerup.
+     *
+     * @param float   $cpMultiplier
+     * @param integer $powerups
+     * @return integer
+     */
+    public static function getCandyCostForPowerup($cpMultiplier, $powerups)
+    {
+        $level = self::getLevel($cpMultiplier);
+
+        if ($level <= 13 && $powerups <= 20) {
+            return 1;
+        }
+
+        if ($level <= 21 && $powerups <= 36) {
+            return 2;
+        }
+
+        if ($level <= 31 && $powerups <= 60) {
+            return 3;
+        }
+
+        return 4;
+    }
+
+    /**
+     * Returns the stardust cost for powerup.
+     *
+     * @param float $cpMultiplier
+     * @param integer $powerups
+     * @return integer
+     */
+    public static function getStardustCostsForPowerup($cpMultiplier, $powerups)
+    {
+        $level = self::getLevel($cpMultiplier);
+
+        if ($level <= 3 && $powerups <= 4) {
+            return 200;
+        }
+        if ($level <= 4 && $powerups <= 8) {
+            return 400;
+        }
+        if ($level <= 7 && $powerups <= 12) {
+            return 600;
+        }
+        if ($level <= 8 && $powerups <= 16) {
+            return 800;
+        }
+        if ($level <= 11 && $powerups <= 20) {
+            return 1000;
+        }
+        if ($level <= 13 && $powerups <= 24) {
+            return 1300;
+        }
+        if ($level <= 15 && $powerups <= 28) {
+            return 1600;
+        }
+        if ($level <= 17 && $powerups <= 32) {
+            return 1900;
+        }
+        if ($level <= 19 && $powerups <= 36) {
+            return 2200;
+        }
+        if ($level <= 21 && $powerups <= 40) {
+            return 2500;
+        }
+        if ($level <= 23 && $powerups <= 44) {
+            return 3000;
+        }
+        if ($level <= 25 && $powerups <= 48) {
+            return 3500;
+        }
+        if ($level <= 27 && $powerups <= 52) {
+            return 4000;
+        }
+        if ($level <= 29 && $powerups <= 56) {
+            return 4500;
+        }
+        if ($level <= 31 && $powerups <= 60) {
+            return 5000;
+        }
+        if ($level <= 33 && $powerups <= 64) {
+            return 6000;
+        }
+        if ($level <= 35 && $powerups <= 68) {
+            return 7000;
+        }
+        if ($level <= 37 && $powerups <= 72) {
+            return 8000;
+        }
+        if ($level <= 39 && $powerups <= 76) {
+            return 9000;
+        }
+
+        return 10000;
+
+
+    }
+
     /**
      * @var array The level to combat points multiplier
      */

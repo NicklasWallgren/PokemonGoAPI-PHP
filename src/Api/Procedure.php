@@ -10,6 +10,14 @@ use NicklasW\PkmGoApi\Services\RequestService;
 abstract class Procedure {
 
     /**
+     * Procedure constructor.
+     */
+    public function __construct()
+    {
+        $this->setUpTraits();
+    }
+
+    /**
      * Returns the request service.
      *
      * @return RequestService
@@ -37,6 +45,16 @@ abstract class Procedure {
     protected function getApplication()
     {
         return App::getInstance();
+    }
+
+    /**
+     * Set up the traits.
+     *
+     * @return void
+     */
+    protected function setUpTraits()
+    {
+
     }
 
 }

@@ -11,13 +11,26 @@ use POGOProtos\Enums\PokemonType;
 class PokemonMetaRegistry {
 
     /**
-     * @var array
+     * @var PokemonMeta[] The list of pokemon meta data
      */
     public static $POKEMON_META = array();
 
+    /**
+     * Returns the pokemon meta data by pokemon id.
+     *
+     * @param integer $pokemonId
+     * @return PokemonMeta
+     */
+    public static function getByPokemonId($pokemonId)
+    {
+        return self::$POKEMON_META[$pokemonId];
+    }
+
+    /**
+     * Initialize the pokemon meta registry.
+     */
     public static function initialize()
     {
-        $pokemonMeta;
         $pokemonMeta = new PokemonMeta();
         $pokemonMeta->setTemplateId("V0001_POKEMON_BULBASAUR");
         $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_BULBASAUR);

@@ -13,6 +13,7 @@ use NicklasW\PkmGoApi\Api\Player\Inventory;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\BasePokemonRetriever;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\CombatPointsCalculator;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonCombatPointsCalculator;
+use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonDetailsTrait;
 use NicklasW\PkmGoApi\Api\Procedure;
 use NicklasW\PkmGoApi\Api\Support\MakeDataPropertiesCallable;
 use NicklasW\PkmGoApi\Services\Request\PokemonRequestService;
@@ -86,31 +87,12 @@ use POGOProtos\Networking\Responses\ReleasePokemonResponse_Result;
 class Pokemon extends Procedure {
 
     use MakeDataPropertiesCallable;
+    use PokemonDetailsTrait;
 
     /**
      * @var PokemonItem
      */
     protected $data;
-
-    /**
-     * @var float The calculated level
-     */
-    protected $level;
-
-    /**
-     * @var string The pokemon name.
-     */
-    protected $name;
-
-    /**
-     * @var double The IV ratio.
-     */
-    protected $ivRatio;
-
-    /**
-     * @var integer The pokemon family id
-     */
-    protected $pokemonFamilyId;
 
     /**
      * Pokemon constructor.
@@ -121,66 +103,7 @@ class Pokemon extends Procedure {
     {
         $this->data = $pokemonData;
 
-        // Initialize the transient values
-        $this->initializeTransientValues();
-    }
-
-    /**
-     * Returns the pokemon data.
-     *
-     * @return PokemonItem
-     */
-    public function getPokemonData()
-    {
-        return $this->data;
-    }
-
-    /**
-     * Returns the pokemon name.
-     *
-     * @return mixed|string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Returns the level.
-     *
-     * @return float
-     */
-    public function getLevel()
-    {
-        return $this->level;
-    }
-
-    /**
-     * @return float
-     */
-    public function getIvRatio()
-    {
-        return $this->ivRatio;
-    }
-
-    /**
-     * Returns the number of candies.
-     *
-     * @return CandyItem
-     */
-    public function getCandies()
-    {
-        return $this->getCandyBank()->get($this->pokemonFamilyId);
-    }
-
-    /**
-     * Returns the pokedex entry.
-     *
-     * @return PokedexItem
-     */
-    public function getPokedexEntry()
-    {
-        return $this->getPokedex()->get($this->getPokemonId());
+        parent::__construct();
     }
 
     /**
@@ -245,42 +168,13 @@ class Pokemon extends Procedure {
     }
 
     /**
-     * Initialize the transient values.
-     */
-    protected function initializeTransientValues()
-    {
-        // Initialize the pokemon level
-        $this->level = CombatPointsCalculator::getLevel(
-            $this->getPokemonData()->getCpMultiplier() + $this->getPokemonData()->getAdditionalCpMultiplier());
-
-        // Initialize the pokemon name
-        $this->name = $this->getNameOrNickname();
-
-        // Calculates the IV ratio
-        $this->ivRatio = ($this->getIndividualAttack() +
-                $this->getIndividualDefense() + $this->getIndividualStamina()) / 45.0;
-
-        // Retrieve the pokemon family id
-        $this->pokemonFamilyId = BasePokemonRetriever::getPokemonFamilyId($this->getPokemonId());
-
-    }
-
-    /**
-     * Returns the pokemon name or nickname.
+     * Returns the pokemon data.
      *
-     * @return string
+     * @return PokemonItem
      */
-    protected function getNameOrNickname()
+    public function getPokemonData()
     {
-        // Retrieve the pokemon data
-        $data = $this->getPokemonData();
-
-        // Check if the pokemon has a nickname
-        if ($data->getNickname() != null) {
-            return $data->getNickname();
-        }
-
-        return PokemonId::toString($this->getPokemonData()->getPokemonId());
+        return $this->data;
     }
 
     /**
@@ -291,56 +185,6 @@ class Pokemon extends Procedure {
     protected function getRequestService()
     {
         return new PokemonRequestService();
-    }
-
-    /**
-     * Returns the inventory.
-     *
-     * @return Inventory
-     */
-    protected function getInventory()
-    {
-        return $this->getPokemonGoApi()->getInventory();
-    }
-
-    /**
-     * Returns the candy bank.
-     *
-     * @return CandyBank
-     */
-    protected function getCandyBank()
-    {
-        return $this->getInventory()->getItems()->getCandyBank();
-    }
-
-    /**
-     * Returns the candy bank.
-     *
-     * @return Pokedex
-     */
-    protected function getPokedex()
-    {
-        return $this->getInventory()->getItems()->getPokedex();
-    }
-
-    /**
-     * Returns the poke bank.
-     *
-     * @return PokeBank
-     */
-    protected function getPokeBank()
-    {
-        return $this->getPokemonGoApi()->getInventory()->getItems()->getPokeBank();
-    }
-
-    /**
-     * Returns the pokemon family id.
-     *
-     * @return integer
-     */
-    public function getPokemonFamilyId()
-    {
-        return $this->pokemonFamilyId;
     }
 
 }
