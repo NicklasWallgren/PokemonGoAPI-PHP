@@ -75,4 +75,17 @@ class PokemonCollection extends Collection {
         }, SORT_REGULAR, $descending);
     }
 
+    /**
+     * Returns a sorted collection by date captured.
+     *
+     * @param bool $descending
+     * @return static
+     */
+    public function sortByDate($descending = false)
+    {
+        return $this->sortBy(function (Pokemon $pokemon1) {
+            return $pokemon1->getCreationTimeMs();
+        }, SORT_REGULAR, $descending);
+    }
+
 }
