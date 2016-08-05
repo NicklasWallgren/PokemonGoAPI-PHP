@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Handlers;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
+use GuzzleHttp\Psr7\StreamWrapper;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
@@ -230,7 +231,7 @@ class RequestHandler {
         $responseEnvelop = new ResponseEnvelope();
 
         // Unmarshall the response
-        $responseEnvelop->read($response->getBody()->getContents());
+        $responseEnvelop->read(StreamWrapper::getResource($response->getBody()));
 
         return $responseEnvelop;
     }
