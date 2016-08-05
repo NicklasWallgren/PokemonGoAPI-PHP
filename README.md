@@ -34,7 +34,8 @@ $pokemon->transfer();
   - Improve logging
 
 ## Contributors
-  - Nicklas Wallgren
+  - [Nicklas Wallgren](https://github.com/NicklasWallgren)
+  - [Ni42](https://github.com/Ni42)
 
 ## Credits
 - [Grover-c13](https://github.com/Grover-c13) for the inspiration
