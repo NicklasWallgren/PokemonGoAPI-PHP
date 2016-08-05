@@ -175,4 +175,40 @@ class Stats extends Data {
      */
     protected $smallRattataCaught = 0;
 
+    /**
+     * @var int[]
+     */
+    protected static $requiredXp = [
+        0, 1000, 3000, 6000, 10000, 15000, 21000, 28000, 36000, 45000, 55000, 65000, 75000, 85000, 100000, 120000,
+        140000, 160000, 185000, 210000, 260000, 335000, 435000, 560000, 710000, 900000, 1100000, 1350000, 1650000,
+        2000000, 2500000, 3000000, 3750000, 4750000, 6000000, 7500000, 9500000, 12000000, 15000000, 20000000];
+
+    /**
+     * Return the XP required for the given level.
+     *
+     * @param int $level
+     * @return int
+     */
+    public function getLevelXp($level = 1) {
+        return isset(self::$requiredXp[$level-1]) ? self::$requiredXp[$level-1] : 0;
+    }
+
+    /**
+     * Return the XP required for the current level.
+     *
+     * @return int
+     */
+    public function getCurrentLevelXp() {
+        return $this->getLevelXp($this->getLevel());
+    }
+
+    /**
+     * Return the XP earned on the current level.
+     *
+     * @return number
+     */
+    public function getCurrentLevelProgressXp() {
+        return $this->getExperience() - $this->getCurrentLevelXp();
+    }
+
 }
