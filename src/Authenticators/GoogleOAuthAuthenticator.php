@@ -49,7 +49,7 @@ class GoogleOAuthAuthenticator implements Authenticator
      *
      * @return \NicklasW\PkmGoApi\Authenticators\GoogleAuthCode\Parsers\Results\GoogleOAuthResult
      */
-    public function exchangeAuthCode($authorization_code)
+    protected function exchangeAuthCode($authorization_code)
     {
         return $this->client()->exchangeAuthCode($authorization_code);
     }
@@ -61,7 +61,7 @@ class GoogleOAuthAuthenticator implements Authenticator
      *
      * @return \NicklasW\PkmGoApi\Authenticators\GoogleAuthCode\Parsers\Results\GoogleOAuthResult
      */
-    public function getOauthToken($refreshToken)
+    protected function getOauthToken($refreshToken)
     {
         return $this->client()->getOauthToken($refreshToken);
     }

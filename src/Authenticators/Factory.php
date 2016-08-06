@@ -87,4 +87,5 @@ class Factory {
     {
         return new GoogleOAuthAuthenticator();
     }
+
 }
