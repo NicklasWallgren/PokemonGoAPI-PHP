@@ -3,12 +3,14 @@
 
 namespace NicklasW\PkmGoApi\Providers;
 
-use NicklasW\PkmGoApi\Authenticators\Factory as AuthenticatorFactory;
-use NicklasW\PkmGoApi\Authenticators\Managers\AuthenticationManager;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler;
+
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 use NicklasW\PkmGoApi\Requests\Envelops\Factory as EnvelopeFactory;
+
+use NicklasW\PkmGoApi\Authenticators\Factory as AuthenticatorFactory;
+
 
 class RequestHandlerServiceProvider extends ServiceProvider {
 
@@ -46,32 +48,60 @@ class RequestHandlerServiceProvider extends ServiceProvider {
     public function register()
     {
         // Create the RequestHandler instance
-        $this->app->container()->set('RequestHandler', new RequestHandler($this->authenticate(), $this->app));
+        $this->app->container()->set('RequestHandler',new RequestHandler(
+            $this->authenticate($this->authenticationType(), $this->user(), $this->password()), $this->app));
     }
 
     /**
      * Authenticate the user.
      *
-     * @return RequestEnvelope_AuthInfo
+     * @param integer $authType
+     * @param string  $user
+     * @param string  $password
+     * @return RequestEnvelope_AuthInfo|null
      */
-    protected function authenticate()
+    protected function authenticate($authType, $user, $password)
     {
-        Log::debug(sprintf('Authenticates user.'));
+        Log::debug(sprintf('Authentication user. User: \'%s\' Password: \'%s\' Authentication type: \'%s\'',
+            $user, $password, $authType));
 
-        return $this->envelopeFactory->create(EnvelopeFactory::$TYPE_AUTHINFO,
-            $this->getAuthenticationManager()->getIdentifier(),
-            $this->getAuthenticationManager()->getOauthToken()
-        );
+        // Retrieve the authenticator
+        $authenticator = $this->authenticatorFactory->create($authType);
+
+        // Authenticate the user and retrieve the auth token
+        $token = $authenticator->login($user, $password);
+        
+        return $this->envelopeFactory->create(EnvelopeFactory::$TYPE_AUTHINFO, $authenticator->identifier(), $token);
     }
 
     /**
-     * Returns the authentication manager.
+     * Returns the user.
      *
-     * @return AuthenticationManager
+     * @return string
      */
-    protected function getAuthenticationManager()
+    protected function user()
     {
-        return $this->app->getManager();
+        return $this->app->getUser();
+    }
+
+    /**
+     * Returns the password.
+     *
+     * @return string
+     */
+    protected function password()
+    {
+        return $this->app->getPassword();
+    }
+
+    /**
+     * Returns the authentication type.
+     *
+     * @return int
+     */
+    protected function authenticationType()
+    {
+        return $this->app->getAuthenticationType();
     }
 
 }

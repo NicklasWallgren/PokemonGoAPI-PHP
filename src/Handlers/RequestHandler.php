@@ -76,7 +76,6 @@ class RequestHandler {
      * RequestHandler constructor.
      *
      * @param RequestEnvelope_AuthInfo $authenticationInformation
-     * @param ApplicationKernel        $application
      */
     public function __construct($authenticationInformation, $application)
     {
