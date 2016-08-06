@@ -39,17 +39,6 @@ class PTCAuthenticator implements Authenticator {
     }
 
     /**
-     * Authenticate using token.
-     *
-     * @param string $token
-     * @return string The authentication token
-     */
-    public function loginByToken($token)
-    {
-
-    }
-
-    /**
      * Returns the authentication identifier.
      *
      * @return string
@@ -58,7 +47,6 @@ class PTCAuthenticator implements Authenticator {
     {
         return 'ptc';
     }
-
 
     /**
      * Returns the Authentication client
@@ -74,4 +62,6 @@ class PTCAuthenticator implements Authenticator {
 
         return $this->authenticationClient;
     }
+
+
 }

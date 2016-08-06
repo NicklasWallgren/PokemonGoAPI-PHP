@@ -1,7 +1,7 @@
 <?php
 
 
-namespace NicklasW\PkmGoApi\Authenticators\Google\Parsers\Results;
+namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results;
 
 class AccountInformationResult {
 

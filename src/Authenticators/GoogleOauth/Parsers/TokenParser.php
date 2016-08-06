@@ -1,10 +1,10 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Authenticators\Google\Parsers;
+namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers;
 
 use NicklasW\PkmGoApi\Authenticators\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Authenticators\Exceptions\ResponseException;
-use NicklasW\PkmGoApi\Authenticators\Google\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationTokenResult;
 use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;

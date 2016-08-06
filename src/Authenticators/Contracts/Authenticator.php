@@ -14,14 +14,6 @@ interface Authenticator {
     public function login($email, $password);
 
     /**
-     * Authenticate using token.
-     *
-     * @param string $token
-     * @return string The authentication token
-     */
-    public function loginByToken($token);
-
-    /**
      * Returns the authentication identifier.
      *
      * @return string

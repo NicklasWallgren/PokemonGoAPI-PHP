@@ -3,8 +3,8 @@
 namespace NicklasW\PkmGoApi\Authenticators;
 
 use NicklasW\PkmGoApi\Authenticators\Contracts\Authenticator;
-use NicklasW\PkmGoApi\Authenticators\Google\Clients\AuthenticationClient;
-use NicklasW\PkmGoApi\Authenticators\Google\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Clients\AuthenticationClient;
+use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationTokenResult;
 use NicklasW\PkmGoApi\Facades\Log;
 
 class GoogleAuthenticator implements Authenticator {
@@ -24,48 +24,16 @@ class GoogleAuthenticator implements Authenticator {
     public function login($email, $password)
     {
         // Retrieve the authentication token result
-        $tokenResult = $this->getAuthenticationToken($email, $password);
+        $tokenResult = $this->getToken($email, $password);
 
         Log::debug(sprintf('[#%s] Token: \'%s\'', __CLASS__, $tokenResult->getToken()));
 
         // Retrieve the oauth token
-        $oauthToken = $this->getOauthTokenByUserCredentials($email, $tokenResult->getToken());
+        $oauthToken = $this->getOauthToken($email, $tokenResult->getToken());
 
         Log::debug(sprintf('[#%s] OAuth token: \'%s\'', __CLASS__, $oauthToken->getAuthId()));
 
         return $oauthToken->getAuthId();
-    }
-
-    /**
-     * Authenticate using authentication code.
-     *
-     * @param string $token
-     * @return string
-     */
-    public function loginByToken($token)
-    {
-        // Retrieve the authentication token result
-        $tokenResult = $this->getOauthTokenByAuthenticationCode($token);
-
-        // Retrieve the oauth token
-        $oauthToken = $this->getOauthTokenByUserCredentials($tokenResult);
-
-        Log::debug(sprintf('[#%s] OAuth token: \'%s\'', __CLASS__, $oauthToken->getAuthId()));
-
-
-        
-
-        return "";
-    }
-
-    /**
-     * Authenticate using refresh token.
-     *
-     * @param string $token
-     */
-    public function loginByRefreshToken($token)
-    {
-
     }
 
     /**
@@ -85,32 +53,21 @@ class GoogleAuthenticator implements Authenticator {
      * @param $password
      * @return AuthenticationTokenResult
      */
-    protected function getAuthenticationToken($email, $password)
+    protected function getToken($email, $password)
     {
-        return $this->client()->getAuthenticationToken($email, $password);
+        return $this->client()->token($email, $password);
     }
 
     /**
-     * Returns the oauth token by user credentials.
+     * Returns the oauth token.
      *
      * @param string $email
      * @param string $token
      * @return AuthenticationTokenResult
      */
-    protected function getOauthTokenByUserCredentials($email, $token)
+    protected function getOauthToken($email, $token)
     {
-        return $this->client()->getOauthTokenByUserCredentials($email, $token);
-    }
-
-    /**
-     * Returns the oauth token by authentication code.
-     *
-     * @param string $authenticationCode
-     * @return AuthenticationTokenResult
-     */
-    protected function getOauthTokenByAuthenticationCode($authenticationCode)
-    {
-        return $this->client()->getOauthTokenByAuthenticationCode($authenticationCode);
+        return $this->client()->oauthToken($email, $token);
     }
 
     /**
