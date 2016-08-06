@@ -108,6 +108,8 @@ class Pokemon extends Procedure {
 
     /**
      * Transfers the pokemon.
+     *
+     * @return ReleasePokemonResponse
      */
     public function transfer()
     {
@@ -125,6 +127,8 @@ class Pokemon extends Procedure {
 
         // Remove the pokemon from the poke bank
         $pokeBank->removePokemon($this);
+
+        return $response;
     }
 
     /**
@@ -132,6 +136,8 @@ class Pokemon extends Procedure {
      *
      * @param string $name
      * @throws Exception
+     *
+     * @return NicknamePokemonResponse
      */
     public function rename($name)
     {
@@ -146,10 +152,14 @@ class Pokemon extends Procedure {
 
         // Update the pokemon name
         $this->data->setNickname($name);
+
+		return $response;
     }
 
     /**
      * Evolves the pokemon.
+     *
+     * @return EvolvePokemonResponse
      */
     public function evolve()
     {
@@ -165,6 +175,7 @@ class Pokemon extends Procedure {
         // Update the inventory
         $this->getInventory()->update();
 
+        return $response;
     }
 
     /**
