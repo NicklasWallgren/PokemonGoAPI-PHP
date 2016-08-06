@@ -1,6 +1,6 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Support;
+namespace NicklasW\PkmGoApi\Authenticators\Google\Support;
 
 use phpseclib\Crypt\RSA;
 use phpseclib\Math\BigInteger;

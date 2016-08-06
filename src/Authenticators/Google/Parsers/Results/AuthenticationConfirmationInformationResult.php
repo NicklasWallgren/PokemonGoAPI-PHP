@@ -1,9 +1,9 @@
 <?php
 
 
-namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results;
+namespace NicklasW\PkmGoApi\Authenticators\Google\Parsers\Results;
 
-class Result {
+class AuthenticationConfirmationInformationResult {
 
     /**
      * @var The parsed data
@@ -35,5 +35,26 @@ class Result {
     {
         $this->data = $data;
     }
+
+    /**
+     * Returns the approve url.
+     *
+     * @return mixed
+     */
+    public function getApproveUrl()
+    {
+        return $this->data['approveUrl'];
+    }
+
+    /**
+     * Returns the state warapper id.
+     *
+     * @return mixed
+     */
+    public function getStateWrapperId()
+    {
+        return $this->data['stateWrapperId'];
+    }
+
 
 }

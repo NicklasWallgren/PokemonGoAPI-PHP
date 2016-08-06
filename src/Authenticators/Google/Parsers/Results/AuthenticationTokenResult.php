@@ -1,9 +1,9 @@
 <?php
 
 
-namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results;
+namespace NicklasW\PkmGoApi\Authenticators\Google\Parsers\Results;
 
-class AuthenticationCodeResult {
+class AuthenticationTokenResult {
 
     /**
      * @var The parsed data
@@ -37,13 +37,23 @@ class AuthenticationCodeResult {
     }
 
     /**
-     * Returns the code.
+     * Returns the token.
      *
-     * @return mixed
+     * @return string
      */
-    public function getCode()
+    public function getToken()
     {
-        return $this->data['code'];
+        return $this->data['token'];
+    }
+
+    /**
+     * Returns the auth id.
+     *
+     * @return string
+     */
+    public function getAuthId()
+    {
+        return $this->data['auth'];
     }
 
 }
