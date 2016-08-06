@@ -6,6 +6,7 @@ use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyItem;
 use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMetaRegistry;
 use NicklasW\PkmGoApi\Api\Support\MakeApiResourcesAvailable;
 use POGOProtos\Enums\PokemonId;
+use POGOProtos\Enums\PokemonType;
 
 trait PokemonDetailsTrait {
 
@@ -22,6 +23,19 @@ trait PokemonDetailsTrait {
         $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
 
         return $data->getFamily();
+    }
+
+    /**
+     * Returns the pokemon type.
+     *
+     * @return string
+     */
+    public function getPokemonType()
+    {
+        // Retrieve the pokemon metadata
+        $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
+
+        return PokemonType::toString($data->getType1());
     }
 
     /**
