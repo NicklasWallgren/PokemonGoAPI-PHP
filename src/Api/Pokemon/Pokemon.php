@@ -153,7 +153,7 @@ class Pokemon extends Procedure {
         // Update the pokemon name
         $this->data->setNickname($name);
 
-		return $response;
+        return $response;
     }
 
     /**
