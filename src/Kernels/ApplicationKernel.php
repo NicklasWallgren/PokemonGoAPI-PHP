@@ -4,25 +4,16 @@ namespace NicklasW\PkmGoApi\Kernels;
 
 use DI\NotFoundException;
 use NicklasW\PkmGoApi\Api\PokemonGoApi;
+use NicklasW\PkmGoApi\Authenticators\Managers\AuthenticationManager;
 use NicklasW\PkmGoApi\Providers\PokemonGoApiServiceProvider;
 use NicklasW\PkmGoApi\Providers\RequestHandlerServiceProvider;
 
 class ApplicationKernel extends Kernel {
 
     /**
-     * @var string
+     * @var AuthenticationManager
      */
-    protected $user;
-
-    /**
-     * @var string
-     */
-    protected $password;
-
-    /**
-     * @var int
-     */
-    protected $authenticationType;
+    protected $manager;
 
     /**
      * @var double
@@ -37,16 +28,12 @@ class ApplicationKernel extends Kernel {
     /**
      * Kernel constructor.
      *
-     * @param string      $user
-     * @param string      $password
-     * @param integer     $authenticationType
+     * @param AuthenticationManager $manager
      * @param string|null $environmentFilePath
      */
-    public function __construct($user, $password, $authenticationType, $environmentFilePath = null)
+    public function __construct($manager, $environmentFilePath = null)
     {
-        $this->user = $user;
-        $this->password = $password;
-        $this->authenticationType = $authenticationType;
+        $this->manager = $manager;
 
         parent::__construct($environmentFilePath);
     }
@@ -77,36 +64,6 @@ class ApplicationKernel extends Kernel {
     }
 
     /**
-     * Returns the user.
-     *
-     * @return string
-     */
-    public function getUser()
-    {
-        return $this->user;
-    }
-
-    /**
-     * Returns the password.
-     *
-     * @return string
-     */
-    public function getPassword()
-    {
-        return $this->password;
-    }
-
-    /**
-     * Returns the authentication type.
-     *
-     * @return integer
-     */
-    public function getAuthenticationType()
-    {
-        return $this->authenticationType;
-    }
-
-    /**
      * Sets the location.
      *
      * @param double $latitude
@@ -132,6 +89,14 @@ class ApplicationKernel extends Kernel {
     public function getLongitude()
     {
         return $this->longitude;
+    }
+
+    /**
+     * @return AuthenticationManager
+     */
+    public function getManager()
+    {
+        return $this->manager;
     }
 
     /**

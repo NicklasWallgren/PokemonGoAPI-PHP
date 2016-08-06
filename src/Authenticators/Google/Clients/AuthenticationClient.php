@@ -1,24 +1,28 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Authenticators\GoogleOauth\Clients;
+namespace NicklasW\PkmGoApi\Authenticators\Google\Clients;
 
 use GuzzleHttp\Cookie\CookieJar;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\AuthenticationInformationParser;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\OauthTokenParser;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\TokenParser;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Parsers\Results\AuthenticationTokenResult;
-use NicklasW\PkmGoApi\Authenticators\GoogleOauth\Support\Signature;
+use NicklasW\PkmGoApi\Authenticators\Google\Parsers\AuthenticationInformationParser;
+use NicklasW\PkmGoApi\Authenticators\Google\Parsers\OauthTokenParser;
+use NicklasW\PkmGoApi\Authenticators\Google\Parsers\TokenParser;
+use NicklasW\PkmGoApi\Authenticators\Google\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Authenticators\Google\Support\Signature;
 use NicklasW\PkmGoApi\Clients\Client;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
 class AuthenticationClient {
 
+    /**
+     * @var string The android authentication token url
+     */
+    protected static $URL_ANDROID_TOKEN_URL = 'https://android.clients.google.com/auth';
 
     /**
      * @var string The authentication token url
      */
-    protected static $URL_TOKEN_URL = 'https://android.clients.google.com/auth';
+    protected static $URL_TOKEN_URL = 'https://accounts.google.com/o/oauth2/token';
 
     /**
      * @var string The oauth login service
@@ -47,7 +51,7 @@ class AuthenticationClient {
      * @param string $password
      * @return AuthenticationTokenResult
      */
-    public function token($email, $password)
+    public function getAuthenticationToken($email, $password)
     {
         // Retrieve the encrypted password
         $encryptedPassword = Signature::create($email, $password);
@@ -67,7 +71,7 @@ class AuthenticationClient {
         );
 
         // Retrieve the response
-        $response = $this->post(self::$URL_TOKEN_URL,
+        $response = $this->post(self::$URL_ANDROID_TOKEN_URL,
             array('headers' => array('User-Agent' => 'gpsoauth/0.0.5'), 'form_params' => $parameters));
 
         // Get the authentication token parser
@@ -78,13 +82,13 @@ class AuthenticationClient {
     }
 
     /**
-     * Returns the oauth token.
+     * Retrieves the the oauth token using user credentials.
      *
      * @param string $email
      * @param string $token
      * @return AuthenticationTokenResult
      */
-    public function oauthToken($email, $token)
+    public function getOauthTokenByUserCredentials($email, $token)
     {
         $parameters = array(
             'accountType'     => 'HOSTED_OR_GOOGLE',
@@ -102,7 +106,7 @@ class AuthenticationClient {
         );
 
         // Retrieve the response
-        $response = $this->post(self::$URL_TOKEN_URL,
+        $response = $this->post(self::$URL_ANDROID_TOKEN_URL,
             array('headers' => array('User-Agent' => 'gpsoauth/0.0.5'), 'form_params' => $parameters));
 
         // Get the authentication token parser
@@ -110,6 +114,33 @@ class AuthenticationClient {
 
         // Parse the content
         return $parser->parse($response);
+    }
+
+    /**
+     * Retrieves the the oauth token using authentication code.
+     *
+     * @param string $authenticationCode
+     * @return AuthenticationTokenResult
+     */
+    public function getOauthTokenByAuthenticationCode($authenticationCode)
+    {
+        $parameters = array(
+            'client_id'     => '848232511240-73ri3t7plvk96pj4f85uj8otdat2alem.apps.googleusercontent.com',
+            'client_secret' => 'NCjF1TLi2CcY6t5mt0ZveuL7',
+            'code'          => $authenticationCode,
+            'grant_type'    => 'authorization_code',
+            'redirect_uri'  => 'urn:ietf:wg:oauth:2.0:oob',
+            'scope'         => 'openid email https://www.googleapis.com/auth/userinfo.email',
+        );
+
+        // Retrieve the content
+        $response = $this->post(self::$URL_TOKEN_URL, array('form_params' => $parameters));
+
+        // Parse the response.
+
+        
+
+
     }
 
     /**
