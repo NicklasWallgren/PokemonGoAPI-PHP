@@ -89,13 +89,12 @@ class PokeBank extends Data {
      *
      * @param integer $id
      * @return Pokemon
-     * @throws Exception
      */
     public function getPokemonById($id)
     {
         // Check if the pokemon exists within the poke bank
         if (!$this->pokemons->offsetExists($id)) {
-            throw new Exception(sprintf('The poke bank does not contain that pokemon. Provided pokemon id: \'%s\'', $id));
+            return null;
         }
 
         return $this->pokemons->get($id);
@@ -128,7 +127,7 @@ class PokeBank extends Data {
 
     }
 
-    
-    
+
+
 
 }
