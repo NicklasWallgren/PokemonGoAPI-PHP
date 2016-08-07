@@ -32,8 +32,12 @@ class PokemonGoApi {
 
     /**
      * Application constructor.
+     *
+     * @param string $user               The username or email
+     * @param        $password           The password
+     * @param        $authenticationType The authentication type
      */
-    public function __construct()
+    public function __construct($user, $password, $authenticationType)
     {
         // Initial the Request Service
         $this->requestService = new RequestService();
