@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 
 use NicklasW\PkmGoApi\Api\Data\Data;
 use POGOProtos\Data\PokedexEntry;
+use POGOProtos\Enums\PokemonId;
 
 /**
  * @method void setItems(PokedexItem[] $items)
@@ -35,11 +36,38 @@ class Pokedex extends Data {
      * Gets the pokedex item by pokemon id
      *
      * @param integer $pokemonId
-     * @return PokedexItem
+     * @return PokedexItem|null
      */
     public function get($pokemonId)
     {
-        return $this->items[$pokemonId];
+        // Check whether a valid pokemon id was provided
+        if (!PokemonId::isValid($pokemonId)) {
+            return null;
+        }
+
+        // Check if the pokemon exists within the pokedex
+        if (array_key_exists($pokemonId, $this->items)) {
+            return $this->items[$pokemonId];
+        }
+
+        return $this->createEmptyItem($pokemonId);
+    }
+
+    /**
+     * Creates a empty PokedexItem.
+     *
+     * @param integer $pokemonId
+     * @return PokedexItem
+     */
+    protected function createEmptyItem($pokemonId)
+    {
+        // Create a new pokedex item
+        $entry = new PokedexItem();
+
+        // Set the pokemon id
+        $entry->setPokemonId($pokemonId);
+
+        return $entry;
     }
 
 }

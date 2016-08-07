@@ -6,6 +6,8 @@ use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyItem;
 use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMetaRegistry;
 use NicklasW\PkmGoApi\Api\Support\MakeApiResourcesAvailable;
 use POGOProtos\Enums\PokemonId;
+use POGOProtos\Enums\PokemonMove;
+use POGOProtos\Enums\PokemonType;
 
 trait PokemonDetailsTrait {
 
@@ -22,6 +24,39 @@ trait PokemonDetailsTrait {
         $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
 
         return $data->getFamily();
+    }
+
+    /**
+     * Returns the pokemon type.
+     *
+     * @return string
+     */
+    public function getType1String()
+    {
+        // Retrieve the pokemon metadata
+        $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
+
+        return PokemonType::toString($data->getType1());
+    }
+
+    /**
+     * Returns the pokemon move1.
+     *
+     * @return string
+     */
+    public function getMove1String()
+    {
+        return PokemonMove::toString($this->getMove1());
+    }
+
+    /**
+     * Returns the pokemon move2.
+     *
+     * @return string
+     */
+    public function getMove2String()
+    {
+        return PokemonMove::toString($this->getMove2());
     }
 
     /**
