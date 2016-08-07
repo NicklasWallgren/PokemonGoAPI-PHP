@@ -4,7 +4,7 @@ namespace NicklasW\PkmGoApi\Kernels;
 
 use DI\NotFoundException;
 use NicklasW\PkmGoApi\Api\PokemonGoApi;
-use NicklasW\PkmGoApi\Authenticators\Managers\AuthenticationManager;
+use NicklasW\PkmGoApi\Authenticators\Managers\Manager;
 use NicklasW\PkmGoApi\Providers\PokemonGoApiServiceProvider;
 use NicklasW\PkmGoApi\Providers\RequestHandlerServiceProvider;
 
