@@ -1,8 +1,8 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Managers\Google\AuthenticationCredentials\Parsers;
+namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers;
 
-use NicklasW\PkmGoApi\Authenticators\Google\AuthenticationCredentials\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers\Results\AuthenticationTokenResult;
 use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
@@ -34,7 +34,7 @@ class OauthTokenParser extends Parser {
         Log::debug(sprintf('[#%s] Retrieved response. Content: \'%s\'', __CLASS__, $content));
 
         return new AuthenticationTokenResult(
-            array('auth' => $this->parseAuthId($content), 'timestamp' => $this->parseExpiryTimestamp($content)));
+            array('token' => $this->parseAuthId($content), 'timestamp' => $this->parseExpiryTimestamp($content)));
     }
 
     /**

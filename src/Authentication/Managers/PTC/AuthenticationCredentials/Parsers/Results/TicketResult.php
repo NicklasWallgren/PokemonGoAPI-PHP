@@ -1,7 +1,6 @@
 <?php
 
-
-namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\Results;
+namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results;
 
 class TicketResult extends Result {
 

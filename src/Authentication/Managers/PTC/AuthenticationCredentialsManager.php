@@ -3,10 +3,11 @@
 namespace NicklasW\PkmGoApi\Authentication\Managers\PTC;
 
 use NicklasW\PkmGoApi\Authentication\AccessToken;
-use NicklasW\PkmGoApi\Authentication\Contracts\Manager;
-use NicklasW\PkmGoApi\Authenticators\PTCAuthenticator;
+use NicklasW\PkmGoApi\Authentication\Manager;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Authenticator;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\PTCAuthenticator;
 
-class AuthenticationCredentialsManager implements Manager {
+class AuthenticationCredentialsManager extends Manager {
 
     /**
      * @var string
@@ -40,7 +41,13 @@ class AuthenticationCredentialsManager implements Manager {
         // Retrieve the PTC authenticator
         $authenticator = $this->authenticator();
 
-        return $authenticator->login($this->username, $this->password);
+        // Retrieve the access token by user credentials
+        $accessToken = $authenticator->login($this->username, $this->password);
+
+        // Dispatch event to listeners
+        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $accessToken);
+
+        return $accessToken;
     }
 
     /**
@@ -56,10 +63,10 @@ class AuthenticationCredentialsManager implements Manager {
     /**
      * Returns the authenticator.
      *
-     * @return PTCAuthenticator
+     * @return Authenticator
      */
     protected function authenticator()
     {
-        return new PTCAuthenticator();
+        return new Authenticator();
     }
 }

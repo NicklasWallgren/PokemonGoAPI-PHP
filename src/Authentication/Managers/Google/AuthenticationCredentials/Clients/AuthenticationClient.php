@@ -3,10 +3,10 @@
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Clients;
 
 use GuzzleHttp\Cookie\CookieJar;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers\OauthTokenParser;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Support\Signature;
-use NicklasW\PkmGoApi\Authenticators\Google\AuthenticationCredentials\Parsers\OauthTokenParser;
-use NicklasW\PkmGoApi\Authenticators\Google\AuthenticationCredentials\Parsers\TokenParser;
 use NicklasW\PkmGoApi\Clients\Client;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers\TokenParser;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 

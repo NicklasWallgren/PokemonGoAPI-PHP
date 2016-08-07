@@ -3,10 +3,10 @@
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google;
 
 use NicklasW\PkmGoApi\Authentication\AccessToken;
-use NicklasW\PkmGoApi\Authentication\Contracts\Manager;
+use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Authenticator;
 
-class AuthenticationRefreshTokenManager implements Manager {
+class AuthenticationRefreshTokenManager extends Manager {
 
     /**
      * @var
@@ -33,7 +33,13 @@ class AuthenticationRefreshTokenManager implements Manager {
         // Retrieve the Google authenticator
         $authenticator = $this->authenticator();
 
-        return $authenticator->loginByRefreshToken($this->token);
+        // Retrieve the access token by refresh token
+        $accessToken = $authenticator->loginByRefreshToken($this->token);
+
+        // Dispatch event to listeners
+        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $accessToken);
+
+        return $accessToken;
     }
 
     /**

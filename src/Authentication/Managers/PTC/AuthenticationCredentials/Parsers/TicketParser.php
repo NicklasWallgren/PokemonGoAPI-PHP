@@ -1,11 +1,8 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers;
+namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers;
 
-use NicklasW\PkmGoApi\Authenticators\Exceptions\AuthenticationException;
-use NicklasW\PkmGoApi\Authenticators\Exceptions\ResponseException;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\Results\AuthenticationInformationResult;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\Results\TicketResult;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\TicketResult;
 use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;

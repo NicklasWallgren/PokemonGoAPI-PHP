@@ -1,9 +1,8 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Authentication\Managers\PTCParsers;
+namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers;
 
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\Results\AuthenticationInformationResult;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\Results\TicketResult;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\TokenResult;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 

@@ -2,10 +2,10 @@
 
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google;
 
-use NicklasW\PkmGoApi\Authentication\Contracts\Manager;
+use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Authenticator;
 
-class AuthenticationCredentialsManager implements Manager {
+class AuthenticationCredentialsManager extends Manager {
 
     /**
      * @var string
@@ -39,7 +39,13 @@ class AuthenticationCredentialsManager implements Manager {
         // Retrieve the Google authenticator
         $authenticator = $this->authenticator();
 
-        return $authenticator->login($this->email, $this->password);
+        // Retrieve the access token by user credentials
+        $accessToken = $authenticator->login($this->email, $this->password);
+
+        // Dispatch event to listeners
+        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $accessToken);
+
+        return $accessToken;
     }
 
     /**
