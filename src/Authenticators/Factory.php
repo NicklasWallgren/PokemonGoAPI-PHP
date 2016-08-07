@@ -18,6 +18,8 @@ class Factory {
      */
     const AUTHENTICATION_TYPE_PTC = '2';
 
+    const AUTHENTICATION_TYPE_GOOGLE_OAUTH = 3;
+
     /**
      * Authenticator factory.
      *
@@ -38,6 +40,11 @@ class Factory {
 
             case self::AUTHENTICATION_TYPE_PTC:
                 $authenticator = $this->createPTCAuthenticator();
+
+                break;
+
+            case self::AUTHENTICATION_TYPE_GOOGLE_OAUTH:
+                $authenticator = $this->createGoogleOAuthAuthenticator();
 
                 break;
 
@@ -71,5 +78,14 @@ class Factory {
         return new PTCAuthenticator();
     }
 
+    /**
+     * Creates a GoogleOAuth Authenticator.
+     *
+     * @return GoogleOAuthAuthenticator
+     */
+    protected function createGoogleOAuthAuthenticator()
+    {
+        return new GoogleOAuthAuthenticator();
+    }
 
 }
