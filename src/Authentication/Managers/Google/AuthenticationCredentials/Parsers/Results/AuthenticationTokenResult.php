@@ -1,7 +1,7 @@
 <?php
 
 
-namespace NicklasW\PkmGoApi\Managers\Google\AuthenticationCredentials\Parsers\Results;
+namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers\Results;
 
 class AuthenticationTokenResult extends Result {
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Managers\Google\AuthenticationCredentials\Parsers;
+namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers;
 
-use NicklasW\PkmGoApi\Authenticators\Exceptions\AuthenticationException;
-use NicklasW\PkmGoApi\Authenticators\Exceptions\ResponseException;
-use NicklasW\PkmGoApi\Authenticators\Google\AuthenticationCredentials\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Authentication\Exceptions\AuthenticationException;
+use NicklasW\PkmGoApi\Authentication\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Facades\Log;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers\Results\AuthenticationTokenResult;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 

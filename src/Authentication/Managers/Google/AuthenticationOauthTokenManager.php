@@ -3,9 +3,9 @@
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google;
 
 use NicklasW\PkmGoApi\Authentication\AccessToken;
-use NicklasW\PkmGoApi\Authentication\Contracts\Manager;
+use NicklasW\PkmGoApi\Authentication\Manager;
 
-class AuthenticationOauthTokenManager implements Manager {
+class AuthenticationOauthTokenManager extends Manager {
 
     /**
      * @var
@@ -29,6 +29,9 @@ class AuthenticationOauthTokenManager implements Manager {
      */
     public function getAccessToken()
     {
+        // Dispatch event to listeners
+        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, new AccessToken($this->token));
+
         return new AccessToken($this->token);
     }
 

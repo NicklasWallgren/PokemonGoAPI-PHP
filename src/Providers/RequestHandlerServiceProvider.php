@@ -3,9 +3,7 @@
 
 namespace NicklasW\PkmGoApi\Providers;
 
-use NicklasW\PkmGoApi\Authenticators\Factory as AuthenticatorFactory;
-use NicklasW\PkmGoApi\Authenticators\Managers\AuthenticationManager;
-use NicklasW\PkmGoApi\Authenticators\Managers\Manager;
+use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
@@ -19,11 +17,6 @@ class RequestHandlerServiceProvider extends ServiceProvider {
     protected $envelopeFactory;
 
     /**
-     * @var AuthenticatorFactory
-     */
-    protected $authenticatorFactory;
-
-    /**
      * RequestHandlerServiceProvider constructor.
      *
      * @param ApplicationKernel $app
@@ -32,9 +25,6 @@ class RequestHandlerServiceProvider extends ServiceProvider {
     {
         // Initialize the envelope factory
         $this->envelopeFactory = new EnvelopeFactory();
-
-        // Initial the authenticator factory
-        $this->authenticatorFactory = new AuthenticatorFactory();
 
         parent::__construct($app);
     }
@@ -58,19 +48,21 @@ class RequestHandlerServiceProvider extends ServiceProvider {
     protected function authenticate()
     {
         Log::debug(sprintf('Authenticates user.'));
-        
-        // Get access token, dispatch to listeners
 
-        return $this->envelopeFactory->create(EnvelopeFactory::$TYPE_AUTHINFO,
-            $this->getAuthenticationManager()->getIdentifier(),
-            $this->getAuthenticationManager()->getAccessToken()
-        );
+        // Retrieve the authentication manager
+        $manager = $this->getAuthenticationManager();
+
+        // Retrieve the access token
+        $accessToken = $manager->getAccessToken();
+
+        return $this->envelopeFactory->create(
+            EnvelopeFactory::$TYPE_AUTHINFO, $manager->getIdentifier(), $manager->getAccessToken());
     }
 
     /**
      * Returns the authentication manager.
      *
-     * @return AuthenticationManager
+     * @return Manager
      */
     protected function getAuthenticationManager()
     {

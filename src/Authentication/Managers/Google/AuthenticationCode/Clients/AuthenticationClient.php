@@ -60,7 +60,6 @@ class AuthenticationClient {
             'code'          => $authenticationCode,
             'grant_type'    => self::$PARAMETER_GRANT_TYPE,
             'redirect_uri'  => self::$PARAMETER_REDIRECT_URI,
-//            'scope'         => self::$PARAMETER_SCOPE,
         );
 
         // Retrieve the content

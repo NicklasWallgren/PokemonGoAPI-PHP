@@ -4,7 +4,7 @@ namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredent
 
 use NicklasW\PkmGoApi\Authentication\AccessToken;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Clients\AuthenticationClient;
-use NicklasW\PkmGoApi\Authenticators\Google\AuthenticationCredentials\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers\Results\AuthenticationTokenResult;
 
 class Authenticator {
 

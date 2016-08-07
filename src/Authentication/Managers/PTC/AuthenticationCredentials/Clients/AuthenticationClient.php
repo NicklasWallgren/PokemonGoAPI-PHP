@@ -1,14 +1,14 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\Clients;
+namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Clients;
 
 use GuzzleHttp\Cookie\CookieJar;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\AuthenticationInformationParser;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\Results\AuthenticationInformationResult;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\Results\TicketResult;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\Results\TokenResult;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\TicketParser;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\Parsers\TokenParser;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\AuthenticationInformationParser;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\AuthenticationInformationResult;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\TicketResult;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\TokenResult;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\TicketParser;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\TokenParser;
 use NicklasW\PkmGoApi\Clients\Client;
 use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
