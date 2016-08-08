@@ -1,6 +1,5 @@
 <?php
 
-
 namespace NicklasW\PkmGoApi\Providers;
 
 use NicklasW\PkmGoApi\Authentication\Manager;
@@ -12,20 +11,12 @@ use NicklasW\PkmGoApi\Requests\Envelops\Factory as EnvelopeFactory;
 class RequestHandlerServiceProvider extends ServiceProvider {
 
     /**
-     * @var EnvelopeFactory
-     */
-    protected $envelopeFactory;
-
-    /**
      * RequestHandlerServiceProvider constructor.
      *
      * @param ApplicationKernel $app
      */
     public function __construct($app)
     {
-        // Initialize the envelope factory
-        $this->envelopeFactory = new EnvelopeFactory();
-
         parent::__construct($app);
     }
 
@@ -37,7 +28,7 @@ class RequestHandlerServiceProvider extends ServiceProvider {
     public function register()
     {
         // Create the RequestHandler instance
-        $this->app->container()->set('RequestHandler', new RequestHandler($this->authenticate(), $this->app));
+        $this->app->container()->set('RequestHandler', new RequestHandler($this->app));
     }
 
     /**
@@ -56,7 +47,7 @@ class RequestHandlerServiceProvider extends ServiceProvider {
         $accessToken = $manager->getAccessToken();
 
         return $this->envelopeFactory->create(
-            EnvelopeFactory::$TYPE_AUTHINFO, $manager->getIdentifier(), $manager->getAccessToken());
+            EnvelopeFactory::$TYPE_AUTHINFO, $manager->getIdentifier(), $accessToken);
     }
 
     /**

@@ -9,21 +9,12 @@ use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Clients\AuthenticationClient;
 use NicklasW\PkmGoApi\Facades\Log;
 
-class Authenticator implements AuthenticatorContract {
+class Authenticator {
 
     /**
      * @var AuthenticationClient
      */
     protected $authenticationClient;
-
-    /**
-     *
-     */
-    public function authenticate($username, $password)
-    {
-
-
-    }
 
     /**
      * Authenticate using email and password.
@@ -47,7 +38,7 @@ class Authenticator implements AuthenticatorContract {
 
         Log::debug(sprintf('[#%s] Retrieved token: \'%s\'', __CLASS__, $tokenInformation->getToken()));
 
-        return new AccessToken($tokenInformation->getToken());
+        return new AccessToken($tokenInformation->getToken(), AccessToken::PROVIDER_PTC, $tokenInformation->getTimestamp());
     }
 
     /**

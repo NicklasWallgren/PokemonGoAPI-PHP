@@ -3,7 +3,6 @@
 namespace NicklasW\PkmGoApi\Authentication;
 
 use Closure;
-use NicklasW\PkmGoApi\Authentication\AccessToken;
 
 abstract class Manager {
 
@@ -18,12 +17,16 @@ abstract class Manager {
     protected $listeners = array();
 
     /**
+     * @var AccessToken The access token
+     */
+    protected $accessToken;
+
+    /**
      * Returns the Oauth token.
      *
      * @return AccessToken
      */
     abstract public function getAccessToken();
-
     /**
      * Returns the identifier.
      *
@@ -56,4 +59,12 @@ abstract class Manager {
         }
     }
 
+    /**
+     * @param AccessToken $accessToken
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+    }
+    
 }

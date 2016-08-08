@@ -24,7 +24,7 @@ class Authenticator {
         // Retrieve Oauth token by refresh code
         $result = $this->getOauthTokenByAuthenticationRefreshToken($token);
 
-        return new AccessToken($result->getToken(), $result->getExpiryTimestamp());
+        return new AccessToken($result->getToken(), AccessToken::PROVIDER_GOOGLE, $result->getExpiryTimestamp());
     }
 
     /**

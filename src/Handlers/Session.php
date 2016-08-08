@@ -2,6 +2,8 @@
 
 namespace NicklasW\PkmGoApi\Handlers;
 
+use POGOProtos\Networking\Envelopes\AuthTicket;
+
 class Session {
 
     /**
@@ -18,6 +20,29 @@ class Session {
      * @var string The API url
      */
     protected $apiUrl;
+
+    /**
+     * Returns true if the session is valid, false otherwise.
+     *
+     * @return boolean
+     */
+    public function isValid()
+    {
+        // Retrieve the authentication ticket instance from the session
+        $authenticationTicket = $this->getAuthenticationTicket();
+
+        // Check if we have not authenticated yet
+        if ($authenticationTicket === null && $this->getAuthenticationInformation() !== null) {
+            return true;
+        }
+
+        // Check if the expire timestamp is valid
+        if ($authenticationTicket->getExpireTimestampMs() > microtime()) {
+            return true;
+        }
+
+        return false;
+    }
 
     /**
      * @return AuthTicket

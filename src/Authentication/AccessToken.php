@@ -7,30 +7,47 @@ class AccessToken {
     /**
      * @var string
      */
-    protected $token;
-
-    /**
-     * @var integer
-     */
-    protected $lifetime;
+    const PROVIDER_GOOGLE = 'google';
 
     /**
      * @var string
      */
-    protected $freshToken;
+    const PROVIDER_PTC = 'ptc';
+
+    /**
+     * @var string The Oauth token
+     */
+    protected $token;
+
+    /**
+     * @var integer The lifetime timestamp of the token
+     */
+    protected $timestamp;
+
+    /**
+     * @var string The refresh token
+     */
+    protected $refreshToken;
+
+    /**
+     * @var string The token provider
+     */
+    protected $provider;
 
     /**
      * AccessToken constructor.
      *
-     * @param string  $token
-     * @param integer $lifetime
-     * @param         $freshToken
+     * @param string  $token The Oauth token
+     * @param string  $provider The provider, either google or ptc
+     * @param integer $timestamp The timestamp of the Oauth token
+     * @param string  $refreshToken The refresh token
      */
-    public function __construct($token, $lifetime = null, $freshToken = null)
+    public function __construct($token, $provider, $timestamp = null, $refreshToken = null)
     {
         $this->token = $token;
-        $this->lifetime = $lifetime;
-        $this->freshToken = $freshToken;
+        $this->provider = $provider;
+        $this->timestamp = $timestamp;
+        $this->refreshToken = $refreshToken;
     }
 
     /**
@@ -52,33 +69,69 @@ class AccessToken {
     /**
      * @return int
      */
-    public function getLifetime()
+    public function getTimestamp()
     {
-        return $this->lifetime;
+        return $this->timestamp;
     }
 
     /**
-     * @param int $lifetime
+     * @param int $timestamp
      */
-    public function setLifetime($lifetime)
+    public function setTimestamp($timestamp)
     {
-        $this->lifetime = $lifetime;
+        $this->timestamp = $timestamp;
+    }
+
+    /**
+     * Returns true if the timestamp is defined, false otherwise.
+     *
+     * @return boolean
+     */
+    public function hasTimestamp()
+    {
+        return $this->timestamp !== null;
+    }
+
+    /**
+     * Returns true if the timestamp is valid, false otherwise.
+     *
+     * @return boolean
+     */
+    public function isTimestampValid()
+    {
+        return $this->hasTimestamp() && intval($this->timestamp) > microtime();
     }
 
     /**
      * @return mixed
      */
-    public function getFreshToken()
+    public function getRefreshToken()
     {
-        return $this->freshToken;
+        return $this->refreshToken;
     }
 
     /**
-     * @param mixed $freshToken
+     * @param mixed $refreshToken
      */
-    public function setFreshToken($freshToken)
+    public function setRefreshToken($refreshToken)
     {
-        $this->freshToken = $freshToken;
+        $this->refreshToken = $refreshToken;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function hasFreshToken()
+    {
+        return $this->refreshToken !== null;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProvider()
+    {
+        return $this->provider;
     }
 
 }

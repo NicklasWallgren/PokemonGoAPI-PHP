@@ -2,6 +2,7 @@
 
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google;
 
+use NicklasW\PkmGoApi\Authentication\AccessToken;
 use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Authenticator;
 
@@ -44,6 +45,9 @@ class AuthenticationCredentialsManager extends Manager {
 
         // Dispatch event to listeners
         $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $accessToken);
+
+        // Add the access token to the manager
+        $this->setAccessToken($accessToken);
 
         return $accessToken;
     }
