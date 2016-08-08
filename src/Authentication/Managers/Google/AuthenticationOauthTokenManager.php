@@ -29,10 +29,15 @@ class AuthenticationOauthTokenManager extends Manager {
      */
     public function getAccessToken()
     {
-        // Dispatch event to listeners
-        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, new AccessToken($this->token));
+        $token = new AccessToken($this->token, AccessToken::PROVIDER_GOOGLE);
 
-        return new AccessToken($this->token);
+        // Dispatch event to listeners
+        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $token);
+
+        // Add the access token to the manager
+        $this->setAccessToken($accessToken);
+
+        return $token;
     }
 
     /**

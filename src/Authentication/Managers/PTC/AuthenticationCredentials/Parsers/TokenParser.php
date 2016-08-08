@@ -60,7 +60,7 @@ class TokenParser extends Parser {
 
         preg_match('/expires=(?<expires>.*)/', $content, $matches);
 
-        return $matches['expires'];
+        return time() + intval($matches['expires']);
     }
 
 }

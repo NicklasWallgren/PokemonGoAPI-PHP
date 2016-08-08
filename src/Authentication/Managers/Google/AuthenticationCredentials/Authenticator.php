@@ -32,7 +32,7 @@ class Authenticator {
 
         Log::debug(sprintf('[#%s] OAuth token: \'%s\'', __CLASS__, $result->getToken()));
 
-        return new AccessToken($result->getToken(), $result->getExpiryTimestamp());
+        return new AccessToken($result->getToken(), AccessToken::PROVIDER_GOOGLE, $result->getExpiryTimestamp());
     }
 
 

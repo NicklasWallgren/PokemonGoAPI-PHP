@@ -106,7 +106,7 @@ class AuthenticationClient {
         // Retrieve the response
         $response = $this->post(self::$URL_ANDROID_TOKEN_URL,
             array('headers' => array('User-Agent' => 'gpsoauth/0.0.5'), 'form_params' => $parameters));
-
+        
         // Get the authentication token parser
         $parser = new OauthTokenParser();
 

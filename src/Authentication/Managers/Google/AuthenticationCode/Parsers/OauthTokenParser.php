@@ -39,7 +39,7 @@ class OauthTokenParser extends Parser {
         return new AuthenticationTokenResult(
             array(
                 'token'         => $content->id_token,
-                'timestamp'     => $content->expires_in,
+                'timestamp'     => time() + $content->expires_in,
                 'refresh_token' => $content->refresh_token,
             )
         );
