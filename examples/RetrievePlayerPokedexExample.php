@@ -3,9 +3,9 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMetaRegistry;
-use NicklasW\PkmGoApi\Authenticators\Factory;
+use NicklasW\PkmGoApi\Authentication\Config\Config;
+use NicklasW\PkmGoApi\Authentication\Factory\Factory;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
-use POGOProtos\Enums\PokemonId;
 
 class RetrievePlayerPokedexExample {
 
@@ -14,9 +14,17 @@ class RetrievePlayerPokedexExample {
      */
     public function run()
     {
+        // Create the authentication config
+        $config = new Config();
+        $config->setProvider(Factory::PROVIDER_PTC);
+        $config->setUser('INSERT_USER');
+        $config->setPassword('INSERT_PASSWORD');
+
+        // Create the authentication manager
+        $manager = Factory::create($config);
+
         // Initialize the pokemon go application
-        $application = new ApplicationKernel(
-            'INSERT_USER', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
+        $application = new ApplicationKernel($manager);
 
         // Retrieve the pokemon go api instance
         $pokemonGoApi = $application->getPokemonGoApi();
@@ -39,10 +47,10 @@ class RetrievePlayerPokedexExample {
             // If pokedex is empty we don't 'know' that creature
             if($pokemondata !== null)
             {
-                echo sprintf("Informations about Pokemon %d. Name: %s <br />", $i, $pokemonmeta->getuniqueId());
+                echo sprintf("Informations about Pokemon %d. Name: %s \n", $i, $pokemonmeta->getuniqueId());
             }
             else
-                echo sprintf("No information about id: %d<br />", $i);
+                echo sprintf("No information about id: %d \n", $i);
         }
     }
 }
