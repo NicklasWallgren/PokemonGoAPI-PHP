@@ -3,17 +3,17 @@
 namespace NicklasW\PkmGoApi\Requests;
 
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
-use POGOProtos\Networking\Requests\Messages\NicknamePokemonMessage;
+use POGOProtos\Networking\Requests\Messages\SetFavoritePokemonMessage;
 use POGOProtos\Networking\Requests\RequestType;
-use POGOProtos\Networking\Responses\NicknamePokemonResponse;
+use POGOProtos\Networking\Responses\SetFavoritePokemonResponse;
 use ProtobufMessage;
 
-class RenamePokemonRequest extends Request {
+class SetFavoritePokemonRequest extends Request {
 
     /**
      * @var integer The request type
      */
-    protected $type = RequestType::NICKNAME_POKEMON;
+    protected $type = RequestType::SET_FAVORITE_POKEMON;
 
     /**
      * @var ProtobufMessage The request message
@@ -26,19 +26,19 @@ class RenamePokemonRequest extends Request {
     protected $pokemonId;
 
     /**
-     * @var string
+     * @var boolean
      */
-    protected $name;
+    protected $favorite;
 
     /**
      * TransferPokemonRequest constructor.
      *
      * @param integer $pokemonId
      */
-    public function __construct($pokemonId, $name)
+    public function __construct($pokemonId, $favorite)
     {
         $this->pokemonId = $pokemonId;
-        $this->name = $name;
+        $this->favorite = $favorite;
     }
 
     /**
@@ -46,7 +46,7 @@ class RenamePokemonRequest extends Request {
      */
     public function getType()
     {
-        return RequestType::NICKNAME_POKEMON;
+        return RequestType::SET_FAVORITE_POKEMON;
     }
 
     /**
@@ -54,20 +54,18 @@ class RenamePokemonRequest extends Request {
      */
     public function getMessage()
     {
-        $nicknamePokemonMessage = new NicknamePokemonMessage();
-        $nicknamePokemonMessage->setPokemonId($this->pokemonId);
-        $nicknamePokemonMessage->setNickname($this->name);
+        $setFavoritePokemonMessage = new SetFavoritePokemonMessage();
+        $setFavoritePokemonMessage->setPokemonId($this->pokemonId);
+        $setFavoritePokemonMessage->setIsFavorite($this->favorite);
 
-        var_dump($nicknamePokemonMessage);
-
-        return $nicknamePokemonMessage;
+        return $setFavoritePokemonMessage;
     }
 
     /**
      * Handles the request data.
      *
      * @param ResponseEnvelope $data
-     * @return NicknamePokemonResponse
+     * @return SetFavoritePokemonResponse
      */
     public function handleResponse($data)
     {
@@ -75,11 +73,11 @@ class RenamePokemonRequest extends Request {
         $requestData = current($data->getReturnsArray());
 
         // Initialize the rename pokemon response
-        $nicknamePokemonResponse = new NicknamePokemonResponse();
+        $setFavoritePokemonResponse = new SetFavoritePokemonResponse();
 
         // Unmarshall the response
-        $nicknamePokemonResponse->read($requestData);
+        $setFavoritePokemonResponse->read($requestData);
 
-        $this->setData($nicknamePokemonResponse);
+        $this->setData($setFavoritePokemonResponse);
     }
 }
