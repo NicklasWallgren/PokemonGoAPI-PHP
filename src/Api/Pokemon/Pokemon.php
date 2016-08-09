@@ -21,6 +21,7 @@ use POGOProtos\Enums\PokemonId;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
 use POGOProtos\Networking\Responses\NicknamePokemonResponse_Result;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse_Result;
+use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
 
 /**
  * @method void setId(int $id)
@@ -120,6 +121,31 @@ class Pokemon extends Procedure {
         if ($response->getResult() !== ReleasePokemonResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during pokemon transfer. Result: \'%s\' Code: \'%s\'',
                 $response->getResult(), ReleasePokemonResponse_Result::toString($response->getResult())));
+        }
+
+        // Retrieve the poke bank
+        $pokeBank = $this->getPokeBank();
+
+        // Remove the pokemon from the poke bank
+        $pokeBank->removePokemon($this);
+
+        return $response;
+    }
+
+    /**
+     * Upgrade the pokemon.
+     *
+     * @return UpgradePokemonResponse
+     */
+    public function upgrade()
+    {
+        // Execute the API request
+        $response = $this->getRequestService()->upgrade($this->getPokemonData()->getId());
+
+        // Check if the request was successfully executed
+        if ($response->getResult() !== UpgradePokemonResponse_Result::SUCCESS) {
+            throw new Exception(sprintf('Invalid response during pokemon upgrade. Result: \'%s\' Code: \'%s\'',
+                $response->getResult(), UpgradePokemonResponse_Result::toString($response->getResult())));
         }
 
         // Retrieve the poke bank
