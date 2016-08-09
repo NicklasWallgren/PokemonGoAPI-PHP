@@ -12,28 +12,21 @@ use NicklasW\PkmGoApi\Authentication\Manager;
 
 class AuthenticationOauthTokenManager extends Manager
 {
-    /** @var string */
-    protected $token;
-
     /**
      * AuthenticationOauthTokenManager constructor.
      *
-     * @param string $token
+     * @param AccessToken $token
      */
-    public function __construct($token)
+    public function __construct(AccessToken $token)
     {
-        $this->token = $token;
+        $this->setAccessToken($token);
     }
 
     public function getAccessToken()
     {
-        $accessToken = new AccessToken($this->token, AccessToken::PROVIDER_PTC);
+        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $this->accessToken);
 
-        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $accessToken);
-
-        $this->setAccessToken($accessToken);
-
-        return $accessToken;
+        return $this->accessToken;
     }
 
     public function getIdentifier()

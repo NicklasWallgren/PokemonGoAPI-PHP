@@ -72,7 +72,7 @@ class Factory {
         if ($accessToken->getProvider() == AccessToken::PROVIDER_GOOGLE) {
             // Check if a token timestamp is provided
             if (!$accessToken->hasTimestamp()) {
-                return new GoogleAuthenticationOauthTokenManager($accessToken->getToken());
+                return new GoogleAuthenticationOauthTokenManager($accessToken);
             }
 
             // Check if a fresh token is available, check if it is still valid
@@ -81,7 +81,7 @@ class Factory {
             }
 
             if ($accessToken->isTimestampValid()) {
-                return new GoogleAuthenticationOauthTokenManager($accessToken->getToken());
+                return new GoogleAuthenticationOauthTokenManager($accessToken);
             }
 
             throw new AuthenticationException('Please re-login, the access token has expired');
@@ -90,7 +90,7 @@ class Factory {
                 throw new AuthenticationException('Please re-login, the access token has expired');
             }
 
-            return new PTCAuthenticationOauthTokenManager($accessToken->getToken());
+            return new PTCAuthenticationOauthTokenManager($accessToken);
         }
 
         throw new Exception('Invalid config provided. No provider defined');
