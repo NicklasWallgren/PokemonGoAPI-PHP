@@ -206,26 +206,26 @@ class Pokemon extends Procedure {
     }
 
     /**
-     * Set favourite pokemon.
+     * Set favorite pokemon.
      *
      * @param boolean $favourite
      * @throws Exception
      *
      * @return SetFavoritePokemonResponse
      */
-    public function favourite($fav)
+    public function favorite($fav)
     {
         // Execute the API request
-        $response = $this->getRequestService()->favourite($this->getPokemonData()->getId(), $fav);
+        $response = $this->getRequestService()->favorite($this->getPokemonData()->getId(), $fav);
 
         // Check if the request was successfully executed
         if ($response->getResult() !== SetFavoritePokemonResponse_Result::SUCCESS) {
-            throw new Exception(sprintf('Invalid response during setting favourite pokemon. Result: \'%s\' Code: \'%s\'',
+            throw new Exception(sprintf('Invalid response during changing favorite state. Result: \'%s\' Code: \'%s\'',
                 $response->getResult(), SetFavoritePokemonResponse_Result::toString($response->getResult())));
         }
 
         // Update pokemon state
-        $this->data->setFavourite($fav);
+        $this->data->setFavorite($fav);
 
         return $response;
     }
