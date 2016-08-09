@@ -29,27 +29,18 @@ class AuthenticationCodeManager extends Manager {
      */
     public function getAccessToken()
     {
-
-        // Check if the access token is available
-        if ($this->accessToken !== null) {
-            // Check if the timestamp is defined and valid
-            if ($this->accessToken->isTimestampValid()) {
-                return $this->accessToken->getToken();
-            }
-
-            // Check if a refresh token is defined
-            if ($this->accessToken->hasFreshToken()) {
-                // Use refresh token to retrieve new oauth token
-            }
+        // Check if we are authenticated
+        if ($this->isAuthenticated()) {
+            // Try to refresh the token if required and possible
+            return $this->refreshTokenIfPossible();
         }
-
 
         // Retrieve the Google authenticator
         $authenticator = $this->authenticator();
 
         // Retrieve the access token by authentication code
         $accessToken = $authenticator->loginByToken($this->authenticationCode);
-
+        
         // Dispatch event to listeners
         $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $accessToken);
 

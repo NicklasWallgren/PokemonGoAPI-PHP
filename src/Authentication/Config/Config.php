@@ -2,6 +2,9 @@
 
 namespace NicklasW\PkmGoApi\Authentication\Config;
 
+use NicklasW\PkmGoApi\Authentication\AccessToken;
+use NicklasW\PkmGoApi\Authentication\Factory\Factory;
+
 class Config {
 
     /**
@@ -28,6 +31,25 @@ class Config {
      * @var string
      */
     protected $oauthToken;
+
+    /**
+     * @var string
+     */
+    protected $provider;
+
+    /**
+     * Converts the access token to a config object.
+     *
+     * @param AccessToken $accessToken
+     */
+    public static function from($accessToken)
+    {
+
+        $instance = new static();
+
+
+
+    }
 
     /**
      * @return string
@@ -108,5 +130,37 @@ class Config {
     {
         $this->oauthToken = $oauthToken;
     }
-    
+
+    /**
+     * @return string
+     */
+    public function getProvider()
+    {
+        return $this->provider;
+    }
+
+    /**
+     * @param string $provider
+     */
+    public function setProvider($provider)
+    {
+        $this->provider = $provider;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isGoogle()
+    {
+        return $this->provider === Factory::PROVIDER_GOOGLE;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isPTC()
+    {
+        return $this->provider === Factory::PROVIDER_PTC;
+    }
+
 }

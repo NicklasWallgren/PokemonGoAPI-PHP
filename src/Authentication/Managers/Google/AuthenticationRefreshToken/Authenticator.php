@@ -17,7 +17,7 @@ class Authenticator {
      * Authenticate using refresh code.
      *
      * @param string $token
-     * @return string
+     * @return AccessToken
      */
     public function loginByRefreshToken($token)
     {
