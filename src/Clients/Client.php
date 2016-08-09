@@ -64,7 +64,12 @@ class Client extends GuzzleClient {
         // Create a middlware for logging
         $stack->unshift(Middleware::log(Log::getInstance(), new MessageFormatter(self::$LOGGER_MESSAGE_FORMAT)));
 
-        return array('http_errors' => false, 'handler' => $stack, 'verify' => Config::get('config.ssl_verification'));
+        return array(
+            'http_errors' => false,
+            'handler' => $stack,
+            'verify' => Config::get('config.ssl_verification'),
+            'proxy' => Config::get('config.proxy'),
+        );
     }
 
 }
