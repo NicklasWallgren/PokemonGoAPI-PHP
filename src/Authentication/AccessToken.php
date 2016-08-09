@@ -103,6 +103,32 @@ class AccessToken {
     }
 
     /**
+     * Returns true if the access token is valid, false otherwise.
+     *
+     * @return boolean
+     */
+    public function isValid()
+    {
+        // Check if we have a oauth token, but no token lifetime timestamp
+        if ($this->getToken() && !$this->hasTimestamp()) {
+            // Authenticated using oauth token, we can't validate the state of the access token.
+            return true;
+        }
+
+        // Check if we have a oauth token, a token lifetime timestamp and no fresh token
+        if ($this->getToken() && $this->hasTimestamp() && !$this->hasFreshToken()) {
+            // Authenticated using user credentials. We have no refresh token.
+            return $this->isTimestampValid();
+        }
+
+        // Check if we have a fresh token and a token lifetime timestamp
+        if ($this->hasFreshToken() && $this->hasTimestamp()) {
+            // Authenticated using authentication code, or refresh token.
+            return $this->isTimestampValid();
+        }
+    }
+
+    /**
      * @return mixed
      */
     public function getRefreshToken()
