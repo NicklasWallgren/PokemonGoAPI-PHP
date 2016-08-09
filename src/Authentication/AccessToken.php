@@ -99,7 +99,7 @@ class AccessToken {
      */
     public function isTimestampValid()
     {
-        return $this->hasTimestamp() && intval($this->timestamp) > microtime();
+        return $this->hasTimestamp() && intval($this->timestamp) > time();
     }
 
     /**
