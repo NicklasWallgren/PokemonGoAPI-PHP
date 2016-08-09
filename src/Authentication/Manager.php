@@ -27,6 +27,7 @@ abstract class Manager {
      * @return AccessToken
      */
     abstract public function getAccessToken();
+
     /**
      * Returns the identifier.
      *
@@ -66,5 +67,66 @@ abstract class Manager {
     {
         $this->accessToken = $accessToken;
     }
-    
+
+    /**
+     * Refresh the token if possible.
+     *
+     * @return AccessToken
+     * @throws AuthenticationException
+     */
+    protected function refreshTokenIfPossible()
+    {
+        // Check if the oauth token is valid
+        if ($this->isTokenValid()) {
+            return $this->accessToken;
+        }
+
+        // Check if a refresh token is defined
+        if ($this->hasFreshToken()) {
+            // Use refresh token to retrieve new oauth token
+
+            // Dispatch event to listeners
+            $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $this->accessToken);
+
+            return $this->accessToken;
+        }
+        
+        throw new AuthenticationException('Unable to refresh token, please re-login');
+    }
+
+    /**
+     * Returns true if the manager has authenticated, false otherwise.
+     *
+     * @return boolean
+     */
+    protected function isAuthenticated()
+    {
+        return $this->accessToken !== null;
+    }
+
+    /**
+     * Returns true if the token is valid, false otherwise.
+     *
+     * @return boolean
+     */
+    protected function isTokenValid()
+    {
+        // Check if the access token contains lifetime timestamp
+        if ($this->isAuthenticated() && !$this->accessToken->hasTimestamp()) {
+            return true;
+        }
+
+        return $this->isAuthenticated() && $this->accessToken->isTimestampValid();
+    }
+
+    /**
+     * Return true if fresh token is defined and valid, false otherwise.
+     *
+     * @return bool
+     */
+    protected function hasFreshToken()
+    {
+        return $this->isAuthenticated() && $this->accessToken->isTimestampValid();
+    }
+
 }

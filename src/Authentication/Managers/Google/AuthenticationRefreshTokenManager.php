@@ -30,11 +30,20 @@ class AuthenticationRefreshTokenManager extends Manager {
      */
     public function getAccessToken()
     {
+        // Check if we are authenticated
+        if ($this->isAuthenticated()) {
+            // Try to refresh the token if required and possible
+            return $this->refreshTokenIfPossible();
+        }
+
         // Retrieve the Google authenticator
         $authenticator = $this->authenticator();
 
         // Retrieve the access token by refresh token
         $accessToken = $authenticator->loginByRefreshToken($this->token);
+
+        // Add the refresh token to the access token
+        $accessToken->setRefreshToken($this->token);
 
         // Dispatch event to listeners
         $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $accessToken);

@@ -38,6 +38,11 @@ class AuthenticationCredentialsManager extends Manager {
      */
     public function getAccessToken()
     {
+        // Check if we are authenticated
+        if ($this->isAuthenticated() && ($token = $this->refreshTokenIfPossible())) {
+            return $token;
+        }
+
         // Retrieve the PTC authenticator
         $authenticator = $this->authenticator();
 
@@ -61,6 +66,32 @@ class AuthenticationCredentialsManager extends Manager {
     public function getIdentifier()
     {
         return $this->authenticator()->identifier();
+    }
+
+    /**
+     * Refresh the token if possible.
+     *
+     * @return AccessToken|null
+     * @throws AuthenticationException
+     */
+    protected function refreshTokenIfPossible()
+    {
+        // Check if the oauth token is valid
+        if ($this->isTokenValid()) {
+            return $this->accessToken;
+        }
+
+        // Check if a refresh token is defined
+        if ($this->hasFreshToken()) {
+            // Use refresh token to retrieve new oauth token
+
+            // Dispatch event to listeners
+            $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $this->accessToken);
+
+            return $this->accessToken;
+        }
+
+        return null;
     }
 
     /**
