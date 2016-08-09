@@ -12,6 +12,7 @@ use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentialsMa
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationOauthTokenManager as GoogleAuthenticationOauthTokenManager;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshTokenManager as GoogleAuthenticationRefreshTokenManager;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentialsManager as PTCAuthenticationCredentialsManager;
+use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationOauthTokenManager as PTCAuthenticationOauthTokenManager;
 
 class Factory {
 
@@ -60,26 +61,39 @@ class Factory {
      * Create authentication manager.
      *
      * @param AccessToken $accessToken
-     * @return GoogleAuthenticationOauthTokenManager|GoogleAuthenticationRefreshTokenManager
+     *
+     * @return Manager
+     *
      * @throws AuthenticationException
+     * @throws Exception
      */
     protected static function createAuthenticationManagerByAccessToken($accessToken)
     {
-        // Check if a token timestamp is provided
-        if (!$accessToken->hasTimestamp()) {
-            return new GoogleAuthenticationOauthTokenManager($accessToken->getToken());
+        if ($accessToken->getProvider() == AccessToken::PROVIDER_GOOGLE) {
+            // Check if a token timestamp is provided
+            if (!$accessToken->hasTimestamp()) {
+                return new GoogleAuthenticationOauthTokenManager($accessToken->getToken());
+            }
+
+            // Check if a fresh token is available, check if it is still valid
+            if ($accessToken->hasFreshToken() && $accessToken->isTimestampValid()) {
+                return new GoogleAuthenticationRefreshTokenManager($accessToken->getRefreshToken());
+            }
+
+            if ($accessToken->isTimestampValid()) {
+                return new GoogleAuthenticationOauthTokenManager($accessToken->getToken());
+            }
+
+            throw new AuthenticationException('Please re-login, the access token has expired');
+        } elseif ($accessToken->getProvider() == AccessToken::PROVIDER_PTC) {
+            if (!$accessToken->isTimestampValid()) {
+                throw new AuthenticationException('Please re-login, the access token has expired');
+            }
+
+            return new PTCAuthenticationOauthTokenManager($accessToken->getToken());
         }
 
-        // Check if a fresh token is available, check if it is still valid
-        if ($accessToken->hasFreshToken() && $accessToken->isTimestampValid()) {
-            return new GoogleAuthenticationRefreshTokenManager($accessToken->getRefreshToken());
-        }
-
-        if ($accessToken->isTimestampValid()) {
-            return new GoogleAuthenticationOauthTokenManager($accessToken->getToken());
-        }
-
-        throw new AuthenticationException('Please re-login, the access token has expired');
+        throw new Exception('Invalid config provided. No provider defined');
     }
 
     /**
