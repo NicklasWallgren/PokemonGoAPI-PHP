@@ -8,6 +8,7 @@ use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException
 use NicklasW\PkmGoApi\Requests\EvolvePokemonRequest;
 use NicklasW\PkmGoApi\Requests\RenamePokemonRequest;
 use NicklasW\PkmGoApi\Requests\TransferPokemonRequest;
+use NicklasW\PkmGoApi\Requests\UpgradePokemonRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse;
 
@@ -63,4 +64,20 @@ class PokemonRequestService extends RequestService {
         return $evolvePokemonRequest->getData();
     }
 
+    /**
+     * Upgrade the pokemon.
+     *
+     * @param integer $pokemonId
+     * @return UpgradePokemonResponse
+     * @throws AuthenticationException
+     * @throws Exception
+     */
+    public function upgrade($pokemonId)
+    {
+        $upgradePokemonRequest = new UpgradePokemonRequest($pokemonId);
+
+        $this->requestHandler()->handle($upgradePokemonRequest);
+
+        return $upgradePokemonRequest->getData();
+    }
 }
