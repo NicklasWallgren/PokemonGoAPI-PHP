@@ -83,7 +83,7 @@ class PokemonRequestService extends RequestService {
     }
 
     /**
-     * Set pokemon favourite.
+     * Set pokemon favorite.
      *
      * @param integer $pokemonId
      * @param boolean $fav
@@ -91,7 +91,7 @@ class PokemonRequestService extends RequestService {
      * @throws AuthenticationException
      * @throws Exception
      */
-    public function favourite($pokemonId, $fav)
+    public function favorite($pokemonId, $fav)
     {
         $setFavoritePokemonRequest = new SetFavoritePokemonRequest($pokemonId, $fav);
 
