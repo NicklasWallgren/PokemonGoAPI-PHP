@@ -7,6 +7,7 @@ use Exception;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Requests\EvolvePokemonRequest;
 use NicklasW\PkmGoApi\Requests\RenamePokemonRequest;
+use NicklasW\PkmGoApi\Requests\SetFavoritePokemonRequest;
 use NicklasW\PkmGoApi\Requests\TransferPokemonRequest;
 use NicklasW\PkmGoApi\Requests\UpgradePokemonRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
@@ -79,5 +80,23 @@ class PokemonRequestService extends RequestService {
         $this->requestHandler()->handle($upgradePokemonRequest);
 
         return $upgradePokemonRequest->getData();
+    }
+
+    /**
+     * Set pokemon favourite.
+     *
+     * @param integer $pokemonId
+     * @param boolean $fav
+     * @return SetFavoritePokemonResponse
+     * @throws AuthenticationException
+     * @throws Exception
+     */
+    public function favourite($pokemonId, $fav)
+    {
+        $setFavoritePokemonRequest = new SetFavoritePokemonRequest($pokemonId, $fav);
+
+        $this->requestHandler()->handle($setFavoritePokemonRequest);
+
+        return $setFavoritePokemonRequest->getData();
     }
 }
