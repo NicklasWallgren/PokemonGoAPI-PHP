@@ -34,6 +34,7 @@ class RenamePokemonRequest extends Request {
      * TransferPokemonRequest constructor.
      *
      * @param integer $pokemonId
+     * @param string $name
      */
     public function __construct($pokemonId, $name)
     {
