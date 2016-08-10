@@ -14,6 +14,8 @@ use NicklasW\PkmGoApi\Api\Procedure;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Services\Request\InventoryRequestService;
 
+use POGOProtos\Networking\Responses\RecycleInventoryItemResponse_Result;
+
 class Inventory extends Procedure {
 
     /**
@@ -135,6 +137,32 @@ class Inventory extends Procedure {
         $this->items = Items::create($inventoryItems);
 
         Log::debug(sprintf('[#%s] Retrieved inventory.', __CLASS__));
+    }
+
+    /**
+     * Recycle inventory item
+     *
+     * @param int $itemId
+     * @param int $count
+     * @throws Exception
+     *
+     * @return  RecycleInventoryItemResponse
+     */
+    public function recycle($itemId, $count)
+    {
+        // Execute the API request
+        $response = $this->getRequestService()->recycle($itemId, $count);
+
+        // Check if the request was successfully executed
+        if ($response->getResult() !== RecycleInventoryItemResponse_Result::SUCCESS) {
+            throw new Exception(sprintf('Invalid response during item recycle. Result: \'%s\' Code: \'%s\'',
+                $response->getResult(), RecycleInventoryItemResponse_Result::toString($response->getResult())));
+        }
+
+        // Update inventory
+        $this->update();
+
+        return $response;
     }
 
     /**
