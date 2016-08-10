@@ -21,6 +21,7 @@ use POGOProtos\Enums\PokemonId;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
 use POGOProtos\Networking\Responses\NicknamePokemonResponse_Result;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse_Result;
+use POGOProtos\Networking\Responses\SetFavoritePokemonResponse_Result;
 use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
 
 /**
@@ -200,6 +201,31 @@ class Pokemon extends Procedure {
 
         // Update the inventory
         $this->getInventory()->update();
+
+        return $response;
+    }
+
+    /**
+     * Set favorite pokemon.
+     *
+     * @param boolean $favourite
+     * @throws Exception
+     *
+     * @return SetFavoritePokemonResponse
+     */
+    public function favorite($fav)
+    {
+        // Execute the API request
+        $response = $this->getRequestService()->favorite($this->getPokemonData()->getId(), $fav);
+
+        // Check if the request was successfully executed
+        if ($response->getResult() !== SetFavoritePokemonResponse_Result::SUCCESS) {
+            throw new Exception(sprintf('Invalid response during changing favorite state. Result: \'%s\' Code: \'%s\'',
+                $response->getResult(), SetFavoritePokemonResponse_Result::toString($response->getResult())));
+        }
+
+        // Update pokemon state
+        $this->data->setFavorite($fav);
 
         return $response;
     }
