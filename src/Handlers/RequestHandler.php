@@ -5,7 +5,6 @@ namespace NicklasW\PkmGoApi\Handlers;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
-use GuzzleHttp\Psr7\StreamWrapper;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
@@ -231,7 +230,7 @@ class RequestHandler {
         $responseEnvelop = new ResponseEnvelope();
 
         // Unmarshall the response
-        $responseEnvelop->read(StreamWrapper::getResource($response->getBody()));
+        $responseEnvelop->read($response->getBody()->getContents());
 
         return $responseEnvelop;
     }
@@ -374,7 +373,13 @@ class RequestHandler {
         if ($this->client == null) {
             // Initialize the HTTP client
             $this->client = new Client(
-                array('headers' => array('User-Agent' => 'Niantic App'), 'http_errors' => false, 'verify' => Config::get('config.ssl_verification')));
+                array(
+                    'headers' => array('User-Agent' => 'Niantic App'),
+                    'http_errors' => false,
+                    'verify' => Config::get('config.ssl_verification'),
+                    'proxy' => Config::get('config.proxy'),
+                )
+            );
         }
 
         return $this->client;
