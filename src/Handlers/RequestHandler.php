@@ -428,7 +428,13 @@ class RequestHandler {
         if ($this->client == null) {
             // Initialize the HTTP client
             $this->client = new Client(
-                array('headers' => array('User-Agent' => 'Niantic App'), 'http_errors' => false, 'verify' => Config::get('config.ssl_verification')));
+                array(
+                    'headers' => array('User-Agent' => 'Niantic App'),
+                    'http_errors' => false,
+                    'verify' => Config::get('config.ssl_verification'),
+                    'proxy' => Config::get('config.proxy'),
+                )
+            );
         }
 
         return $this->client;
