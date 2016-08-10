@@ -37,9 +37,9 @@ class AccessToken {
     /**
      * AccessToken constructor.
      *
-     * @param string  $token The Oauth token
-     * @param string  $provider The provider, either google or ptc
-     * @param integer $timestamp The timestamp of the Oauth token
+     * @param string  $token        The Oauth token
+     * @param string  $provider     The provider, either google or ptc
+     * @param integer $timestamp    The timestamp of the Oauth token
      * @param string  $refreshToken The refresh token
      */
     public function __construct($token, $provider, $timestamp = null, $refreshToken = null)
@@ -124,7 +124,7 @@ class AccessToken {
         // Check if we have a fresh token and a token lifetime timestamp
         if ($this->hasFreshToken() && $this->hasTimestamp()) {
             // Authenticated using authentication code, or refresh token.
-            return $this->isTimestampValid();
+            return true;
         }
     }
 
