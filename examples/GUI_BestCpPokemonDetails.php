@@ -98,7 +98,7 @@ function show_error($txt)
 function html_start()
 {
 	?>
-    <div class="container">
+	<div class="container">
 		<div class="header clearfix"><h3 class="text-muted">PokemonGoAPI-PHP</h3></div>
 	<?
 }
@@ -112,26 +112,26 @@ function html_stop()
 
 function html_header()
 {
-    ?>
+	?>
 	<!doctype html>
 	<html lang="en">
-    <head>
+	<head>
 		<meta charset="UTF-8">
 		<meta name="Author" content="Gandaflux">
-	    <link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+		<link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
 		<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    </head>
-    <body>
-    <?
+	</head>
+	<body>
+	<?
 }
 
 function html_footer()
 {
-    ?>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    </body>
-    </html>
-    <?
+	?>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</body>
+	</html>
+	<?
 }
 
 ?>
