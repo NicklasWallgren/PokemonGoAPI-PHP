@@ -15,11 +15,15 @@ class AuthenticationOauthTokenManager extends Manager {
     /**
      * AuthenticationOauthTokenManager constructor.
      *
-     * @param string $token
+     * @param AccessToken|string $token
      */
     public function __construct($token)
     {
-        $this->token = $token;
+        if ($token instanceof AccessToken) {
+            $this->setAccessToken($token);
+        } else {
+            $this->token = $token;
+        }
     }
 
     /**
@@ -29,15 +33,14 @@ class AuthenticationOauthTokenManager extends Manager {
      */
     public function getAccessToken()
     {
-        $accessToken = new AccessToken($this->token, AccessToken::PROVIDER_GOOGLE);
+        if (!$this->accessToken) {
+            $this->accessToken = new AccessToken($this->token, AccessToken::PROVIDER_GOOGLE);
+        }
 
         // Dispatch event to listeners
-        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $accessToken);
+        $this->dispatchEvent(static::EVENT_ACCESS_TOKEN, $this->accessToken);
 
-        // Add the access token to the manager
-        $this->setAccessToken($accessToken);
-
-        return $accessToken;
+        return $this->accessToken;
     }
 
     /**
