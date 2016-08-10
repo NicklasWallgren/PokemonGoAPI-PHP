@@ -149,6 +149,23 @@ class Items extends Data {
     }
 
     /**
+     * Returns item instance or null.
+     *
+     * @param $itemId
+     * @return Item
+     */
+    public function getItemById($id)
+    {
+        foreach($this->items as $item)
+        {
+            if($item->getItemId() == $id)
+                return $item;
+        }
+
+        return null;
+    }
+
+    /**
      * Returns true if the item data is of type item, false otherwise.
      *
      * @param InventoryItemData $itemData
