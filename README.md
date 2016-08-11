@@ -1,17 +1,40 @@
 # PokemonGoAPI-PHP
 Pokemon GO PHP API library
 
-# Build
-  - Clone the repo and cd into the folder
-  - `` git clone <repo> ``
-  - Install the dependencies
-  - `` composer install ``
+# Install
+Add the following properties to your project's `composer.json` file:
+
+```json
+"minimum-stability": "dev",
+"prefer-stable": true
+```
+
+Then run the command `composer require nicklasw/pkm-go-api`.
 
 # Usage
 EG:
 ```php
+ // Create the authentication config
+$config = new Config();
+$config->setProvider(Factory::PROVIDER_PTC);
+$config->setUser('INSERT_USER');
+$config->setPassword('INSERT_PASSWORD');
+
+// Create the authentication manager
+$manager = Factory::create($config);
+
+// Add a event listener,
+$manager->addListener(function ($event, $value) {
+    if ($event === Manager::EVENT_ACCESS_TOKEN) {
+        /** @var AccessToken $accessToken */
+        $accessToken = $value;
+
+        // Persist the access token in session storage, cache or whatever.
+    }
+});
+
 // Initialize the pokemon go application
-$application = new ApplicationKernel('INSERT_EMAIL', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
+$application = new ApplicationKernel($manager);
 
 // Retrieve the pokemon go api instance
 $pokemonGoApi = $application->getPokemonGoApi();

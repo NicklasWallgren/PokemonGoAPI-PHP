@@ -5,11 +5,15 @@ namespace NicklasW\PkmGoApi\Handlers;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
+use GuzzleHttp\Psr7\StreamWrapper;
+use NicklasW\PkmGoApi\Authentication\AccessToken;
+use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 use NicklasW\PkmGoApi\Requests\Request;
+use NicklasW\PkmGoApi\Requests\Envelops\Factory as EnvelopeFactory;
 use POGOProtos\Networking\Envelopes\RequestEnvelope;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Request as NetworkRequest;
@@ -73,20 +77,25 @@ class RequestHandler {
     protected $application;
 
     /**
+     * @var EnvelopeFactory
+     */
+    protected $envelopeFactory;
+
+    /**
      * RequestHandler constructor.
      *
-     * @param RequestEnvelope_AuthInfo $authenticationInformation
+     * @param ApplicationKernel $application
      */
-    public function __construct($authenticationInformation, $application)
+    public function __construct($application)
     {
-        $this->session = new Session();
-        $this->session->setAuthenticationInformation($authenticationInformation);
-
         // Set the initial request id
         $this->requestId = rand(100000000, 999999999);
 
         // Set the application
         $this->application = $application;
+
+        // Initialize the envelope factory
+        $this->envelopeFactory = new EnvelopeFactory();
     }
 
     /**
@@ -99,6 +108,9 @@ class RequestHandler {
      */
     public function handle($request, $retry = 0)
     {
+        // Validate the session, check if the auth token has expired and renew if possible
+        $this->validateSession();
+
         // Build and populate request envelope
         $requestEnvelope = $this->build($request);
 
@@ -150,6 +162,18 @@ class RequestHandler {
 
         // Handles and unsmarshalles the response envelope
         $request->handleResponse($response);
+    }
+
+    /**
+     * Re-initialize the session.
+     *
+     * @param RequestEnvelope_AuthInfo_JWT $authenticationInformation
+     */
+    protected function reinitializeSession($authenticationInformation)
+    {
+        $this->session = new Session();
+
+        $this->session->setAuthenticationInformation($authenticationInformation);
     }
 
     /**
@@ -230,7 +254,7 @@ class RequestHandler {
         $responseEnvelop = new ResponseEnvelope();
 
         // Unmarshall the response
-        $responseEnvelop->read($response->getBody()->getContents());
+        $responseEnvelop->read(StreamWrapper::getResource($response->getBody()));
 
         return $responseEnvelop;
     }
@@ -258,6 +282,27 @@ class RequestHandler {
 
         // Set the authentication ticket
         $this->session->setAuthenticationTicket($response->getAuthTicket());
+    }
+
+    /**
+     * Check if the session is valid, if not we refresh if possible.
+     */
+    protected function validateSession()
+    {
+        // Check if the current session is valid
+        if ($this->session !== null && $this->session->isValid()) {
+            return;
+        }
+        
+        // Retrieve the renewed access token
+        $accessToken = $this->manager()->getAccessToken();
+
+        // Build the authentication information
+        $authenticationInformation = $this->envelopeFactory->create(
+            EnvelopeFactory::$TYPE_AUTHINFO, $accessToken->getProvider(), $accessToken);
+
+        // Reinitialize the session
+        $this->reinitializeSession($authenticationInformation);
     }
 
     /**
@@ -360,6 +405,16 @@ class RequestHandler {
         }
 
         $requestEnvelope->setAuthTicket($this->session->getAuthenticationTicket());
+    }
+
+    /**
+     * Returns the authentication manager
+     *
+     * @return Manager
+     */
+    protected function manager()
+    {
+        return $this->application->getManager();
     }
 
     /**
