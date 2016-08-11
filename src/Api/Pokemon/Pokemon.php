@@ -20,6 +20,7 @@ use NicklasW\PkmGoApi\Services\Request\PokemonRequestService;
 use POGOProtos\Enums\PokemonId;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
 use POGOProtos\Networking\Responses\NicknamePokemonResponse_Result;
+use POGOProtos\Networking\Responses\ReleasePokemonResponse;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse_Result;
 use POGOProtos\Networking\Responses\SetFavoritePokemonResponse_Result;
 use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
@@ -112,6 +113,7 @@ class Pokemon extends Procedure {
      * Transfers the pokemon.
      *
      * @return ReleasePokemonResponse
+     * @throws Exception
      */
     public function transfer()
     {
@@ -187,6 +189,7 @@ class Pokemon extends Procedure {
      * Evolves the pokemon.
      *
      * @return EvolvePokemonResponse
+     * @throws Exception
      */
     public function evolve()
     {

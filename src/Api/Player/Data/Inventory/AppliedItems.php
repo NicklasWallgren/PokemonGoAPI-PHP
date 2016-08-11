@@ -16,7 +16,7 @@ class AppliedItems extends Data {
     /**
      * @var AppliedItem[]
      */
-    protected $appliedItems;
+    protected $appliedItems = array();
 
     /**
      * Add applied item to the list of applied items.

@@ -9,15 +9,6 @@ use NicklasW\PkmGoApi\Requests\Envelops\ProtobufMessage;
 class RequestService {
 
     /**
-     * Transfers the pokemon.
-     */
-    public function transferPokemon()
-    {
-
-
-    }
-
-    /**
      * Returns the request handler.
      *
      * @return RequestHandler

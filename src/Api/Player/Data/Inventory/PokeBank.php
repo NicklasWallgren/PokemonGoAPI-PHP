@@ -118,16 +118,4 @@ class PokeBank extends Data {
         });
     }
 
-
-    public function sortBy()
-    {
-        // name, cp, level, iv, pokedex number
-
-
-
-    }
-
-
-
-
 }

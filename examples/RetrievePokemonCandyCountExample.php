@@ -2,10 +2,10 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use NicklasW\PkmGoApi\Authenticators\Factory;
+use NicklasW\PkmGoApi\Authentication\Config\Config;
+use NicklasW\PkmGoApi\Authentication\Factory\Factory;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 use POGOProtos\Enums\PokemonFamilyId;
-use POGOProtos\Enums\PokemonId;
 
 class RetrievePokemonCandyCountExample {
 
@@ -14,9 +14,17 @@ class RetrievePokemonCandyCountExample {
      */
     public function run()
     {
+        // Create the authentication config
+        $config = new Config();
+        $config->setProvider(Factory::PROVIDER_PTC);
+        $config->setUser('INSERT_USER');
+        $config->setPassword('INSERT_PASSWORD');
+
+        // Create the authentication manager
+        $manager = Factory::create($config);
+
         // Initialize the pokemon go application
-        $application = new ApplicationKernel(
-            'INSERT_USER', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
+        $application = new ApplicationKernel($manager);
 
         // Retrieve the pokemon go api instance
         $pokemonGoApi = $application->getPokemonGoApi();
