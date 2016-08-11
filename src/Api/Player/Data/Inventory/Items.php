@@ -8,6 +8,7 @@ use NicklasW\PkmGoApi\Facades\Log;
 use POGOProtos\Inventory\InventoryDelta;
 use POGOProtos\Inventory\InventoryItem;
 use POGOProtos\Inventory\InventoryItemData;
+use POGOProtos\Inventory\Item\ItemId;
 
 /**
  * @method void setPokeBank(PokeBank $pokeBank)
@@ -17,7 +18,6 @@ use POGOProtos\Inventory\InventoryItemData;
  * @method void setAppliedItems(AppliedItems $appliedItems)
  * @method void setStats(Stats $stats)
  * @method void setEggPokemon(EggPokemon[] $eggPokemon)
- *
  * @method PokeBank getPokeBank()
  * @method Item[] getItems()
  * @method CandyBank getCandyBank()
@@ -113,8 +113,11 @@ class Items extends Data {
     protected function createItemData($itemData)
     {
         if (self::isItem($itemData)) {
+            // Retrieve the item data instance
+            $item = $itemData->getItem();
+
             // Retrieve the item data
-            $this->items[] = Item::create($itemData->getItem());
+            $this->items[$item->getItemId()] = Item::create($item);
         } elseif (self::isEggPokemon($itemData)) {
             // Retrieve the applied items data
             $this->eggPokemon[] = EggPokemon::create($itemData->getPokemonData());
@@ -151,18 +154,23 @@ class Items extends Data {
     /**
      * Returns item instance or null.
      *
-     * @param $itemId
+     * @param integer $id
      * @return Item
+     * @throws Exception
      */
     public function getItemById($id)
     {
-        foreach($this->items as $item)
-        {
-            if($item->getItemId() == $id)
-                return $item;
+        // Check if we retrieved a valid item id
+        if (!ItemId::isValid($id)) {
+            throw new Exception(sprintf('Invalid item id provided. Id \'%s\'', $id));
         }
 
-        return null;
+        // Check if we have that particular item in the inventory
+        if (!array_key_exists($id, $this->items)) {
+            return null;
+        }
+
+        return $this->items[$id];
     }
 
     /**

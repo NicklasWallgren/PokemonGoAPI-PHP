@@ -66,7 +66,7 @@ class Inventory extends Procedure {
     /**
      * Returns the inventory items.
      *
-     * @return Item[]
+     * @return Items
      */
     public function getInventoryItems()
     {
@@ -145,11 +145,18 @@ class Inventory extends Procedure {
      * @param int $itemId
      * @param int $count
      * @throws Exception
-     *
      * @return  RecycleInventoryItemResponse
      */
     public function recycle($itemId, $count)
     {
+        // Retrieve the item from the inventory
+        $item = $this->getInventoryItems()->getItemById($itemId);
+
+        // Retrieve the item from the inventory, validate the capacity
+        if ($item == null || $item->getCount() < $count) {
+            return RecycleInventoryItemResponse_Result::ERROR_NOT_ENOUGH_COPIES;
+        }
+
         // Execute the API request
         $response = $this->getRequestService()->recycle($itemId, $count);
 
@@ -159,8 +166,8 @@ class Inventory extends Procedure {
                 $response->getResult(), RecycleInventoryItemResponse_Result::toString($response->getResult())));
         }
 
-        // Update inventory
-        $this->update();
+        // Update inventory to reflect on the changes
+        $item->setCount($item->getCount() - $count);
 
         return $response;
     }
