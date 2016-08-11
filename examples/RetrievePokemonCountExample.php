@@ -16,9 +16,9 @@ class RetrievePokemonCountExample {
     {
         // Create the authentication config
         $config = new Config();
-        $config->setProvider(Factory::PROVIDER_GOOGLE);
-        $config->setUser('walle.sthlm@gmail.com');
-        $config->setPassword('nicklasintelligentochsmart123');
+        $config->setProvider(Factory::PROVIDER_PTC);
+        $config->setUser('INSERT_USER');
+        $config->setPassword('INSERT_PASSWORD');
 
         // Create the authentication manager
         $manager = Factory::create($config);

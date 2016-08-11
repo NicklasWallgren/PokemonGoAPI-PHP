@@ -23,6 +23,7 @@ use POGOProtos\Networking\Responses\NicknamePokemonResponse_Result;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse_Result;
 use POGOProtos\Networking\Responses\SetFavoritePokemonResponse_Result;
+use POGOProtos\Networking\Responses\UpgradePokemonResponse;
 use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
 
 /**
@@ -118,7 +119,7 @@ class Pokemon extends Procedure {
     public function transfer()
     {
         // Execute the API request
-        $response = $this->getRequestService()->transfer($this->getPokemonData()->getId());
+        $response = $this->getRequestService()->transfer($this->getId());
 
         // Check if the request was successfully executed
         if ($response->getResult() !== ReleasePokemonResponse_Result::SUCCESS) {
@@ -139,11 +140,15 @@ class Pokemon extends Procedure {
      * Upgrade the pokemon.
      *
      * @return UpgradePokemonResponse
+     * @throws Exception
      */
     public function upgrade()
     {
+        // Check if possible to upgrade, do we have enough stardust and candy?
+        // Check if pokemon have reached the current maximum combat points
+
         // Execute the API request
-        $response = $this->getRequestService()->upgrade($this->getPokemonData()->getId());
+        $response = $this->getRequestService()->upgrade($this->getId());
 
         // Check if the request was successfully executed
         if ($response->getResult() !== UpgradePokemonResponse_Result::SUCCESS) {
@@ -165,13 +170,12 @@ class Pokemon extends Procedure {
      *
      * @param string $name
      * @throws Exception
-     *
      * @return NicknamePokemonResponse
      */
     public function rename($name)
     {
         // Execute the API request
-        $response = $this->getRequestService()->rename($this->getPokemonData()->getId(), $name);
+        $response = $this->getRequestService()->rename($this->getId(), $name);
 
         // Check if the request was successfully executed
         if ($response->getResult() !== NicknamePokemonResponse_Result::SUCCESS) {
@@ -193,8 +197,12 @@ class Pokemon extends Procedure {
      */
     public function evolve()
     {
+        if (!$this->canEvolve()) {
+            return EvolvePokemonResponse_Result::FAILED_INSUFFICIENT_RESOURCES;
+        }
+
         // Execute the API request
-        $response = $this->getRequestService()->envolve($this->getPokemonData()->getId());
+        $response = $this->getRequestService()->envolve($this->getId());
 
         // Check if the request was successfully executed
         if ($response->getResult() !== EvolvePokemonResponse_Result::SUCCESS) {
@@ -213,13 +221,14 @@ class Pokemon extends Procedure {
      *
      * @param boolean $favourite
      * @throws Exception
-     *
      * @return SetFavoritePokemonResponse
      */
-    public function favorite($fav)
+    public function favorite($favourite)
     {
+        // Check if already has the requested state
+
         // Execute the API request
-        $response = $this->getRequestService()->favorite($this->getPokemonData()->getId(), $fav);
+        $response = $this->getRequestService()->favorite($this->getId(), $favourite);
 
         // Check if the request was successfully executed
         if ($response->getResult() !== SetFavoritePokemonResponse_Result::SUCCESS) {
@@ -228,7 +237,7 @@ class Pokemon extends Procedure {
         }
 
         // Update pokemon state
-        $this->data->setFavorite($fav);
+        $this->data->setFavorite($favourite);
 
         return $response;
     }
