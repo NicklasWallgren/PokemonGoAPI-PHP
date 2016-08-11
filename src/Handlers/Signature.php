@@ -87,7 +87,7 @@ class Signature {
      */
     protected function generateLocationHash2($latitude, $longitude, $altitude)
     {
-        return (int)hexdec(xxhash32($this->getLocationBytes($latitude, $longitude, $altitude), (int)hexdec(0x1B845238)));
+        return hexdec(xxhash32($this->getLocationBytes($latitude, $longitude, $altitude), 0x1B845238));
     }
 
     /**
@@ -97,8 +97,8 @@ class Signature {
      */
     protected function generateRequestHash($serializedTicket, $serializedRequest)
     {
-        $seed = (int)hexdec(xxhash64($serializedTicket, (int)hexdec(0x1B845238)));
-        return (int)hexdec(xxhash64($serializedRequest, $seed));
+        $seed = hexdec(xxhash64($serializedTicket, 0x1B845238));
+        return hexdec(xxhash64($serializedRequest, $seed));
     }
 
     /**
