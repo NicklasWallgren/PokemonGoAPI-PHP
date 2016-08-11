@@ -2,6 +2,8 @@
 
 namespace NicklasW\PkmGoApi\Api\Player;
 
+use Exception;
+
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\AppliedItems;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyBank;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\EggIncubators;
@@ -15,6 +17,8 @@ use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Services\Request\InventoryRequestService;
 
 use POGOProtos\Networking\Responses\RecycleInventoryItemResponse_Result;
+use POGOProtos\Networking\Responses\UseIncenseResponse_Result;
+use POGOProtos\Networking\Responses\UseItemXpBoostResponse_Result;
 
 class Inventory extends Procedure {
 
@@ -157,6 +161,56 @@ class Inventory extends Procedure {
         if ($response->getResult() !== RecycleInventoryItemResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during item recycle. Result: \'%s\' Code: \'%s\'',
                 $response->getResult(), RecycleInventoryItemResponse_Result::toString($response->getResult())));
+        }
+
+        // Update inventory
+        $this->update();
+
+        return $response;
+    }
+
+    /**
+     * Use incense item
+     *
+     * @param int $itemId
+     * @throws Exception
+     *
+     * @return  UseIncenseResponse
+     */
+    public function useIncense($itemId)
+    {
+        // Execute the API request
+        $response = $this->getRequestService()->useIncense($itemId);
+
+        // Check if the request was successfully executed
+        if ($response->getResult() !== UseIncenseResponse_Result::SUCCESS) {
+            throw new Exception(sprintf('Invalid response during item usage. Result: \'%s\' Code: \'%s\'',
+                $response->getResult(), UseIncenseResponse_Result::toString($response->getResult())));
+        }
+
+        // Update inventory
+        $this->update();
+
+        return $response;
+    }
+
+    /**
+     * Use XP Boost item
+     *
+     * @param int $itemId
+     * @throws Exception
+     *
+     * @return  UseItemXpBoostResponse
+     */
+    public function useItemXpBoost($itemId)
+    {
+        // Execute the API request
+        $response = $this->getRequestService()->useItemXpBoost($itemId);
+
+        // Check if the request was successfully executed
+        if ($response->getResult() !== UseItemXpBoostResponse_Result::SUCCESS) {
+            throw new Exception(sprintf('Invalid response during item usage. Result: \'%s\' Code: \'%s\'',
+                $response->getResult(), UseItemXpBoostResponse_Result::toString($response->getResult())));
         }
 
         // Update inventory
