@@ -5,15 +5,13 @@ namespace NicklasW\PkmGoApi\Handlers;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
-use GuzzleHttp\Psr7\StreamWrapper;
-use NicklasW\PkmGoApi\Authentication\AccessToken;
 use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
-use NicklasW\PkmGoApi\Requests\Request;
 use NicklasW\PkmGoApi\Requests\Envelops\Factory as EnvelopeFactory;
+use NicklasW\PkmGoApi\Requests\Request;
 use POGOProtos\Networking\Envelopes\RequestEnvelope;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Request as NetworkRequest;
@@ -254,7 +252,7 @@ class RequestHandler {
         $responseEnvelop = new ResponseEnvelope();
 
         // Unmarshall the response
-        $responseEnvelop->read(StreamWrapper::getResource($response->getBody()));
+        $responseEnvelop->read($response->getBody()->getContents());
 
         return $responseEnvelop;
     }
