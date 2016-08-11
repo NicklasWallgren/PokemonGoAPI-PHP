@@ -14,6 +14,8 @@ use NicklasW\PkmGoApi\Requests\Envelops\Factory as EnvelopeFactory;
 use NicklasW\PkmGoApi\Requests\Request;
 use POGOProtos\Networking\Envelopes\RequestEnvelope;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
+use POGOProtos\Networking\Envelopes\Unknown6;
+use POGOProtos\Networking\Envelopes\Unknown6_Unknown2;
 use POGOProtos\Networking\Requests\Request as NetworkRequest;
 use Psr\Http\Message\ResponseInterface;
 
@@ -100,17 +102,18 @@ class RequestHandler {
      * Handles a request.
      *
      * @param Request $request
+     * @param bool    $sign
      * @param integer $retry
      * @throws AuthenticationException
      * @throws Exception
      */
-    public function handle($request, $retry = 0)
+    public function handle($request, $sign = false, $retry = 0)
     {
         // Validate the session, check if the auth token has expired and renew if possible
         $this->validateSession();
 
         // Build and populate request envelope
-        $requestEnvelope = $this->build($request);
+        $requestEnvelope = $this->build($request, $sign);
 
         // Execute the HTTP request
         $response = $this->call($requestEnvelope);
@@ -178,9 +181,10 @@ class RequestHandler {
      * Builds the server request envelope.
      *
      * @param Request $request
+     * @param bool    $sign     Requires php-xxhash extension
      * @return RequestEnvelope
      */
-    protected function build($request)
+    protected function build($request, $sign = false)
     {
         // Prepare the network request
         $networkRequest = new NetworkRequest();
@@ -202,6 +206,33 @@ class RequestHandler {
 
         // Add request
         $requestEnvelope->addAllRequests(array($networkRequest));
+
+        // Sign if needed
+        if ($sign === true && $this->session->getAuthenticationTicket() !== null) {
+
+            // Create unknown 6
+            $unknown6 = new Unknown6();
+            $unknown6->setRequestType(6);
+
+            // Create signature
+            $signature  = new Signature(
+                $networkRequest,
+                $this->session->getAuthenticationTicket(),
+                $this->application->getLatitude(),
+                $this->application->getLongitude(),
+                8.0
+            );
+
+            // Create unknown 2
+            $unknown2 = new Unknown6_Unknown2();
+            $unknown2->setEncryptedSignature($signature->getEncryptedValue());
+
+            // Attach to unknown 6
+            $unknown6->setUnknown2($unknown2);
+
+            // Add to envelope
+            $requestEnvelope->setUnknown6($unknown6);
+        }
 
         return $requestEnvelope;
     }
