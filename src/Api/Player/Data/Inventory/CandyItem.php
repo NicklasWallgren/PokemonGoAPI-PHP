@@ -16,7 +16,7 @@ class CandyItem extends Data {
     /**
      * @var integer
      */
-    protected $familyId = PokemonFamilyId::FAMILY_UNSET;
+    protected $familyId = PokemonFamilyId::FAMILY_NONE;
 
     /**
      * @var integer
