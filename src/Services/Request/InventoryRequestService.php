@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Services\Request;
 use NicklasW\PkmGoApi\Requests\GetInventoryRequest;
 use NicklasW\PkmGoApi\Requests\RecycleInventoryItemRequest;
 use NicklasW\PkmGoApi\Requests\UseIncenseRequest;
+use NicklasW\PkmGoApi\Requests\UseItemXpBoostRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
 
 use POGOProtos\Networking\Responses\GetInventoryResponse;
@@ -54,5 +55,20 @@ class InventoryRequestService extends RequestService {
         $this->requestHandler()->handle($useIncenseRequest);
 
         return $useIncenseRequest->getData();
+    }
+
+    /**
+     * Use xp boost item.
+     *
+     * @param integer $itemId
+     * @return UseItemXpBoostResponse
+     */
+    public function useItemXpBoost($itemId)
+    {
+        $useItemXpBoostRequest = new UseItemXpBoostRequest($itemId, $count);
+
+        $this->requestHandler()->handle($useItemXpBoostRequest);
+
+        return $useItemXpBoostRequest->getData();
     }
 }
