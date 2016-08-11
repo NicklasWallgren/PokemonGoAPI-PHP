@@ -2,12 +2,20 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use NicklasW\PkmGoApi\Authenticators\Factory;
+use NicklasW\PkmGoApi\Authentication\Config\Config;
+use NicklasW\PkmGoApi\Authentication\Factory\Factory;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 use POGOProtos\Enums\PokemonFamilyId;
 use POGOProtos\Enums\PokemonId;
 
-$application = new ApplicationKernel('INSERT_USER', 'INSERT_PASSWORD', Factory::AUTHENTICATION_TYPE_GOOGLE);
+$config = new Config();
+$config->setProvider(Factory::PROVIDER_PTC);
+$config->setUser('INSERT_USER');
+$config->setPassword('INSERT_PASSWORD');
+
+$manager = Factory::create($config);
+
+$application = new ApplicationKernel($manager);
 
 if ($application)
 {
