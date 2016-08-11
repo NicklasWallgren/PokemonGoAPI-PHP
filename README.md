@@ -1,11 +1,15 @@
 # PokemonGoAPI-PHP
 Pokemon GO PHP API library
 
-# Build
-  - Clone the repo and cd into the folder
-  - `` git clone <repo> ``
-  - Install the dependencies
-  - `` composer install ``
+# Install
+Add the following properties to your project's `composer.json` file:
+
+```json
+"minimum-stability": "dev",
+"prefer-stable": true
+```
+
+Then run the command `composer require nicklasw/pkm-go-api`.
 
 # Usage
 EG:
