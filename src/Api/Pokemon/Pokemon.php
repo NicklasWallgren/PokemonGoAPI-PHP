@@ -3,21 +3,12 @@
 namespace NicklasW\PkmGoApi\Api\Pokemon;
 
 use Exception;
-use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyBank;
-use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyItem;
-use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokeBank;
-use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Pokedex;
-use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokedexItem;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokemonItem;
-use NicklasW\PkmGoApi\Api\Player\Inventory;
-use NicklasW\PkmGoApi\Api\Pokemon\Support\BasePokemonRetriever;
-use NicklasW\PkmGoApi\Api\Pokemon\Support\CombatPointsCalculator;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonCombatPointsCalculator;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonDetailsTrait;
 use NicklasW\PkmGoApi\Api\Procedure;
 use NicklasW\PkmGoApi\Api\Support\MakeDataPropertiesCallable;
 use NicklasW\PkmGoApi\Services\Request\PokemonRequestService;
-use POGOProtos\Enums\PokemonId;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
 use POGOProtos\Networking\Responses\NicknamePokemonResponse_Result;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse;

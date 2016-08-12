@@ -11,6 +11,7 @@ use NicklasW\PkmGoApi\Api\Player\Data\Inventory\EggPokemon;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Item;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Items;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokeBank;
+use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Pokedex;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Stats;
 use NicklasW\PkmGoApi\Api\Procedure;
 use NicklasW\PkmGoApi\Facades\Log;

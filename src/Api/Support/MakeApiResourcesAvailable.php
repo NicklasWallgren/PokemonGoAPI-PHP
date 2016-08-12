@@ -2,6 +2,9 @@
 
 namespace NicklasW\PkmGoApi\Api\Support;
 
+use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Pokedex;
+use NicklasW\PkmGoApi\Api\Player\Inventory;
+
 trait MakeApiResourcesAvailable {
 
     /**
