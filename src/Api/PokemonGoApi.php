@@ -4,6 +4,7 @@ namespace NicklasW\PkmGoApi\Api;
 
 use NicklasW\PkmGoApi\Api\Map\Map;
 use NicklasW\PkmGoApi\Api\Player\Inventory;
+use NicklasW\PkmGoApi\Api\Player\Journal;
 use NicklasW\PkmGoApi\Api\Player\Profile;
 use NicklasW\PkmGoApi\Services\RequestService;
 
@@ -23,6 +24,11 @@ class PokemonGoApi {
      * @var Profile
      */
     protected $profile;
+
+    /**
+     * @var Journal
+     */
+    protected $journal;
 
     /**
      * @var Map
@@ -62,6 +68,14 @@ class PokemonGoApi {
     }
 
     /**
+     * @return Journal
+     */
+    public function getJournal()
+    {
+        return $this->journal;
+    }
+
+    /**
      * Returns the map.
      *
      * @return Map
@@ -89,6 +103,9 @@ class PokemonGoApi {
 
         // Initialize the profile instance
         $this->profile = new Profile($this);
+
+        // Initialize the journal instance
+        $this->journal = new Journal($this);
 
         // Initialize the map instance
         $this->map = new Map($this);
