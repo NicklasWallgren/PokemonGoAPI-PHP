@@ -358,7 +358,7 @@ class RequestHandler {
         // Retrieve the initial integer from the status code
         $responseCode = substr($response->getStatusCode(), 0, 1);
 
-        return $responseCode == 5;
+        return $responseCode == 5 || $responseCode == 4;
     }
 
     /**
