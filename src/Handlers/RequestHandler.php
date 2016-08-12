@@ -233,6 +233,10 @@ class RequestHandler {
         // Execute the request
         $response = $this->client()->send($request);
 
+        // Check if response is valid
+        if($response->getStatusCode() != 200)
+            throw new Exception(sprintf('Connection problem. Please try again later', $response->getStatusCode()));
+
         // Validate the retrieved response
         $this->validateResponse($response);
 
@@ -291,7 +295,7 @@ class RequestHandler {
         if ($this->session !== null && $this->session->isValid()) {
             return;
         }
-        
+
         // Retrieve the renewed access token
         $accessToken = $this->manager()->getAccessToken();
 
