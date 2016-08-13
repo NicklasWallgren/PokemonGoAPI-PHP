@@ -15,6 +15,16 @@ class Pokemon extends Data {
     /**
      * @var integer
      */
+    protected $timestampMs;
+
+    /**
+     * @var integer
+     */
+    protected $result;
+
+    /**
+     * @var integer
+     */
     protected $pokemonId;
 
     /**
@@ -26,6 +36,25 @@ class Pokemon extends Data {
      * @var integer
      */
     protected $pokemonDataId;
+
+    /**
+     * Returns the timestamp (in ms) of this log entry.
+     *
+     * @return integer
+     */
+    public function getTimestampMs() {
+        return $this->timestampMs;
+    }
+
+    /**
+     * Returns the catch result.
+     * (1=success, 2=escaped)
+     * @return int
+     */
+    public function getResult()
+    {
+        return $this->result;
+    }
 
     /**
      * Returns pokemon id.

@@ -10,6 +10,11 @@ class Fort extends Data {
     /**
      * @var integer
      */
+    protected $timestampMs;
+
+    /**
+     * @var integer
+     */
     protected $result;
 
     /**
@@ -23,7 +28,7 @@ class Fort extends Data {
     protected $eggs;
 
     /**
-     * @var array
+     * @var Item[]
      */
     protected $items;
 
