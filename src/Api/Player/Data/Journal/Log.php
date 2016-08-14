@@ -50,11 +50,17 @@ class Log extends Data {
 
         foreach ($data as $logEntry) {
             if ($logEntry->hasCatchPokemon()) {
+                $element = Pokemon::create($logEntry->getCatchPokemon());
+                $element->setTimestampMs($logEntry->getTimestampMs());
+
                 // Adds pokemon to the list of pokemon log entries
-                $instance->pokemons[] = Pokemon::create($logEntry->getCatchPokemon());
+                $instance->pokemons[] = $element;
             } elseif ($logEntry->hasFortSearch()) {
+                $element = Fort::create($logEntry->getFortSearch());;
+                $element->setTimestampMs($logEntry->getTimestampMs());
+
                 // Add fort to the list of fort log entries
-                $instance->forts[] = Fort::create($logEntry->getFortSearch());
+                $instance->forts[] = $element;
             }
         }
 
