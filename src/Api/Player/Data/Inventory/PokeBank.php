@@ -8,6 +8,7 @@ use NicklasW\PkmGoApi\Api\Data\Data;
 use NicklasW\PkmGoApi\Api\Pokemon\Collection\PokemonCollection;
 use NicklasW\PkmGoApi\Api\Pokemon\Pokemon;
 use POGOProtos\Data\PokemonData;
+use POGOProtos\Enums\PokemonFamilyId;
 use POGOProtos\Enums\PokemonId;
 
 /**
@@ -115,6 +116,25 @@ class PokeBank extends Data {
         }
         return $this->pokemons->filter(function (Pokemon $pokemon) use ($typeId) {
             return $pokemon->getPokemonData()->getPokemonId() == $typeId;
+        });
+    }
+
+    /**
+     * Returns pokemons by pokemon family.
+     *
+     * @param integer $familyId
+     * @return PokemonCollection
+     * @throws Exception
+     */
+    public function getPokemonsByFamily($familyId)
+    {
+        // Check if we retrieved a valid pokemon family id
+        if (PokemonFamilyId::isValid($familyId)) {
+            throw new Exception(sprintf('Invalid pokemon family id provided. Provided pokemon family id: \'%s\'', $familyId));
+        }
+
+        return $this->pokemons->filter(function (Pokemon $pokemon) use ($familyId) {
+            return $pokemon->getFamilyId() == $familyId;
         });
     }
 
