@@ -13,11 +13,6 @@ use POGOProtos\Networking\Responses\GetMapObjectsResponse;
 class Map extends Procedure {
 
     /**
-     * @var Resource
-     */
-    protected $data;
-
-    /**
      * Map constructor.
      */
     public function __construct()

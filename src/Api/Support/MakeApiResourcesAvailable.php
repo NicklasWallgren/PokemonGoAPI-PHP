@@ -4,6 +4,8 @@ namespace NicklasW\PkmGoApi\Api\Support;
 
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Pokedex;
 use NicklasW\PkmGoApi\Api\Player\Inventory;
+use NicklasW\PkmGoApi\Api\Player\Profile;
+use NicklasW\PkmGoApi\Api\PokemonGoApi;
 
 trait MakeApiResourcesAvailable {
 
@@ -12,7 +14,7 @@ trait MakeApiResourcesAvailable {
      *
      * @return PokeBank
      */
-    protected function getPokeBank()
+    protected function pokeBank()
     {
         return $this->getPokemonGoApi()->getInventory()->getPokeBank();
     }
@@ -22,9 +24,9 @@ trait MakeApiResourcesAvailable {
      *
      * @return Pokedex
      */
-    protected function getPokedex()
+    protected function pokedex()
     {
-        return $this->getInventory()->getPokedex();
+        return $this->inventory()->getPokedex();
     }
 
     /**
@@ -32,9 +34,19 @@ trait MakeApiResourcesAvailable {
      *
      * @return CandyBank
      */
-    protected function getCandyBank()
+    protected function candyBank()
     {
-        return $this->getInventory()->getCandyBank();
+        return $this->inventory()->getCandyBank();
+    }
+
+    /**
+     * Returns the candy bank.
+     *
+     * @return Profile
+     */
+    protected function profile()
+    {
+        return $this->getPokemonGoApi()->getProfile();
     }
 
     /**
@@ -42,7 +54,7 @@ trait MakeApiResourcesAvailable {
      *
      * @return Inventory
      */
-    protected function getInventory()
+    protected function inventory()
     {
         return $this->getPokemonGoApi()->getInventory();
     }

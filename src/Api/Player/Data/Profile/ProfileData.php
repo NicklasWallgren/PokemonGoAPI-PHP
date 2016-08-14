@@ -3,7 +3,7 @@
 
 namespace NicklasW\PkmGoApi\Api\Player\Data\Profile;
 
-use NicklasW\PkmGoApi\Api\Data\Data as ApiData;
+use NicklasW\PkmGoApi\Api\Data\Data;
 use POGOProtos\Data\PlayerData;
 
 /**
@@ -31,7 +31,7 @@ use POGOProtos\Data\PlayerData;
  * @method ContactSettings getContactSettings()
  * @method Currencies getCurrencies()
  */
-class ProfileData extends ApiData {
+class ProfileData extends Data {
 
     /**
      * @var string The creation time

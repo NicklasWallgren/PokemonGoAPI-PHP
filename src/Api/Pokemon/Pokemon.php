@@ -7,7 +7,6 @@ use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokemonItem;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonCombatPointsCalculator;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonDetailsTrait;
 use NicklasW\PkmGoApi\Api\Procedure;
-use NicklasW\PkmGoApi\Api\Support\MakeDataPropertiesCallable;
 use NicklasW\PkmGoApi\Services\Request\PokemonRequestService;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
 use POGOProtos\Networking\Responses\NicknamePokemonResponse_Result;
@@ -81,13 +80,7 @@ use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
  */
 class Pokemon extends Procedure {
 
-    use MakeDataPropertiesCallable;
     use PokemonDetailsTrait;
-
-    /**
-     * @var PokemonItem
-     */
-    protected $data;
 
     /**
      * Pokemon constructor.
@@ -97,8 +90,6 @@ class Pokemon extends Procedure {
     public function __construct($pokemonData)
     {
         $this->data = $pokemonData;
-
-        parent::__construct();
     }
 
     /**
@@ -119,7 +110,7 @@ class Pokemon extends Procedure {
         }
 
         // Retrieve the poke bank
-        $pokeBank = $this->getPokeBank();
+        $pokeBank = $this->pokeBank();
 
         // Remove the pokemon from the poke bank
         $pokeBank->removePokemon($this);
@@ -148,7 +139,7 @@ class Pokemon extends Procedure {
         }
 
         // Retrieve the poke bank
-        $pokeBank = $this->getPokeBank();
+        $pokeBank = $this->pokeBank();
 
         // Remove the pokemon from the poke bank
         $pokeBank->removePokemon($this);
@@ -202,7 +193,7 @@ class Pokemon extends Procedure {
         }
 
         // Update the inventory
-        $this->getInventory()->update();
+        $this->inventory()->update();
 
         return $response;
     }
@@ -238,9 +229,9 @@ class Pokemon extends Procedure {
      *
      * @return PokemonItem
      */
-    public function getPokemonData()
+    public function getData()
     {
-        return $this->data;
+        return parent::getData();
     }
 
     /**

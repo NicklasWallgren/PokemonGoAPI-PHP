@@ -5,8 +5,6 @@ namespace NicklasW\PkmGoApi\Api\Map;
 use NicklasW\PkmGoApi\Api\Map\Data\Resources\Fort;
 use NicklasW\PkmGoApi\Api\Map\Data\Results\PokestopSpinResult;
 use NicklasW\PkmGoApi\Api\Procedure;
-use NicklasW\PkmGoApi\Api\Support\MakeDataPropertiesCallable;
-use NicklasW\PkmGoApi\Services\Request\MapRequestService;
 use NicklasW\PkmGoApi\Services\Request\PokestopRequestService;
 use POGOProtos\Networking\Responses\FortSearchResponse_Result;
 use S2\S2LatLng;
@@ -45,17 +43,10 @@ use S2\S2LatLng;
  */
 class Pokestop extends Procedure {
 
-    use MakeDataPropertiesCallable;
-
     /**
      * @var int The loot distance
      */
     protected static $LOOT_DISTANCE = 30;
-
-    /**
-     * @var Fort
-     */
-    protected $data;
 
     /**
      * @var int The fort cooldown timestamp

@@ -9,18 +9,13 @@ use NicklasW\PkmGoApi\Services\Request\JournalRequestService;
 class Journal extends Procedure {
 
     /**
-     * @var Log
-     */
-    protected $log;
-
-    /**
      * Returns the forts log entries.
      *
      * @return Data\Journal\Fort[]
      */
     public function getForts()
     {
-        return $this->getEntries()->getForts();
+        return $this->getData()->getForts();
     }
 
     /**
@@ -30,7 +25,7 @@ class Journal extends Procedure {
      */
     public function getPokemons()
     {
-        return $this->getEntries()->getPokemons();
+        return $this->getData()->getPokemons();
     }
 
     /**
@@ -40,12 +35,7 @@ class Journal extends Procedure {
      */
     public function getEntries()
     {
-        // Check if the log entries is defined
-        if ($this->log == null) {
-            $this->update();
-        }
-
-        return $this->log;
+        return $this->getData();
     }
 
     /**
@@ -57,7 +47,7 @@ class Journal extends Procedure {
         $data = $this->getRequestService()->getJournal();
 
         // Set the log entries
-        $this->log = Log::create($data->getLogEntriesArray());
+        $this->data = Log::create($data->getLogEntriesArray());
     }
 
     /**

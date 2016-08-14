@@ -3,7 +3,6 @@
 namespace NicklasW\PkmGoApi\Api\Player;
 
 use Exception;
-
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\AppliedItems;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyBank;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\EggIncubators;
@@ -16,113 +15,37 @@ use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Stats;
 use NicklasW\PkmGoApi\Api\Procedure;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Services\Request\InventoryRequestService;
-
 use POGOProtos\Networking\Responses\RecycleInventoryItemResponse_Result;
 use POGOProtos\Networking\Responses\UseIncenseResponse_Result;
 use POGOProtos\Networking\Responses\UseItemXpBoostResponse_Result;
 
+/**
+ * @method void setPokeBank(PokeBank $pokeBank)
+ * @method void setItems(Item[] $items)
+ * @method void setCandyBank(CandyBank $candyBank)
+ * @method void setPokedex(Pokedex $pokedex)
+ * @method void setAppliedItems(AppliedItems $appliedItems)
+ * @method void setStats(Stats $stats)
+ * @method void setEggPokemon(EggPokemon[] $eggPokemon)
+ * @method PokeBank getPokeBank()
+ * @method Item[] getItems()
+ * @method CandyBank getCandyBank()
+ * @method Pokedex getPokedex()
+ * @method EggIncubators getEggIncubators()
+ * @method AppliedItems getAppliedItems()
+ * @method Stats getStats()
+ * @method EggPokemon[] getEggPokemon()
+ */
 class Inventory extends Procedure {
-
-    /**
-     * @var Items
-     */
-    protected $items;
-
-    /**
-     * Returns the poke bank.
-     *
-     * @return PokeBank
-     */
-    public function getPokeBank()
-    {
-        return $this->getItems()->getPokeBank();
-    }
-
-    /**
-     * Returns the candy bank.
-     *
-     * @return CandyBank
-     */
-    public function getCandyBank()
-    {
-        return $this->getItems()->getCandyBank();
-    }
-
-    /**
-     * Returns the pokedex.
-     *
-     * @return Pokedex
-     */
-    public function getPokedex()
-    {
-        return $this->getItems()->getPokedex();
-    }
-
-    /**
-     * Returns the egg incubators.
-     *
-     * @return EggIncubators
-     */
-    public function getEggIncubators()
-    {
-        return $this->getItems()->getEggIncubators();
-    }
-
-    /**
-     * Returns the inventory items.
-     *
-     * @return Items
-     */
-    public function getInventoryItems()
-    {
-        return $this->getItems()->getItems();
-    }
-
-    /**
-     * Returns applied items.
-     *
-     * @return AppliedItems
-     */
-    public function getAppliedItems()
-    {
-        return $this->getItems()->getAppliedItems();
-    }
-
-    /**
-     * Returns stats.
-     *
-     * @return Stats
-     */
-    public function getStats()
-    {
-        return $this->getItems()->getStats();
-    }
-
-    /**
-     * Returns egg pokemon.
-     *
-     * @return EggPokemon[]
-     */
-    public function getEggPokemon()
-    {
-        return $this->getItems()->getEggPokemon();
-    }
 
     /**
      * Returns the items.
      *
      * @returns Items
      */
-    public function getItems()
+    public function getData()
     {
-        // Check if the items is available since earlier
-        if ($this->items === null) {
-            Log::debug(sprintf('[#%s] No items in inventory - Fetching the latest inventory', __CLASS__));
-
-            $this->update();
-        }
-
-        return $this->items;
+        return parent::getData();
     }
 
     /**
@@ -139,7 +62,7 @@ class Inventory extends Procedure {
         $inventoryItems = $playerInventory->getInventoryDelta();
 
         // Set the items
-        $this->items = Items::create($inventoryItems);
+        $this->data = Items::create($inventoryItems);
 
         Log::debug(sprintf('[#%s] Retrieved inventory.', __CLASS__));
     }

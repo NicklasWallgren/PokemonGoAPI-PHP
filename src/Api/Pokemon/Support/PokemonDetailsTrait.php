@@ -4,14 +4,11 @@ namespace NicklasW\PkmGoApi\Api\Pokemon\Support;
 
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyItem;
 use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMetaRegistry;
-use NicklasW\PkmGoApi\Api\Support\MakeApiResourcesAvailable;
 use POGOProtos\Enums\PokemonId;
 use POGOProtos\Enums\PokemonMove;
 use POGOProtos\Enums\PokemonType;
 
 trait PokemonDetailsTrait {
-
-    use MakeApiResourcesAvailable;
 
     /**
      * Returns the pokemon family id.
@@ -126,6 +123,23 @@ trait PokemonDetailsTrait {
     }
 
     /**
+     * Returns true if it is possible to upgrade, false otherwise.
+     *
+     * @return bool
+     */
+    public function canUpgrade()
+    {
+        // Retrieve the amount of stardust
+        $stardustAmount = $this->profile()->getCurrencies()->getStardust()->getAmount();
+
+        // Retrieve the candy amount
+        $candyAmount = $this->getCandies()->getCount();
+
+        return ($stardustAmount >= $this->getStardustCostsForPowerup()
+            && $candyAmount >= $this->getCandyCostForPowerup());
+    }
+
+    /**
      * Returns the base stamina.
      *
      * @return integer
@@ -213,7 +227,7 @@ trait PokemonDetailsTrait {
      */
     public function getCandies()
     {
-        return $this->getCandyBank()->get($this->getFamilyId());
+        return $this->candyBank()->get($this->getFamilyId());
     }
 
     /**
@@ -223,7 +237,7 @@ trait PokemonDetailsTrait {
      */
     public function getPokedexEntry()
     {
-        return $this->getPokedex()->get($this->getPokemonId());
+        return $this->pokedex()->get($this->getPokemonId());
     }
 
     /**
@@ -234,8 +248,8 @@ trait PokemonDetailsTrait {
     protected function getNameOrNickname()
     {
         // Check if the pokemon has a nickname
-        if ($this->data->getNickname() != null) {
-            return $this->data->getNickname();
+        if ($this->getNickname() != null) {
+            return $this->getNickname();
         }
 
         return PokemonId::toString($this->getPokemonId());

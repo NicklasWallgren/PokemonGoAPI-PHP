@@ -24,7 +24,7 @@ class Currencies extends Data {
     const CURRENCY_TYPE_STARDUST = 'STARDUST';
 
     /**
-     * @var array
+     * @var Currency[]
      */
     protected $currencies;
 
@@ -54,7 +54,7 @@ class Currencies extends Data {
      * Returns the currency by currency type.
      *
      * @param string $type
-     * @return mixed
+     * @return Currency
      * @throws Exception
      */
     public function getByType($type)
@@ -65,6 +65,28 @@ class Currencies extends Data {
         }
 
         return $this->currencies[$type];
+    }
+
+    /**
+     * Returns the pokecoins currency.
+     *
+     * @return Currency
+     * @throws Exception
+     */
+    public function getPokecoins()
+    {
+        return $this->getByType(self::CURRENCY_TYPE_POKECOIN);
+    }
+
+    /**
+     * Returns stardust currency.
+     *
+     * @return Currency
+     * @throws Exception
+     */
+    public function getStardust()
+    {
+        return $this->getByType(self::CURRENCY_TYPE_STARDUST);
     }
 
     /**

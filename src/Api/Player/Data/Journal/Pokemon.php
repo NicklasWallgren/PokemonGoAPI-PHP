@@ -103,7 +103,7 @@ class Pokemon extends Data {
      */
     public function getPokedexEntry()
     {
-        return $this->getPokedex()->get($this->pokemonId);
+        return $this->pokedex()->get($this->pokemonId);
     }
 
 

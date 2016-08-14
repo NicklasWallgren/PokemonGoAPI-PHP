@@ -3,18 +3,54 @@
 
 namespace NicklasW\PkmGoApi\Api;
 
-use NicklasW\PkmGoApi\Facades\App;
-use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
+use NicklasW\PkmGoApi\Api\Data\Data;
+use NicklasW\PkmGoApi\Api\Support\MakeApiResourcesAvailable;
 use NicklasW\PkmGoApi\Services\RequestService;
 
 abstract class Procedure {
 
+    use MakeApiResourcesAvailable;
+
     /**
-     * Procedure constructor.
+     * @var mixed
      */
-    public function __construct()
+    protected $data;
+
+    /**
+     * Update the data.
+     */
+    public function update()
     {
-        $this->setUpTraits();
+
+    }
+
+    /**
+     * Returns the data.
+     *
+     * @returns Data
+     */
+    public function getData()
+    {
+        // Check if the data is available since earlier
+        if ($this->data === null) {
+            $this->update();
+        }
+
+        return $this->data;
+    }
+
+    /**
+     * @param $name
+     * @param $arguments
+     */
+    public function __call($name, $arguments)
+    {
+        // Check if the data is defined
+        if ($this->data == null) {
+            $this->update();
+        }
+
+        return $this->data->{$name}($arguments);
     }
 
     /**
@@ -27,34 +63,5 @@ abstract class Procedure {
         return $this->getPokemonGoApi()->getRequestService();
     }
 
-    /**
-     * Returns the pokemon go api.
-     *
-     * @return PokemonGoApi
-     */
-    protected function getPokemonGoApi()
-    {
-        return App::getPokemonGoApi();
-    }
-
-    /**
-     * Returns the application.
-     *
-     * @return ApplicationKernel
-     */
-    protected function getApplication()
-    {
-        return App::getInstance();
-    }
-
-    /**
-     * Set up the traits.
-     *
-     * @return void
-     */
-    protected function setUpTraits()
-    {
-
-    }
 
 }

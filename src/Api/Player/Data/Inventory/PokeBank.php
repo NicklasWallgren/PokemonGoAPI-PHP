@@ -41,7 +41,7 @@ class PokeBank extends Data {
         $pokemon = new Pokemon(PokemonItem::create($data));
 
         // Add the pokemon to the list of pokemons
-        $this->pokemons->put($pokemon->getPokemonData()->getId(), $pokemon);
+        $this->pokemons->put($pokemon->getId(), $pokemon);
     }
 
     /**
@@ -52,7 +52,7 @@ class PokeBank extends Data {
     public function addPokemon($pokemon)
     {
         // Add the pokemon to the list of pokemons
-        $this->pokemons->put($pokemon->getPokemonData()->getId(), $pokemon);
+        $this->pokemons->put($pokemon->getId(), $pokemon);
     }
 
     /**
@@ -82,7 +82,7 @@ class PokeBank extends Data {
      */
     public function removePokemon($pokemon)
     {
-        return $this->removeBydId($pokemon->getPokemonData()->getPokemonId());
+        return $this->removeBydId($pokemon->getPokemonId());
     }
 
     /**
@@ -115,7 +115,7 @@ class PokeBank extends Data {
             throw new Exception(sprintf('Invalid pokemon type id provided. Provided pokemon type id: \'%s\'', $typeId));
         }
         return $this->pokemons->filter(function (Pokemon $pokemon) use ($typeId) {
-            return $pokemon->getPokemonData()->getPokemonId() == $typeId;
+            return $pokemon->getPokemonId() == $typeId;
         });
     }
 
