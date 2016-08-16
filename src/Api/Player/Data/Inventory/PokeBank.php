@@ -129,7 +129,7 @@ class PokeBank extends Data {
     public function getPokemonsByFamily($familyId)
     {
         // Check if we retrieved a valid pokemon family id
-        if (PokemonFamilyId::isValid($familyId)) {
+        if (!PokemonFamilyId::isValid($familyId)) {
             throw new Exception(sprintf('Invalid pokemon family id provided. Provided pokemon family id: \'%s\'', $familyId));
         }
 
