@@ -23,7 +23,7 @@ class MapRequestService extends RequestService {
     {
         $mapResourcesRequest = new GetMapResourcesRequest($latitude, $longitude, $mapCellIds);
 
-        $this->requestHandler()->handle($mapResourcesRequest);
+        $this->requestHandler()->handle($mapResourcesRequest, true);
 
         return $mapResourcesRequest->getData();
     }

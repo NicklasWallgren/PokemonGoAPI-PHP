@@ -16,7 +16,9 @@
         "phpseclib/phpseclib": "^2.0",
         "illuminate/config": "^5.2",
         "nicklasw/s2-geometry-library-php": "dev-master",
-        "nicklasw/pogoprotos-php": "dev-master"
+        "nicklasw/pogoprotos-php": "dev-master",
+        "pogo-php/pogoencrypt-php": "^1.0",
+        "paragonie/random_compat": "^2.0"
     },
     "autoload": {
         "psr-4": {
