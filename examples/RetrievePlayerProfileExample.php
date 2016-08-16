@@ -32,7 +32,7 @@ class RetrievePlayerProfileExample {
         $profile = $pokemonGoApi->getProfile();
 
         // Retrieve the profile data
-        $profileData = $profile->getProfileData();
+        $profileData = $profile->getData();
 
         echo sprintf('The profile data: %s', print_r($profileData, true));
     }
