@@ -13,6 +13,8 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use NicklasW\PkmGoApi\Config\Config;
 use NicklasW\PkmGoApi\Providers\ServiceProvider;
+use Psr\Log\LoggerInterface;
+use Psr\Log\NullLogger;
 use XStatic\ProxyManager;
 
 class Kernel implements ContainerInterface {
@@ -86,6 +88,16 @@ class Kernel implements ContainerInterface {
     public function register($provider)
     {
         $this->serviceProviders[] = $provider;
+    }
+
+    /**
+     * Sets the logger instance.
+     *
+     * @param LoggerInterface $logger
+     */
+    public function setLogger(LoggerInterface $logger)
+    {
+        $this->container->set('log', $logger);
     }
 
     /**
@@ -225,49 +237,8 @@ class Kernel implements ContainerInterface {
      */
     protected function initializeLogger()
     {
-        // Initialize the logger
-        $logger = new Logger(self::class);
-
-        // Retrieve the log file path.
-        $filePath = $this->getLogFilePath();
-
-        // Check if we retrieved a valid file path
-        if ($filePath == null) {
-            $logger->pushHandler(new NullHandler(getenv('LOG_LEVEL')));
-        } else {
-            // Create the stream handler
-            $handler = new StreamHandler($filePath, getenv('LOG_LEVEL'));
-
-            // Create the formatter
-            $handler->setFormatter(new LineFormatter(null, null, true, true));
-
-            $logger->pushHandler($handler);
-        }
-
         // Add the logger instance to the container
-        $this->container->set('log', $logger);
-    }
-
-    /**
-     * Returns the log file path.
-     *
-     * @return string
-     * @throws Exception
-     */
-    protected function getLogFilePath()
-    {
-        // Retrieve the log file path
-        $logFilePath = getenv('LOG_FILE_PATH');
-
-        // Retrieve the directory path
-        $directory = dirname($logFilePath);
-
-        // Check if the directory is writable
-        if (!is_writeable($directory)) {
-            return null;
-        }
-
-        return $logFilePath;
+        $this->container->set('log', new NullLogger());
     }
 
 }

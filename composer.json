@@ -10,13 +10,13 @@
         "paquettg/php-html-parser": "1.7",
         "guzzlehttp/guzzle": "~6.0",
         "vlucas/phpdotenv": "^2.3",
-        "monolog/monolog": "^1.20",
         "jeremeamia/xstatic": "^1.0",
         "php-di/php-di": "^5.3",
         "phpseclib/phpseclib": "^2.0",
         "illuminate/config": "^5.2",
         "nicklasw/s2-geometry-library-php": "dev-master",
-        "nicklasw/pogoprotos-php": "dev-master"
+        "nicklasw/pogoprotos-php": "dev-master",
+        "psr/log": "^1.0"
     },
     "autoload": {
         "psr-4": {
