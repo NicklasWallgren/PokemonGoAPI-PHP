@@ -35,6 +35,20 @@ class AuthenticationExample {
         // Create the authentication manager
         $manager = Factory::create($config);
 
+
+        // EXAMPLE Authentication via Google user credentials
+        // with custom environment file path
+        $config = new Config();
+        $config->setProvider(Factory::PROVIDER_GOOGLE);
+        $config->setUser('INSERT_EMAIL');
+        $config->setPassword('INSERT_PASSWORD');
+        $config->setEnvFilePath('PATH_TO_FILE');
+
+        // Create the authentication manager
+        $manager = Factory::create($config);
+
+
+
         // EXAMPLE Authentication via Google authentication code
         $config = new Config();
         $config->setProvider(Factory::PROVIDER_GOOGLE);
@@ -60,6 +74,13 @@ class AuthenticationExample {
 
         // Initialize the pokemon go application
         $application = new ApplicationKernel($manager);
+
+        // Initialize the pokemon go application
+        // with custom environment file path
+        $application = new ApplicationKernel($manager, 'PATH_TO_FILE');
+
+        // NOTE: the custom environment file path passed to the ApplicationKernel
+        // will override the setEnvFilePath() method of the Config object.
     }
 
 }
