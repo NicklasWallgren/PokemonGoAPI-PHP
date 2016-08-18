@@ -16,11 +16,13 @@ class AuthenticationRefreshTokenManager extends Manager {
     /**
      * AuthenticationOauthTokenManager constructor.
      *
-     * @param string $token
+     * @param $config
      */
-    public function __construct($token)
+    public function __construct($config)
     {
-        $this->token = $token;
+        parent::__construct($config);
+
+        $this->token = $config->getRefreshToken();
     }
 
     /**

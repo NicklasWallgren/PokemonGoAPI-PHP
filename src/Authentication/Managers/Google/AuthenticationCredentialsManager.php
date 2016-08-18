@@ -21,13 +21,14 @@ class AuthenticationCredentialsManager extends Manager {
     /**
      * AuthenticationCredentialsManager constructor.
      *
-     * @param string $email
-     * @param string $password
+     * @param $config
      */
-    public function __construct($email, $password)
+    public function __construct($config)
     {
-        $this->email = $email;
-        $this->password = $password;
+        parent::__construct($config);
+
+        $this->email    = $config->getUser();
+        $this->password = $config->getPassword();
     }
 
     /**

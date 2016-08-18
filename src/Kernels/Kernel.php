@@ -20,6 +20,11 @@ use XStatic\ProxyManager;
 class Kernel implements ContainerInterface {
 
     /**
+     * @var AuthenticationManager
+     */
+    protected $manager;
+
+    /**
      * @var Container
      */
     protected $container;
@@ -44,9 +49,11 @@ class Kernel implements ContainerInterface {
      *
      * @param string|null $environmentFilePath
      */
-    public function __construct($environmentFilePath = null)
+    public function __construct($manager, $environmentFilePath = null)
     {
         $this->environmentFilePath = $environmentFilePath;
+
+        $this->manager = $manager;
 
         // Initialize the container
         $this->initializeContainer();
