@@ -43,3 +43,31 @@ if (!function_exists('env')) {
         return $value;
     }
 }
+
+
+if (!function_exists("searchEnvFilePath")) {
+    /**
+     * Do an upward directory scan to check if an environment file exists
+     *
+     * @param string $filename
+     * @param int $depth
+     * @return null|string
+     */
+    function searchEnvFilePath($filename = ".env", $depth = 4)
+    {
+
+        $pwd = getcwd();
+
+        $max_depth = realpath('.' . str_repeat('/..', $depth));
+
+        while (($pwd = realpath("{$pwd}/..")) != $max_depth) {
+
+            if (file_exists("{$pwd}/{$filename}")) {
+
+                return $pwd;
+
+            }
+        }
+        return null;
+    }
+}

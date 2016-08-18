@@ -11,6 +11,7 @@ use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use NicklasW\PkmGoApi\Authentication\Config\AccessTokenConfig;
 use NicklasW\PkmGoApi\Config\Config;
 use NicklasW\PkmGoApi\Providers\ServiceProvider;
 use Psr\Log\LoggerInterface;
@@ -133,9 +134,24 @@ class Kernel implements ContainerInterface {
      */
     protected function loadEnvironmentVariables()
     {
+
+
+
         // Check if the environment file path is defined
         if ($this->environmentFilePath === null) {
-            return;
+
+            $config = $this->manager->getConfig();
+
+            if (($config instanceof Config || $config instanceof AccessTokenConfig) && $config->getEnvFilePath() !== null) {
+
+                $this->environmentFilePath = $config->getEnvFilePath();
+
+            } else {
+
+                return;
+
+            }
+
         }
 
         // Initialize the environment instance

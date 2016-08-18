@@ -38,6 +38,11 @@ class Config {
     protected $provider;
 
     /**
+     * @var string
+     */
+    protected $env_file_path;
+
+    /**
      * Converts the access token to a config object.
      *
      * @param AccessToken $accessToken
@@ -49,6 +54,32 @@ class Config {
 
 
 
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getEnvFilePath()
+    {
+
+        // attempt to resolve environment file by looking up the parent directories
+        // the default depth limit is 4
+        if ($this->env_file_path === null) {
+
+            $this->env_file_path = searchEnvFilePath();
+
+        }
+
+        return $this->env_file_path;
+    }
+
+    /**
+     * @return string
+     */
+    public function setEnvFilePath($path)
+    {
+        $this->env_file_path = $path;
     }
 
     /**
