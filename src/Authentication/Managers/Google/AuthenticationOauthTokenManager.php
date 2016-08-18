@@ -21,7 +21,7 @@ class AuthenticationOauthTokenManager extends Manager {
     {
         parent::__construct($config);
 
-        if ($config->getOauthToken() instanceof AccessToken) {
+        if ($config instanceof AccessToken) {
             $this->setAccessToken($config);
         } else {
             $this->token = $config->getOauthToken();
