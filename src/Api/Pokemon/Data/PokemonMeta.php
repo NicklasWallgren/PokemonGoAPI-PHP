@@ -551,7 +551,7 @@ class PokemonMeta {
     }
 
     /**
-     * @return mixed
+     * @return PokemonMove
      */
     public function getQuickMoves()
     {
@@ -559,15 +559,15 @@ class PokemonMeta {
     }
 
     /**
-     * @param mixed $quickMoves
+     * @param PokemonMove $quickMoves
      */
-    public function setQuickMoves($quickMoves)
+    public function setQuickMoves(PokemonMove $quickMoves)
     {
         $this->quickMoves = $quickMoves;
     }
 
     /**
-     * @return mixed
+     * @return PokemonMove
      */
     public function getCinematicMoves()
     {
@@ -575,9 +575,9 @@ class PokemonMeta {
     }
 
     /**
-     * @param mixed $cinematicMoves
+     * @param PokemonMove $cinematicMoves
      */
-    public function setCinematicMoves($cinematicMoves)
+    public function setCinematicMoves(PokemonMove $cinematicMoves)
     {
         $this->cinematicMoves = $cinematicMoves;
     }
