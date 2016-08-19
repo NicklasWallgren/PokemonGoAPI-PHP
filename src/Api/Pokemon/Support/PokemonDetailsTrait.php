@@ -7,8 +7,11 @@ use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMetaRegistry;
 use POGOProtos\Enums\PokemonId;
 use POGOProtos\Enums\PokemonMove;
 use POGOProtos\Enums\PokemonType;
+use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
+use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
 
-trait PokemonDetailsTrait {
+trait PokemonDetailsTrait
+{
 
     /**
      * Returns the pokemon family id.
@@ -116,28 +119,69 @@ trait PokemonDetailsTrait {
      */
     public function canEvolve()
     {
+        return $this->getEvolveStatus() === EvolvePokemonResponse_Result::SUCCESS;
+    }
+
+    /**
+     * Returns the evolve status.
+     *
+     * @return int
+     */
+    public function getEvolveStatus()
+    {
+        // Check if the pokemon is deployed at fort
+        if ($this->isDeployed()) {
+            return EvolvePokemonResponse_Result::FAILED_POKEMON_IS_DEPLOYED;
+        }
+
         // Retrieve the pokemon metadata
         $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
 
-        return $data->getCandyToEvolve() !== 0 && $this->getCandies()->getCount() >= $data->getCandyToEvolve();
+        // Check if the pokemon type can be evolved
+        if ($data->getCandyToEvolve() !== 0) {
+            return EvolvePokemonResponse_Result::FAILED_POKEMON_CANNOT_EVOLVE;
+        }
+
+        if ($this->getCandies()->getCount() < $data->getCandyToEvolve()) {
+            return EvolvePokemonResponse_Result::FAILED_INSUFFICIENT_RESOURCES;
+        }
     }
 
     /**
      * Returns true if it is possible to upgrade, false otherwise.
      *
-     * @return bool
+     * @return boolean
      */
     public function canUpgrade()
     {
+        return $this->getUpgradeStatus() === UpgradePokemonResponse_Result::SUCCESS;
+    }
+
+    /**
+     * Returns the upgrade status.
+     *
+     * @return int
+     */
+    public function getUpgradeStatus()
+    {
+        // Check if the pokemon is deployed at fort
+        if ($this->isDeployed()) {
+            return UpgradePokemonResponse_Result::ERROR_POKEMON_IS_DEPLOYED;
+        }
+
         // Retrieve the amount of stardust
         $stardustAmount = $this->profile()->getCurrencies()->getStardust()->getAmount();
 
         // Retrieve the candy amount
         $candyAmount = $this->getCandies()->getCount();
 
-        return ($stardustAmount >= $this->getStardustCostsForPowerup()
-            && $candyAmount >= $this->getCandyCostForPowerup());
+        if ($stardustAmount < $this->getStardustCostsForPowerup() || $candyAmount < $this->getCandyCostForPowerup()) {
+            return UpgradePokemonResponse_Result::ERROR_INSUFFICIENT_RESOURCES;
+        }
+
+        return UpgradePokemonResponse_Result::SUCCESS;
     }
+
 
     /**
      * Returns the base stamina.
@@ -238,6 +282,16 @@ trait PokemonDetailsTrait {
     public function getPokedexEntry()
     {
         return $this->pokedex()->get($this->getPokemonId());
+    }
+
+    /**
+     * Returns true if deployed, false otherwise.
+     *
+     * @return boolean
+     */
+    public function isDeployed()
+    {
+        return $this->getDeployedFortId() !== null;
     }
 
     /**

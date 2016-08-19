@@ -78,7 +78,8 @@ use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
  * @method string getNickname()
  * @method int getFromFort()
  */
-class Pokemon extends Procedure {
+class Pokemon extends Procedure
+{
 
     use PokemonDetailsTrait;
 
@@ -126,8 +127,12 @@ class Pokemon extends Procedure {
      */
     public function upgrade()
     {
-        // Check if possible to upgrade, do we have enough stardust and candy?
         // Check if pokemon have reached the current maximum combat points
+
+        // Validate the upgrade status
+        if (($status = $this->getUpgradeStatus()) !== UpgradePokemonResponse_Result::SUCCESS) {
+            return $status;
+        }
 
         // Execute the API request
         $response = $this->getRequestService()->upgrade($this->getId());
@@ -179,8 +184,9 @@ class Pokemon extends Procedure {
      */
     public function evolve()
     {
-        if (!$this->canEvolve()) {
-            return EvolvePokemonResponse_Result::FAILED_INSUFFICIENT_RESOURCES;
+        // Validate the upgrade status
+        if (($status = $this->canEvolve()) !== EvolvePokemonResponse_Result::SUCCESS) {
+            return $status;
         }
 
         // Execute the API request

@@ -2,7 +2,8 @@
 
 namespace NicklasW\PkmGoApi\Api\Pokemon\Support;
 
-class CombatPointsCalculator {
+class CombatPointsCalculator
+{
 
     /**
      * Calculates the level by combat points multiplier
@@ -38,7 +39,6 @@ class CombatPointsCalculator {
         return (int)($attack * pow($defense, 0.5) * pow($stamina, 0.5) * pow($maxCpMultplier, 2) / 10);
     }
 
-
     /**
      * Returns the combat points after powerup.
      *
@@ -51,16 +51,16 @@ class CombatPointsCalculator {
         $level = self::getLevel($cpMultiplier);
 
         if ($level <= 10) {
-            return (int)(($cp * 0.009426125469) / pow($cpMultiplier, 2));
+            return (int)round(($cp * 0.009426125469) / pow($cpMultiplier, 2));
         }
         if ($level <= 20) {
-            return (int)(($cp * 0.008919025675) / pow($cpMultiplier, 2));
+            return (int)round(($cp * 0.008919025675) / pow($cpMultiplier, 2));
         }
         if ($level <= 30) {
-            return (int)(($cp * 0.008924905903) / pow($cpMultiplier, 2));
+            return (int)round(($cp * 0.008924905903) / pow($cpMultiplier, 2));
         }
 
-        return (int)(($cp * 0.00445946079) / pow($cpMultiplier, 2));
+        return $cp + (int)round(($cp * 0.00445946079) / pow($cpMultiplier, 2));
     }
 
     /**
@@ -74,11 +74,11 @@ class CombatPointsCalculator {
     {
         $level = self::getLevel($cpMultiplier);
 
-        if ($level <= 13 && $powerups <= 20) {
+        if ($level <= 11 && $powerups <= 20) {
             return 1;
         }
 
-        if ($level <= 21 && $powerups <= 36) {
+        if ($level <= 21 && $powerups <= 40) {
             return 2;
         }
 
@@ -92,7 +92,7 @@ class CombatPointsCalculator {
     /**
      * Returns the stardust cost for powerup.
      *
-     * @param float $cpMultiplier
+     * @param float   $cpMultiplier
      * @param integer $powerups
      * @return integer
      */
