@@ -25,19 +25,52 @@ class CombatPointsCalculator
     }
 
     /**
-     * Get the maximum CP by attack, defense and stamina.
+     * Get the maximum CP by base attack, base defense and base stamina.
+     *
+     * @param integer $baseAttack
+     * @param integer $baseDefense
+     * @param integer $baseStamina
+     * @return integer
+     */
+    public static function getMaxCp($baseAttack, $baseDefense, $baseStamina)
+    {
+        $attack = 15 + $baseAttack;
+        $defense = 15 + $baseDefense;
+        $stamina = 15 + $baseStamina;
+
+        return self::getMaxCpForPlayer($attack, $defense, $stamina, 40);
+    }
+
+    /**
+     * Get the CP by attack, defense and stamina.
      *
      * @param integer $attack
      * @param integer $defense
      * @param integer $stamina
-     * @return int
+     * @param integer $cpMultiplier
+     * @return integer
      */
-    public static function getMaxCp($attack, $defense, $stamina)
+    public static function getCp($attack, $defense, $stamina, $cpMultiplier)
     {
-        $maxCpMultplier = self::$LEVEL_TO_CP_MULTIPLIER[40];
-
-        return (int)($attack * pow($defense, 0.5) * pow($stamina, 0.5) * pow($maxCpMultplier, 2) / 10);
+        return (int)($attack * pow($defense, 0.5) * pow($stamina, 0.5) * pow($cpMultiplier, 2) / 10);
     }
+
+    /**
+     * Get the maximum CP for the player level.
+     *
+     * @param integer $attack
+     * @param integer $defense
+     * @param integer $stamina
+     * @param integer $level
+     * @return Maximum CP for these levels
+     */
+    public static function getMaxCpForPlayer($attack, $defense, $stamina, $level)
+    {
+        $maxLevel = min($level + 1.5, 40);
+
+        return self::getCp($attack, $defense, $stamina, self::$LEVEL_TO_CP_MULTIPLIER[$maxLevel]);
+    }
+
 
     /**
      * Returns the combat points after powerup.
@@ -46,8 +79,11 @@ class CombatPointsCalculator
      * @param float $cpMultiplier
      * @return integer
      */
-    public static function getCpAfterPowerup($cp, $cpMultiplier)
-    {
+    public
+    static function getCpAfterPowerup(
+        $cp,
+        $cpMultiplier
+    ) {
         $level = self::getLevel($cpMultiplier);
 
         if ($level <= 10) {
@@ -70,8 +106,11 @@ class CombatPointsCalculator
      * @param integer $powerups
      * @return integer
      */
-    public static function getCandyCostForPowerup($cpMultiplier, $powerups)
-    {
+    public
+    static function getCandyCostForPowerup(
+        $cpMultiplier,
+        $powerups
+    ) {
         $level = self::getLevel($cpMultiplier);
 
         if ($level <= 11 && $powerups <= 20) {
@@ -96,8 +135,11 @@ class CombatPointsCalculator
      * @param integer $powerups
      * @return integer
      */
-    public static function getStardustCostsForPowerup($cpMultiplier, $powerups)
-    {
+    public
+    static function getStardustCostsForPowerup(
+        $cpMultiplier,
+        $powerups
+    ) {
         $level = self::getLevel($cpMultiplier);
 
         if ($level <= 3 && $powerups <= 4) {
@@ -166,7 +208,8 @@ class CombatPointsCalculator
     /**
      * @var array The level to combat points multiplier
      */
-    protected static $LEVEL_TO_CP_MULTIPLIER = array(
+    protected
+    static $LEVEL_TO_CP_MULTIPLIER = array(
         '1'    => 0.094,
         '1.5'  => 0.135137432,
         '2'    => 0.16639787,

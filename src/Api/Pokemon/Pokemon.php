@@ -101,6 +101,11 @@ class Pokemon extends Procedure
      */
     public function transfer()
     {
+        // Check if the pokemon is deployed
+        if ($this->isDeployed()) {
+            return ReleasePokemonResponse_Result::POKEMON_DEPLOYED;
+        }
+
         // Execute the API request
         $response = $this->getRequestService()->transfer($this->getId());
 
@@ -128,6 +133,9 @@ class Pokemon extends Procedure
     public function upgrade()
     {
         // Check if pokemon have reached the current maximum combat points
+
+
+
 
         // Validate the upgrade status
         if (($status = $this->getUpgradeStatus()) !== UpgradePokemonResponse_Result::SUCCESS) {
@@ -184,8 +192,8 @@ class Pokemon extends Procedure
      */
     public function evolve()
     {
-        // Validate the upgrade status
-        if (($status = $this->canEvolve()) !== EvolvePokemonResponse_Result::SUCCESS) {
+        // Validate the evolve status
+        if (($status = $this->getEvolveStatus()) !== EvolvePokemonResponse_Result::SUCCESS) {
             return $status;
         }
 
