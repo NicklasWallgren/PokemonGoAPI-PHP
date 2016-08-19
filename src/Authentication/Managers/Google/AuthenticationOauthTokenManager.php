@@ -15,14 +15,16 @@ class AuthenticationOauthTokenManager extends Manager {
     /**
      * AuthenticationOauthTokenManager constructor.
      *
-     * @param AccessToken|string $token
+     * @param $config
      */
-    public function __construct($token)
+    public function __construct($config)
     {
-        if ($token instanceof AccessToken) {
-            $this->setAccessToken($token);
+        parent::__construct($config);
+
+        if ($config instanceof AccessToken) {
+            $this->setAccessToken($config);
         } else {
-            $this->token = $token;
+            $this->token = $config->getOauthToken();
         }
     }
 

@@ -11,6 +11,7 @@ use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use NicklasW\PkmGoApi\Authentication\Config\AccessTokenConfig;
 use NicklasW\PkmGoApi\Config\Config;
 use NicklasW\PkmGoApi\Providers\ServiceProvider;
 use Psr\Log\LoggerInterface;
@@ -18,6 +19,11 @@ use Psr\Log\NullLogger;
 use XStatic\ProxyManager;
 
 class Kernel implements ContainerInterface {
+
+    /**
+     * @var AuthenticationManager
+     */
+    protected $manager;
 
     /**
      * @var Container
@@ -44,9 +50,11 @@ class Kernel implements ContainerInterface {
      *
      * @param string|null $environmentFilePath
      */
-    public function __construct($environmentFilePath = null)
+    public function __construct($manager, $environmentFilePath = null)
     {
         $this->environmentFilePath = $environmentFilePath;
+
+        $this->manager = $manager;
 
         // Initialize the container
         $this->initializeContainer();
@@ -126,9 +134,24 @@ class Kernel implements ContainerInterface {
      */
     protected function loadEnvironmentVariables()
     {
+
+
+
         // Check if the environment file path is defined
         if ($this->environmentFilePath === null) {
-            return;
+
+            $config = $this->manager->getConfig();
+
+            if (($config instanceof Config || $config instanceof AccessTokenConfig) && $config->getEnvFilePath() !== null) {
+
+                $this->environmentFilePath = $config->getEnvFilePath();
+
+            } else {
+
+                return;
+
+            }
+
         }
 
         // Initialize the environment instance

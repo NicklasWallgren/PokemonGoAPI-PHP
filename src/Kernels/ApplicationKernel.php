@@ -11,11 +11,6 @@ use NicklasW\PkmGoApi\Providers\RequestHandlerServiceProvider;
 class ApplicationKernel extends Kernel {
 
     /**
-     * @var AuthenticationManager
-     */
-    protected $manager;
-
-    /**
      * @var double
      */
     protected $latitude = 0;
@@ -33,9 +28,8 @@ class ApplicationKernel extends Kernel {
      */
     public function __construct($manager, $environmentFilePath = null)
     {
-        $this->manager = $manager;
+        parent::__construct($manager, $environmentFilePath);
 
-        parent::__construct($environmentFilePath);
     }
 
     /**

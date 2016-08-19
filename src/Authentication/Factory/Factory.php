@@ -77,7 +77,7 @@ class Factory {
 
             // Check if a fresh token is available, check if it is still valid
             if ($accessToken->hasFreshToken() && $accessToken->isTimestampValid()) {
-                return new GoogleAuthenticationRefreshTokenManager($accessToken->getRefreshToken());
+                return new GoogleAuthenticationRefreshTokenManager($accessToken);
             }
 
             if ($accessToken->isTimestampValid()) {
@@ -135,7 +135,7 @@ class Factory {
     protected static function createPTCManager($config)
     {
         if (self::isAdaptedForUserCredentialsManager($config)) {
-            return new PTCAuthenticationCredentialsManager($config->getUser(), $config->getPassword());
+            return new PTCAuthenticationCredentialsManager($config);
         }
 
         throw new AuthenticationException('Invalid config provided. Could not create authentication manager');
@@ -204,7 +204,7 @@ class Factory {
      */
     protected static function createGoogleRefreshTokenManager($config)
     {
-        return new GoogleAuthenticationRefreshTokenManager($config->getRefreshToken());
+        return new GoogleAuthenticationRefreshTokenManager($config);
     }
 
     /**
@@ -215,7 +215,7 @@ class Factory {
      */
     protected static function createGoogleOauthManager($config)
     {
-        return new GoogleAuthenticationOauthTokenManager($config->getOauthToken());
+        return new GoogleAuthenticationOauthTokenManager($config);
     }
 
     /**
@@ -226,7 +226,7 @@ class Factory {
      */
     protected static function createGoogleAuthenticationCodeManager($config)
     {
-        return new GoogleAuthenticationCodeManager($config->getAuthToken());
+        return new GoogleAuthenticationCodeManager($config);
     }
 
     /**
@@ -237,7 +237,7 @@ class Factory {
      */
     protected static function createGoogleUserCredentialsManager($config)
     {
-        return new GoogleAuthenticationCredentialsManager($config->getUser(), $config->getPassword());
+        return new GoogleAuthenticationCredentialsManager($config);
     }
 
 }

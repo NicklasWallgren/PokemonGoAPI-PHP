@@ -3,6 +3,8 @@
 namespace NicklasW\PkmGoApi\Authentication;
 
 use Closure;
+use NicklasW\PkmGoApi\Authentication\Config\Config;
+use NicklasW\PkmGoApi\Authentication\Exceptions\AuthenticationException;
 
 abstract class Manager {
 
@@ -20,6 +22,28 @@ abstract class Manager {
      * @var AccessToken The access token
      */
     protected $accessToken;
+
+    /**
+     * @var Config
+     */
+    protected $config;
+
+    public function __construct($config)
+    {
+        $this->config = $config;
+    }
+
+
+    /**
+     * Returns the Config Object
+     *
+     * @return Config
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
 
     /**
      * Returns the Oauth token.

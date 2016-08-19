@@ -15,11 +15,13 @@ class AuthenticationCodeManager extends Manager {
     /**
      * AuthenticationCodeManager constructor.
      *
-     * @param string $authenticationCode
+     * @param $config
      */
-    public function __construct($authenticationCode)
+    public function __construct($config)
     {
-        $this->authenticationCode = $authenticationCode;
+        parent::__construct($config);
+
+        $this->authenticationCode = $config->getAuthToken();
     }
 
     /**
