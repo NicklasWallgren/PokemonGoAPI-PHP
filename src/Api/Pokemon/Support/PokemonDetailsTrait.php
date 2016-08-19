@@ -169,6 +169,11 @@ trait PokemonDetailsTrait
             return UpgradePokemonResponse_Result::ERROR_POKEMON_IS_DEPLOYED;
         }
 
+        // Check if the combat points is higher than the maximum level for the player level
+        if ($this->getCp() >= $this->getMaxCpForPlayer()) {
+            return UpgradePokemonResponse_Result::ERROR_UPGRADE_NOT_AVAILABLE;
+        }
+
         // Retrieve the amount of stardust
         $stardustAmount = $this->profile()->getCurrencies()->getStardust()->getAmount();
 
@@ -291,8 +296,31 @@ trait PokemonDetailsTrait
      */
     public function isDeployed()
     {
-        return $this->getDeployedFortId() !== null;
+        return $this->getDeployedFortId() != null;
     }
+
+    /**
+     * Calculate the maximum CP for this individual pokemon and this player's level
+     *
+     * @return The maximum CP for this pokemon
+     * @throws NoSuchItemException   If the PokemonId value cannot be found in the {@link PokemonMetaRegistry}.
+     * @throws LoginFailedException  If login failed
+     * @throws RemoteServerException If the server is causing issues
+     */
+    public function getMaxCpForPlayer()
+    {
+        // Retrieve the pokemon metadata
+        $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
+
+        $attack = $this->getIndividualAttack() + $data->getBaseAttack();
+        $defense = $this->getIndividualDefense() + $data->getBaseDefense();
+        $stamina = $this->getIndividualStamina() + $data->getBaseStamina();
+
+        $level = $this->inventory()->getStats()->getLevel();
+
+        return CombatPointsCalculator::getMaxCpForPlayer($attack, $defense, $stamina, $level);
+    }
+
 
     /**
      * Returns the pokemon name or nickname.

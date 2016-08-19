@@ -132,11 +132,6 @@ class Pokemon extends Procedure
      */
     public function upgrade()
     {
-        // Check if pokemon have reached the current maximum combat points
-
-
-
-
         // Validate the upgrade status
         if (($status = $this->getUpgradeStatus()) !== UpgradePokemonResponse_Result::SUCCESS) {
             return $status;
