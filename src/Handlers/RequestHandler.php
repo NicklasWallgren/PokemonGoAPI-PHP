@@ -196,8 +196,8 @@ class RequestHandler {
         $requestEnvelope->setUnknown12(989);
 
         // Sets the location
-        $requestEnvelope->setLatitude($this->application->getLatitude());
-        $requestEnvelope->setLongitude($this->application->getLongitude());
+        $requestEnvelope->setLatitude($this->application->getLocation()->getLatitude());
+        $requestEnvelope->setLongitude($this->application->getLocation()->getLongitude());
         $requestEnvelope->setAltitude(0);
 
         // Add request
@@ -228,7 +228,7 @@ class RequestHandler {
         Log::debug(sprintf('The request envelope. Content: \'%s\'', print_r($requestEnvelope, true)));
 
         // Prepare the HTTP request
-        $request = new HttpRequest('POST', $url, array(), $requestEnvelope->toProtobuf());
+        $request = new HttpRequest('POST', $url, array('User-Agent' => 'Niantic App'), $requestEnvelope->toProtobuf());
 
         // Execute the request
         $response = $this->client()->send($request);
@@ -422,20 +422,7 @@ class RequestHandler {
      */
     protected function client()
     {
-        // Check if the client has been initialized
-        if ($this->client == null) {
-            // Initialize the HTTP client
-            $this->client = new Client(
-                array(
-                    'headers' => array('User-Agent' => 'Niantic App'),
-                    'http_errors' => false,
-                    'verify' => Config::get('config.ssl_verification'),
-                    'proxy' => Config::get('config.proxy'),
-                )
-            );
-        }
-
-        return $this->client;
+        return App::get('client');
     }
 
 }

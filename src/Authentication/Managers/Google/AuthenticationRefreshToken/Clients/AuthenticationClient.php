@@ -2,14 +2,15 @@
 
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Clients;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Parsers\OauthTokenParser;
-use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Results\AuthenticationTokenResult;
-use NicklasW\PkmGoApi\Clients\Client;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Parsers\Results\AuthenticationTokenResult;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
-class AuthenticationClient {
+class AuthenticationClient
+{
 
     /**
      * @var string The authentication token url
@@ -45,6 +46,19 @@ class AuthenticationClient {
      * @var Client
      */
     protected $client;
+
+    /**
+     * @var CookieJar
+     */
+    protected $cookies;
+
+    /**
+     * AuthenticationClient constructor.
+     */
+    public function __construct()
+    {
+        $this->cookies = new CookieJar();
+    }
 
     /**
      * Retrieves the the oauth token using refresh code.
@@ -83,10 +97,21 @@ class AuthenticationClient {
     protected function post($url, $parameters = array())
     {
         // Execute the POST request
-        $response = $this->client()->post($url, $parameters);
+        $response = $this->client()->post($url, $this->options($parameters));
 
         // Retrieve the content
         return $response;
+    }
+
+    /**
+     * Retrieve the options.
+     *
+     * @param array $options
+     * @return array
+     */
+    protected function options($options = array())
+    {
+        return array_merge($options, array('cookies' => $this->cookies));
     }
 
     /**
@@ -96,11 +121,7 @@ class AuthenticationClient {
      */
     protected function client()
     {
-        if ($this->client == null) {
-            $this->client = new Client(array('cookies' => new CookieJar()));
-        }
-
-        return $this->client;
+        return App::get('client');
     }
 
 }

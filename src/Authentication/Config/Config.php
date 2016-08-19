@@ -38,20 +38,6 @@ class Config {
     protected $provider;
 
     /**
-     * Converts the access token to a config object.
-     *
-     * @param AccessToken $accessToken
-     */
-    public static function from($accessToken)
-    {
-
-        $instance = new static();
-
-
-
-    }
-
-    /**
      * @return string
      */
     public function getUser()

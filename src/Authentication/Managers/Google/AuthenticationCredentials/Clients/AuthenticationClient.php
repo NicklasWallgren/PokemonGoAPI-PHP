@@ -2,15 +2,15 @@
 
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Clients;
 
-use GuzzleHttp\Cookie\CookieJar;
+use GuzzleHttp\Client;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers\OauthTokenParser;
-use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Support\Signature;
-use NicklasW\PkmGoApi\Clients\Client;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Parsers\TokenParser;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Support\Signature;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
-class AuthenticationClient {
+class AuthenticationClient
+{
 
     /**
      * @var string The android authentication token url
@@ -69,8 +69,7 @@ class AuthenticationClient {
         );
 
         // Retrieve the response
-        $response = $this->post(self::$URL_ANDROID_TOKEN_URL,
-            array('headers' => array('User-Agent' => 'gpsoauth/0.0.5'), 'form_params' => $parameters));
+        $response = $this->post(self::$URL_ANDROID_TOKEN_URL, array('form_params' => $parameters));
 
         // Get the authentication token parser
         $parser = new TokenParser();
@@ -104,9 +103,8 @@ class AuthenticationClient {
         );
 
         // Retrieve the response
-        $response = $this->post(self::$URL_ANDROID_TOKEN_URL,
-            array('headers' => array('User-Agent' => 'gpsoauth/0.0.5'), 'form_params' => $parameters));
-        
+        $response = $this->post(self::$URL_ANDROID_TOKEN_URL, array('form_params' => $parameters));
+
         // Get the authentication token parser
         $parser = new OauthTokenParser();
 
@@ -131,17 +129,25 @@ class AuthenticationClient {
     }
 
     /**
+     * Retrieve the options.
+     *
+     * @param array $options
+     * @return array
+     */
+    protected function options($options = array())
+    {
+        return array_merge($options, array(array('headers' => array('User-Agent' => 'gpsoauth/0.0.5'))));
+    }
+
+    /**
      * Returns the Client.
      *
      * @return Client
      */
     protected function client()
     {
-        if ($this->client == null) {
-            $this->client = new Client(array('cookies' => new CookieJar()));
-        }
-
-        return $this->client;
+        return App::get('client');
     }
+
 
 }

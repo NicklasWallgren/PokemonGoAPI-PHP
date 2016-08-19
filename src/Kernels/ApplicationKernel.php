@@ -3,12 +3,16 @@
 namespace NicklasW\PkmGoApi\Kernels;
 
 use DI\NotFoundException;
+use GuzzleHttp\Client;
+use NicklasW\PkmGoApi\Api\Data\Location;
 use NicklasW\PkmGoApi\Api\PokemonGoApi;
 use NicklasW\PkmGoApi\Authentication\Manager;
+use NicklasW\PkmGoApi\Clients\Proxies\ClientProxy;
 use NicklasW\PkmGoApi\Providers\PokemonGoApiServiceProvider;
 use NicklasW\PkmGoApi\Providers\RequestHandlerServiceProvider;
 
-class ApplicationKernel extends Kernel {
+class ApplicationKernel extends Kernel
+{
 
     /**
      * @var AuthenticationManager
@@ -16,26 +20,24 @@ class ApplicationKernel extends Kernel {
     protected $manager;
 
     /**
-     * @var double
+     * @var Location
      */
-    protected $latitude = 0;
-
-    /**
-     * @var double
-     */
-    protected $longitude = 0;
+    protected $location;
 
     /**
      * Kernel constructor.
      *
      * @param AuthenticationManager $manager
-     * @param string|null $environmentFilePath
      */
-    public function __construct($manager, $environmentFilePath = null)
+    public function __construct($manager)
     {
         $this->manager = $manager;
+        $this->location = new Location();
 
-        parent::__construct($environmentFilePath);
+        // Add the defined service providers
+        $this->addServiceProviders();
+
+        parent::__construct();
     }
 
     /**
@@ -43,13 +45,23 @@ class ApplicationKernel extends Kernel {
      */
     public function initialize()
     {
+        parent::initialize();
+
+        // Initialize the client
+        $this->initializeClient();
+
         // Add the application object to the container
         $this->container->set('app', $this);
+    }
 
-        // Add the defined service providers
-        $this->addServiceProviders();
-
-        parent::initialize();
+    /**
+     * Sets the HTTP client.
+     *
+     * @param Client $client
+     */
+    public function setClient($client)
+    {
+        $this->container()->set('client', new ClientProxy($client));
     }
 
     /**
@@ -66,29 +78,19 @@ class ApplicationKernel extends Kernel {
     /**
      * Sets the location.
      *
-     * @param double $latitude
-     * @param double $longitude
+     * @param Location $location
      */
-    public function setLocation($latitude, $longitude)
+    public function setLocation($location)
     {
-        $this->latitude = $latitude;
-        $this->longitude = $longitude;
+        $this->location = $location;
     }
 
     /**
-     * @return float
+     * @return Location
      */
-    public function getLatitude()
+    public function getLocation()
     {
-        return $this->latitude;
-    }
-
-    /**
-     * @return float
-     */
-    public function getLongitude()
-    {
-        return $this->longitude;
+        return $this->location;
     }
 
     /**
@@ -97,6 +99,14 @@ class ApplicationKernel extends Kernel {
     public function getManager()
     {
         return $this->manager;
+    }
+
+    /**
+     * Initialize client.
+     */
+    public function initializeClient()
+    {
+        $this->container->set('client', new ClientProxy(new Client()));
     }
 
     /**

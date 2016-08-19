@@ -5,7 +5,8 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Journal;
 use NicklasW\PkmGoApi\Api\Data\Data;
 use POGOProtos\Data\Logs\ActionLogEntry;
 
-class Log extends Data {
+class Log extends Data
+{
 
     /**
      * @var Fort[]
@@ -41,12 +42,12 @@ class Log extends Data {
      */
     public static function create($data)
     {
+        $instance = new static();
+
         // Check if we retrieved valid data
         if ($data == null) {
-            return;
+            return $instance;
         }
-
-        $instance = new static();
 
         foreach ($data as $logEntry) {
             if ($logEntry->hasCatchPokemon()) {

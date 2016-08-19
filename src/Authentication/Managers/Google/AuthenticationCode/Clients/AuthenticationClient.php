@@ -2,10 +2,9 @@
 
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCode\Clients;
 
-use GuzzleHttp\Cookie\CookieJar;
+use GuzzleHttp\Client;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCode\Parsers\OauthTokenParser;
-use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCode\Results\AuthenticationTokenResult;
-use NicklasW\PkmGoApi\Clients\Client;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCode\Parsers\Results\AuthenticationTokenResult;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
@@ -95,11 +94,7 @@ class AuthenticationClient {
      */
     protected function client()
     {
-        if ($this->client == null) {
-            $this->client = new Client(array('cookies' => new CookieJar()));
-        }
-
-        return $this->client;
+        return App::get('client');
     }
 
 }

@@ -17,7 +17,8 @@ use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use XStatic\ProxyManager;
 
-class Kernel implements ContainerInterface {
+class Kernel implements ContainerInterface
+{
 
     /**
      * @var Container
@@ -35,19 +36,10 @@ class Kernel implements ContainerInterface {
     protected $serviceProviders;
 
     /**
-     * @var
-     */
-    protected $environmentFilePath;
-
-    /**
      * Kernel constructor.
-     *
-     * @param string|null $environmentFilePath
      */
-    public function __construct($environmentFilePath = null)
+    public function __construct()
     {
-        $this->environmentFilePath = $environmentFilePath;
-
         // Initialize the container
         $this->initializeContainer();
 
@@ -105,12 +97,6 @@ class Kernel implements ContainerInterface {
      */
     protected function initialize()
     {
-        // Load the environment variables
-        $this->loadEnvironmentVariables();
-
-        // Initialize the configuration
-        $this->initializeConfig();
-
         // Initialize the proxy manager
         $this->initializeProxyManager();
 
@@ -122,33 +108,12 @@ class Kernel implements ContainerInterface {
     }
 
     /**
-     * Initializes the environment variables.
-     */
-    protected function loadEnvironmentVariables()
-    {
-        // Check if the environment file path is defined
-        if ($this->environmentFilePath === null) {
-            return;
-        }
-
-        // Initialize the environment instance
-        $dotenv = new Dotenv($this->environmentFilePath);
-
-        // Load environment file in given directory.
-        $dotenv->load();
-
-    }
-
-    /**
      * Add the facades classes.
      */
     protected function addFacades()
     {
         // Add the Log facade
         $this->proxyManager->addProxy('Log', 'NicklasW\PkmGoApi\Facades\Log');
-
-        // Add the Config facade
-        $this->proxyManager->addProxy('Config', 'NicklasW\PkmGoApi\Facades\Config');
     }
 
     /**
@@ -188,26 +153,6 @@ class Kernel implements ContainerInterface {
     }
 
     /**
-     * Returns the base path.
-     *
-     * @return string
-     */
-    public function basePath()
-    {
-        return __DIR__ . '/../../';
-    }
-
-    /**
-     * Returns the config path.
-     *
-     * @return string
-     */
-    public function configPath()
-    {
-        return $this->basePath() . 'config';
-    }
-
-    /**
      * Initialize the service providers.
      */
     protected function initializeServiceProviders()
@@ -218,18 +163,6 @@ class Kernel implements ContainerInterface {
             // Register the service provider
             $serviceProvider->register();
         }
-    }
-
-    /**
-     * Initialize configuration.
-     */
-    protected function initializeConfig()
-    {
-        // Initialize the config
-        $config = new Config();
-        $config->bootstrap($this);
-
-        $this->container->set('config', $config);
     }
 
     /**

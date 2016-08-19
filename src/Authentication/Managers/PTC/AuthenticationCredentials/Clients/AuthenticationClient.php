@@ -2,6 +2,7 @@
 
 namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Clients;
 
+use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\AuthenticationInformationParser;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\AuthenticationInformationResult;
@@ -9,7 +10,7 @@ use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Pars
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\TokenResult;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\TicketParser;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\TokenParser;
-use NicklasW\PkmGoApi\Clients\Client;
+use NicklasW\PkmGoApi\Facades\App;
 use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
@@ -32,9 +33,17 @@ class AuthenticationClient {
     protected static $CLIENT_SECRET = 'w8ScCUXJQc6kXKw8FiOhd8Fixzht18Dq3PEVkUCP5ZPxtgyWsbTvWHFLm2wNY0JR';
 
     /**
-     * @var Client
+     * @var CookieJar
      */
-    protected $client;
+    protected $cookies;
+
+    /**
+     * AuthenticationClient constructor.
+     */
+    public function __construct()
+    {
+        $this->cookies = new CookieJar();
+    }
 
     /**
      * Returns the authentication information.
@@ -44,7 +53,7 @@ class AuthenticationClient {
     public function authenticationInformation()
     {
         // Retrieve the response
-        $response = $this->get(self::$URL_ENDPOINT_LOGIN, array('headers' => array('User-Agent' => 'niantic')));
+        $response = $this->get(self::$URL_ENDPOINT_LOGIN);
 
         // Get the authentication information parser
         $parser = new AuthenticationInformationParser();
@@ -73,8 +82,7 @@ class AuthenticationClient {
         );
 
         // Retrieve the content.
-        $response = $this->post(self::$URL_ENDPOINT_LOGIN,
-            array('headers' => array('User-Agent' => 'niantic'), 'form_params' => $parameters, 'allow_redirects' => false));
+        $response = $this->post(self::$URL_ENDPOINT_LOGIN, array('form_params' => $parameters, 'allow_redirects' => false));
 
         // Get the authentication ticket parser
         $parser = new TicketParser();
@@ -115,28 +123,13 @@ class AuthenticationClient {
      * Execute a GET request and returns the response content.
      *
      * @param string $url
-     * @return string
-     */
-    protected function content($url)
-    {
-        // Execute the GET request
-        $response = $this->client()->get($url);
-
-        // Retrieve the content
-        return $response->getBody()->getContents();
-    }
-
-    /**
-     * Execute a GET request and returns the response content.
-     *
-     * @param string $url
      * @param array  $parameters
      * @return ResponseInterface
      */
     protected function get($url, $parameters = array())
     {
         // Execute the GET request
-        $response = $this->client()->get($url, $parameters);
+        $response = $this->client()->get($url, $this->options($parameters));
 
         // Retrieve the content
         return $response;
@@ -152,10 +145,21 @@ class AuthenticationClient {
     protected function post($url, $parameters = array())
     {
         // Execute the POST request
-        $response = $this->client()->post($url, $parameters);
+        $response = $this->client()->post($url, $this->options($parameters));
 
         // Retrieve the content
         return $response;
+    }
+
+    /**
+     * Retrieve the options.
+     *
+     * @param array $options
+     * @return array
+     */
+    protected function options($options = array())
+    {
+        return array_merge($options, array('cookies' => $this->cookies, array('headers' => array('User-Agent' => 'niantic'))));
     }
 
     /**
@@ -165,11 +169,7 @@ class AuthenticationClient {
      */
     protected function client()
     {
-        if ($this->client == null) {
-            $this->client = new Client(array('cookies' => new CookieJar()));
-        }
-
-        return $this->client;
+        return App::get('client');
     }
 
 }

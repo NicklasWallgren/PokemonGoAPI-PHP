@@ -143,7 +143,7 @@ class Pokestop extends Procedure {
      */
     protected function getCurrentLatitude()
     {
-        return $this->getApplication()->getLatitude();
+        return $this->getApplication()->getLocation()->getLatitude();
     }
 
     /**
@@ -153,7 +153,7 @@ class Pokestop extends Procedure {
      */
     protected function getCurrentLongitude()
     {
-        return $this->getApplication()->getLongitude();
+        return $this->getApplication()->getLocation()->getLongitude();
     }
 
     /**

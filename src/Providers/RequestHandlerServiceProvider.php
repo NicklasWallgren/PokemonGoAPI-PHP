@@ -31,33 +31,4 @@ class RequestHandlerServiceProvider extends ServiceProvider {
         $this->app->container()->set('RequestHandler', new RequestHandler($this->app));
     }
 
-    /**
-     * Authenticate the user.
-     *
-     * @return RequestEnvelope_AuthInfo
-     */
-    protected function authenticate()
-    {
-        Log::debug(sprintf('Authenticates user.'));
-
-        // Retrieve the authentication manager
-        $manager = $this->getAuthenticationManager();
-
-        // Retrieve the access token
-        $accessToken = $manager->getAccessToken();
-
-        return $this->envelopeFactory->create(
-            EnvelopeFactory::$TYPE_AUTHINFO, $manager->getIdentifier(), $accessToken);
-    }
-
-    /**
-     * Returns the authentication manager.
-     *
-     * @return Manager
-     */
-    protected function getAuthenticationManager()
-    {
-        return $this->app->getManager();
-    }
-
 }
