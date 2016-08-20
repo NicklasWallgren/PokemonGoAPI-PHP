@@ -14,7 +14,8 @@
         "phpseclib/phpseclib": "^2.0",
         "nicklasw/s2-geometry-library-php": "dev-master",
         "nicklasw/pogoprotos-php": "dev-master",
-        "psr/log": "^1.0"
+        "psr/log": "^1.0",
+        "illuminate/support": "^5.2"
     },
     "autoload": {
         "psr-4": {
