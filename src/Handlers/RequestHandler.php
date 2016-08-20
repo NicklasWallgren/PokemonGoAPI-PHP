@@ -17,7 +17,8 @@ use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Request as NetworkRequest;
 use Psr\Http\Message\ResponseInterface;
 
-class RequestHandler {
+class RequestHandler
+{
 
     /**
      * @var string The API URL
@@ -33,6 +34,11 @@ class RequestHandler {
      * @var string Authentication error response status
      */
     protected static $RESPONSE_STATUS_AUTHENTICATION_ERROR = 102;
+
+    /**
+     * @var string Account banned error response status
+     */
+    protected static $RESPONSE_STATUS_ACCOUNT_BANNED_ERROR = 3;
 
     /**
      * @var string The handskake response status
@@ -115,13 +121,8 @@ class RequestHandler {
         // Execute the HTTP request
         $response = $this->call($requestEnvelope);
 
-        // Check authentication status
-        if ($this->hasAuthenticationError($response)) {
-            Log::debug(sprintf('Authentication error. Status code: \'%s\' Error message: \'%s\'',
-                $response->getStatusCode(), print_r($response->getError(), true)));
-
-            throw new AuthenticationException('Invalid authentication token provided');
-        }
+        // Validate the response envelope
+        $this->validateResponseEnvelope($response);
 
         // Initialize session
         $this->session($response);
@@ -161,6 +162,32 @@ class RequestHandler {
         // Handles and unsmarshalles the response envelope
         $request->handleResponse($response);
     }
+
+    /**
+     * Validates the response envelope. Throws exception on error.
+     *
+     * @param ResponseEnvelope $response
+     * @throws AuthenticationException
+     */
+    protected function validateResponseEnvelope($response)
+    {
+        // Check the authentication status
+        if ($this->hasAuthenticationError($response)) {
+            Log::debug(sprintf('Authentication error. Status code: \'%s\' Error message: \'%s\'',
+                $response->getStatusCode(), print_r($response->getError(), true)));
+
+            throw new AuthenticationException('Invalid authentication token provided');
+        }
+
+        // Check the account status
+        if ($this->isAccountBannedError($response)) {
+            Log::debug(sprintf('Authentication error. Status code: \'%s\' Error message: \'%s\'',
+                $response->getStatusCode(), print_r($response->getError(), true)));
+
+            throw new AuthenticationException('Invalid authentication state. The account may be banned');
+        }
+    }
+
 
     /**
      * Re-initialize the session.
@@ -291,7 +318,7 @@ class RequestHandler {
         if ($this->session !== null && $this->session->isValid()) {
             return;
         }
-        
+
         // Retrieve the renewed access token
         $accessToken = $this->manager()->getAccessToken();
 
@@ -312,6 +339,17 @@ class RequestHandler {
     protected function hasAuthenticationError($responseEnvelop)
     {
         return $responseEnvelop->getStatusCode() === self::$RESPONSE_STATUS_AUTHENTICATION_ERROR;
+    }
+
+    /**
+     * Returns true if the request type corresponds to an account banned error, false otherwise.
+     *
+     * @param ResponseEnvelope $responseEnvelop
+     * @return boolean
+     */
+    protected function isAccountBannedError($responseEnvelop)
+    {
+        return $responseEnvelop->getStatusCode() === self::$RESPONSE_STATUS_ACCOUNT_BANNED_ERROR;
     }
 
     /**
