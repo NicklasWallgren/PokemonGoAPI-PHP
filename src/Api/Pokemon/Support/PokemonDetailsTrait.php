@@ -138,7 +138,7 @@ trait PokemonDetailsTrait
         $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
 
         // Check if the pokemon type can be evolved
-        if ($data->getCandyToEvolve() !== 0) {
+        if ($data->getCandyToEvolve() === 0) {
             return EvolvePokemonResponse_Result::FAILED_POKEMON_CANNOT_EVOLVE;
         }
 
