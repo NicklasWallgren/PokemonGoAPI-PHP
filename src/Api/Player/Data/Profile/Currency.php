@@ -7,7 +7,7 @@ use NicklasW\PkmGoApi\Api\Data\Data;
 
 /**
  * @method void setName(string $state)
- * @method void setAmount(intger $state)
+ * @method void setAmount(integer $state)
  *
  * @method string getName()
  * @method integer getAmount()
