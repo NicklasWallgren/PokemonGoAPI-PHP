@@ -86,7 +86,7 @@ class Pokemon extends Procedure
     /**
      * Pokemon constructor.
      *
-     * @param array $pokemonData
+     * @param array|PokemonItem $pokemonData
      */
     public function __construct($pokemonData)
     {

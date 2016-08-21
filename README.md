@@ -60,6 +60,12 @@ $pokemon->transfer();
   - [Nicklas Wallgren](https://github.com/NicklasWallgren)
   - [Ni42](https://github.com/Ni42)
 
+## Testing
+
+``` bash
+$ composer test
+```
+
 ## Credits
 - [Grover-c13](https://github.com/Grover-c13) for the inspiration
 - [AeonLucid](https://github.com/AeonLucid/POGOProtos) for improved protos
