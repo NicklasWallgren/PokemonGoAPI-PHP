@@ -145,6 +145,8 @@ trait PokemonDetailsTrait
         if ($this->getCandies()->getCount() < $data->getCandyToEvolve()) {
             return EvolvePokemonResponse_Result::FAILED_INSUFFICIENT_RESOURCES;
         }
+
+        return EvolvePokemonResponse_Result::SUCCESS;
     }
 
     /**
