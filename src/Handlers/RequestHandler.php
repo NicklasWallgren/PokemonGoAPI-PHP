@@ -220,7 +220,7 @@ class RequestHandler
 
         // Sets the request id
         $requestEnvelope->setRequestId($this->requestId());
-        $requestEnvelope->setUnknown12(989);
+        $requestEnvelope->setUnknown12(rand(901, 999));
 
         // Sets the location
         $requestEnvelope->setLatitude($this->application->getLocation()->getLatitude());
