@@ -225,7 +225,7 @@ class RequestHandler
         // Sets the location
         $requestEnvelope->setLatitude($this->application->getLocation()->getLatitude());
         $requestEnvelope->setLongitude($this->application->getLocation()->getLongitude());
-        $requestEnvelope->setAltitude(0);
+        $requestEnvelope->setAltitude(rand(30, 100) / 10); // Is actually accuracy, see https://github.com/AeonLucid/POGOProtos/commit/0170d19e1a02e65d1f600904a915b5988af39bd4#commitcomment-18785764
 
         // Add request
         $requestEnvelope->addAllRequests(array($networkRequest));
