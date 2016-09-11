@@ -22,7 +22,7 @@ if ($application)
 	$pokemonGoApi = $application->getPokemonGoApi();
 	if ($pokemonGoApi)
 	{
-		$pokez = $pokemonGoApi->getInventory()->getItems()->getPokeBank()->getPokemons();
+		$pokez = $pokemonGoApi->getInventory()->getPokeBank()->getPokemons();
 		$pokes = $pokez->sortByCp(true);
 		if ($pokes)
 		{
