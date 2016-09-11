@@ -16,13 +16,14 @@ $config->setPassword('INSERT_PASSWORD');
 $manager = Factory::create($config);
 
 $application = new ApplicationKernel($manager);
+$error = null;
 
 if ($application)
 {
 	$pokemonGoApi = $application->getPokemonGoApi();
 	if ($pokemonGoApi)
 	{
-		$pokez = $pokemonGoApi->getInventory()->getItems()->getPokeBank()->getPokemons();
+		$pokez = $pokemonGoApi->getInventory()->getPokeBank()->getPokemons();
 		$pokes = $pokez->sortByCp(true);
 		if ($pokes)
 		{
@@ -108,14 +109,14 @@ function html_start()
 	?>
 	<div class="container">
 		<div class="header clearfix"><h3 class="text-muted">PokemonGoAPI-PHP</h3></div>
-	<?
+	<?php
 }
 
 function html_stop()
 {
 	?>
 	</div>
-	<?
+	<?php
 }
 
 function html_header()
@@ -130,7 +131,7 @@ function html_header()
 		<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 	</head>
 	<body>
-	<?
+	<?php
 }
 
 function html_footer()
@@ -139,7 +140,7 @@ function html_footer()
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</body>
 	</html>
-	<?
+	<?php
 }
 
 ?>
