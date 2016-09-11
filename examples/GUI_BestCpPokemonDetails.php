@@ -16,6 +16,7 @@ $config->setPassword('INSERT_PASSWORD');
 $manager = Factory::create($config);
 
 $application = new ApplicationKernel($manager);
+$error = null;
 
 if ($application)
 {
