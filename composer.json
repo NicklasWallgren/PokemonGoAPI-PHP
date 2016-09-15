@@ -8,7 +8,7 @@
     "require": {
         "php": ">=5.6",
         "paquettg/php-html-parser": "1.7",
-        "guzzlehttp/guzzle": "~6.0",
+        "guzzlehttp/guzzle": "^6.2.1",
         "jeremeamia/xstatic": "^1.0",
         "php-di/php-di": "^5.3",
         "phpseclib/phpseclib": "^2.0",
