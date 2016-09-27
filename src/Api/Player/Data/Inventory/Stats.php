@@ -168,7 +168,7 @@ class Stats extends Data {
     /**
      * @var string
      */
-//    protected $pokemonCaughtByType = "";
+    protected $pokemonCaughtByType = "";
 
     /**
      * @var int
