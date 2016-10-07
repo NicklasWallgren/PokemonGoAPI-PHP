@@ -1,4 +1,8 @@
 # PokemonGoAPI-PHP
+
+[![Total Downloads][ico-downloads]][link-packagist]
+[![PHP7 Ready](https://img.shields.io/badge/PHP7-ready-green.svg)][link-packagist]
+
 Pokemon GO PHP API library
 
 # Install
@@ -59,6 +63,7 @@ $pokemon->transfer();
 ## Contributors
   - [Nicklas Wallgren](https://github.com/NicklasWallgren)
   - [Ni42](https://github.com/Ni42)
+  - [All Contributors][link-contributors]
 
 ## Testing
 
@@ -66,6 +71,15 @@ $pokemon->transfer();
 $ composer test
 ```
 
+## Slack Chat
+
+We use [Slack](https://slack.com) for community discussions. You can find our team here: https://pokemongoapi-php.slack.com
+
 ## Credits
 - [Grover-c13](https://github.com/Grover-c13) for the inspiration
 - [AeonLucid](https://github.com/AeonLucid/POGOProtos) for improved protos
+
+[ico-downloads]: https://img.shields.io/packagist/dt/nicklasw/pkm-go-api.svg?style=flat-square
+
+[link-packagist]: https://packagist.org/packages/nicklasw/pkm-go-api
+[link-contributors]: ../../contributors
