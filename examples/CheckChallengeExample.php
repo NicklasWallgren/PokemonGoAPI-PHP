@@ -36,17 +36,21 @@ class CheckChallengeRequest {
                 	$checkChallenge = $pokemonGoApi->checkChallenge()->getData();
                 	if ($checkChallenge)
                 	{
+				//print_r( $checkChallenge ); //DEBUG
 				echo '<!DOCTYPE html><html><head><title>CheckChallenge Example</title></head><body>';
+
 				echo '<pre>USER: ' . $config->getUser() . '</pre>';
 				echo '<pre>SHOWCHALLANGE: ' . var_export($checkChallenge->getShowChallenge(), true) . '</pre>';
-				//print_r( $checkChallenge );
-				echo '<div id=checkChallenge style="text-align:center">';
-				echo '<p>Step 1: <b>Drag and Drop</b> the bookmarklet button below to your browser\'s bookmark toolbar.</p>';
-				echo '<p><a class="btn btn-primary btn-sm" class="button" href="javascript:(function(){document.body.appendChild(document.createElement(\'script\')).src=\'https://alertboxx.com/bookmarklet/pgo-captcha.js\';})();">PGO-Captcha</a></p>';
-				echo '<p>Step 2: Open the below captcha link in a new tab, then execute the PGO-Captcha js bookmarklet you just added to your toolbar against that page.</p>';
-				echo '<p><a target="_blank" href="' . $checkChallenge->getChallengeUrl() . '">' . $checkChallenge->getChallengeUrl() . "</a></p>";
-				echo '<p>Step 3: Solve the captcha that is displayed to generate a token to verify the successful captcha completion.</p>';
-				echo '</div>';
+				echo '<pre>CHALLENGE URL: <a target=_blank href="' . $checkChallenge->getChallengeUrl() . '">'. $checkChallenge->getChallengeUrl() . '</a></pre>';
+
+				echo '<div id=checkChallenge style="width:50%;margin:20px auto;">';
+				echo '<center><p><a class="btn btn-primary btn-sm" class="button" href="javascript:(function(){document.body.appendChild(document.createElement(\'script\')).src=\'https://alertboxx.com/bookmarklet/pgo-captcha.js\';})();">PGO-Captcha</a></p></center>';
+				echo '<ol><li><b>Drag and Drop the [ PGO-Captcha ] bookmarklet</b> button above to your browser\'s bookmark toolbar.</li>';
+				echo '<li><b>Open the CHALLENGE URL</b> in a new tab.</li>';
+				echo '<li><b>Execute the PGO-Captcha bookmarklet</b> against the challenge page to display the modified captcha form.</li>';
+				echo '<li><b>Solve the captcha</b> that is displayed to generate a unique challenge token to verify the successful captcha completion.</li>';
+				echo '</ul></div>';
+
 				//echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>';
 				echo '<link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">';
 				echo '<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">';
