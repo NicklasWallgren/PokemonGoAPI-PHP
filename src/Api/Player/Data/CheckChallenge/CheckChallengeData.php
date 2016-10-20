@@ -42,3 +42,4 @@ class CheckChallengeData extends Data {
         return $instance;
     }
 }
+
