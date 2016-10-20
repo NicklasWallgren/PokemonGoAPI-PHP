@@ -21,5 +21,5 @@ class CheckChallengeRequestService extends RequestService {
 
         return $checkChallengeRequest->getData();
     }
-
 }
+

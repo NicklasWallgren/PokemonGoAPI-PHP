@@ -130,3 +130,4 @@ class PokemonGoApi {
         $this->checkChallenge = new CheckChallenge($this);
     }
 }
+

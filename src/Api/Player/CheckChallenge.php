@@ -43,3 +43,4 @@ class CheckChallenge extends Procedure {
         return new CheckChallengeRequestService();
     }
 }
+

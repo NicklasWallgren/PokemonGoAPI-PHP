@@ -81,3 +81,4 @@ trait MakeApiResourcesAvailable {
         return App::getInstance();
     }
 }
+

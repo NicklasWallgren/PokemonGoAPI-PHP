@@ -1,4 +1,5 @@
 <?php
+
 namespace NicklasW\PkmGoApi\Requests;
 
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
@@ -46,3 +47,4 @@ class CheckChallengeRequest extends Request {
         $this->setData($checkChallengeResponse);
     }
 }
+

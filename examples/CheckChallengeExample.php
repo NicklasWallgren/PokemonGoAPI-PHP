@@ -14,18 +14,17 @@ class CheckChallengeRequest {
      */
     public function run()
     {
+	// EXAMPLE Authentication via PTC user credentials
+	$config = new Config();
+	$config->setProvider(Factory::PROVIDER_PTC);
+	$config->setUser('YOURUSERNAME');
+	$config->setPassword('YOURPASSWORD');
 
-        // EXAMPLE Authentication via PTC user credentials
-        $config = new Config();
-        $config->setProvider(Factory::PROVIDER_PTC);
-        $config->setUser('YOURUSERNAME');
-        $config->setPassword('YOURPASSWORD');
+	// Create the authentication manager
+	$manager = Factory::create($config);
 
-        // Create the authentication manager
-        $manager = Factory::create($config);
-
-        // Initialize the pokemon go application
-        $application = new ApplicationKernel($manager);
+	// Initialize the pokemon go application
+	$application = new ApplicationKernel($manager);
 
 	$error = null;
 
@@ -44,7 +43,7 @@ class CheckChallengeRequest {
 				echo '<div id=checkChallenge style="text-align:center">';
 				echo '<p>Step 1: <b>Drag and Drop</b> the bookmarklet button below to your browser\'s bookmark toolbar.</p>';
 				echo '<p><a class="btn btn-primary btn-sm" class="button" href="javascript:(function(){document.body.appendChild(document.createElement(\'script\')).src=\'https://alertboxx.com/bookmarklet/pgo-captcha.js\';})();">PGO-Captcha</a></p>';
-                                echo '<p>Step 2: Open the below captcha link in a new tab, then execute the PGO-Captcha js bookmarklet you just added to your toolbar against that page.</p>';
+				echo '<p>Step 2: Open the below captcha link in a new tab, then execute the PGO-Captcha js bookmarklet you just added to your toolbar against that page.</p>';
 				echo '<p><a target="_blank" href="' . $checkChallenge->getChallengeUrl() . '">' . $checkChallenge->getChallengeUrl() . "</a></p>";
 				echo '<p>Step 3: Solve the captcha that is displayed to generate a token to verify the successful captcha completion.</p>';
 				echo '</div>';
@@ -85,3 +84,4 @@ $checkChallengeRequest = new CheckChallengeRequest();
 $checkChallengeRequest->run();
 
 ?>
+
