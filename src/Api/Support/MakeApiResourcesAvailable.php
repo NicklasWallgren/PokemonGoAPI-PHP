@@ -5,6 +5,7 @@ namespace NicklasW\PkmGoApi\Api\Support;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Pokedex;
 use NicklasW\PkmGoApi\Api\Player\Inventory;
 use NicklasW\PkmGoApi\Api\Player\Profile;
+use NicklasW\PkmGoApi\Api\Player\CheckChallenge;
 use NicklasW\PkmGoApi\Api\PokemonGoApi;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 
@@ -79,5 +80,5 @@ trait MakeApiResourcesAvailable {
     {
         return App::getInstance();
     }
-
 }
+

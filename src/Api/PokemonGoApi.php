@@ -6,6 +6,7 @@ use NicklasW\PkmGoApi\Api\Map\Map;
 use NicklasW\PkmGoApi\Api\Player\Inventory;
 use NicklasW\PkmGoApi\Api\Player\Journal;
 use NicklasW\PkmGoApi\Api\Player\Profile;
+use NicklasW\PkmGoApi\Api\Player\CheckChallenge;
 use NicklasW\PkmGoApi\Services\RequestService;
 
 class PokemonGoApi {
@@ -34,6 +35,11 @@ class PokemonGoApi {
      * @var Map
      */
     protected $map;
+
+    /**
+     * @var CheckChallenge
+     */
+    protected $checkChallenge;
 
     /**
      * Application constructor.
@@ -86,6 +92,16 @@ class PokemonGoApi {
     }
 
     /**
+     * Returns the player checkChallenge.
+     *
+     * @return CheckChallenge
+     */
+    public function checkChallenge()
+    {
+        return $this->checkChallenge;
+    }
+
+    /**
      * @return RequestService
      */
     public function getRequestService()
@@ -109,6 +125,9 @@ class PokemonGoApi {
 
         // Initialize the map instance
         $this->map = new Map($this);
-    }
 
+        // Initialize the checkChallenge instance
+        $this->checkChallenge = new CheckChallenge($this);
+    }
 }
+
