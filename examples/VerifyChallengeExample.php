@@ -87,7 +87,6 @@ EOFORM;
 
         // Initialize the pokemon go application
         $application = new ApplicationKernel($manager);
-        
         if ($application)
         {
             $pogoApi = $application->getPokemonGoApi();
@@ -125,20 +124,20 @@ EOFORM;
     
 }//END VerifyChallengeRequest
 
-// Initialize verifyChallengeRequest
+// Initialize VerifyChallengeRequest
 $verifyChallengeRequest = new VerifyChallengeRequest();
 
 // Sanatize User Supplied Post Input
 $_POST = !empty($_POST) ? filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING) : null;
 
 // Check For Post
-if( !$_POST ) {
+if(!$_POST) {
     // Display challengeForm if no postback detected
     $verifyChallengeRequest->showForm();
 }else {
-    // Check for direct post or form subission
-    if(	$_POST['token'] ) {
-        // Process token challenge request with user supplied challenge token and account info from config
+    // Check for challenge token
+    if($_POST['token']) {
+        // Pass challenge token to api
         $verifyChallengeRequest->sendToken($_POST['token']);
     }
     else {
@@ -146,5 +145,4 @@ if( !$_POST ) {
         echo json_encode(array("error", "POST detected but no valid TOKEN value supplied!"));
     }
 }
-
 ?>
