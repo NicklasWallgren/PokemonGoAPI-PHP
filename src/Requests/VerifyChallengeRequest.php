@@ -2,7 +2,7 @@
 namespace NicklasW\PkmGoApi\Requests;
 
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
-use POGOProtos\Networking\Requests\Messages\VerifyChallenge;
+use POGOProtos\Networking\Requests\Messages\VerifyChallengeMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\VerifyChallengeResponse;
 use ProtobufMessage;
