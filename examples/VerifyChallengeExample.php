@@ -91,7 +91,6 @@ EOFORM;
         if ($application)
         {
             $pogoApi = $application->getPokemonGoApi();
-            
             if ($pogoApi)
             {
                 $requestHandler = $pogoApi->getRequestService()->requestHandler();
