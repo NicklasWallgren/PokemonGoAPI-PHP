@@ -19,17 +19,18 @@ class VerifyChallengeRequest {
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Verify Challenge FORM</title>
+        <title>Verify Challenge Request Example</title>
     </head>
     <body>
         <div class="container">
+            <center><h1>Verify Challenge Request Example</h1></center>
             <form id="challengeForm" role="form">
                 <div class="form-group">
-                    <label class="control-label" for="token">TOKEN</label>
+                    <label class="control-label" for="token">RECaptcha Challenge Token</label>
                     <textarea class="form-control" cols="40" id="token" name="token" rows="10"></textarea>
                 </div>
                 <div class="form-group">
-                    <button id="form-submit" type="submit" class="btn btn-lg btn-success">SUBMIT</button>
+                    <center><button id="form-submit" type="submit" class="btn btn-lg btn-success">SUBMIT</button></center>
                 </div>
             </form>
             <div id="results"></div>
@@ -61,23 +62,6 @@ EOFORM;
     }
     
     /**
-     * Generate and display the ERROR html.
-     */
-    public function showError($error)
-    {
-        echo '<!DOCTYPE html>';
-        echo '<html lang="en">';
-        echo '<head><title>Verify Challenge ERROR</title></head>';
-        echo '<body>';
-        echo '<div class="container">';
-        echo '<div class="alert alert-danger">{$error}</div>';
-        echo '</div>';
-        echo '<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">';
-        echo '</body></html>';
-        exit;
-    }
-    
-    /**
      * Submit the user supplied challenge token to API.
      */
     public function sendToken($token)
@@ -85,8 +69,8 @@ EOFORM;
         // EXAMPLE Authentication via PTC user credentials
         $config = new Config();
         $config->setProvider(Factory::PROVIDER_PTC);
-        $config->setUser('INPUT_USER');
-        $config->setPassword('INPUT_PASSWORD');
+        $config->setUser('YOURUSERNAME');
+        $config->setPassword('YOURPASSWORD');
 
         // Create the authentication manager
         $manager = Factory::create($config);
@@ -129,7 +113,7 @@ EOFORM;
         }else
             $error = "Cannot connect with PokemonGo servers.";
             
-        if ($error) { self::showError($error); }
+        if ($error) { echo json_encode(array("ERROR", $error)); }
     }//END sendToken()
 }//END VerifyChallengeRequest
 
@@ -142,7 +126,7 @@ if( !$_POST ) {
     $verifyChallengeRequest->showForm();
 }else {
     if(	$_POST['token'] ) { $verifyChallengeRequest->sendToken($_POST['token']); }
-    else { $verifyChallengeRequest->showError('ERROR: POST DETECTED but no valid TOKEN value supplied!'); }
+    else { echo json_encode(array("error", "POST detected but no valid TOKEN value supplied!")); }
 }
 
 ?>
