@@ -53,7 +53,23 @@ class CheckChallengeRequest {
 				echo '<li><b>Open the CHALLENGE URL</b> in a new tab.</li>';
 				echo '<li><b>Execute the PGO-Captcha bookmarklet</b> against the challenge page to display the modified captcha form.</li>';
 				echo '<li><b>Solve the captcha</b> that is displayed to generate a unique challenge token to verify the successful captcha completion.</li>';
-				echo '</ol></div>';
+				echo '</ol>';
+						?>
+						<span>Alternatively to the bookmarklet, execute this JS using your browser's developer tools:</span>
+						<pre>function captchaResponse(challengeToken){
+	var responseDiv=document.createElement('div');
+	responseDiv.id='response';
+	document.getElementsByTagName('body')[0].appendChild(responseDiv);
+	document.getElementById('response').innerHTML=challengeToken;
+}
+var captchaHTML='&lt;form action="?" method="POST">&lt;div class="g-recaptcha" data-size="compact" data-sitekey="6LeeTScTAAAAADqvhqVMhPpr_vB9D364Ia-1dSgK" data-callback="captchaResponse">&lt;/form>';
+document.body.parentElement.innerHTML=captchaHTML;
+var script=document.createElement('script');
+script.src='https://www.google.com/recaptcha/api.js?hl=en';
+script.type='text/javascript';
+document.getElementsByTagName('head')[0].appendChild(script);</pre>
+						<?php
+				echo '</div>';
 
 				//echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>';
 				echo '<link href="http://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">';
