@@ -53,6 +53,9 @@ class VerifyChallengeRequest {
                     type: "POST",
                     url: "VerifyChallengeExample.php",
                     data: "token=" + token,
+                    beforeSend: function(){
+                        $("#results").html("<pre>... LOADING...</pre>");
+                    },
                     success : function(response){
                         if (response){
                             $("#results").html("<pre>" + JSON.stringify(response) + "</pre>");
@@ -70,7 +73,7 @@ EOFORM;
     /**
      * Submit the user supplied challenge token to API.
      */
-    public function sendToken($token)
+    public function verifyChallenge($token)
     {
         // Initialize error string
         $error = null;
@@ -101,6 +104,7 @@ EOFORM;
 
                 // return JSON encoded challengeResponse
                 echo json_encode($challengeResponse);
+                
             }else
                 $error = "There is problem with PokemonGo API.";
         }else
@@ -126,7 +130,7 @@ if(!$_POST) {
     // Check for challenge token
     if($_POST['token']) {
         // Pass challenge token to api
-        $verifyChallengeRequest->sendToken($_POST['token']);
+        $verifyChallengeRequest->verifyChallenge($_POST['token']);
     }
     else {
         // POST received but token not specified.
