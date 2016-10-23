@@ -7,6 +7,7 @@ use NicklasW\PkmGoApi\Api\Player\Inventory;
 use NicklasW\PkmGoApi\Api\Player\Journal;
 use NicklasW\PkmGoApi\Api\Player\Profile;
 use NicklasW\PkmGoApi\Api\Player\CheckChallenge;
+use NicklasW\PkmGoApi\Requests\VerifyChallengeRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
 
 class PokemonGoApi {
@@ -99,6 +100,25 @@ class PokemonGoApi {
     public function checkChallenge()
     {
         return $this->checkChallenge;
+    }
+
+    /**
+     * Sends back the captcha response
+     *
+     * @param string $token The recaptcha "solved-token"
+     *
+     * @return bool Whether the account is now "unflagged"
+     */
+    public function sendChallengeResponse($token)
+    {
+        $request = new VerifyChallengeRequest($token);
+
+        $this->getRequestService()->requestHandler()->handle($request);
+
+        /** @var \POGOProtos\Networking\Responses\VerifyChallengeResponse $response */
+        $response = $request->getData();
+
+        return (bool) $response->getSuccess();
     }
 
     /**
