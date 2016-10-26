@@ -103,13 +103,13 @@ class PokemonGoApi {
     }
 
     /**
-     * Sends back the captcha response
+     * Sends back the RECaptcha challenge token
      *
      * @param string $token The recaptcha "solved-token"
      *
      * @return bool Whether the account is now "unflagged"
      */
-    public function sendChallengeResponse($token)
+    public function verifyChallenge($token)
     {
         $request = new VerifyChallengeRequest($token);
 

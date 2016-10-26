@@ -73,9 +73,9 @@ EOFORM;
     }
     
     /**
-     * Submit the user supplied challenge token to API.
+     * Authenticate and submit the user supplied challenge token through API.
      */
-    public function verifyChallenge($token)
+    public function processRequest($token)
     {
         // Initialize error string
         $error = null;
@@ -89,15 +89,16 @@ EOFORM;
         // Create the authentication manager
         $manager = Factory::create($config);
 
-        // Initialize the pokemon go application
+        // Initialize the pokemon go application kernel
         $application = new ApplicationKernel($manager);
         if ($application)
         {
+            // Initialize the pokemon go api
             $pogoApi = $application->getPokemonGoApi();
             if ($pogoApi)
             {
-                //Needs error checking??
-                $success = $pogoApi->sendChallengeResponse($token);
+                // Process api request
+                $success = $pogoApi->verifyChallenge($token);
 
                 $challengeResponse = [
                     "user" => $config->getUser(),
@@ -105,14 +106,14 @@ EOFORM;
                 ];
 
                 // return JSON encoded challengeResponse
-                echo json_encode($challengeResponse);
+                return json_encode($challengeResponse);
                 
             }else
                 $error = "Failed to initialize the PokemonGo API!";
         }else
             $error = "Failed to initialize the application kernel!";
             
-        if ($error) { echo json_encode(array("ERROR", $error)); }
+        if ($error) { return json_encode(array("error", $error)); }
         
     }//END sendToken()
     
@@ -131,8 +132,8 @@ if(!$_POST) {
 }else {
     // Check for challenge token
     if($_POST['token']) {
-        // Pass challenge token to api
-        $verifyChallengeRequest->verifyChallenge($_POST['token']);
+        // Process request
+        echo $verifyChallengeRequest->processRequest($_POST['token']);
     }
     else {
         // POST received but token not specified.

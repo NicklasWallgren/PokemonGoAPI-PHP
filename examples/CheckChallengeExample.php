@@ -84,7 +84,7 @@ function captchaResponse(challengeToken){
     document.getElementsByTagName('body')[0].appendChild(responseDiv);
     document.getElementById('response').innerHTML=challengeToken;
 }
-var captchaHTML='&lt;form action="?" method="POST">&lt;div class="g-recaptcha" data-size="compact" data-sitekey="6LeeTScTAAAAADqvhqVMhPpr_vB9D364Ia-1dSgK" data-callback="captchaResponse">&lt;/form>';
+var captchaHTML='&lt;form action="?" method="POST">&lt;div class="g-recaptcha" data-size="compact" data-sitekey="6LeeTScTAAAAADqvhqVMhPpr_vB9D364Ia-1dSgK" data-callback="captchaResponse">&lt;/div>&lt;/form>';
 document.body.parentElement.innerHTML=captchaHTML;
 var script=document.createElement('script');
 script.src='https://www.google.com/recaptcha/api.js?hl=en';
