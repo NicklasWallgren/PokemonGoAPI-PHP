@@ -61,15 +61,24 @@ class VerifyChallengeRequest extends Request {
      */
     public function handleResponse($data)
     {
-        // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        // DEBUG - dump response object
+        //var_dump($data);
+        // DEBUG - check status code of response for error handling, but error can return both 1 and 2 - not sure why?
+        //echo "StatusCode: " . $data->getStatusCode();
         
         // Initialize the VerifyChallenge response
         $verifyChallengeResponse = new VerifyChallengeResponse();
-        
-        // Unmarshall the response
-        $verifyChallengeResponse->read($requestData);
-        
+
+        // Retrieve the specific request data
+        $requestData = current($data->getReturnsArray());
+        if ($requestData) {
+            // Unmarshall the response
+            $verifyChallengeResponse->read($requestData);
+        }else {
+            // HACK to instansiate a valid VerifyChallengeResponse object when $requestData == NULL - sets success to "0";
+            $verifyChallengeResponse->clearSuccess();
+        }
+
         $this->setData($verifyChallengeResponse);
     }
 }
