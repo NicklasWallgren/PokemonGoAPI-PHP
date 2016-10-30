@@ -29,9 +29,9 @@ class TokenParser extends Parser {
         $content = $response->getBody();
         
         // Check if the response includes any error messages
-        if (array_key_exists('errors', $content)) {
+        if (array_key_exists('error', $content)) {
             // Retrieve the error messages
-            $errors = $content['errors'];
+            $errors = $content['error'];
 
             // Check if there are any available error messages
             if (sizeof($errors) > 0) {

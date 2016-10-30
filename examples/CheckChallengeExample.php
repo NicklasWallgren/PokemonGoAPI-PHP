@@ -39,7 +39,14 @@ class CheckChallengeRequest {
             // Ensure api and user are not empty
             if ($pogoApi && $config->getUser())
             {
-                $checkChallenge = $pogoApi->checkChallenge()->getData();
+                try {
+                    $checkChallenge = $pogoApi->checkChallenge()->getData();
+                } catch (Exception $e) {
+                    //DEBUG - 
+                    echo 'Caught exception code: ',  $e->getCode, ' - ', $e->getMessage(), "\n";
+                    exit;
+                }
+                
                 if ($checkChallenge)
                 {
                     // Convert showChallenge boolean to string equiv
