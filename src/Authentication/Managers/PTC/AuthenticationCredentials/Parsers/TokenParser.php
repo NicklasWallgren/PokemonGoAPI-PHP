@@ -37,8 +37,8 @@ class TokenParser extends Parser {
             if (sizeof($errors) > 0) {
                 Log::debug(sprintf('[#%s] Error messages in response. Errors: \'%s\'', __CLASS__,
                     print_r($errors, true)));
-
-                throw new AuthenticationException(current($errors));
+                // A code of 498 indicates an expired or otherwise invalid token.
+                throw new AuthenticationException(current($errors),498);
             }
         }
 
