@@ -2,6 +2,7 @@
 
 namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers;
 
+use NicklasW\PkmGoApi\Authentication\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\TokenResult;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
@@ -25,10 +26,25 @@ class TokenParser extends Parser {
     public function parse($response)
     {
         // Retrieve the content
-        $content = (string)$response->getBody();
+        $content = $response->getBody();
+        
+        // Check if the response includes any error messages
+        if (array_key_exists('errors', $content)) {
+            // Retrieve the error messages
+            $errors = $content['errors'];
+
+            // Check if there are any available error messages
+            if (sizeof($errors) > 0) {
+                Log::debug(sprintf('[#%s] Error messages in response. Errors: \'%s\'', __CLASS__,
+                    print_r($errors, true)));
+
+                throw new AuthenticationException(current($errors));
+            }
+        }
 
         Log::debug(sprintf('[#%s] Retrieved content: \'%s\'', __CLASS__, $content));
 
+        $content = (string)$content;
         return new TokenResult(
             array('token' => $this->parseToken($content), 'timestamp' => $this->parseExpiresTimestamp($content)));
     }
