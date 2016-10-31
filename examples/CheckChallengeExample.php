@@ -42,9 +42,12 @@ class CheckChallengeRequest {
                 try {
                     $checkChallenge = $pogoApi->checkChallenge()->getData();
                 } catch (Exception $e) {
-                    //DEBUG - 
-                    echo 'Caught exception code: ',  $e->getCode, ' - ', $e->getMessage(), "\n";
-                    exit;
+                    // DEBUG
+                    // 498 - invalid_grant in body response (missing token/expires values)
+                    // 503 - Oops! It seems that Pokemon.com has had an unexpected error.
+                    // 0   - default error code
+                    $error = 'ERROR ' . $e->getCode() . ': ' . $e->getMessage() . '\n';
+                    $checkChallenge = FALSE;
                 }
                 
                 if ($checkChallenge)
@@ -106,8 +109,8 @@ document.getElementsByTagName('head')[0].appendChild(script);
 </html>
 EOBODY;
                     exit;
-                }else
-                    $error = "There was a problem with your checkChallenge() request!";
+                }
+                
             }else
                 $error = "Failed to initialize the PokemonGo API! Did you forget to set your credentials?";
         }else

@@ -45,8 +45,9 @@ class TicketParser extends Parser {
             if (sizeof($errors) > 0) {
                 Log::debug(sprintf('[#%s] Error messages in response. Errors: \'%s\'', __CLASS__,
                     print_r($errors, true)));
-
-                throw new AuthenticationException(current($errors));
+                // A code of 503 indicates a service unavailable or unexpected error response. 0 is default
+                $code = (strstr(implode($errors),"unexpected error")) ? 503 : 0;
+                throw new AuthenticationException(current($errors),$code);
             }
         }
 
