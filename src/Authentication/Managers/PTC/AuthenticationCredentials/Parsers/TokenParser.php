@@ -38,7 +38,7 @@ class TokenParser extends Parser {
                 Log::debug(sprintf('[#%s] Error messages in response. Errors: \'%s\'', __CLASS__,
                     print_r($errors, true)));
                 // A code of 498 indicates an expired or otherwise invalid token. 0 is default
-                $code = in_array("invalid_grant", $errors) ? 498 : 0;
+                $code = in_array("invalid_grant", $errors) ? AuthenticationException::PTC_INVALID_GRANT_ERROR : 0;
                 throw new AuthenticationException(current($errors),$code);
             }
         }
