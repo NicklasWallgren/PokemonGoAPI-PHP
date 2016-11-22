@@ -41,7 +41,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(90);
         $pokemonMeta->setCylRadiusM(0.3815);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(126);
+        $pokemonMeta->setBaseAttack(118);
         $pokemonMeta->setDiskRadiusM(0.5723);
         $pokemonMeta->setCollisionRadiusM(0.3815);
         $pokemonMeta->setPokedexWeightKg(6.9);
@@ -52,7 +52,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.15);
         $pokemonMeta->setModelScale(1.09);
         $pokemonMeta->setUniqueId("V0001_POKEMON_BULBASAUR");
-        $pokemonMeta->setBaseDefense(126);
+        $pokemonMeta->setBaseDefense(118);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.8625);
         $pokemonMeta->setCylHeightM(0.763);
@@ -84,7 +84,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.51);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(156);
+        $pokemonMeta->setBaseAttack(151);
         $pokemonMeta->setDiskRadiusM(0.765);
         $pokemonMeta->setCollisionRadiusM(0.31875);
         $pokemonMeta->setPokedexWeightKg(13);
@@ -95,7 +95,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.5);
         $pokemonMeta->setModelScale(0.85);
         $pokemonMeta->setUniqueId("V0002_POKEMON_IVYSAUR");
-        $pokemonMeta->setBaseDefense(158);
+        $pokemonMeta->setBaseDefense(151);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(1.625);
         $pokemonMeta->setCylHeightM(1.0625);
@@ -138,7 +138,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.69);
         $pokemonMeta->setUniqueId("V0003_POKEMON_VENUSAUR");
-        $pokemonMeta->setBaseDefense(200);
+        $pokemonMeta->setBaseDefense(198);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(12.5);
         $pokemonMeta->setCylHeightM(1.2075);
@@ -170,7 +170,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(78);
         $pokemonMeta->setCylRadiusM(0.3125);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(128);
+        $pokemonMeta->setBaseAttack(116);
         $pokemonMeta->setDiskRadiusM(0.4688);
         $pokemonMeta->setCollisionRadiusM(0.15625);
         $pokemonMeta->setPokedexWeightKg(8.5);
@@ -181,7 +181,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.25);
         $pokemonMeta->setUniqueId("V0004_POKEMON_CHARMANDER");
-        $pokemonMeta->setBaseDefense(108);
+        $pokemonMeta->setBaseDefense(96);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(1.0625);
         $pokemonMeta->setCylHeightM(0.75);
@@ -213,7 +213,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(116);
         $pokemonMeta->setCylRadiusM(0.4635);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(160);
+        $pokemonMeta->setBaseAttack(158);
         $pokemonMeta->setDiskRadiusM(0.6953);
         $pokemonMeta->setCollisionRadiusM(0.2575);
         $pokemonMeta->setPokedexWeightKg(19);
@@ -224,7 +224,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.03);
         $pokemonMeta->setUniqueId("V0005_POKEMON_CHARMELEON");
-        $pokemonMeta->setBaseDefense(140);
+        $pokemonMeta->setBaseDefense(129);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(2.375);
         $pokemonMeta->setCylHeightM(1.133);
@@ -256,7 +256,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(156);
         $pokemonMeta->setCylRadiusM(0.81);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(212);
+        $pokemonMeta->setBaseAttack(223);
         $pokemonMeta->setDiskRadiusM(1.215);
         $pokemonMeta->setCollisionRadiusM(0.405);
         $pokemonMeta->setPokedexWeightKg(90.5);
@@ -267,7 +267,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.81);
         $pokemonMeta->setUniqueId("V0006_POKEMON_CHARIZARD");
-        $pokemonMeta->setBaseDefense(182);
+        $pokemonMeta->setBaseDefense(176);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(11.3125);
         $pokemonMeta->setCylHeightM(1.377);
@@ -299,7 +299,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(88);
         $pokemonMeta->setCylRadiusM(0.3825);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(112);
+        $pokemonMeta->setBaseAttack(94);
         $pokemonMeta->setDiskRadiusM(0.5738);
         $pokemonMeta->setCollisionRadiusM(0.2295);
         $pokemonMeta->setPokedexWeightKg(9);
@@ -310,7 +310,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.53);
         $pokemonMeta->setUniqueId("V0007_POKEMON_SQUIRTLE");
-        $pokemonMeta->setBaseDefense(142);
+        $pokemonMeta->setBaseDefense(122);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(1.125);
         $pokemonMeta->setCylHeightM(0.64259988);
@@ -342,7 +342,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(118);
         $pokemonMeta->setCylRadiusM(0.375);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(144);
+        $pokemonMeta->setBaseAttack(126);
         $pokemonMeta->setDiskRadiusM(0.5625);
         $pokemonMeta->setCollisionRadiusM(0.25);
         $pokemonMeta->setPokedexWeightKg(22.5);
@@ -353,7 +353,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1);
         $pokemonMeta->setUniqueId("V0008_POKEMON_WARTORTLE");
-        $pokemonMeta->setBaseDefense(176);
+        $pokemonMeta->setBaseDefense(155);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(2.8125);
         $pokemonMeta->setCylHeightM(1);
@@ -385,7 +385,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(158);
         $pokemonMeta->setCylRadiusM(0.564);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(186);
+        $pokemonMeta->setBaseAttack(171);
         $pokemonMeta->setDiskRadiusM(0.846);
         $pokemonMeta->setCollisionRadiusM(0.564);
         $pokemonMeta->setPokedexWeightKg(85.5);
@@ -396,7 +396,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.94);
         $pokemonMeta->setUniqueId("V0009_POKEMON_BLASTOISE");
-        $pokemonMeta->setBaseDefense(222);
+        $pokemonMeta->setBaseDefense(210);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(10.6875);
         $pokemonMeta->setCylHeightM(1.2925);
@@ -428,7 +428,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(90);
         $pokemonMeta->setCylRadiusM(0.306);
         $pokemonMeta->setBaseFleeRate(0.2);
-        $pokemonMeta->setBaseAttack(62);
+        $pokemonMeta->setBaseAttack(55);
         $pokemonMeta->setDiskRadiusM(0.459);
         $pokemonMeta->setCollisionRadiusM(0.102);
         $pokemonMeta->setPokedexWeightKg(2.9);
@@ -439,7 +439,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0);
         $pokemonMeta->setModelScale(2.04);
         $pokemonMeta->setUniqueId("V0010_POKEMON_CATERPIE");
-        $pokemonMeta->setBaseDefense(66);
+        $pokemonMeta->setBaseDefense(62);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.3625);
         $pokemonMeta->setCylHeightM(0.408);
@@ -469,7 +469,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.351);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(56);
+        $pokemonMeta->setBaseAttack(45);
         $pokemonMeta->setDiskRadiusM(0.5265);
         $pokemonMeta->setCollisionRadiusM(0.117);
         $pokemonMeta->setPokedexWeightKg(9.9);
@@ -480,7 +480,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.17);
         $pokemonMeta->setUniqueId("V0011_POKEMON_METAPOD");
-        $pokemonMeta->setBaseDefense(86);
+        $pokemonMeta->setBaseDefense(64);
         $pokemonMeta->setAttackTimerS(3600);
         $pokemonMeta->setWeightStdDev(1.2375);
         $pokemonMeta->setCylHeightM(0.6435);
@@ -510,7 +510,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.666);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(144);
+        $pokemonMeta->setBaseAttack(167);
         $pokemonMeta->setDiskRadiusM(0.999);
         $pokemonMeta->setCollisionRadiusM(0.1665);
         $pokemonMeta->setPokedexWeightKg(32);
@@ -521,7 +521,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.11);
         $pokemonMeta->setUniqueId("V0012_POKEMON_BUTTERFREE");
-        $pokemonMeta->setBaseDefense(144);
+        $pokemonMeta->setBaseDefense(151);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(4);
         $pokemonMeta->setCylHeightM(1.11);
@@ -553,7 +553,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.209);
         $pokemonMeta->setBaseFleeRate(0.2);
-        $pokemonMeta->setBaseAttack(68);
+        $pokemonMeta->setBaseAttack(63);
         $pokemonMeta->setDiskRadiusM(0.3135);
         $pokemonMeta->setCollisionRadiusM(0.1045);
         $pokemonMeta->setPokedexWeightKg(3.2);
@@ -564,7 +564,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(2.09);
         $pokemonMeta->setUniqueId("V0013_POKEMON_WEEDLE");
-        $pokemonMeta->setBaseDefense(64);
+        $pokemonMeta->setBaseDefense(55);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.4);
         $pokemonMeta->setCylHeightM(0.418);
@@ -594,7 +594,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(90);
         $pokemonMeta->setCylRadiusM(0.25);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(62);
+        $pokemonMeta->setBaseAttack(46);
         $pokemonMeta->setDiskRadiusM(0.375);
         $pokemonMeta->setCollisionRadiusM(0.25);
         $pokemonMeta->setPokedexWeightKg(10);
@@ -605,7 +605,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0);
         $pokemonMeta->setModelScale(1.25);
         $pokemonMeta->setUniqueId("V0014_POKEMON_KAKUNA");
-        $pokemonMeta->setBaseDefense(82);
+        $pokemonMeta->setBaseDefense(86);
         $pokemonMeta->setAttackTimerS(3600);
         $pokemonMeta->setWeightStdDev(1.25);
         $pokemonMeta->setCylHeightM(0.75);
@@ -635,7 +635,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.462);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(144);
+        $pokemonMeta->setBaseAttack(169);
         $pokemonMeta->setDiskRadiusM(0.693);
         $pokemonMeta->setCollisionRadiusM(0.308);
         $pokemonMeta->setPokedexWeightKg(29.5);
@@ -646,7 +646,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.77);
         $pokemonMeta->setUniqueId("V0015_POKEMON_BEEDRILL");
-        $pokemonMeta->setBaseDefense(130);
+        $pokemonMeta->setBaseDefense(150);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(3.6875);
         $pokemonMeta->setCylHeightM(0.77);
@@ -678,7 +678,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.252);
         $pokemonMeta->setBaseFleeRate(0.2);
-        $pokemonMeta->setBaseAttack(94);
+        $pokemonMeta->setBaseAttack(85);
         $pokemonMeta->setDiskRadiusM(0.378);
         $pokemonMeta->setCollisionRadiusM(0.1344);
         $pokemonMeta->setPokedexWeightKg(1.8);
@@ -689,7 +689,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.4);
         $pokemonMeta->setModelScale(1.68);
         $pokemonMeta->setUniqueId("V0016_POKEMON_PIDGEY");
-        $pokemonMeta->setBaseDefense(90);
+        $pokemonMeta->setBaseDefense(76);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.225);
         $pokemonMeta->setCylHeightM(0.504);
@@ -721,7 +721,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(126);
         $pokemonMeta->setCylRadiusM(0.474);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(126);
+        $pokemonMeta->setBaseAttack(117);
         $pokemonMeta->setDiskRadiusM(0.711);
         $pokemonMeta->setCollisionRadiusM(0.316);
         $pokemonMeta->setPokedexWeightKg(30);
@@ -732,7 +732,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.79);
         $pokemonMeta->setUniqueId("V0017_POKEMON_PIDGEOTTO");
-        $pokemonMeta->setBaseDefense(122);
+        $pokemonMeta->setBaseDefense(108);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(3.75);
         $pokemonMeta->setCylHeightM(0.9875);
@@ -764,7 +764,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(166);
         $pokemonMeta->setCylRadiusM(0.864);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(170);
+        $pokemonMeta->setBaseAttack(166);
         $pokemonMeta->setDiskRadiusM(1.296);
         $pokemonMeta->setCollisionRadiusM(0.36);
         $pokemonMeta->setPokedexWeightKg(39.5);
@@ -775,7 +775,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.72);
         $pokemonMeta->setUniqueId("V0018_POKEMON_PIDGEOT");
-        $pokemonMeta->setBaseDefense(166);
+        $pokemonMeta->setBaseDefense(157);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(4.9375);
         $pokemonMeta->setCylHeightM(1.44);
@@ -807,7 +807,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(60);
         $pokemonMeta->setCylRadiusM(0.252);
         $pokemonMeta->setBaseFleeRate(0.2);
-        $pokemonMeta->setBaseAttack(92);
+        $pokemonMeta->setBaseAttack(103);
         $pokemonMeta->setDiskRadiusM(0.378);
         $pokemonMeta->setCollisionRadiusM(0.189);
         $pokemonMeta->setPokedexWeightKg(3.5);
@@ -818,7 +818,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.9);
         $pokemonMeta->setModelScale(1.26);
         $pokemonMeta->setUniqueId("V0019_POKEMON_RATTATA");
-        $pokemonMeta->setBaseDefense(86);
+        $pokemonMeta->setBaseDefense(70);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.4375);
         $pokemonMeta->setCylHeightM(0.378);
@@ -850,7 +850,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(110);
         $pokemonMeta->setCylRadiusM(0.5265);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(146);
+        $pokemonMeta->setBaseAttack(161);
         $pokemonMeta->setDiskRadiusM(0.7898);
         $pokemonMeta->setCollisionRadiusM(0.2925);
         $pokemonMeta->setPokedexWeightKg(18.5);
@@ -861,7 +861,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.17);
         $pokemonMeta->setUniqueId("V0020_POKEMON_RATICATE");
-        $pokemonMeta->setBaseDefense(150);
+        $pokemonMeta->setBaseDefense(144);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(2.3125);
         $pokemonMeta->setCylHeightM(0.936);
@@ -893,7 +893,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.296);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(102);
+        $pokemonMeta->setBaseAttack(112);
         $pokemonMeta->setDiskRadiusM(0.444);
         $pokemonMeta->setCollisionRadiusM(0.148);
         $pokemonMeta->setPokedexWeightKg(2);
@@ -904,7 +904,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.48);
         $pokemonMeta->setUniqueId("V0021_POKEMON_SPEAROW");
-        $pokemonMeta->setBaseDefense(78);
+        $pokemonMeta->setBaseDefense(61);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.25);
         $pokemonMeta->setCylHeightM(0.518);
@@ -936,7 +936,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.504);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(168);
+        $pokemonMeta->setBaseAttack(182);
         $pokemonMeta->setDiskRadiusM(1.26);
         $pokemonMeta->setCollisionRadiusM(0.252);
         $pokemonMeta->setPokedexWeightKg(38);
@@ -947,7 +947,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.84);
         $pokemonMeta->setUniqueId("V0022_POKEMON_FEAROW");
-        $pokemonMeta->setBaseDefense(146);
+        $pokemonMeta->setBaseDefense(135);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(4.75);
         $pokemonMeta->setCylHeightM(1.05);
@@ -979,7 +979,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(70);
         $pokemonMeta->setCylRadiusM(0.4325);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(112);
+        $pokemonMeta->setBaseAttack(110);
         $pokemonMeta->setDiskRadiusM(0.6488);
         $pokemonMeta->setCollisionRadiusM(0.2595);
         $pokemonMeta->setPokedexWeightKg(6.9);
@@ -990,7 +990,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.73);
         $pokemonMeta->setUniqueId("V0023_POKEMON_EKANS");
-        $pokemonMeta->setBaseDefense(112);
+        $pokemonMeta->setBaseDefense(102);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(0.8625);
         $pokemonMeta->setCylHeightM(0.6055);
@@ -1022,7 +1022,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.615);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(166);
+        $pokemonMeta->setBaseAttack(167);
         $pokemonMeta->setDiskRadiusM(0.9225);
         $pokemonMeta->setCollisionRadiusM(0.41);
         $pokemonMeta->setPokedexWeightKg(65);
@@ -1033,7 +1033,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.82);
         $pokemonMeta->setUniqueId("V0024_POKEMON_ARBOK");
-        $pokemonMeta->setBaseDefense(166);
+        $pokemonMeta->setBaseDefense(158);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(8.125);
         $pokemonMeta->setCylHeightM(1.353);
@@ -1065,7 +1065,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(70);
         $pokemonMeta->setCylRadiusM(0.37);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(124);
+        $pokemonMeta->setBaseAttack(112);
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.185);
         $pokemonMeta->setPokedexWeightKg(6);
@@ -1076,7 +1076,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.48);
         $pokemonMeta->setUniqueId("V0025_POKEMON_PIKACHU");
-        $pokemonMeta->setBaseDefense(108);
+        $pokemonMeta->setBaseDefense(101);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.75);
         $pokemonMeta->setCylHeightM(0.74);
@@ -1108,7 +1108,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.486);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(200);
+        $pokemonMeta->setBaseAttack(192);
         $pokemonMeta->setDiskRadiusM(0.729);
         $pokemonMeta->setCollisionRadiusM(0.27);
         $pokemonMeta->setPokedexWeightKg(30);
@@ -1119,7 +1119,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.08);
         $pokemonMeta->setUniqueId("V0026_POKEMON_RAICHU");
-        $pokemonMeta->setBaseDefense(154);
+        $pokemonMeta->setBaseDefense(165);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(3.75);
         $pokemonMeta->setCylHeightM(1.35);
@@ -1151,7 +1151,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.3225);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(90);
+        $pokemonMeta->setBaseAttack(126);
         $pokemonMeta->setDiskRadiusM(0.4838);
         $pokemonMeta->setCollisionRadiusM(0.258);
         $pokemonMeta->setPokedexWeightKg(12);
@@ -1162,7 +1162,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.29);
         $pokemonMeta->setUniqueId("V0027_POKEMON_SANDSHREW");
-        $pokemonMeta->setBaseDefense(114);
+        $pokemonMeta->setBaseDefense(145);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(1.5);
         $pokemonMeta->setCylHeightM(0.774);
@@ -1194,7 +1194,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(150);
         $pokemonMeta->setCylRadiusM(0.4);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(150);
+        $pokemonMeta->setBaseAttack(182);
         $pokemonMeta->setDiskRadiusM(0.6);
         $pokemonMeta->setCollisionRadiusM(0.35);
         $pokemonMeta->setPokedexWeightKg(29.5);
@@ -1205,7 +1205,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1);
         $pokemonMeta->setUniqueId("V0028_POKEMON_SANDSLASH");
-        $pokemonMeta->setBaseDefense(172);
+        $pokemonMeta->setBaseDefense(202);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(3.6875);
         $pokemonMeta->setCylHeightM(1);
@@ -1237,7 +1237,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(110);
         $pokemonMeta->setCylRadiusM(0.37);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(100);
+        $pokemonMeta->setBaseAttack(86);
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.185);
         $pokemonMeta->setPokedexWeightKg(7);
@@ -1248,7 +1248,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.48);
         $pokemonMeta->setUniqueId("V0029_POKEMON_NIDORAN");
-        $pokemonMeta->setBaseDefense(104);
+        $pokemonMeta->setBaseDefense(94);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(0.875);
         $pokemonMeta->setCylHeightM(0.666);
@@ -1280,7 +1280,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(140);
         $pokemonMeta->setCylRadiusM(0.4388);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(132);
+        $pokemonMeta->setBaseAttack(117);
         $pokemonMeta->setDiskRadiusM(0.6581);
         $pokemonMeta->setCollisionRadiusM(0.2925);
         $pokemonMeta->setPokedexWeightKg(20);
@@ -1291,7 +1291,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.17);
         $pokemonMeta->setUniqueId("V0030_POKEMON_NIDORINA");
-        $pokemonMeta->setBaseDefense(136);
+        $pokemonMeta->setBaseDefense(126);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(2.5);
         $pokemonMeta->setCylHeightM(0.87749988);
@@ -1323,7 +1323,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.4095);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(184);
+        $pokemonMeta->setBaseAttack(180);
         $pokemonMeta->setDiskRadiusM(0.6143);
         $pokemonMeta->setCollisionRadiusM(0.455);
         $pokemonMeta->setPokedexWeightKg(60);
@@ -1334,7 +1334,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.91);
         $pokemonMeta->setUniqueId("V0031_POKEMON_NIDOQUEEN");
-        $pokemonMeta->setBaseDefense(190);
+        $pokemonMeta->setBaseDefense(174);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(7.5);
         $pokemonMeta->setCylHeightM(1.183);
@@ -1366,7 +1366,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(92);
         $pokemonMeta->setCylRadiusM(0.4725);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(110);
+        $pokemonMeta->setBaseAttack(105);
         $pokemonMeta->setDiskRadiusM(0.7088);
         $pokemonMeta->setCollisionRadiusM(0.252);
         $pokemonMeta->setPokedexWeightKg(9);
@@ -1377,7 +1377,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.26);
         $pokemonMeta->setUniqueId("V0032_POKEMON_NIDORAN");
-        $pokemonMeta->setBaseDefense(94);
+        $pokemonMeta->setBaseDefense(76);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(1.125);
         $pokemonMeta->setCylHeightM(0.756);
@@ -1409,7 +1409,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(122);
         $pokemonMeta->setCylRadiusM(0.495);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(142);
+        $pokemonMeta->setBaseAttack(137);
         $pokemonMeta->setDiskRadiusM(0.7425);
         $pokemonMeta->setCollisionRadiusM(0.297);
         $pokemonMeta->setPokedexWeightKg(19.5);
@@ -1420,7 +1420,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.99);
         $pokemonMeta->setUniqueId("V0033_POKEMON_NIDORINO");
-        $pokemonMeta->setBaseDefense(128);
+        $pokemonMeta->setBaseDefense(112);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(2.4375);
         $pokemonMeta->setCylHeightM(0.792);
@@ -1463,7 +1463,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.87);
         $pokemonMeta->setUniqueId("V0034_POKEMON_NIDOKING");
-        $pokemonMeta->setBaseDefense(170);
+        $pokemonMeta->setBaseDefense(157);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(7.75);
         $pokemonMeta->setCylHeightM(1.305);
@@ -1495,7 +1495,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(140);
         $pokemonMeta->setCylRadiusM(0.45);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(116);
+        $pokemonMeta->setBaseAttack(107);
         $pokemonMeta->setDiskRadiusM(0.675);
         $pokemonMeta->setCollisionRadiusM(0.3125);
         $pokemonMeta->setPokedexWeightKg(7.5);
@@ -1506,7 +1506,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.25);
         $pokemonMeta->setUniqueId("V0035_POKEMON_CLEFAIRY");
-        $pokemonMeta->setBaseDefense(124);
+        $pokemonMeta->setBaseDefense(116);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(0.9375);
         $pokemonMeta->setCylHeightM(0.75);
@@ -1549,7 +1549,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.89);
         $pokemonMeta->setUniqueId("V0036_POKEMON_CLEFABLE");
-        $pokemonMeta->setBaseDefense(178);
+        $pokemonMeta->setBaseDefense(171);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(5);
         $pokemonMeta->setCylHeightM(1.44625);
@@ -1581,7 +1581,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(76);
         $pokemonMeta->setCylRadiusM(0.567);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(106);
+        $pokemonMeta->setBaseAttack(96);
         $pokemonMeta->setDiskRadiusM(0.8505);
         $pokemonMeta->setCollisionRadiusM(0.315);
         $pokemonMeta->setPokedexWeightKg(9.9);
@@ -1592,7 +1592,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.26);
         $pokemonMeta->setUniqueId("V0037_POKEMON_VULPIX");
-        $pokemonMeta->setBaseDefense(118);
+        $pokemonMeta->setBaseDefense(122);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(1.2375);
         $pokemonMeta->setCylHeightM(0.756);
@@ -1624,7 +1624,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(146);
         $pokemonMeta->setCylRadiusM(0.864);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(176);
+        $pokemonMeta->setBaseAttack(169);
         $pokemonMeta->setDiskRadiusM(1.296);
         $pokemonMeta->setCollisionRadiusM(0.36);
         $pokemonMeta->setPokedexWeightKg(19.9);
@@ -1635,7 +1635,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.96);
         $pokemonMeta->setUniqueId("V0038_POKEMON_NINETALES");
-        $pokemonMeta->setBaseDefense(194);
+        $pokemonMeta->setBaseDefense(204);
         $pokemonMeta->setAttackTimerS(14);
         $pokemonMeta->setWeightStdDev(2.4875);
         $pokemonMeta->setCylHeightM(1.2);
@@ -1667,7 +1667,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(230);
         $pokemonMeta->setCylRadiusM(0.512);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(98);
+        $pokemonMeta->setBaseAttack(80);
         $pokemonMeta->setDiskRadiusM(0.768);
         $pokemonMeta->setCollisionRadiusM(0.32);
         $pokemonMeta->setPokedexWeightKg(5.5);
@@ -1678,7 +1678,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(3);
         $pokemonMeta->setModelScale(1.28);
         $pokemonMeta->setUniqueId("V0039_POKEMON_JIGGLYPUFF");
-        $pokemonMeta->setBaseDefense(54);
+        $pokemonMeta->setBaseDefense(44);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.6875);
         $pokemonMeta->setCylHeightM(0.96);
@@ -1710,7 +1710,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(280);
         $pokemonMeta->setCylRadiusM(0.445);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(168);
+        $pokemonMeta->setBaseAttack(156);
         $pokemonMeta->setDiskRadiusM(1.0013);
         $pokemonMeta->setCollisionRadiusM(0.356);
         $pokemonMeta->setPokedexWeightKg(12);
@@ -1721,7 +1721,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.89);
         $pokemonMeta->setUniqueId("V0040_POKEMON_WIGGLYTUFF");
-        $pokemonMeta->setBaseDefense(108);
+        $pokemonMeta->setBaseDefense(93);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(1.5);
         $pokemonMeta->setCylHeightM(1.22375);
@@ -1753,7 +1753,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.642);
         $pokemonMeta->setBaseFleeRate(0.2);
-        $pokemonMeta->setBaseAttack(88);
+        $pokemonMeta->setBaseAttack(83);
         $pokemonMeta->setDiskRadiusM(0.963);
         $pokemonMeta->setCollisionRadiusM(0.0535);
         $pokemonMeta->setPokedexWeightKg(7.5);
@@ -1764,7 +1764,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.07);
         $pokemonMeta->setUniqueId("V0041_POKEMON_ZUBAT");
-        $pokemonMeta->setBaseDefense(90);
+        $pokemonMeta->setBaseDefense(76);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.9375);
         $pokemonMeta->setCylHeightM(0.6955);
@@ -1796,7 +1796,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(150);
         $pokemonMeta->setCylRadiusM(0.75);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(164);
+        $pokemonMeta->setBaseAttack(161);
         $pokemonMeta->setDiskRadiusM(1.5975);
         $pokemonMeta->setCollisionRadiusM(0.0355);
         $pokemonMeta->setPokedexWeightKg(55);
@@ -1807,7 +1807,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.71);
         $pokemonMeta->setUniqueId("V0042_POKEMON_GOLBAT");
-        $pokemonMeta->setBaseDefense(164);
+        $pokemonMeta->setBaseDefense(153);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(6.875);
         $pokemonMeta->setCylHeightM(1.2425);
@@ -1839,7 +1839,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(90);
         $pokemonMeta->setCylRadiusM(0.405);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(134);
+        $pokemonMeta->setBaseAttack(131);
         $pokemonMeta->setDiskRadiusM(0.6075);
         $pokemonMeta->setCollisionRadiusM(0.2025);
         $pokemonMeta->setPokedexWeightKg(5.4);
@@ -1850,7 +1850,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.35);
         $pokemonMeta->setUniqueId("V0043_POKEMON_ODDISH");
-        $pokemonMeta->setBaseDefense(130);
+        $pokemonMeta->setBaseDefense(116);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.675);
         $pokemonMeta->setCylHeightM(0.81000012);
@@ -1882,7 +1882,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.495);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(162);
+        $pokemonMeta->setBaseAttack(153);
         $pokemonMeta->setDiskRadiusM(0.7425);
         $pokemonMeta->setCollisionRadiusM(0.4125);
         $pokemonMeta->setPokedexWeightKg(8.6);
@@ -1893,7 +1893,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.1);
         $pokemonMeta->setUniqueId("V0044_POKEMON_GLOOM");
-        $pokemonMeta->setBaseDefense(158);
+        $pokemonMeta->setBaseDefense(139);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(1.075);
         $pokemonMeta->setCylHeightM(0.88000011);
@@ -1936,7 +1936,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.92);
         $pokemonMeta->setUniqueId("V0045_POKEMON_VILEPLUME");
-        $pokemonMeta->setBaseDefense(190);
+        $pokemonMeta->setBaseDefense(170);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(2.325);
         $pokemonMeta->setCylHeightM(1.196);
@@ -1968,7 +1968,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(70);
         $pokemonMeta->setCylRadiusM(0.384);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(122);
+        $pokemonMeta->setBaseAttack(121);
         $pokemonMeta->setDiskRadiusM(0.576);
         $pokemonMeta->setCollisionRadiusM(0.192);
         $pokemonMeta->setPokedexWeightKg(5.4);
@@ -1979,7 +1979,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.1);
         $pokemonMeta->setModelScale(1.28);
         $pokemonMeta->setUniqueId("V0046_POKEMON_PARAS");
-        $pokemonMeta->setBaseDefense(120);
+        $pokemonMeta->setBaseDefense(99);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(0.675);
         $pokemonMeta->setCylHeightM(0.448);
@@ -2011,7 +2011,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.6313);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(162);
+        $pokemonMeta->setBaseAttack(165);
         $pokemonMeta->setDiskRadiusM(0.9469);
         $pokemonMeta->setCollisionRadiusM(0.4545);
         $pokemonMeta->setPokedexWeightKg(29.5);
@@ -2022,7 +2022,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.01);
         $pokemonMeta->setUniqueId("V0047_POKEMON_PARASECT");
-        $pokemonMeta->setBaseDefense(170);
+        $pokemonMeta->setBaseDefense(146);
         $pokemonMeta->setAttackTimerS(6);
         $pokemonMeta->setWeightStdDev(3.6875);
         $pokemonMeta->setCylHeightM(1.01);
@@ -2054,7 +2054,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.5325);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(108);
+        $pokemonMeta->setBaseAttack(100);
         $pokemonMeta->setDiskRadiusM(0.7988);
         $pokemonMeta->setCollisionRadiusM(0.355);
         $pokemonMeta->setPokedexWeightKg(30);
@@ -2065,7 +2065,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.71);
         $pokemonMeta->setUniqueId("V0048_POKEMON_VENONAT");
-        $pokemonMeta->setBaseDefense(118);
+        $pokemonMeta->setBaseDefense(102);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(3.75);
         $pokemonMeta->setCylHeightM(1.1715);
@@ -2097,7 +2097,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(140);
         $pokemonMeta->setCylRadiusM(0.576);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(172);
+        $pokemonMeta->setBaseAttack(179);
         $pokemonMeta->setDiskRadiusM(0.864);
         $pokemonMeta->setCollisionRadiusM(0.36);
         $pokemonMeta->setPokedexWeightKg(12.5);
@@ -2108,7 +2108,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.72);
         $pokemonMeta->setUniqueId("V0049_POKEMON_VENOMOTH");
-        $pokemonMeta->setBaseDefense(154);
+        $pokemonMeta->setBaseDefense(150);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(1.5625);
         $pokemonMeta->setCylHeightM(1.08);
@@ -2140,7 +2140,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(20);
         $pokemonMeta->setCylRadiusM(0.3);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(108);
+        $pokemonMeta->setBaseAttack(109);
         $pokemonMeta->setDiskRadiusM(0.45);
         $pokemonMeta->setCollisionRadiusM(0.16);
         $pokemonMeta->setPokedexWeightKg(0.8);
@@ -2151,7 +2151,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0);
         $pokemonMeta->setModelScale(2);
         $pokemonMeta->setUniqueId("V0050_POKEMON_DIGLETT");
-        $pokemonMeta->setBaseDefense(86);
+        $pokemonMeta->setBaseDefense(88);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(0.1);
         $pokemonMeta->setCylHeightM(0.4);
@@ -2183,7 +2183,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(70);
         $pokemonMeta->setCylRadiusM(0.672);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(148);
+        $pokemonMeta->setBaseAttack(167);
         $pokemonMeta->setDiskRadiusM(1.008);
         $pokemonMeta->setCollisionRadiusM(0.448);
         $pokemonMeta->setPokedexWeightKg(33.3);
@@ -2194,7 +2194,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0);
         $pokemonMeta->setModelScale(1.12);
         $pokemonMeta->setUniqueId("V0051_POKEMON_DUGTRIO");
-        $pokemonMeta->setBaseDefense(140);
+        $pokemonMeta->setBaseDefense(147);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(4.1625);
         $pokemonMeta->setCylHeightM(0.84);
@@ -2226,7 +2226,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.4);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(104);
+        $pokemonMeta->setBaseAttack(92);
         $pokemonMeta->setDiskRadiusM(0.6);
         $pokemonMeta->setCollisionRadiusM(0.128);
         $pokemonMeta->setPokedexWeightKg(4.2);
@@ -2237,7 +2237,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.6);
         $pokemonMeta->setUniqueId("V0052_POKEMON_MEOWTH");
-        $pokemonMeta->setBaseDefense(94);
+        $pokemonMeta->setBaseDefense(81);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(0.525);
         $pokemonMeta->setCylHeightM(0.64);
@@ -2269,7 +2269,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.533);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(156);
+        $pokemonMeta->setBaseAttack(150);
         $pokemonMeta->setDiskRadiusM(0.7995);
         $pokemonMeta->setCollisionRadiusM(0.328);
         $pokemonMeta->setPokedexWeightKg(32);
@@ -2280,7 +2280,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.82);
         $pokemonMeta->setUniqueId("V0053_POKEMON_PERSIAN");
-        $pokemonMeta->setBaseDefense(146);
+        $pokemonMeta->setBaseDefense(139);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(4);
         $pokemonMeta->setCylHeightM(0.902);
@@ -2312,7 +2312,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.3638);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(132);
+        $pokemonMeta->setBaseAttack(122);
         $pokemonMeta->setDiskRadiusM(0.5456);
         $pokemonMeta->setCollisionRadiusM(0.291);
         $pokemonMeta->setPokedexWeightKg(19.6);
@@ -2323,7 +2323,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.97);
         $pokemonMeta->setUniqueId("V0054_POKEMON_PSYDUCK");
-        $pokemonMeta->setBaseDefense(112);
+        $pokemonMeta->setBaseDefense(96);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(2.45);
         $pokemonMeta->setCylHeightM(0.97);
@@ -2355,7 +2355,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.465);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(194);
+        $pokemonMeta->setBaseAttack(191);
         $pokemonMeta->setDiskRadiusM(0.9765);
         $pokemonMeta->setCollisionRadiusM(0.2325);
         $pokemonMeta->setPokedexWeightKg(76.6);
@@ -2366,7 +2366,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.93);
         $pokemonMeta->setUniqueId("V0055_POKEMON_GOLDUCK");
-        $pokemonMeta->setBaseDefense(176);
+        $pokemonMeta->setBaseDefense(163);
         $pokemonMeta->setAttackTimerS(14);
         $pokemonMeta->setWeightStdDev(9.575);
         $pokemonMeta->setCylHeightM(1.3485);
@@ -2398,7 +2398,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.4838);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(122);
+        $pokemonMeta->setBaseAttack(148);
         $pokemonMeta->setDiskRadiusM(0.7256);
         $pokemonMeta->setCollisionRadiusM(0.1935);
         $pokemonMeta->setPokedexWeightKg(28);
@@ -2409,7 +2409,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.29);
         $pokemonMeta->setUniqueId("V0056_POKEMON_MANKEY");
-        $pokemonMeta->setBaseDefense(96);
+        $pokemonMeta->setBaseDefense(87);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(3.5);
         $pokemonMeta->setCylHeightM(0.80625);
@@ -2441,7 +2441,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.46);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(178);
+        $pokemonMeta->setBaseAttack(207);
         $pokemonMeta->setDiskRadiusM(0.69);
         $pokemonMeta->setCollisionRadiusM(0.46);
         $pokemonMeta->setPokedexWeightKg(32);
@@ -2452,7 +2452,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.92);
         $pokemonMeta->setUniqueId("V0057_POKEMON_PRIMEAPE");
-        $pokemonMeta->setBaseDefense(150);
+        $pokemonMeta->setBaseDefense(144);
         $pokemonMeta->setAttackTimerS(6);
         $pokemonMeta->setWeightStdDev(4);
         $pokemonMeta->setCylHeightM(1.15);
@@ -2484,7 +2484,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(110);
         $pokemonMeta->setCylRadiusM(0.585);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(156);
+        $pokemonMeta->setBaseAttack(136);
         $pokemonMeta->setDiskRadiusM(0.8775);
         $pokemonMeta->setCollisionRadiusM(0.234);
         $pokemonMeta->setPokedexWeightKg(19);
@@ -2495,7 +2495,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.17);
         $pokemonMeta->setUniqueId("V0058_POKEMON_GROWLITHE");
-        $pokemonMeta->setBaseDefense(110);
+        $pokemonMeta->setBaseDefense(96);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(2.375);
         $pokemonMeta->setCylHeightM(1.02375);
@@ -2527,7 +2527,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.666);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(230);
+        $pokemonMeta->setBaseAttack(227);
         $pokemonMeta->setDiskRadiusM(0.999);
         $pokemonMeta->setCollisionRadiusM(0.37);
         $pokemonMeta->setPokedexWeightKg(155);
@@ -2538,7 +2538,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.74);
         $pokemonMeta->setUniqueId("V0059_POKEMON_ARCANINE");
-        $pokemonMeta->setBaseDefense(180);
+        $pokemonMeta->setBaseDefense(166);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(19.375);
         $pokemonMeta->setCylHeightM(1.48);
@@ -2570,7 +2570,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.5);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(108);
+        $pokemonMeta->setBaseAttack(101);
         $pokemonMeta->setDiskRadiusM(0.75);
         $pokemonMeta->setCollisionRadiusM(0.3125);
         $pokemonMeta->setPokedexWeightKg(12.4);
@@ -2581,7 +2581,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.25);
         $pokemonMeta->setUniqueId("V0060_POKEMON_POLIWAG");
-        $pokemonMeta->setBaseDefense(98);
+        $pokemonMeta->setBaseDefense(82);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(1.55);
         $pokemonMeta->setCylHeightM(0.875);
@@ -2613,7 +2613,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.735);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(132);
+        $pokemonMeta->setBaseAttack(130);
         $pokemonMeta->setDiskRadiusM(1.1025);
         $pokemonMeta->setCollisionRadiusM(0.49);
         $pokemonMeta->setPokedexWeightKg(20);
@@ -2624,7 +2624,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.8);
         $pokemonMeta->setModelScale(0.98);
         $pokemonMeta->setUniqueId("V0061_POKEMON_POLIWHIRL");
-        $pokemonMeta->setBaseDefense(132);
+        $pokemonMeta->setBaseDefense(130);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(2.5);
         $pokemonMeta->setCylHeightM(1.078);
@@ -2656,7 +2656,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.817);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(180);
+        $pokemonMeta->setBaseAttack(182);
         $pokemonMeta->setDiskRadiusM(1.2255);
         $pokemonMeta->setCollisionRadiusM(0.645);
         $pokemonMeta->setPokedexWeightKg(54);
@@ -2667,7 +2667,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.05);
         $pokemonMeta->setModelScale(0.86);
         $pokemonMeta->setUniqueId("V0062_POKEMON_POLIWRATH");
-        $pokemonMeta->setBaseDefense(202);
+        $pokemonMeta->setBaseDefense(187);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(6.75);
         $pokemonMeta->setCylHeightM(1.204);
@@ -2699,7 +2699,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(50);
         $pokemonMeta->setCylRadiusM(0.448);
         $pokemonMeta->setBaseFleeRate(0.99);
-        $pokemonMeta->setBaseAttack(110);
+        $pokemonMeta->setBaseAttack(195);
         $pokemonMeta->setDiskRadiusM(0.672);
         $pokemonMeta->setCollisionRadiusM(0.28);
         $pokemonMeta->setPokedexWeightKg(19.5);
@@ -2710,7 +2710,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.12);
         $pokemonMeta->setUniqueId("V0063_POKEMON_ABRA");
-        $pokemonMeta->setBaseDefense(76);
+        $pokemonMeta->setBaseDefense(103);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(2.4375);
         $pokemonMeta->setCylHeightM(0.784);
@@ -2741,7 +2741,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.6675);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(150);
+        $pokemonMeta->setBaseAttack(232);
         $pokemonMeta->setDiskRadiusM(1.0013);
         $pokemonMeta->setCollisionRadiusM(0.445);
         $pokemonMeta->setPokedexWeightKg(56.5);
@@ -2752,7 +2752,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.89);
         $pokemonMeta->setUniqueId("V0064_POKEMON_KADABRA");
-        $pokemonMeta->setBaseDefense(112);
+        $pokemonMeta->setBaseDefense(138);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(7.0625);
         $pokemonMeta->setCylHeightM(1.157);
@@ -2784,7 +2784,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(110);
         $pokemonMeta->setCylRadiusM(0.51);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(186);
+        $pokemonMeta->setBaseAttack(271);
         $pokemonMeta->setDiskRadiusM(0.765);
         $pokemonMeta->setCollisionRadiusM(0.425);
         $pokemonMeta->setPokedexWeightKg(48);
@@ -2795,7 +2795,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.85);
         $pokemonMeta->setUniqueId("V0065_POKEMON_ALAKAZAM");
-        $pokemonMeta->setBaseDefense(152);
+        $pokemonMeta->setBaseDefense(194);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(6);
         $pokemonMeta->setCylHeightM(1.275);
@@ -2827,7 +2827,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(140);
         $pokemonMeta->setCylRadiusM(0.4125);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(118);
+        $pokemonMeta->setBaseAttack(137);
         $pokemonMeta->setDiskRadiusM(0.6188);
         $pokemonMeta->setCollisionRadiusM(0.22);
         $pokemonMeta->setPokedexWeightKg(19.5);
@@ -2838,7 +2838,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.1);
         $pokemonMeta->setUniqueId("V0066_POKEMON_MACHOP");
-        $pokemonMeta->setBaseDefense(96);
+        $pokemonMeta->setBaseDefense(88);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(2.4375);
         $pokemonMeta->setCylHeightM(0.88000011);
@@ -2870,7 +2870,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.546);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(154);
+        $pokemonMeta->setBaseAttack(177);
         $pokemonMeta->setDiskRadiusM(0.819);
         $pokemonMeta->setCollisionRadiusM(0.54600012);
         $pokemonMeta->setPokedexWeightKg(70.5);
@@ -2881,7 +2881,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.91);
         $pokemonMeta->setUniqueId("V0067_POKEMON_MACHOKE");
-        $pokemonMeta->setBaseDefense(144);
+        $pokemonMeta->setBaseDefense(130);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(8.8125);
         $pokemonMeta->setCylHeightM(1.274);
@@ -2913,7 +2913,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.5785);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(198);
+        $pokemonMeta->setBaseAttack(234);
         $pokemonMeta->setDiskRadiusM(0.8678);
         $pokemonMeta->setCollisionRadiusM(0.5785);
         $pokemonMeta->setPokedexWeightKg(130);
@@ -2924,7 +2924,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.89);
         $pokemonMeta->setUniqueId("V0068_POKEMON_MACHAMP");
-        $pokemonMeta->setBaseDefense(180);
+        $pokemonMeta->setBaseDefense(162);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(16.25);
         $pokemonMeta->setCylHeightM(1.424);
@@ -2956,7 +2956,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.4515);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(158);
+        $pokemonMeta->setBaseAttack(139);
         $pokemonMeta->setDiskRadiusM(0.6773);
         $pokemonMeta->setCollisionRadiusM(0.1935);
         $pokemonMeta->setPokedexWeightKg(4);
@@ -2967,7 +2967,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.2);
         $pokemonMeta->setModelScale(1.29);
         $pokemonMeta->setUniqueId("V0069_POKEMON_BELLSPROUT");
-        $pokemonMeta->setBaseDefense(78);
+        $pokemonMeta->setBaseDefense(64);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.5);
         $pokemonMeta->setCylHeightM(0.90299988);
@@ -2999,7 +2999,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.65);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(190);
+        $pokemonMeta->setBaseAttack(172);
         $pokemonMeta->setDiskRadiusM(0.975);
         $pokemonMeta->setCollisionRadiusM(0.25);
         $pokemonMeta->setPokedexWeightKg(6.4);
@@ -3010,7 +3010,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1);
         $pokemonMeta->setUniqueId("V0070_POKEMON_WEEPINBELL");
-        $pokemonMeta->setBaseDefense(110);
+        $pokemonMeta->setBaseDefense(95);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(0.8);
         $pokemonMeta->setCylHeightM(1);
@@ -3042,7 +3042,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.546);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(222);
+        $pokemonMeta->setBaseAttack(207);
         $pokemonMeta->setDiskRadiusM(0.819);
         $pokemonMeta->setCollisionRadiusM(0.336);
         $pokemonMeta->setPokedexWeightKg(15.5);
@@ -3053,7 +3053,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.84);
         $pokemonMeta->setUniqueId("V0071_POKEMON_VICTREEBEL");
-        $pokemonMeta->setBaseDefense(152);
+        $pokemonMeta->setBaseDefense(138);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(1.9375);
         $pokemonMeta->setCylHeightM(1.428);
@@ -3085,7 +3085,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.315);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(106);
+        $pokemonMeta->setBaseAttack(97);
         $pokemonMeta->setDiskRadiusM(0.4725);
         $pokemonMeta->setCollisionRadiusM(0.21);
         $pokemonMeta->setPokedexWeightKg(45.5);
@@ -3096,7 +3096,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.05);
         $pokemonMeta->setUniqueId("V0072_POKEMON_TENTACOOL");
-        $pokemonMeta->setBaseDefense(136);
+        $pokemonMeta->setBaseDefense(182);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(5.6875);
         $pokemonMeta->setCylHeightM(0.91874993);
@@ -3128,7 +3128,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.492);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(170);
+        $pokemonMeta->setBaseAttack(166);
         $pokemonMeta->setDiskRadiusM(0.738);
         $pokemonMeta->setCollisionRadiusM(0.492);
         $pokemonMeta->setPokedexWeightKg(55);
@@ -3139,7 +3139,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.82);
         $pokemonMeta->setUniqueId("V0073_POKEMON_TENTACRUEL");
-        $pokemonMeta->setBaseDefense(196);
+        $pokemonMeta->setBaseDefense(237);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(6.875);
         $pokemonMeta->setCylHeightM(1.312);
@@ -3171,7 +3171,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.3915);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(106);
+        $pokemonMeta->setBaseAttack(132);
         $pokemonMeta->setDiskRadiusM(0.5873);
         $pokemonMeta->setCollisionRadiusM(0.3915);
         $pokemonMeta->setPokedexWeightKg(20);
@@ -3182,7 +3182,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.87);
         $pokemonMeta->setUniqueId("V0074_POKEMON_GEODUDE");
-        $pokemonMeta->setBaseDefense(118);
+        $pokemonMeta->setBaseDefense(163);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(2.5);
         $pokemonMeta->setCylHeightM(0.348);
@@ -3214,7 +3214,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(110);
         $pokemonMeta->setCylRadiusM(0.697);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(142);
+        $pokemonMeta->setBaseAttack(164);
         $pokemonMeta->setDiskRadiusM(1.0455);
         $pokemonMeta->setCollisionRadiusM(0.492);
         $pokemonMeta->setPokedexWeightKg(105);
@@ -3225,7 +3225,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.2);
         $pokemonMeta->setModelScale(0.82);
         $pokemonMeta->setUniqueId("V0075_POKEMON_GRAVELER");
-        $pokemonMeta->setBaseDefense(156);
+        $pokemonMeta->setBaseDefense(196);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(13.125);
         $pokemonMeta->setCylHeightM(0.82);
@@ -3257,7 +3257,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.63);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(176);
+        $pokemonMeta->setBaseAttack(211);
         $pokemonMeta->setDiskRadiusM(0.945);
         $pokemonMeta->setCollisionRadiusM(0.63);
         $pokemonMeta->setPokedexWeightKg(300);
@@ -3268,7 +3268,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.2);
         $pokemonMeta->setModelScale(0.84);
         $pokemonMeta->setUniqueId("V0076_POKEMON_GOLEM");
-        $pokemonMeta->setBaseDefense(198);
+        $pokemonMeta->setBaseDefense(229);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(37.5);
         $pokemonMeta->setCylHeightM(1.092);
@@ -3300,7 +3300,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.3788);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(168);
+        $pokemonMeta->setBaseAttack(170);
         $pokemonMeta->setDiskRadiusM(0.5681);
         $pokemonMeta->setCollisionRadiusM(0.2525);
         $pokemonMeta->setPokedexWeightKg(30);
@@ -3311,7 +3311,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.95);
         $pokemonMeta->setModelScale(1.01);
         $pokemonMeta->setUniqueId("V0077_POKEMON_PONYTA");
-        $pokemonMeta->setBaseDefense(138);
+        $pokemonMeta->setBaseDefense(132);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(3.75);
         $pokemonMeta->setCylHeightM(1.2625);
@@ -3343,7 +3343,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.405);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(200);
+        $pokemonMeta->setBaseAttack(207);
         $pokemonMeta->setDiskRadiusM(0.6075);
         $pokemonMeta->setCollisionRadiusM(0.324);
         $pokemonMeta->setPokedexWeightKg(95);
@@ -3354,7 +3354,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.81);
         $pokemonMeta->setUniqueId("V0078_POKEMON_RAPIDASH");
-        $pokemonMeta->setBaseDefense(170);
+        $pokemonMeta->setBaseDefense(167);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(11.875);
         $pokemonMeta->setCylHeightM(1.701);
@@ -3386,7 +3386,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.5925);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(110);
+        $pokemonMeta->setBaseAttack(109);
         $pokemonMeta->setDiskRadiusM(1.185);
         $pokemonMeta->setCollisionRadiusM(0.316);
         $pokemonMeta->setPokedexWeightKg(36);
@@ -3397,7 +3397,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.79);
         $pokemonMeta->setUniqueId("V0079_POKEMON_SLOWPOKE");
-        $pokemonMeta->setBaseDefense(110);
+        $pokemonMeta->setBaseDefense(109);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(4.5);
         $pokemonMeta->setCylHeightM(0.94800007);
@@ -3429,7 +3429,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(190);
         $pokemonMeta->setCylRadiusM(0.4675);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(184);
+        $pokemonMeta->setBaseAttack(177);
         $pokemonMeta->setDiskRadiusM(0.7013);
         $pokemonMeta->setCollisionRadiusM(0.425);
         $pokemonMeta->setPokedexWeightKg(78.5);
@@ -3440,7 +3440,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.85);
         $pokemonMeta->setUniqueId("V0080_POKEMON_SLOWBRO");
-        $pokemonMeta->setBaseDefense(198);
+        $pokemonMeta->setBaseDefense(194);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(9.8125);
         $pokemonMeta->setCylHeightM(1.275);
@@ -3472,7 +3472,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(50);
         $pokemonMeta->setCylRadiusM(0.456);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(128);
+        $pokemonMeta->setBaseAttack(165);
         $pokemonMeta->setDiskRadiusM(0.684);
         $pokemonMeta->setCollisionRadiusM(0.456);
         $pokemonMeta->setPokedexWeightKg(6);
@@ -3483,7 +3483,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.52);
         $pokemonMeta->setUniqueId("V0081_POKEMON_MAGNEMITE");
-        $pokemonMeta->setBaseDefense(138);
+        $pokemonMeta->setBaseDefense(128);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(0.75);
         $pokemonMeta->setCylHeightM(0.456);
@@ -3515,7 +3515,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.44);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(186);
+        $pokemonMeta->setBaseAttack(223);
         $pokemonMeta->setDiskRadiusM(0.66);
         $pokemonMeta->setCollisionRadiusM(0.44);
         $pokemonMeta->setPokedexWeightKg(60);
@@ -3526,7 +3526,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.1);
         $pokemonMeta->setUniqueId("V0082_POKEMON_MAGNETON");
-        $pokemonMeta->setBaseDefense(180);
+        $pokemonMeta->setBaseDefense(182);
         $pokemonMeta->setAttackTimerS(14);
         $pokemonMeta->setWeightStdDev(7.5);
         $pokemonMeta->setCylHeightM(1.1);
@@ -3558,7 +3558,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(104);
         $pokemonMeta->setCylRadiusM(0.452);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(138);
+        $pokemonMeta->setBaseAttack(124);
         $pokemonMeta->setDiskRadiusM(0.678);
         $pokemonMeta->setCollisionRadiusM(0.2825);
         $pokemonMeta->setPokedexWeightKg(15);
@@ -3569,7 +3569,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.13);
         $pokemonMeta->setUniqueId("V0083_POKEMON_FARFETCHD");
-        $pokemonMeta->setBaseDefense(132);
+        $pokemonMeta->setBaseDefense(128);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(1.875);
         $pokemonMeta->setCylHeightM(0.8475);
@@ -3601,7 +3601,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(70);
         $pokemonMeta->setCylRadiusM(0.396);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(126);
+        $pokemonMeta->setBaseAttack(158);
         $pokemonMeta->setDiskRadiusM(0.594);
         $pokemonMeta->setCollisionRadiusM(0.352);
         $pokemonMeta->setPokedexWeightKg(39.2);
@@ -3612,7 +3612,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.88);
         $pokemonMeta->setUniqueId("V0084_POKEMON_DODUO");
-        $pokemonMeta->setBaseDefense(96);
+        $pokemonMeta->setBaseDefense(88);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(4.9);
         $pokemonMeta->setCylHeightM(1.232);
@@ -3644,7 +3644,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.5148);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(182);
+        $pokemonMeta->setBaseAttack(218);
         $pokemonMeta->setDiskRadiusM(0.7722);
         $pokemonMeta->setCollisionRadiusM(0.39);
         $pokemonMeta->setPokedexWeightKg(85.2);
@@ -3655,7 +3655,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.78);
         $pokemonMeta->setUniqueId("V0085_POKEMON_DODRIO");
-        $pokemonMeta->setBaseDefense(150);
+        $pokemonMeta->setBaseDefense(145);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(10.65);
         $pokemonMeta->setCylHeightM(1.287);
@@ -3687,7 +3687,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.275);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(104);
+        $pokemonMeta->setBaseAttack(85);
         $pokemonMeta->setDiskRadiusM(0.4125);
         $pokemonMeta->setCollisionRadiusM(0.275);
         $pokemonMeta->setPokedexWeightKg(90);
@@ -3698,7 +3698,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.9);
         $pokemonMeta->setModelScale(1.1);
         $pokemonMeta->setUniqueId("V0086_POKEMON_SEEL");
-        $pokemonMeta->setBaseDefense(138);
+        $pokemonMeta->setBaseDefense(128);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(11.25);
         $pokemonMeta->setCylHeightM(0.55);
@@ -3730,7 +3730,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.525);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(156);
+        $pokemonMeta->setBaseAttack(139);
         $pokemonMeta->setDiskRadiusM(0.7875);
         $pokemonMeta->setCollisionRadiusM(0.315);
         $pokemonMeta->setPokedexWeightKg(120);
@@ -3741,7 +3741,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.05);
         $pokemonMeta->setUniqueId("V0087_POKEMON_DEWGONG");
-        $pokemonMeta->setBaseDefense(192);
+        $pokemonMeta->setBaseDefense(184);
         $pokemonMeta->setAttackTimerS(14);
         $pokemonMeta->setWeightStdDev(15);
         $pokemonMeta->setCylHeightM(0.84);
@@ -3773,7 +3773,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.588);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(124);
+        $pokemonMeta->setBaseAttack(135);
         $pokemonMeta->setDiskRadiusM(0.882);
         $pokemonMeta->setCollisionRadiusM(0.49);
         $pokemonMeta->setPokedexWeightKg(30);
@@ -3784,7 +3784,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.98);
         $pokemonMeta->setUniqueId("V0088_POKEMON_GRIMER");
-        $pokemonMeta->setBaseDefense(110);
+        $pokemonMeta->setBaseDefense(90);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(3.75);
         $pokemonMeta->setCylHeightM(0.98);
@@ -3816,7 +3816,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(210);
         $pokemonMeta->setCylRadiusM(0.86);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(180);
+        $pokemonMeta->setBaseAttack(190);
         $pokemonMeta->setDiskRadiusM(1.14);
         $pokemonMeta->setCollisionRadiusM(0.76);
         $pokemonMeta->setPokedexWeightKg(30);
@@ -3827,7 +3827,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.76);
         $pokemonMeta->setUniqueId("V0089_POKEMON_MUK");
-        $pokemonMeta->setBaseDefense(188);
+        $pokemonMeta->setBaseDefense(184);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(3.75);
         $pokemonMeta->setCylHeightM(0.912);
@@ -3859,7 +3859,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(60);
         $pokemonMeta->setCylRadiusM(0.3864);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(120);
+        $pokemonMeta->setBaseAttack(116);
         $pokemonMeta->setDiskRadiusM(0.5796);
         $pokemonMeta->setCollisionRadiusM(0.336);
         $pokemonMeta->setPokedexWeightKg(4);
@@ -3870,7 +3870,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.2);
         $pokemonMeta->setModelScale(1.68);
         $pokemonMeta->setUniqueId("V0090_POKEMON_SHELLDER");
-        $pokemonMeta->setBaseDefense(112);
+        $pokemonMeta->setBaseDefense(168);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(0.5);
         $pokemonMeta->setCylHeightM(0.504);
@@ -3902,7 +3902,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.63);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(196);
+        $pokemonMeta->setBaseAttack(186);
         $pokemonMeta->setDiskRadiusM(0.945);
         $pokemonMeta->setCollisionRadiusM(0.42);
         $pokemonMeta->setPokedexWeightKg(132.5);
@@ -3913,7 +3913,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.84);
         $pokemonMeta->setUniqueId("V0091_POKEMON_CLOYSTER");
-        $pokemonMeta->setBaseDefense(196);
+        $pokemonMeta->setBaseDefense(323);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(16.5625);
         $pokemonMeta->setCylHeightM(1.05);
@@ -3945,7 +3945,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(60);
         $pokemonMeta->setCylRadiusM(0.45);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(136);
+        $pokemonMeta->setBaseAttack(186);
         $pokemonMeta->setDiskRadiusM(0.675);
         $pokemonMeta->setCollisionRadiusM(0.25);
         $pokemonMeta->setPokedexWeightKg(0.1);
@@ -3956,7 +3956,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1);
         $pokemonMeta->setUniqueId("V0092_POKEMON_GASTLY");
-        $pokemonMeta->setBaseDefense(82);
+        $pokemonMeta->setBaseDefense(70);
         $pokemonMeta->setAttackTimerS(10);
         $pokemonMeta->setWeightStdDev(0.0125);
         $pokemonMeta->setCylHeightM(0.8);
@@ -3988,7 +3988,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(90);
         $pokemonMeta->setCylRadiusM(0.51);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(172);
+        $pokemonMeta->setBaseAttack(223);
         $pokemonMeta->setDiskRadiusM(0.765);
         $pokemonMeta->setCollisionRadiusM(0.442);
         $pokemonMeta->setPokedexWeightKg(0.1);
@@ -3999,7 +3999,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.68);
         $pokemonMeta->setUniqueId("V0093_POKEMON_HAUNTER");
-        $pokemonMeta->setBaseDefense(118);
+        $pokemonMeta->setBaseDefense(112);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(0.0125);
         $pokemonMeta->setCylHeightM(1.088);
@@ -4031,7 +4031,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.462);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(204);
+        $pokemonMeta->setBaseAttack(261);
         $pokemonMeta->setDiskRadiusM(0.693);
         $pokemonMeta->setCollisionRadiusM(0.462);
         $pokemonMeta->setPokedexWeightKg(40.5);
@@ -4074,7 +4074,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(70);
         $pokemonMeta->setCylRadiusM(0.658);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(90);
+        $pokemonMeta->setBaseAttack(85);
         $pokemonMeta->setDiskRadiusM(0.987);
         $pokemonMeta->setCollisionRadiusM(0.658);
         $pokemonMeta->setPokedexWeightKg(210);
@@ -4085,7 +4085,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.47);
         $pokemonMeta->setUniqueId("V0095_POKEMON_ONIX");
-        $pokemonMeta->setBaseDefense(186);
+        $pokemonMeta->setBaseDefense(288);
         $pokemonMeta->setAttackTimerS(6);
         $pokemonMeta->setWeightStdDev(26.25);
         $pokemonMeta->setCylHeightM(1.41);
@@ -4117,7 +4117,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.42);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(104);
+        $pokemonMeta->setBaseAttack(89);
         $pokemonMeta->setDiskRadiusM(0.63);
         $pokemonMeta->setCollisionRadiusM(0.3675);
         $pokemonMeta->setPokedexWeightKg(32.4);
@@ -4128,7 +4128,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1.05);
         $pokemonMeta->setUniqueId("V0096_POKEMON_DROWZEE");
-        $pokemonMeta->setBaseDefense(140);
+        $pokemonMeta->setBaseDefense(158);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(4.05);
         $pokemonMeta->setCylHeightM(1.05);
@@ -4160,7 +4160,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(170);
         $pokemonMeta->setCylRadiusM(0.6225);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(162);
+        $pokemonMeta->setBaseAttack(144);
         $pokemonMeta->setDiskRadiusM(0.9338);
         $pokemonMeta->setCollisionRadiusM(0.332);
         $pokemonMeta->setPokedexWeightKg(75.6);
@@ -4171,7 +4171,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.8);
         $pokemonMeta->setModelScale(0.83);
         $pokemonMeta->setUniqueId("V0097_POKEMON_HYPNO");
-        $pokemonMeta->setBaseDefense(196);
+        $pokemonMeta->setBaseDefense(215);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(9.45);
         $pokemonMeta->setCylHeightM(1.328);
@@ -4203,7 +4203,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(60);
         $pokemonMeta->setCylRadiusM(0.522);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(116);
+        $pokemonMeta->setBaseAttack(181);
         $pokemonMeta->setDiskRadiusM(0.783);
         $pokemonMeta->setCollisionRadiusM(0.522);
         $pokemonMeta->setPokedexWeightKg(6.5);
@@ -4214,7 +4214,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.16);
         $pokemonMeta->setUniqueId("V0098_POKEMON_KRABBY");
-        $pokemonMeta->setBaseDefense(110);
+        $pokemonMeta->setBaseDefense(156);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(0.8125);
         $pokemonMeta->setCylHeightM(0.87);
@@ -4246,7 +4246,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(110);
         $pokemonMeta->setCylRadiusM(0.6525);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(178);
+        $pokemonMeta->setBaseAttack(240);
         $pokemonMeta->setDiskRadiusM(0.9788);
         $pokemonMeta->setCollisionRadiusM(0.6525);
         $pokemonMeta->setPokedexWeightKg(60);
@@ -4257,7 +4257,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.8);
         $pokemonMeta->setModelScale(0.87);
         $pokemonMeta->setUniqueId("V0099_POKEMON_KINGLER");
-        $pokemonMeta->setBaseDefense(168);
+        $pokemonMeta->setBaseDefense(214);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(7.5);
         $pokemonMeta->setCylHeightM(1.0005);
@@ -4289,7 +4289,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.3375);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(102);
+        $pokemonMeta->setBaseAttack(109);
         $pokemonMeta->setDiskRadiusM(0.5063);
         $pokemonMeta->setCollisionRadiusM(0.3375);
         $pokemonMeta->setPokedexWeightKg(10.4);
@@ -4300,7 +4300,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.2);
         $pokemonMeta->setModelScale(1.35);
         $pokemonMeta->setUniqueId("V0100_POKEMON_VOLTORB");
-        $pokemonMeta->setBaseDefense(124);
+        $pokemonMeta->setBaseDefense(114);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(1.3);
         $pokemonMeta->setCylHeightM(0.675);
@@ -4332,7 +4332,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.552);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(150);
+        $pokemonMeta->setBaseAttack(173);
         $pokemonMeta->setDiskRadiusM(0.828);
         $pokemonMeta->setCollisionRadiusM(0.552);
         $pokemonMeta->setPokedexWeightKg(66.6);
@@ -4343,7 +4343,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.2);
         $pokemonMeta->setModelScale(0.92);
         $pokemonMeta->setUniqueId("V0101_POKEMON_ELECTRODE");
-        $pokemonMeta->setBaseDefense(174);
+        $pokemonMeta->setBaseDefense(179);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(8.325);
         $pokemonMeta->setCylHeightM(1.104);
@@ -4375,7 +4375,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.515);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(110);
+        $pokemonMeta->setBaseAttack(107);
         $pokemonMeta->setDiskRadiusM(0.7725);
         $pokemonMeta->setCollisionRadiusM(0.515);
         $pokemonMeta->setPokedexWeightKg(2.5);
@@ -4386,7 +4386,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.03);
         $pokemonMeta->setUniqueId("V0102_POKEMON_EXEGGCUTE");
-        $pokemonMeta->setBaseDefense(132);
+        $pokemonMeta->setBaseDefense(140);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(0.3125);
         $pokemonMeta->setCylHeightM(0.412);
@@ -4417,7 +4417,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(190);
         $pokemonMeta->setCylRadiusM(0.507);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(232);
+        $pokemonMeta->setBaseAttack(233);
         $pokemonMeta->setDiskRadiusM(0.7605);
         $pokemonMeta->setCollisionRadiusM(0.507);
         $pokemonMeta->setPokedexWeightKg(120);
@@ -4428,7 +4428,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.78);
         $pokemonMeta->setUniqueId("V0103_POKEMON_EXEGGUTOR");
-        $pokemonMeta->setBaseDefense(164);
+        $pokemonMeta->setBaseDefense(158);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(15);
         $pokemonMeta->setCylHeightM(1.365);
@@ -4460,7 +4460,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.296);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(102);
+        $pokemonMeta->setBaseAttack(90);
         $pokemonMeta->setDiskRadiusM(0.444);
         $pokemonMeta->setCollisionRadiusM(0.222);
         $pokemonMeta->setPokedexWeightKg(6.5);
@@ -4471,7 +4471,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.48);
         $pokemonMeta->setUniqueId("V0104_POKEMON_CUBONE");
-        $pokemonMeta->setBaseDefense(150);
+        $pokemonMeta->setBaseDefense(165);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(0.8125);
         $pokemonMeta->setCylHeightM(0.592);
@@ -4503,7 +4503,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.35);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(140);
+        $pokemonMeta->setBaseAttack(144);
         $pokemonMeta->setDiskRadiusM(0.525);
         $pokemonMeta->setCollisionRadiusM(0.25);
         $pokemonMeta->setPokedexWeightKg(45);
@@ -4514,7 +4514,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.85);
         $pokemonMeta->setModelScale(1);
         $pokemonMeta->setUniqueId("V0105_POKEMON_MAROWAK");
-        $pokemonMeta->setBaseDefense(202);
+        $pokemonMeta->setBaseDefense(200);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(5.625);
         $pokemonMeta->setCylHeightM(1);
@@ -4546,7 +4546,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.415);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(148);
+        $pokemonMeta->setBaseAttack(224);
         $pokemonMeta->setDiskRadiusM(0.6225);
         $pokemonMeta->setCollisionRadiusM(0.415);
         $pokemonMeta->setPokedexWeightKg(49.8);
@@ -4557,7 +4557,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.8);
         $pokemonMeta->setModelScale(0.83);
         $pokemonMeta->setUniqueId("V0106_POKEMON_HITMONLEE");
-        $pokemonMeta->setBaseDefense(172);
+        $pokemonMeta->setBaseDefense(211);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(6.225);
         $pokemonMeta->setCylHeightM(1.245);
@@ -4589,7 +4589,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(100);
         $pokemonMeta->setCylRadiusM(0.459);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(138);
+        $pokemonMeta->setBaseAttack(193);
         $pokemonMeta->setDiskRadiusM(0.6885);
         $pokemonMeta->setCollisionRadiusM(0.3315);
         $pokemonMeta->setPokedexWeightKg(50.2);
@@ -4600,7 +4600,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.1);
         $pokemonMeta->setModelScale(1.02);
         $pokemonMeta->setUniqueId("V0107_POKEMON_HITMONCHAN");
-        $pokemonMeta->setBaseDefense(204);
+        $pokemonMeta->setBaseDefense(212);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(6.275);
         $pokemonMeta->setCylHeightM(1.428);
@@ -4633,7 +4633,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.46);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(126);
+        $pokemonMeta->setBaseAttack(108);
         $pokemonMeta->setDiskRadiusM(0.69);
         $pokemonMeta->setCollisionRadiusM(0.46);
         $pokemonMeta->setPokedexWeightKg(65.5);
@@ -4644,7 +4644,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.92);
         $pokemonMeta->setUniqueId("V0108_POKEMON_LICKITUNG");
-        $pokemonMeta->setBaseDefense(160);
+        $pokemonMeta->setBaseDefense(137);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(8.1875);
         $pokemonMeta->setCylHeightM(1.104);
@@ -4676,7 +4676,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.48);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(136);
+        $pokemonMeta->setBaseAttack(119);
         $pokemonMeta->setDiskRadiusM(0.72);
         $pokemonMeta->setCollisionRadiusM(0.36);
         $pokemonMeta->setPokedexWeightKg(1);
@@ -4687,7 +4687,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.2);
         $pokemonMeta->setUniqueId("V0109_POKEMON_KOFFING");
-        $pokemonMeta->setBaseDefense(142);
+        $pokemonMeta->setBaseDefense(164);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(0.125);
         $pokemonMeta->setCylHeightM(0.72);
@@ -4719,7 +4719,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.62);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(190);
+        $pokemonMeta->setBaseAttack(174);
         $pokemonMeta->setDiskRadiusM(0.93);
         $pokemonMeta->setCollisionRadiusM(0.682);
         $pokemonMeta->setPokedexWeightKg(9.5);
@@ -4730,7 +4730,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.24);
         $pokemonMeta->setUniqueId("V0110_POKEMON_WEEZING");
-        $pokemonMeta->setBaseDefense(198);
+        $pokemonMeta->setBaseDefense(221);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(1.1875);
         $pokemonMeta->setCylHeightM(0.744);
@@ -4762,7 +4762,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.5);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(110);
+        $pokemonMeta->setBaseAttack(140);
         $pokemonMeta->setDiskRadiusM(0.75);
         $pokemonMeta->setCollisionRadiusM(0.5);
         $pokemonMeta->setPokedexWeightKg(115);
@@ -4773,7 +4773,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1);
         $pokemonMeta->setUniqueId("V0111_POKEMON_RHYHORN");
-        $pokemonMeta->setBaseDefense(116);
+        $pokemonMeta->setBaseDefense(157);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(14.375);
         $pokemonMeta->setCylHeightM(0.85);
@@ -4805,7 +4805,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(210);
         $pokemonMeta->setCylRadiusM(0.79);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(166);
+        $pokemonMeta->setBaseAttack(222);
         $pokemonMeta->setDiskRadiusM(1.185);
         $pokemonMeta->setCollisionRadiusM(0.5925);
         $pokemonMeta->setPokedexWeightKg(120);
@@ -4816,7 +4816,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.79);
         $pokemonMeta->setUniqueId("V0112_POKEMON_RHYDON");
-        $pokemonMeta->setBaseDefense(160);
+        $pokemonMeta->setBaseDefense(206);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(15);
         $pokemonMeta->setCylHeightM(1.343);
@@ -4848,7 +4848,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(500);
         $pokemonMeta->setCylRadiusM(0.48);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(40);
+        $pokemonMeta->setBaseAttack(60);
         $pokemonMeta->setDiskRadiusM(0.72);
         $pokemonMeta->setCollisionRadiusM(0.48);
         $pokemonMeta->setPokedexWeightKg(34.6);
@@ -4859,7 +4859,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.96);
         $pokemonMeta->setUniqueId("V0113_POKEMON_CHANSEY");
-        $pokemonMeta->setBaseDefense(60);
+        $pokemonMeta->setBaseDefense(176);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(4.325);
         $pokemonMeta->setCylHeightM(1.056);
@@ -4891,7 +4891,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.73);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(164);
+        $pokemonMeta->setBaseAttack(183);
         $pokemonMeta->setDiskRadiusM(1.095);
         $pokemonMeta->setCollisionRadiusM(0.5);
         $pokemonMeta->setPokedexWeightKg(35);
@@ -4902,7 +4902,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1);
         $pokemonMeta->setUniqueId("V0114_POKEMON_TANGELA");
-        $pokemonMeta->setBaseDefense(152);
+        $pokemonMeta->setBaseDefense(205);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(4.375);
         $pokemonMeta->setCylHeightM(1);
@@ -4933,7 +4933,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(210);
         $pokemonMeta->setCylRadiusM(0.576);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(142);
+        $pokemonMeta->setBaseAttack(181);
         $pokemonMeta->setDiskRadiusM(0.864);
         $pokemonMeta->setCollisionRadiusM(0.504);
         $pokemonMeta->setPokedexWeightKg(80);
@@ -4944,7 +4944,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.7);
         $pokemonMeta->setModelScale(0.72);
         $pokemonMeta->setUniqueId("V0115_POKEMON_KANGASKHAN");
-        $pokemonMeta->setBaseDefense(178);
+        $pokemonMeta->setBaseDefense(165);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(10);
         $pokemonMeta->setCylHeightM(1.584);
@@ -4976,7 +4976,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(60);
         $pokemonMeta->setCylRadiusM(0.25);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(122);
+        $pokemonMeta->setBaseAttack(129);
         $pokemonMeta->setDiskRadiusM(0.2775);
         $pokemonMeta->setCollisionRadiusM(0.148);
         $pokemonMeta->setPokedexWeightKg(8);
@@ -4987,7 +4987,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.48);
         $pokemonMeta->setUniqueId("V0116_POKEMON_HORSEA");
-        $pokemonMeta->setBaseDefense(100);
+        $pokemonMeta->setBaseDefense(125);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(1);
         $pokemonMeta->setCylHeightM(0.74);
@@ -5019,7 +5019,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(110);
         $pokemonMeta->setCylRadiusM(0.46);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(176);
+        $pokemonMeta->setBaseAttack(187);
         $pokemonMeta->setDiskRadiusM(0.69);
         $pokemonMeta->setCollisionRadiusM(0.322);
         $pokemonMeta->setPokedexWeightKg(25);
@@ -5030,7 +5030,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.92);
         $pokemonMeta->setUniqueId("V0117_POKEMON_SEADRA");
-        $pokemonMeta->setBaseDefense(150);
+        $pokemonMeta->setBaseDefense(182);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(3.125);
         $pokemonMeta->setCylHeightM(1.15);
@@ -5062,7 +5062,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(90);
         $pokemonMeta->setCylRadiusM(0.27);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(112);
+        $pokemonMeta->setBaseAttack(123);
         $pokemonMeta->setDiskRadiusM(0.405);
         $pokemonMeta->setCollisionRadiusM(0.135);
         $pokemonMeta->setPokedexWeightKg(15);
@@ -5073,7 +5073,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.35);
         $pokemonMeta->setUniqueId("V0118_POKEMON_GOLDEEN");
-        $pokemonMeta->setBaseDefense(126);
+        $pokemonMeta->setBaseDefense(115);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(1.875);
         $pokemonMeta->setCylHeightM(0.3375);
@@ -5105,7 +5105,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.396);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(172);
+        $pokemonMeta->setBaseAttack(175);
         $pokemonMeta->setDiskRadiusM(0.594);
         $pokemonMeta->setCollisionRadiusM(0.044);
         $pokemonMeta->setPokedexWeightKg(39);
@@ -5116,7 +5116,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.88);
         $pokemonMeta->setUniqueId("V0119_POKEMON_SEAKING");
-        $pokemonMeta->setBaseDefense(160);
+        $pokemonMeta->setBaseDefense(154);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(4.875);
         $pokemonMeta->setCylHeightM(0.748);
@@ -5148,7 +5148,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(60);
         $pokemonMeta->setCylRadiusM(0.4125);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(130);
+        $pokemonMeta->setBaseAttack(137);
         $pokemonMeta->setDiskRadiusM(0.6188);
         $pokemonMeta->setCollisionRadiusM(0.4125);
         $pokemonMeta->setPokedexWeightKg(34.5);
@@ -5159,7 +5159,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.35);
         $pokemonMeta->setModelScale(1.1);
         $pokemonMeta->setUniqueId("V0120_POKEMON_STARYU");
-        $pokemonMeta->setBaseDefense(128);
+        $pokemonMeta->setBaseDefense(112);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(4.3125);
         $pokemonMeta->setCylHeightM(0.88000011);
@@ -5191,7 +5191,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.485);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(194);
+        $pokemonMeta->setBaseAttack(210);
         $pokemonMeta->setDiskRadiusM(0.7275);
         $pokemonMeta->setCollisionRadiusM(0.485);
         $pokemonMeta->setPokedexWeightKg(80);
@@ -5202,7 +5202,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.6);
         $pokemonMeta->setModelScale(0.97);
         $pokemonMeta->setUniqueId("V0121_POKEMON_STARMIE");
-        $pokemonMeta->setBaseDefense(192);
+        $pokemonMeta->setBaseDefense(184);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(10);
         $pokemonMeta->setCylHeightM(1.067);
@@ -5234,7 +5234,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(80);
         $pokemonMeta->setCylRadiusM(0.445);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(154);
+        $pokemonMeta->setBaseAttack(192);
         $pokemonMeta->setDiskRadiusM(0.6675);
         $pokemonMeta->setCollisionRadiusM(0.267);
         $pokemonMeta->setPokedexWeightKg(54.5);
@@ -5245,7 +5245,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.89);
         $pokemonMeta->setUniqueId("V0122_POKEMON_MR_MIME");
-        $pokemonMeta->setBaseDefense(196);
+        $pokemonMeta->setBaseDefense(233);
         $pokemonMeta->setAttackTimerS(14);
         $pokemonMeta->setWeightStdDev(6.8125);
         $pokemonMeta->setCylHeightM(1.157);
@@ -5277,7 +5277,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(140);
         $pokemonMeta->setCylRadiusM(0.76);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(176);
+        $pokemonMeta->setBaseAttack(218);
         $pokemonMeta->setDiskRadiusM(1.14);
         $pokemonMeta->setCollisionRadiusM(0.4);
         $pokemonMeta->setPokedexWeightKg(56);
@@ -5288,7 +5288,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.8);
         $pokemonMeta->setUniqueId("V0123_POKEMON_SCYTHER");
-        $pokemonMeta->setBaseDefense(180);
+        $pokemonMeta->setBaseDefense(170);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(7);
         $pokemonMeta->setCylHeightM(1.2);
@@ -5320,7 +5320,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.6525);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(172);
+        $pokemonMeta->setBaseAttack(223);
         $pokemonMeta->setDiskRadiusM(0.9788);
         $pokemonMeta->setCollisionRadiusM(0.435);
         $pokemonMeta->setPokedexWeightKg(40.6);
@@ -5331,7 +5331,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.87);
         $pokemonMeta->setUniqueId("V0124_POKEMON_JYNX");
-        $pokemonMeta->setBaseDefense(134);
+        $pokemonMeta->setBaseDefense(182);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(5.075);
         $pokemonMeta->setCylHeightM(1.218);
@@ -5374,7 +5374,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.98);
         $pokemonMeta->setUniqueId("V0125_POKEMON_ELECTABUZZ");
-        $pokemonMeta->setBaseDefense(160);
+        $pokemonMeta->setBaseDefense(173);
         $pokemonMeta->setAttackTimerS(17);
         $pokemonMeta->setWeightStdDev(3.75);
         $pokemonMeta->setCylHeightM(0.98);
@@ -5406,7 +5406,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.66);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(214);
+        $pokemonMeta->setBaseAttack(206);
         $pokemonMeta->setDiskRadiusM(0.99);
         $pokemonMeta->setCollisionRadiusM(0.44);
         $pokemonMeta->setPokedexWeightKg(44.5);
@@ -5417,7 +5417,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.88);
         $pokemonMeta->setUniqueId("V0126_POKEMON_MAGMAR");
-        $pokemonMeta->setBaseDefense(158);
+        $pokemonMeta->setBaseDefense(169);
         $pokemonMeta->setAttackTimerS(5);
         $pokemonMeta->setWeightStdDev(5.5625);
         $pokemonMeta->setCylHeightM(1.144);
@@ -5449,7 +5449,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.348);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(184);
+        $pokemonMeta->setBaseAttack(232);
         $pokemonMeta->setDiskRadiusM(0.522);
         $pokemonMeta->setCollisionRadiusM(0.348);
         $pokemonMeta->setPokedexWeightKg(55);
@@ -5460,7 +5460,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.87);
         $pokemonMeta->setUniqueId("V0127_POKEMON_PINSIR");
-        $pokemonMeta->setBaseDefense(186);
+        $pokemonMeta->setBaseDefense(197);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(6.875);
         $pokemonMeta->setCylHeightM(1.131);
@@ -5492,7 +5492,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(150);
         $pokemonMeta->setCylRadiusM(0.5742);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(148);
+        $pokemonMeta->setBaseAttack(198);
         $pokemonMeta->setDiskRadiusM(0.8613);
         $pokemonMeta->setCollisionRadiusM(0.435);
         $pokemonMeta->setPokedexWeightKg(88.4);
@@ -5503,7 +5503,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.2);
         $pokemonMeta->setModelScale(0.87);
         $pokemonMeta->setUniqueId("V0128_POKEMON_TAUROS");
-        $pokemonMeta->setBaseDefense(184);
+        $pokemonMeta->setBaseDefense(197);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(11.05);
         $pokemonMeta->setCylHeightM(1.19625);
@@ -5535,7 +5535,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(40);
         $pokemonMeta->setCylRadiusM(0.428);
         $pokemonMeta->setBaseFleeRate(0.15);
-        $pokemonMeta->setBaseAttack(42);
+        $pokemonMeta->setBaseAttack(29);
         $pokemonMeta->setDiskRadiusM(0.642);
         $pokemonMeta->setCollisionRadiusM(0.2675);
         $pokemonMeta->setPokedexWeightKg(10);
@@ -5546,7 +5546,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.3);
         $pokemonMeta->setModelScale(1.07);
         $pokemonMeta->setUniqueId("V0129_POKEMON_MAGIKARP");
-        $pokemonMeta->setBaseDefense(84);
+        $pokemonMeta->setBaseDefense(102);
         $pokemonMeta->setAttackTimerS(3600);
         $pokemonMeta->setWeightStdDev(1.25);
         $pokemonMeta->setCylHeightM(0.535);
@@ -5575,7 +5575,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(190);
         $pokemonMeta->setCylRadiusM(0.48);
         $pokemonMeta->setBaseFleeRate(0.07);
-        $pokemonMeta->setBaseAttack(192);
+        $pokemonMeta->setBaseAttack(237);
         $pokemonMeta->setDiskRadiusM(0.72);
         $pokemonMeta->setCollisionRadiusM(0.24);
         $pokemonMeta->setPokedexWeightKg(235);
@@ -5586,7 +5586,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.48);
         $pokemonMeta->setUniqueId("V0130_POKEMON_GYARADOS");
-        $pokemonMeta->setBaseDefense(196);
+        $pokemonMeta->setBaseDefense(197);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(29.375);
         $pokemonMeta->setCylHeightM(1.2);
@@ -5661,7 +5661,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(96);
         $pokemonMeta->setCylRadiusM(0.4025);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(110);
+        $pokemonMeta->setBaseAttack(91);
         $pokemonMeta->setDiskRadiusM(0.6038);
         $pokemonMeta->setCollisionRadiusM(0.4025);
         $pokemonMeta->setPokedexWeightKg(4);
@@ -5672,7 +5672,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.61);
         $pokemonMeta->setUniqueId("V0132_POKEMON_DITTO");
-        $pokemonMeta->setBaseDefense(110);
+        $pokemonMeta->setBaseDefense(91);
         $pokemonMeta->setAttackTimerS(3600);
         $pokemonMeta->setWeightStdDev(0.5);
         $pokemonMeta->setCylHeightM(0.52325);
@@ -5701,7 +5701,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(110);
         $pokemonMeta->setCylRadiusM(0.42);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(114);
+        $pokemonMeta->setBaseAttack(104);
         $pokemonMeta->setDiskRadiusM(0.63);
         $pokemonMeta->setCollisionRadiusM(0.252);
         $pokemonMeta->setPokedexWeightKg(6.5);
@@ -5712,7 +5712,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.35);
         $pokemonMeta->setModelScale(1.68);
         $pokemonMeta->setUniqueId("V0133_POKEMON_EEVEE");
-        $pokemonMeta->setBaseDefense(128);
+        $pokemonMeta->setBaseDefense(121);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.8125);
         $pokemonMeta->setCylHeightM(0.504);
@@ -5744,7 +5744,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(260);
         $pokemonMeta->setCylRadiusM(0.3465);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(186);
+        $pokemonMeta->setBaseAttack(205);
         $pokemonMeta->setDiskRadiusM(0.5198);
         $pokemonMeta->setCollisionRadiusM(0.21);
         $pokemonMeta->setPokedexWeightKg(29);
@@ -5755,7 +5755,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.05);
         $pokemonMeta->setUniqueId("V0134_POKEMON_VAPOREON");
-        $pokemonMeta->setBaseDefense(168);
+        $pokemonMeta->setBaseDefense(177);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(3.625);
         $pokemonMeta->setCylHeightM(0.94499987);
@@ -5786,7 +5786,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.33);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(192);
+        $pokemonMeta->setBaseAttack(232);
         $pokemonMeta->setDiskRadiusM(0.495);
         $pokemonMeta->setCollisionRadiusM(0.22);
         $pokemonMeta->setPokedexWeightKg(24.5);
@@ -5797,7 +5797,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.3);
         $pokemonMeta->setModelScale(1.1);
         $pokemonMeta->setUniqueId("V0135_POKEMON_JOLTEON");
-        $pokemonMeta->setBaseDefense(174);
+        $pokemonMeta->setBaseDefense(201);
         $pokemonMeta->setAttackTimerS(11);
         $pokemonMeta->setWeightStdDev(3.0625);
         $pokemonMeta->setCylHeightM(0.88000011);
@@ -5828,7 +5828,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.3045);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(238);
+        $pokemonMeta->setBaseAttack(246);
         $pokemonMeta->setDiskRadiusM(0.4568);
         $pokemonMeta->setCollisionRadiusM(0.2175);
         $pokemonMeta->setPokedexWeightKg(25);
@@ -5839,7 +5839,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.35);
         $pokemonMeta->setModelScale(0.87);
         $pokemonMeta->setUniqueId("V0136_POKEMON_FLAREON");
-        $pokemonMeta->setBaseDefense(178);
+        $pokemonMeta->setBaseDefense(204);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(3.125);
         $pokemonMeta->setCylHeightM(0.783);
@@ -5870,7 +5870,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(130);
         $pokemonMeta->setCylRadiusM(0.55);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(156);
+        $pokemonMeta->setBaseAttack(153);
         $pokemonMeta->setDiskRadiusM(0.825);
         $pokemonMeta->setCollisionRadiusM(0.385);
         $pokemonMeta->setPokedexWeightKg(36.5);
@@ -5881,7 +5881,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.1);
         $pokemonMeta->setUniqueId("V0137_POKEMON_PORYGON");
-        $pokemonMeta->setBaseDefense(158);
+        $pokemonMeta->setBaseDefense(139);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(4.5625);
         $pokemonMeta->setCylHeightM(0.93500012);
@@ -5913,7 +5913,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(70);
         $pokemonMeta->setCylRadiusM(0.222);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(132);
+        $pokemonMeta->setBaseAttack(155);
         $pokemonMeta->setDiskRadiusM(0.333);
         $pokemonMeta->setCollisionRadiusM(0.222);
         $pokemonMeta->setPokedexWeightKg(7.5);
@@ -5924,7 +5924,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.3);
         $pokemonMeta->setModelScale(1.48);
         $pokemonMeta->setUniqueId("V0138_POKEMON_OMANYTE");
-        $pokemonMeta->setBaseDefense(160);
+        $pokemonMeta->setBaseDefense(174);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(0.9375);
         $pokemonMeta->setCylHeightM(0.592);
@@ -5956,7 +5956,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(140);
         $pokemonMeta->setCylRadiusM(0.375);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(180);
+        $pokemonMeta->setBaseAttack(207);
         $pokemonMeta->setDiskRadiusM(0.5625);
         $pokemonMeta->setCollisionRadiusM(0.25);
         $pokemonMeta->setPokedexWeightKg(35);
@@ -5967,7 +5967,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(1);
         $pokemonMeta->setUniqueId("V0139_POKEMON_OMASTAR");
-        $pokemonMeta->setBaseDefense(202);
+        $pokemonMeta->setBaseDefense(227);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(4.375);
         $pokemonMeta->setCylHeightM(1);
@@ -6010,7 +6010,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.9);
         $pokemonMeta->setModelScale(1.35);
         $pokemonMeta->setUniqueId("V0140_POKEMON_KABUTO");
-        $pokemonMeta->setBaseDefense(142);
+        $pokemonMeta->setBaseDefense(162);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(1.4375);
         $pokemonMeta->setCylHeightM(0.50625);
@@ -6042,7 +6042,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(120);
         $pokemonMeta->setCylRadiusM(0.455);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(190);
+        $pokemonMeta->setBaseAttack(220);
         $pokemonMeta->setDiskRadiusM(0.6825);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(40.5);
@@ -6053,7 +6053,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.91);
         $pokemonMeta->setUniqueId("V0141_POKEMON_KABUTOPS");
-        $pokemonMeta->setBaseDefense(190);
+        $pokemonMeta->setBaseDefense(203);
         $pokemonMeta->setAttackTimerS(4);
         $pokemonMeta->setWeightStdDev(5.0625);
         $pokemonMeta->setCylHeightM(1.1375);
@@ -6085,7 +6085,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(160);
         $pokemonMeta->setCylRadiusM(0.399);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(182);
+        $pokemonMeta->setBaseAttack(221);
         $pokemonMeta->setDiskRadiusM(0.5985);
         $pokemonMeta->setCollisionRadiusM(0.285);
         $pokemonMeta->setPokedexWeightKg(59);
@@ -6096,7 +6096,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.57);
         $pokemonMeta->setUniqueId("V0142_POKEMON_AERODACTYL");
-        $pokemonMeta->setBaseDefense(162);
+        $pokemonMeta->setBaseDefense(164);
         $pokemonMeta->setAttackTimerS(14);
         $pokemonMeta->setWeightStdDev(7.375);
         $pokemonMeta->setCylHeightM(0.9975);
@@ -6128,7 +6128,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(320);
         $pokemonMeta->setCylRadiusM(0.74);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(180);
+        $pokemonMeta->setBaseAttack(190);
         $pokemonMeta->setDiskRadiusM(1.11);
         $pokemonMeta->setCollisionRadiusM(0.74);
         $pokemonMeta->setPokedexWeightKg(460);
@@ -6139,7 +6139,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.74);
         $pokemonMeta->setUniqueId("V0143_POKEMON_SNORLAX");
-        $pokemonMeta->setBaseDefense(180);
+        $pokemonMeta->setBaseDefense(190);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(57.5);
         $pokemonMeta->setCylHeightM(1.48);
@@ -6171,7 +6171,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.396);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(198);
+        $pokemonMeta->setBaseAttack(192);
         $pokemonMeta->setDiskRadiusM(0.594);
         $pokemonMeta->setCollisionRadiusM(0.231);
         $pokemonMeta->setPokedexWeightKg(55.4);
@@ -6182,7 +6182,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.66);
         $pokemonMeta->setUniqueId("V0144_POKEMON_ARTICUNO");
-        $pokemonMeta->setBaseDefense(242);
+        $pokemonMeta->setBaseDefense(249);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(6.925);
         $pokemonMeta->setCylHeightM(0.99);
@@ -6213,7 +6213,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.5175);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(232);
+        $pokemonMeta->setBaseAttack(253);
         $pokemonMeta->setDiskRadiusM(0.7763);
         $pokemonMeta->setCollisionRadiusM(0.4485);
         $pokemonMeta->setPokedexWeightKg(52.6);
@@ -6224,7 +6224,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.69);
         $pokemonMeta->setUniqueId("V0145_POKEMON_ZAPDOS");
-        $pokemonMeta->setBaseDefense(194);
+        $pokemonMeta->setBaseDefense(188);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(6.575);
         $pokemonMeta->setCylHeightM(1.035);
@@ -6255,7 +6255,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(180);
         $pokemonMeta->setCylRadiusM(0.62);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(242);
+        $pokemonMeta->setBaseAttack(251);
         $pokemonMeta->setDiskRadiusM(0.93);
         $pokemonMeta->setCollisionRadiusM(0.403);
         $pokemonMeta->setPokedexWeightKg(60);
@@ -6266,7 +6266,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.62);
         $pokemonMeta->setUniqueId("V0146_POKEMON_MOLTRES");
-        $pokemonMeta->setBaseDefense(194);
+        $pokemonMeta->setBaseDefense(184);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(7.5);
         $pokemonMeta->setCylHeightM(1.395);
@@ -6297,7 +6297,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(82);
         $pokemonMeta->setCylRadiusM(0.2775);
         $pokemonMeta->setBaseFleeRate(0.09);
-        $pokemonMeta->setBaseAttack(128);
+        $pokemonMeta->setBaseAttack(119);
         $pokemonMeta->setDiskRadiusM(0.4163);
         $pokemonMeta->setCollisionRadiusM(0.2775);
         $pokemonMeta->setPokedexWeightKg(3.3);
@@ -6308,7 +6308,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(0.85);
         $pokemonMeta->setModelScale(1.11);
         $pokemonMeta->setUniqueId("V0147_POKEMON_DRATINI");
-        $pokemonMeta->setBaseDefense(110);
+        $pokemonMeta->setBaseDefense(94);
         $pokemonMeta->setAttackTimerS(29);
         $pokemonMeta->setWeightStdDev(0.4125);
         $pokemonMeta->setCylHeightM(0.8325);
@@ -6339,7 +6339,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(122);
         $pokemonMeta->setCylRadiusM(0.5625);
         $pokemonMeta->setBaseFleeRate(0.06);
-        $pokemonMeta->setBaseAttack(170);
+        $pokemonMeta->setBaseAttack(163);
         $pokemonMeta->setDiskRadiusM(0.8438);
         $pokemonMeta->setCollisionRadiusM(0.375);
         $pokemonMeta->setPokedexWeightKg(16.5);
@@ -6350,7 +6350,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.25);
         $pokemonMeta->setModelScale(0.75);
         $pokemonMeta->setUniqueId("V0148_POKEMON_DRAGONAIR");
-        $pokemonMeta->setBaseDefense(152);
+        $pokemonMeta->setBaseDefense(138);
         $pokemonMeta->setAttackTimerS(23);
         $pokemonMeta->setWeightStdDev(2.0625);
         $pokemonMeta->setCylHeightM(1.5);
@@ -6381,7 +6381,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(182);
         $pokemonMeta->setCylRadiusM(0.42);
         $pokemonMeta->setBaseFleeRate(0.05);
-        $pokemonMeta->setBaseAttack(250);
+        $pokemonMeta->setBaseAttack(263);
         $pokemonMeta->setDiskRadiusM(0.63);
         $pokemonMeta->setCollisionRadiusM(0.42);
         $pokemonMeta->setPokedexWeightKg(210);
@@ -6392,7 +6392,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(0.7);
         $pokemonMeta->setUniqueId("V0149_POKEMON_DRAGONITE");
-        $pokemonMeta->setBaseDefense(212);
+        $pokemonMeta->setBaseDefense(201);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(26.25);
         $pokemonMeta->setCylHeightM(1.47);
@@ -6424,7 +6424,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(212);
         $pokemonMeta->setCylRadiusM(0.37);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(284);
+        $pokemonMeta->setBaseAttack(330);
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.37);
         $pokemonMeta->setPokedexWeightKg(122);
@@ -6435,7 +6435,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1.2);
         $pokemonMeta->setModelScale(0.74);
         $pokemonMeta->setUniqueId("V0150_POKEMON_MEWTWO");
-        $pokemonMeta->setBaseDefense(202);
+        $pokemonMeta->setBaseDefense(200);
         $pokemonMeta->setAttackTimerS(3);
         $pokemonMeta->setWeightStdDev(15.25);
         $pokemonMeta->setCylHeightM(1.48);
@@ -6467,7 +6467,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setBaseStamina(200);
         $pokemonMeta->setCylRadiusM(0.282);
         $pokemonMeta->setBaseFleeRate(0.1);
-        $pokemonMeta->setBaseAttack(220);
+        $pokemonMeta->setBaseAttack(210);
         $pokemonMeta->setDiskRadiusM(0.423);
         $pokemonMeta->setCollisionRadiusM(0.141);
         $pokemonMeta->setPokedexWeightKg(4);
@@ -6478,7 +6478,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setJumpTimeS(1);
         $pokemonMeta->setModelScale(1.41);
         $pokemonMeta->setUniqueId("V0151_POKEMON_MEW");
-        $pokemonMeta->setBaseDefense(220);
+        $pokemonMeta->setBaseDefense(210);
         $pokemonMeta->setAttackTimerS(8);
         $pokemonMeta->setWeightStdDev(0.5);
         $pokemonMeta->setCylHeightM(0.7755);
