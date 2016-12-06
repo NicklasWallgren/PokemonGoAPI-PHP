@@ -21,6 +21,7 @@ class TokenParser extends Parser {
      * The method which parses the content.
      *
      * @param ResponseInterface $response
+     * @throws AuthenticationException
      * @return TokenResult
      */
     public function parse($response)
@@ -28,24 +29,21 @@ class TokenParser extends Parser {
         // Retrieve the content
         $content = $response->getBody();
         
-        // Check if the response includes any error messages
-        if (array_key_exists('error', $content)) {
-            // Retrieve the error messages
-            $errors = $content['error'];
+        $errors = array();
 
-            // Check if there are any available error messages
-            if (sizeof($errors) > 0) {
-                Log::debug(sprintf('[#%s] Error messages in response. Errors: \'%s\'', __CLASS__,
-                    print_r($errors, true)));
-                // A code of 498 indicates an expired or otherwise invalid token. 0 is default
-                $code = in_array("invalid_grant", $errors) ? AuthenticationException::PTC_INVALID_GRANT_ERROR : 0;
-                throw new AuthenticationException(current($errors),$code);
-            }
+        // Check if the response includes any error messages
+        preg_match('/error=(?<error>.*)/', $content->getContents(), $errors);
+        if (sizeof($errors) > 0) {
+            Log::debug(sprintf('[#%s] Error messages in response. Errors: \'%s\'', __CLASS__,
+                print_r($errors, true)));
+            // A code of 498 indicates an expired or otherwise invalid token. 0 is default
+            $code = in_array('invalid_grant', $errors) ? AuthenticationException::PTC_INVALID_GRANT_ERROR : 0;
+            throw new AuthenticationException(current($errors),$code);
         }
 
+        $content = (string)$content;
         Log::debug(sprintf('[#%s] Retrieved content: \'%s\'', __CLASS__, $content));
 
-        $content = (string)$content;
         return new TokenResult(
             array('token' => $this->parseToken($content), 'timestamp' => $this->parseExpiresTimestamp($content)));
     }
@@ -81,3 +79,4 @@ class TokenParser extends Parser {
     }
 
 }
+
