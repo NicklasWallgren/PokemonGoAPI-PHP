@@ -4,9 +4,9 @@ namespace NicklasW\PkmGoApi\Api\Pokemon\Support;
 
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyItem;
 use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMetaRegistry;
-use POGOProtos\Enums\PokemonId;
-use POGOProtos\Enums\PokemonMove;
-use POGOProtos\Enums\PokemonType;
+use NicklasW\PkmGoApi\Api\Support\PokemonId;
+use NicklasW\PkmGoApi\Api\Support\PokemonMove;
+use NicklasW\PkmGoApi\Api\Support\PokemonType;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
 use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
 
@@ -36,7 +36,7 @@ trait PokemonDetailsTrait
         // Retrieve the pokemon metadata
         $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
 
-        return PokemonType::toString($data->getType1());
+        return PokemonType::name($data->getType1());
     }
 
     /**
@@ -46,7 +46,7 @@ trait PokemonDetailsTrait
      */
     public function getMove1String()
     {
-        return PokemonMove::toString($this->getMove1());
+        return PokemonMove::name($this->getMove1());
     }
 
     /**
@@ -56,7 +56,7 @@ trait PokemonDetailsTrait
      */
     public function getMove2String()
     {
-        return PokemonMove::toString($this->getMove2());
+        return PokemonMove::name($this->getMove2());
     }
 
     /**
@@ -336,7 +336,7 @@ trait PokemonDetailsTrait
             return $this->getNickname();
         }
 
-        return PokemonId::toString($this->getPokemonId());
+        return PokemonId::name($this->getPokemonId());
     }
 
 }

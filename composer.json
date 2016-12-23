@@ -5,6 +5,17 @@
     "license": "MIT",
     "type": "project",
 
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/NicklasWallgren/pogoprotos-php"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/NicklasWallgren/protobuf"
+        }
+    ],
+
     "require": {
         "php": ">=5.6",
         "paquettg/php-html-parser": "1.7",
@@ -13,7 +24,7 @@
         "php-di/php-di": "^5.3",
         "phpseclib/phpseclib": "^2.0",
         "nicklasw/s2-geometry-library-php": "dev-master",
-        "nicklasw/pogoprotos-php": "dev-master",
+        "nicklasw/pogoprotos-php": "dev-development",
         "psr/log": "^1.0",
         "illuminate/support": "^5.2"
     },

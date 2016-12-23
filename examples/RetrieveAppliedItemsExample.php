@@ -3,10 +3,10 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\ItemMetaRegistry;
+use NicklasW\PkmGoApi\Api\Support\ItemId;
 use NicklasW\PkmGoApi\Authentication\Config\Config;
 use NicklasW\PkmGoApi\Authentication\Factory\Factory;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
-use POGOProtos\Inventory\Item\ItemId;
 
 class RetrieveAppliedItemsExample {
 
@@ -42,7 +42,7 @@ class RetrieveAppliedItemsExample {
         foreach($items as $item)
         {
             // Retrieve item name
-            $item->setName(ItemId::toString($item->getItemId()));
+            $item->setName(ItemId::name($item->getItemId()));
 
             echo sprintf('Applied item: %s', print_r($item, true));
         }

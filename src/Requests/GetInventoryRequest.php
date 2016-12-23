@@ -45,13 +45,13 @@ class GetInventoryRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
-    
+        $requestData = $data->getReturns();
+
         // Initialize the inventory response
         $inventoryResponse = new GetInventoryResponse();
 
         // Unmarshall the response
-        $inventoryResponse->read($requestData);
+        $inventoryResponse->decode($requestData[0]);
 
         $this->setData($inventoryResponse);
     }

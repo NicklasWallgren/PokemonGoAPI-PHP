@@ -5,7 +5,7 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 
 use Exception;
 use NicklasW\PkmGoApi\Api\Data\Data;
-use POGOProtos\Enums\PokemonFamilyId;
+use NicklasW\PkmGoApi\Api\Support\PokemonFamilyId;
 use POGOProtos\Inventory\Candy;
 use POGOProtos\Inventory\PokemonFamily;
 

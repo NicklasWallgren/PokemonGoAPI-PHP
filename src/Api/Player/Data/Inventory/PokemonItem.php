@@ -103,12 +103,12 @@ class PokemonItem extends Data {
     /**
      * @var int
      */
-    protected $move1 = PokemonMove::MOVE_NONE;
+    protected $move1 = PokemonMove::MOVE_UNSET;
 
     /**
      * @var int
      */
-    protected $move2 = PokemonMove::MOVE_NONE;
+    protected $move2 = PokemonMove::MOVE_UNSET;
 
     /**
      * @var int

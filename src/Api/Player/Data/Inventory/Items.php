@@ -93,7 +93,7 @@ class Items extends Data {
         $instance = new static();
 
         /** @var InventoryItem[] $items */
-        $items = $data->getInventoryItemsArray();
+        $items = $data->getInventoryItems();
 
         // Iterate through the inventory items
         foreach ($items as $item) {
