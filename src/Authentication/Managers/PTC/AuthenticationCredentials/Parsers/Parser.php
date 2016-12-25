@@ -7,7 +7,8 @@ use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
-abstract class Parser {
+abstract class Parser
+{
 
     /**
      * @var integer The success status response code
@@ -51,15 +52,35 @@ abstract class Parser {
         Log::debug(sprintf('[#%s] Validating response. Status code: \'%s\'', __CLASS__, $response->getStatusCode()));
 
         // Check if we retrieved a valid response status code
-        if ($response->getStatusCode() === self::$RESPONSE_STATUS_SUCCESS ||
-            $response->getStatusCode() === self::$RESPONSE_STATUS_REDIRECT) {
-
+        if ($this->isSuccessfulResponse($response) || $this->isRedirect($response)) {
             return;
         }
 
         Log::debug(sprintf('[#%s] Retrieved a invalid response. Content: \'%s\'', __CLASS__, $response->getBody()));
 
         throw new ResponseException('Retrieved a invalid response from the server. Please try again later');
+    }
+
+    /**
+     * Returns true if the response was successful, false otherwise.
+     *
+     * @param ResponseInterface $response
+     * @return bool
+     */
+    protected function isSuccessfulResponse($response)
+    {
+        return $response->getStatusCode() === self::$RESPONSE_STATUS_SUCCESS;
+    }
+
+    /**
+     * Returns true if the response corresponds to a redirect, false otherwise
+     *
+     * @param ResponseInterface $response
+     * @return bool
+     */
+    protected function isRedirect($response)
+    {
+        return $response->getStatusCode() === self::$RESPONSE_STATUS_REDIRECT;
     }
 
 }
