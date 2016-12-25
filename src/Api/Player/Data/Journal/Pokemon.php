@@ -6,7 +6,7 @@ use NicklasW\PkmGoApi\Api\Data\Data;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokedexItem;
 use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMeta;
 use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMetaRegistry;
-use NicklasW\PkmGoApi\Api\Support\MakeApiResourcesAvailable;
+use NicklasW\PkmGoApi\Api\Support\Traits\MakeApiResourcesAvailable;
 
 class Pokemon extends Data {
 

@@ -7,9 +7,9 @@ use Exception;
 use NicklasW\PkmGoApi\Api\Data\Data;
 use NicklasW\PkmGoApi\Api\Pokemon\Collection\PokemonCollection;
 use NicklasW\PkmGoApi\Api\Pokemon\Pokemon;
+use NicklasW\PkmGoApi\Api\Support\PokemonFamilyId;
+use NicklasW\PkmGoApi\Api\Support\PokemonId;
 use POGOProtos\Data\PokemonData;
-use POGOProtos\Enums\PokemonFamilyId;
-use POGOProtos\Enums\PokemonId;
 
 /**
  * @method void setPokemons(PokemonCollection $pokemons)

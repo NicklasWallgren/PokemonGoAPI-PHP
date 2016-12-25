@@ -30,13 +30,13 @@ abstract class Data {
         $properties = self::getClassDefaultProperties($instance);
 
         foreach ($dataProperties as $property) {
+            // Retrieve the property name
+            $propertyName = camel_case($property->getName());
+
             // Check if the same property exists within the data class
-            if (!array_key_exists($property->getName(), $properties)) {
+            if (!array_key_exists($propertyName, $properties)) {
                 continue;
             }
-
-            // Retrieve the property name
-            $propertyName = ucfirst($property->getName());
 
             // Sets the property value
             $instance->{'set' . $propertyName}($data->{'get' . $propertyName}());

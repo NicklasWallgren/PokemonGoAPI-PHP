@@ -2,11 +2,11 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
+use NicklasW\PkmGoApi\Api\Support\ItemId;
+use NicklasW\PkmGoApi\Api\Support\PokemonId;
 use NicklasW\PkmGoApi\Authentication\Config\Config;
 use NicklasW\PkmGoApi\Authentication\Factory\Factory;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
-use POGOProtos\Enums\PokemonId;
-use POGOProtos\Inventory\Item\ItemId;
 
 class RetrieveJournalExample {
 
@@ -37,7 +37,7 @@ class RetrieveJournalExample {
         foreach($journal->getPokemons() as $pkmn) {
             echo sprintf("[%s] [Pokemon] #%s %s, Result: %s, %s CP\n",
                 (new DateTime('@'.floor($pkmn->getTimestampMs()/1000)))->format('d.m.Y H:i'),
-                $pkmn->getPokemonId(), PokemonId::toString($pkmn->getPokemonId()), $pkmn->getResult() == 2 ? 'flee' : 'captured',
+                $pkmn->getPokemonId(), PokemonId::name($pkmn->getPokemonId()), $pkmn->getResult() == 2 ? 'flee' : 'captured',
                 $pkmn->getCombatPoints());
         }
 
@@ -50,7 +50,7 @@ class RetrieveJournalExample {
                    $fort->getItems(),
                    function($val, $e) {
                        if($val) $val.=', ';
-                       return $val.$e->getCount().'x '.ItemId::toString($e->getItemId());
+                       return $val.$e->getCount().'x '.ItemId::name($e->getItemId());
                    }
                )
            );

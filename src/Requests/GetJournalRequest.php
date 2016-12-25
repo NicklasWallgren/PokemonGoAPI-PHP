@@ -46,13 +46,13 @@ class GetJournalRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the sfida action log response
         $sfidaActionResponse = new SfidaActionLogResponse();
 
         // Unmarshall the response
-        $sfidaActionResponse->read($requestData);
+        $sfidaActionResponse->decode($requestData[0]);
 
         $this->setData($sfidaActionResponse);
     }

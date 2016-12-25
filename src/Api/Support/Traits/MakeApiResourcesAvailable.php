@@ -1,6 +1,6 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Api\Support;
+namespace NicklasW\PkmGoApi\Api\Support\Traits;
 
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Pokedex;
 use NicklasW\PkmGoApi\Api\Player\Inventory;

@@ -38,7 +38,7 @@ class EggIncubator extends Data {
     /**
      * @var int
      */
-    protected $incubatorType = EggIncubatorType::INCUBATOR_NONE;
+    protected $incubatorType = EggIncubatorType::INCUBATOR_UNSET;
 
     /**
      * @var int

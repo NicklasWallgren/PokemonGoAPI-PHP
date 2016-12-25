@@ -47,7 +47,7 @@ class Journal extends Procedure {
         $data = $this->getRequestService()->getJournal();
 
         // Set the log entries
-        $this->data = Log::create($data->getLogEntriesArray());
+        $this->data = Log::create($data->getLogEntries());
     }
 
     /**

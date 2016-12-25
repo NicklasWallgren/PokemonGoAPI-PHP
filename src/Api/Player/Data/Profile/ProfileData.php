@@ -109,7 +109,7 @@ class ProfileData extends Data {
         $instance->creationTime = $data->getCreationTimestampMs();
 
         // Crates the tutorial state
-        $instance->tutorialState = TutorialState::create($data->getTutorialStateArray());
+        $instance->tutorialState = TutorialState::create($data->getTutorialState());
 
         // Creates the player avatar
         $instance->avatar = Avatar::create($data->getAvatar());
@@ -130,7 +130,7 @@ class ProfileData extends Data {
         $instance->contactSettings = ContactSettings::create($data->getContactSettings());
 
         // Sets the player currencies
-        $instance->currencies = Currencies::create($data->getCurrenciesArray());
+        $instance->currencies = Currencies::create($data->getCurrencies());
 
         return $instance;
     }

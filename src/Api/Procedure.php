@@ -4,7 +4,7 @@
 namespace NicklasW\PkmGoApi\Api;
 
 use NicklasW\PkmGoApi\Api\Data\Data;
-use NicklasW\PkmGoApi\Api\Support\MakeApiResourcesAvailable;
+use NicklasW\PkmGoApi\Api\Support\Traits\MakeApiResourcesAvailable;
 use NicklasW\PkmGoApi\Services\RequestService;
 
 abstract class Procedure {

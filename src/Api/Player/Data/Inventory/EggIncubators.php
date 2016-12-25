@@ -39,11 +39,8 @@ class EggIncubators extends Data {
         // Create a instance
         $instance = new static();
 
-        // Retrieve the egg incubators
-        $eggIncubators = $data->getEggIncubatorArray();
-
         // Iterate through the list of egg incubators
-        foreach ($data->getEggIncubatorArray() as $eggIncubator) {
+        foreach ($data->getEggIncubator() as $eggIncubator) {
             // Add a egg incubator to the list of egg incubators
             $instance->add($eggIncubator);
         }

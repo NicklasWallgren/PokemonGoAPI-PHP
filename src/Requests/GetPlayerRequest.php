@@ -45,13 +45,13 @@ class GetPlayerRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the player response
         $playerResponse = new GetPlayerResponse();
 
         // Unmarshall the response
-        $playerResponse->read($requestData);
+        $playerResponse->decode($requestData[0]);
 
         $this->setData($playerResponse);
     }

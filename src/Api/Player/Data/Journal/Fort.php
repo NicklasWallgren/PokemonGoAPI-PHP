@@ -56,7 +56,7 @@ class Fort extends Data {
         // Set the egg count
         $instance->eggs = $data->getEggs();
 
-        foreach ($data->getItemsArray() as $item) {
+        foreach ($data->getItems() as $item) {
             // Add the item to the list of items
             $instance->items[] = Item::create($item);
         }

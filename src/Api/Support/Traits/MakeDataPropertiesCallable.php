@@ -1,6 +1,6 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Api\Support;
+namespace NicklasW\PkmGoApi\Api\Support\Traits;
 
 trait MakeDataPropertiesCallable {
 
