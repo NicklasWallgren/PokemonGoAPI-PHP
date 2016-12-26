@@ -3,6 +3,7 @@
 namespace NicklasW\PkmGoApi\Handlers;
 
 use Exception;
+use Google\Protobuf\Internal\GPBType;
 use Google\Protobuf\Internal\RepeatedField;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
@@ -229,7 +230,7 @@ class RequestHandler
         $requestEnvelope->setLongitude($this->application->getLocation()->getLongitude());
         $requestEnvelope->setAccuracy(rand(30, 100) / 10);
 
-        $repeatedField = new RepeatedField(11, NetworkRequest::class);
+        $repeatedField = new RepeatedField(GPBType::MESSAGE, NetworkRequest::class);
         $repeatedField[] = $networkRequest;
 
         // Add request
@@ -440,12 +441,12 @@ class RequestHandler
     {
         // Check if we retrieved a authentication ticket since earlier
         if ($this->session->getAuthenticationTicket() == null) {
-            $requestEnvelope->setAuthInfo($this->session->getAuthenticationInformation());
+            @$requestEnvelope->setAuthInfo($this->session->getAuthenticationInformation());
 
             return;
         }
 
-        $requestEnvelope->setAuthTicket($this->session->getAuthenticationTicket());
+        @$requestEnvelope->setAuthTicket($this->session->getAuthenticationTicket());
     }
 
     /**

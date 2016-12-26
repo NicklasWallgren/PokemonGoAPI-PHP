@@ -70,10 +70,10 @@ class VerifyChallengeRequest extends Request {
         $verifyChallengeResponse = new VerifyChallengeResponse();
 
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
         if ($requestData) {
             // Unmarshall the response
-            $verifyChallengeResponse->read($requestData);
+            $verifyChallengeResponse->read($requestData[0]);
         }else {
             // HACK to instansiate a valid VerifyChallengeResponse object when $requestData == NULL - sets success to "0";
             $verifyChallengeResponse->clearSuccess();

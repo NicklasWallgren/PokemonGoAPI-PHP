@@ -73,13 +73,13 @@ class RenamePokemonRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the rename pokemon response
         $nicknamePokemonResponse = new NicknamePokemonResponse();
 
         // Unmarshall the response
-        $nicknamePokemonResponse->read($requestData);
+        $nicknamePokemonResponse->read($requestData[0]);
 
         $this->setData($nicknamePokemonResponse);
     }

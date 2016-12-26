@@ -86,13 +86,13 @@ class FortSearchRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the fort search response
         $fortSearchResponse = new FortSearchResponse();
 
         // Unmarshall the response
-        $fortSearchResponse->read($requestData);
+        $fortSearchResponse->read($requestData[0]);
 
         $this->setData($fortSearchResponse);
     }

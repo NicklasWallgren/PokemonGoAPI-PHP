@@ -63,13 +63,13 @@ class TransferPokemonRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the release pokemon response
         $releasePokemonResponse = new ReleasePokemonResponse();
 
         // Unmarshall the response
-        $releasePokemonResponse->read($requestData);
+        $releasePokemonResponse->read($requestData[0]);
 
         $this->setData($releasePokemonResponse);
     }

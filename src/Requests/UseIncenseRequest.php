@@ -63,13 +63,13 @@ class UseIncenseRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the rename pokemon response
         $useIncenseResponse = new UseIncenseResponse();
 
         // Unmarshall the response
-        $useIncenseResponse->read($requestData);
+        $useIncenseResponse->read($requestData[0]);
 
         $this->setData($useIncenseResponse);
     }

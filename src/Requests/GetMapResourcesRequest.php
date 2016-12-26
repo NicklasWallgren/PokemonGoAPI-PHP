@@ -86,13 +86,13 @@ class GetMapResourcesRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturnsArray();
 
         // Initialize the map objects response
         $mapObjectsResponse = new GetMapObjectsResponse();
 
         // Unmarshall the response
-        $mapObjectsResponse->read($requestData);
+        $mapObjectsResponse->read($requestData[0]);
 
         $this->setData($mapObjectsResponse);
     }

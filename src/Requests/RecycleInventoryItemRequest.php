@@ -70,13 +70,13 @@ class RecycleInventoryItemRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the rename pokemon response
         $recycleInventoryItemResponse = new RecycleInventoryItemResponse();
 
         // Unmarshall the response
-        $recycleInventoryItemResponse->read($requestData);
+        $recycleInventoryItemResponse->read($requestData[0]);
 
         $this->setData($recycleInventoryItemResponse);
     }

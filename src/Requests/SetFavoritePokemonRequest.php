@@ -70,13 +70,13 @@ class SetFavoritePokemonRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the rename pokemon response
         $setFavoritePokemonResponse = new SetFavoritePokemonResponse();
 
         // Unmarshall the response
-        $setFavoritePokemonResponse->read($requestData);
+        $setFavoritePokemonResponse->read($requestData[0]);
 
         $this->setData($setFavoritePokemonResponse);
     }

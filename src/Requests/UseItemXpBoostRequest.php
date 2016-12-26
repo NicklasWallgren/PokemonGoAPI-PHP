@@ -63,13 +63,13 @@ class UseItemXpBoostRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturnsArray();
 
         // Initialize the rename pokemon response
         $useItemXpBoostResponse = new UseItemXpBoostResponse();
 
         // Unmarshall the response
-        $useItemXpBoostResponse->read($requestData);
+        $useItemXpBoostResponse->read($requestData[0]);
 
         $this->setData($useItemXpBoostResponse);
     }

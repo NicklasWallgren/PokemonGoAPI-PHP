@@ -67,13 +67,13 @@ class EvolvePokemonRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the evolve pokemon response
         $evolvePokemonResponse = new EvolvePokemonResponse();
 
         // Unmarshall the response
-        $evolvePokemonResponse->read($requestData);
+        $evolvePokemonResponse->read($requestData[0]);
 
         $this->setData($evolvePokemonResponse);
     }

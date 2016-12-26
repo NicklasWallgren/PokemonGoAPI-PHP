@@ -39,11 +39,13 @@ class CheckChallengeRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
+
         // Initialize the player response
         $checkChallengeResponse = new CheckChallengeResponse();
+
         // Unmarshall the response
-        $checkChallengeResponse->read($requestData);
+        $checkChallengeResponse->read($requestData[0]);
         $this->setData($checkChallengeResponse);
     }
 }

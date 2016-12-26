@@ -63,13 +63,13 @@ class UpgradePokemonRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = current($data->getReturnsArray());
+        $requestData = $data->getReturns();
 
         // Initialize the release pokemon response
         $upgradePokemonResponse = new UpgradePokemonResponse();
 
         // Unmarshall the response
-        $upgradePokemonResponse->read($requestData);
+        $upgradePokemonResponse->read($requestData[0]);
 
         $this->setData($upgradePokemonResponse);
     }
