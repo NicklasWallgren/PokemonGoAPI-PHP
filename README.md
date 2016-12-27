@@ -6,14 +6,7 @@
 Pokemon GO PHP API library
 
 # Install
-Add the following properties to your project's `composer.json` file:
-
-```json
-"minimum-stability": "dev",
-"prefer-stable": true
-```
-
-Then run the command `composer require nicklasw/pkm-go-api`.
+Run the command `composer require nicklasw/pkm-go-api`.
 
 # Usage
 EG:
