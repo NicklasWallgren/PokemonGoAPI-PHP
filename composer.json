@@ -4,18 +4,6 @@
     "keywords": ["Pokemon Go API"],
     "license": "MIT",
     "type": "project",
-
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/NicklasWallgren/pogoprotos-php"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/NicklasWallgren/protobuf"
-        }
-    ],
-
     "require": {
         "php": ">=5.6",
         "paquettg/php-html-parser": "1.7",
@@ -23,8 +11,8 @@
         "jeremeamia/xstatic": "^1.0",
         "php-di/php-di": "^5.3",
         "phpseclib/phpseclib": "^2.0",
-        "nicklasw/s2-geometry-library-php": "dev-master",
-        "nicklasw/pogoprotos-php": "dev-development",
+        "nicklasw/s2-geometry-library-php": "^v2.0",
+        "nicklasw/pogoprotos-php": "^v2.0",
         "psr/log": "^1.0",
         "illuminate/support": "^5.2"
     },
@@ -46,7 +34,5 @@
     },
     "scripts": {
         "test": "phpunit"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
