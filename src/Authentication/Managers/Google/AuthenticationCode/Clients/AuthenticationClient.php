@@ -5,7 +5,7 @@ namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCode\Cl
 use GuzzleHttp\Client;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCode\Parsers\OauthTokenParser;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCode\Parsers\Results\AuthenticationTokenResult;
-use PHPHtmlParser\Dom;
+use NicklasW\PkmGoApi\Facades\App;
 use Psr\Http\Message\ResponseInterface;
 
 class AuthenticationClient {

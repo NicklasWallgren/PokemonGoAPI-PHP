@@ -9,6 +9,9 @@ use NicklasW\PkmGoApi\Requests\UseItemXpBoostRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
 
 use POGOProtos\Networking\Responses\GetInventoryResponse;
+use POGOProtos\Networking\Responses\RecycleInventoryItemResponse;
+use POGOProtos\Networking\Responses\UseIncenseResponse;
+use POGOProtos\Networking\Responses\UseItemXpBoostResponse;
 
 class InventoryRequestService extends RequestService {
 
@@ -50,7 +53,7 @@ class InventoryRequestService extends RequestService {
      */
     public function useIncense($itemId)
     {
-        $useIncenseRequest = new UseIncenseRequest($itemId, $count);
+        $useIncenseRequest = new UseIncenseRequest($itemId);
 
         $this->requestHandler()->handle($useIncenseRequest);
 
@@ -65,7 +68,7 @@ class InventoryRequestService extends RequestService {
      */
     public function useItemXpBoost($itemId)
     {
-        $useItemXpBoostRequest = new UseItemXpBoostRequest($itemId, $count);
+        $useItemXpBoostRequest = new UseItemXpBoostRequest($itemId);
 
         $this->requestHandler()->handle($useItemXpBoostRequest);
 

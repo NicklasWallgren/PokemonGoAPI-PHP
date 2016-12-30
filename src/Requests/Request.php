@@ -2,8 +2,8 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
-use ProtobufMessage;
 
 abstract class Request {
 
@@ -18,7 +18,7 @@ abstract class Request {
     abstract public function getType();
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     abstract public function getMessage();
 

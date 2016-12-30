@@ -2,13 +2,14 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\RecycleInventoryItemMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\RecycleInventoryItemResponse;
-use ProtobufMessage;
 
-class RecycleInventoryItemRequest extends Request {
+class RecycleInventoryItemRequest extends Request
+{
 
     /**
      * @var integer The request type
@@ -16,7 +17,7 @@ class RecycleInventoryItemRequest extends Request {
     protected $type = RequestType::RECYCLE_INVENTORY_ITEM;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -34,6 +35,7 @@ class RecycleInventoryItemRequest extends Request {
      * RecycleInventoryItemRequest constructor.
      *
      * @param integer $itemId
+     * @param integer $count
      */
     public function __construct($itemId, $count)
     {
@@ -50,7 +52,7 @@ class RecycleInventoryItemRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
@@ -76,7 +78,7 @@ class RecycleInventoryItemRequest extends Request {
         $recycleInventoryItemResponse = new RecycleInventoryItemResponse();
 
         // Unmarshall the response
-        $recycleInventoryItemResponse->read($requestData[0]);
+        $recycleInventoryItemResponse->decode($requestData[0]);
 
         $this->setData($recycleInventoryItemResponse);
     }

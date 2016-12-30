@@ -2,11 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\GetInventoryMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\GetInventoryResponse;
-use ProtobufMessage;
 
 class GetInventoryRequest extends Request {
 
@@ -16,7 +16,7 @@ class GetInventoryRequest extends Request {
     protected $type = RequestType::GET_INVENTORY;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -29,7 +29,7 @@ class GetInventoryRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {

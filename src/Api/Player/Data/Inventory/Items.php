@@ -4,11 +4,11 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 
 use Exception;
 use NicklasW\PkmGoApi\Api\Data\Data;
+use NicklasW\PkmGoApi\Api\Support\Enums\ItemId;
 use NicklasW\PkmGoApi\Facades\Log;
 use POGOProtos\Inventory\InventoryDelta;
 use POGOProtos\Inventory\InventoryItem;
 use POGOProtos\Inventory\InventoryItemData;
-use POGOProtos\Inventory\Item\ItemId;
 
 /**
  * @method void setPokeBank(PokeBank $pokeBank)

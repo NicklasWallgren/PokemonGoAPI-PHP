@@ -2,11 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\UseItemXpBoostMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\UseItemXpBoostResponse;
-use ProtobufMessage;
 
 class UseItemXpBoostRequest extends Request {
 
@@ -16,7 +16,7 @@ class UseItemXpBoostRequest extends Request {
     protected $type = RequestType::USE_ITEM_XP_BOOST;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -44,7 +44,7 @@ class UseItemXpBoostRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
@@ -63,13 +63,13 @@ class UseItemXpBoostRequest extends Request {
     public function handleResponse($data)
     {
         // Retrieve the specific request data
-        $requestData = $data->getReturnsArray();
+        $requestData = $data->getReturns();
 
         // Initialize the rename pokemon response
         $useItemXpBoostResponse = new UseItemXpBoostResponse();
 
         // Unmarshall the response
-        $useItemXpBoostResponse->read($requestData[0]);
+        $useItemXpBoostResponse->decode($requestData[0]);
 
         $this->setData($useItemXpBoostResponse);
     }

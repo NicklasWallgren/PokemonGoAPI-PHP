@@ -3,9 +3,9 @@
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Parsers;
 
 use NicklasW\PkmGoApi\Authentication\Exceptions\AuthenticationException;
+use NicklasW\PkmGoApi\Authentication\Exceptions\ResponseException;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Parsers\Results\AuthenticationTokenResult;
 use NicklasW\PkmGoApi\Facades\Log;
-use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 
 class OauthTokenParser extends Parser {
@@ -50,7 +50,7 @@ class OauthTokenParser extends Parser {
      * Validate the request response.
      *
      * @param ResponseInterface $response
-     * @throws ResponseException
+     * @throws AuthenticationException
      */
     protected function validateResponse($response)
     {

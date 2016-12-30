@@ -3,10 +3,11 @@
 namespace NicklasW\PkmGoApi\Api\Pokemon\Support;
 
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\CandyItem;
+use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokedexItem;
 use NicklasW\PkmGoApi\Api\Pokemon\Data\PokemonMetaRegistry;
-use NicklasW\PkmGoApi\Api\Support\PokemonId;
-use NicklasW\PkmGoApi\Api\Support\PokemonMove;
-use NicklasW\PkmGoApi\Api\Support\PokemonType;
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonId;
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonMove;
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonType;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
 use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
 
@@ -304,7 +305,7 @@ trait PokemonDetailsTrait
     /**
      * Calculate the maximum CP for this individual pokemon and this player's level
      *
-     * @return The maximum CP for this pokemon
+     * @return float The maximum CP for this pokemon
      * @throws NoSuchItemException   If the PokemonId value cannot be found in the {@link PokemonMetaRegistry}.
      * @throws LoginFailedException  If login failed
      * @throws RemoteServerException If the server is causing issues

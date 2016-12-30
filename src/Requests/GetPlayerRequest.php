@@ -2,11 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\GetPlayerMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\GetPlayerResponse;
-use ProtobufMessage;
 
 class GetPlayerRequest extends Request {
 
@@ -16,7 +16,7 @@ class GetPlayerRequest extends Request {
     protected $type = RequestType::GET_PLAYER;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -29,7 +29,7 @@ class GetPlayerRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {

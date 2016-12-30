@@ -3,7 +3,7 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\ItemMetaRegistry;
-use NicklasW\PkmGoApi\Api\Support\ItemId;
+use NicklasW\PkmGoApi\Api\Support\Enums\ItemId;
 use NicklasW\PkmGoApi\Authentication\Config\Config;
 use NicklasW\PkmGoApi\Authentication\Factory\Factory;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;

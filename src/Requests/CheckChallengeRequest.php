@@ -2,20 +2,24 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\CheckChallengeResponse;
-use ProtobufMessage;
 
-class CheckChallengeRequest extends Request {
+class CheckChallengeRequest extends Request
+{
+
     /**
      * @var integer The request type
      */
     protected $type = RequestType::CHECK_CHALLENGE;
+
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
+
     /**
      * @return int
      */
@@ -23,13 +27,15 @@ class CheckChallengeRequest extends Request {
     {
         return RequestType::CHECK_CHALLENGE;
     }
+
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
         return new CheckChallengeResponse();
     }
+
     /**
      * Handles the request data.
      *
@@ -45,7 +51,7 @@ class CheckChallengeRequest extends Request {
         $checkChallengeResponse = new CheckChallengeResponse();
 
         // Unmarshall the response
-        $checkChallengeResponse->read($requestData[0]);
+        $checkChallengeResponse->decode($requestData[0]);
         $this->setData($checkChallengeResponse);
     }
 }

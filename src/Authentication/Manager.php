@@ -3,6 +3,7 @@
 namespace NicklasW\PkmGoApi\Authentication;
 
 use Closure;
+use NicklasW\PkmGoApi\Authentication\Exceptions\AuthenticationException;
 
 abstract class Manager {
 

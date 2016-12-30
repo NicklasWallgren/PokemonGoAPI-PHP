@@ -45,6 +45,9 @@ class Signature {
 
     /**
      * Returns the modulus key.
+     *
+     * @param string $binaryKey
+     * @return BigInteger
      */
     protected static function modulus($binaryKey)
     {
@@ -55,6 +58,9 @@ class Signature {
 
     /**
      * Returns the exponent key.
+     *
+     * @param string $binaryKey
+     * @return BigInteger
      */
     protected static function exponent($binaryKey)
     {
@@ -80,7 +86,7 @@ class Signature {
      * @param string     $password
      * @param BigInteger $modulus
      * @param BigInteger $exponent
-     * @return
+     * @return string
      */
     protected static function encrypt($email, $password, $modulus, $exponent)
     {

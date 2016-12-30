@@ -7,8 +7,8 @@ use Exception;
 use NicklasW\PkmGoApi\Api\Data\Data;
 use NicklasW\PkmGoApi\Api\Pokemon\Collection\PokemonCollection;
 use NicklasW\PkmGoApi\Api\Pokemon\Pokemon;
-use NicklasW\PkmGoApi\Api\Support\PokemonFamilyId;
-use NicklasW\PkmGoApi\Api\Support\PokemonId;
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonFamilyId;
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonId;
 use POGOProtos\Data\PokemonData;
 
 /**

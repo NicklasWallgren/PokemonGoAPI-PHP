@@ -3,8 +3,8 @@
 namespace NicklasW\PkmGoApi\Services;
 
 use DI\Container;
+use NicklasW\PkmGoApi\Facades\App;
 use NicklasW\PkmGoApi\Handlers\RequestHandler;
-use NicklasW\PkmGoApi\Requests\Envelops\ProtobufMessage;
 
 class RequestService {
 

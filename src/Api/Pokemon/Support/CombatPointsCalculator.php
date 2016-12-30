@@ -62,7 +62,7 @@ class CombatPointsCalculator
      * @param integer $defense
      * @param integer $stamina
      * @param integer $level
-     * @return Maximum CP for these levels
+     * @return float Maximum CP for these levels
      */
     public static function getMaxCpForPlayer($attack, $defense, $stamina, $level)
     {

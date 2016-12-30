@@ -2,15 +2,17 @@
 
 namespace NicklasW\PkmGoApi\Services\Request;
 
+use NicklasW\PkmGoApi\Handlers\Exception;
 use NicklasW\PkmGoApi\Requests\GetPlayerRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
+use POGOProtos\Networking\Responses\GetPlayerResponse;
 
 class PlayerRequestService extends RequestService {
 
     /**
      * Returns the player metadata.
      *
-     * @throws \NicklasW\PkmGoApi\Handlers\Exception
+     * @throws Exception
      * @returns GetPlayerResponse
      */
     public function getPlayer()

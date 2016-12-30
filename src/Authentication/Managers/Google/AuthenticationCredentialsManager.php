@@ -3,6 +3,7 @@
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google;
 
 use NicklasW\PkmGoApi\Authentication\AccessToken;
+use NicklasW\PkmGoApi\Authentication\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationCredentials\Authenticator;
 

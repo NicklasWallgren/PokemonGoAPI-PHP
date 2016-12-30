@@ -8,6 +8,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request as HttpRequest;
 use NicklasW\PkmGoApi\Authentication\Manager;
+use NicklasW\PkmGoApi\Facades\App;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Handlers\RequestHandler\Exceptions\ResponseException;
@@ -15,9 +16,9 @@ use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 use NicklasW\PkmGoApi\Requests\Envelops\Factory as EnvelopeFactory;
 use NicklasW\PkmGoApi\Requests\Request;
 use POGOProtos\Networking\Envelopes\RequestEnvelope;
+use POGOProtos\Networking\Envelopes\RequestEnvelope_AuthInfo_JWT;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Request as NetworkRequest;
-use POGOProtos\Networking\Requests\RequestType;
 use Psr\Http\Message\ResponseInterface;
 
 class RequestHandler

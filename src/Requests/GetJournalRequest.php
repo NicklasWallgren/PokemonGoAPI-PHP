@@ -2,12 +2,10 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
-use POGOProtos\Networking\Requests\Messages\GetPlayerMessage;
 use POGOProtos\Networking\Requests\RequestType;
-use POGOProtos\Networking\Responses\GetPlayerResponse;
 use POGOProtos\Networking\Responses\SfidaActionLogResponse;
-use ProtobufMessage;
 
 class GetJournalRequest extends Request {
 
@@ -17,7 +15,7 @@ class GetJournalRequest extends Request {
     protected $type = RequestType::SFIDA_ACTION_LOG;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -30,7 +28,7 @@ class GetJournalRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {

@@ -3,6 +3,7 @@
 namespace NicklasW\PkmGoApi\Handlers;
 
 use POGOProtos\Networking\Envelopes\AuthTicket;
+use POGOProtos\Networking\Envelopes\RequestEnvelope_AuthInfo_JWT;
 
 class Session {
 

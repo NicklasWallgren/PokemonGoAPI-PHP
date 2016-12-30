@@ -4,14 +4,17 @@ namespace NicklasW\PkmGoApi\Api\Pokemon;
 
 use Exception;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokemonItem;
-use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonCombatPointsCalculator;
 use NicklasW\PkmGoApi\Api\Pokemon\Support\PokemonDetailsTrait;
 use NicklasW\PkmGoApi\Api\Procedure;
+use NicklasW\PkmGoApi\Api\Support\Enums\GenericEnum;
 use NicklasW\PkmGoApi\Services\Request\PokemonRequestService;
+use POGOProtos\Networking\Responses\EvolvePokemonResponse;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse_Result;
+use POGOProtos\Networking\Responses\NicknamePokemonResponse;
 use POGOProtos\Networking\Responses\NicknamePokemonResponse_Result;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse_Result;
+use POGOProtos\Networking\Responses\SetFavoritePokemonResponse;
 use POGOProtos\Networking\Responses\SetFavoritePokemonResponse_Result;
 use POGOProtos\Networking\Responses\UpgradePokemonResponse;
 use POGOProtos\Networking\Responses\UpgradePokemonResponse_Result;
@@ -112,7 +115,7 @@ class Pokemon extends Procedure
         // Check if the request was successfully executed
         if ($response->getResult() !== ReleasePokemonResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during pokemon transfer. Result: \'%s\' Code: \'%s\'',
-                $response->getResult(), ReleasePokemonResponse_Result::toString($response->getResult())));
+                $response->getResult(), GenericEnum::name(ReleasePokemonResponse_Result::class, $response->getResult())));
         }
 
         // Retrieve the poke bank
@@ -143,7 +146,7 @@ class Pokemon extends Procedure
         // Check if the request was successfully executed
         if ($response->getResult() !== UpgradePokemonResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during pokemon upgrade. Result: \'%s\' Code: \'%s\'',
-                $response->getResult(), UpgradePokemonResponse_Result::toString($response->getResult())));
+                $response->getResult(), GenericEnum::name(UpgradePokemonResponse_Result::class, $response->getResult())));
         }
 
         // Retrieve the poke bank
@@ -170,7 +173,7 @@ class Pokemon extends Procedure
         // Check if the request was successfully executed
         if ($response->getResult() !== NicknamePokemonResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during pokemon rename. Result: \'%s\' Code: \'%s\'',
-                $response->getResult(), NicknamePokemonResponse_Result::toString($response->getResult())));
+                $response->getResult(), GenericEnum::name(NicknamePokemonResponse_Result::class, $response->getResult())));
         }
 
         // Update the pokemon name
@@ -198,7 +201,7 @@ class Pokemon extends Procedure
         // Check if the request was successfully executed
         if ($response->getResult() !== EvolvePokemonResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during pokemon evolve. Result: \'%s\' Code: \'%s\'',
-                $response->getResult(), EvolvePokemonResponse_Result::toString($response->getResult())));
+                $response->getResult(), GenericEnum::name(EvolvePokemonResponse_Result::class, $response->getResult())));
         }
 
         // Update the inventory
@@ -224,7 +227,7 @@ class Pokemon extends Procedure
         // Check if the request was successfully executed
         if ($response->getResult() !== SetFavoritePokemonResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during changing favorite state. Result: \'%s\' Code: \'%s\'',
-                $response->getResult(), SetFavoritePokemonResponse_Result::toString($response->getResult())));
+                $response->getResult(), GenericEnum::name(SetFavoritePokemonResponse_Result::class, $response->getResult())));
         }
 
         // Update pokemon state

@@ -2,15 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\EvolvePokemonMessage;
-use POGOProtos\Networking\Requests\Messages\NicknamePokemonMessage;
-use POGOProtos\Networking\Requests\Messages\ReleasePokemonMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\EvolvePokemonResponse;
-use POGOProtos\Networking\Responses\NicknamePokemonResponse;
-use POGOProtos\Networking\Responses\ReleasePokemonResponse;
-use ProtobufMessage;
 
 class EvolvePokemonRequest extends Request {
 
@@ -20,7 +16,7 @@ class EvolvePokemonRequest extends Request {
     protected $type = RequestType::EVOLVE_POKEMON;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -48,7 +44,7 @@ class EvolvePokemonRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
@@ -73,7 +69,7 @@ class EvolvePokemonRequest extends Request {
         $evolvePokemonResponse = new EvolvePokemonResponse();
 
         // Unmarshall the response
-        $evolvePokemonResponse->read($requestData[0]);
+        $evolvePokemonResponse->decode($requestData[0]);
 
         $this->setData($evolvePokemonResponse);
     }

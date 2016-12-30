@@ -5,10 +5,6 @@ namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 use NicklasW\PkmGoApi\Api\Data\Data;
 use POGOProtos\Enums\PokemonId;
 use POGOProtos\Enums\PokemonMove;
-use POGOProtos\Inventory\InventoryDelta;
-use POGOProtos\Inventory\InventoryItem;
-use POGOProtos\Inventory\InventoryItemData;
-use Protobuf\Exception;
 
 /**
  * @method void setId(int $id)

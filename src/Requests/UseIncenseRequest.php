@@ -2,11 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\UseIncenseMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\UseIncenseResponse;
-use ProtobufMessage;
 
 class UseIncenseRequest extends Request {
 
@@ -16,7 +16,7 @@ class UseIncenseRequest extends Request {
     protected $type = RequestType::USE_INCENSE;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -44,7 +44,7 @@ class UseIncenseRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
@@ -69,7 +69,7 @@ class UseIncenseRequest extends Request {
         $useIncenseResponse = new UseIncenseResponse();
 
         // Unmarshall the response
-        $useIncenseResponse->read($requestData[0]);
+        $useIncenseResponse->decode($requestData[0]);
 
         $this->setData($useIncenseResponse);
     }

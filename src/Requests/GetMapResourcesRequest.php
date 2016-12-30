@@ -2,13 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\GetMapObjectsMessage;
-use POGOProtos\Networking\Requests\Messages\GetPlayerMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\GetMapObjectsResponse;
-use POGOProtos\Networking\Responses\GetPlayerResponse;
-use ProtobufMessage;
 
 class GetMapResourcesRequest extends Request {
 
@@ -18,7 +16,7 @@ class GetMapResourcesRequest extends Request {
     protected $type = RequestType::GET_MAP_OBJECTS;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 

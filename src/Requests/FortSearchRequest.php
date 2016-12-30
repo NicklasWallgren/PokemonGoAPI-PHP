@@ -2,6 +2,7 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use NicklasW\PkmGoApi\Facades\App;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
@@ -9,7 +10,6 @@ use POGOProtos\Networking\Requests\Messages\FortSearchMessage;
 use POGOProtos\Networking\Requests\Messages\GetMapObjectsMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\FortSearchResponse;
-use ProtobufMessage;
 
 class FortSearchRequest extends Request {
 
@@ -19,7 +19,7 @@ class FortSearchRequest extends Request {
     protected $type = RequestType::FORT_SEARCH;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -92,7 +92,7 @@ class FortSearchRequest extends Request {
         $fortSearchResponse = new FortSearchResponse();
 
         // Unmarshall the response
-        $fortSearchResponse->read($requestData[0]);
+        $fortSearchResponse->decode($requestData[0]);
 
         $this->setData($fortSearchResponse);
     }

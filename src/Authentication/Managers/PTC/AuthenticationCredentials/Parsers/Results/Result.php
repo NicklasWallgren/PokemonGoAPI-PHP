@@ -5,7 +5,7 @@ namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredential
 class Result {
 
     /**
-     * @var The parsed data
+     * @var mixed The parsed data
      */
     protected $data;
 
@@ -20,7 +20,7 @@ class Result {
     }
 
     /**
-     * @return The parsed data
+     * @return mixed The parsed data
      */
     public function getData()
     {
@@ -28,7 +28,7 @@ class Result {
     }
 
     /**
-     * @param The parsed data $data
+     * @param mixed $data The parsed data
      */
     public function setData($data)
     {

@@ -1,11 +1,11 @@
 <?php
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\VerifyChallengeMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\VerifyChallengeResponse;
-use ProtobufMessage;
 
 class VerifyChallengeRequest extends Request {
     
@@ -15,7 +15,7 @@ class VerifyChallengeRequest extends Request {
     protected $type = RequestType::VERIFY_CHALLENGE;
     
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
     
@@ -43,7 +43,7 @@ class VerifyChallengeRequest extends Request {
     }
     
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
@@ -73,10 +73,10 @@ class VerifyChallengeRequest extends Request {
         $requestData = $data->getReturns();
         if ($requestData) {
             // Unmarshall the response
-            $verifyChallengeResponse->read($requestData[0]);
+            $verifyChallengeResponse->decode($requestData[0]);
         }else {
             // HACK to instansiate a valid VerifyChallengeResponse object when $requestData == NULL - sets success to "0";
-            $verifyChallengeResponse->clearSuccess();
+            $verifyChallengeResponse->setSuccess(true);
         }
 
         $this->setData($verifyChallengeResponse);

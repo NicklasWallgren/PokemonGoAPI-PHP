@@ -1,9 +1,8 @@
 <?php
 
-
 namespace NicklasW\PkmGoApi\Api\Data;
 
-use ProtobufMessage;
+use Google\Protobuf\Internal\Message;
 use ReflectionClass;
 
 abstract class Data {
@@ -11,7 +10,7 @@ abstract class Data {
     /**
      * Creates a data instance from a Protobuf Message.
      *
-     * @param ProtobufMessage $data
+     * @param Message $data
      * @return static
      */
     public static function create($data)

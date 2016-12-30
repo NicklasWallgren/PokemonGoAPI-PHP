@@ -13,10 +13,14 @@ use NicklasW\PkmGoApi\Api\Player\Data\Inventory\PokeBank;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Pokedex;
 use NicklasW\PkmGoApi\Api\Player\Data\Inventory\Stats;
 use NicklasW\PkmGoApi\Api\Procedure;
+use NicklasW\PkmGoApi\Api\Support\Enums\GenericEnum;
 use NicklasW\PkmGoApi\Facades\Log;
 use NicklasW\PkmGoApi\Services\Request\InventoryRequestService;
+use POGOProtos\Networking\Responses\RecycleInventoryItemResponse;
 use POGOProtos\Networking\Responses\RecycleInventoryItemResponse_Result;
+use POGOProtos\Networking\Responses\UseIncenseResponse;
 use POGOProtos\Networking\Responses\UseIncenseResponse_Result;
+use POGOProtos\Networking\Responses\UseItemXpBoostResponse;
 use POGOProtos\Networking\Responses\UseItemXpBoostResponse_Result;
 
 /**
@@ -36,7 +40,13 @@ use POGOProtos\Networking\Responses\UseItemXpBoostResponse_Result;
  * @method Stats getStats()
  * @method EggPokemon[] getEggPokemon()
  */
-class Inventory extends Procedure {
+class Inventory extends Procedure
+{
+
+    /**
+     * @var Items
+     */
+    protected $data;
 
     /**
      * Returns the items.
@@ -73,12 +83,12 @@ class Inventory extends Procedure {
      * @param int $itemId
      * @param int $count
      * @throws Exception
-     * @return  RecycleInventoryItemResponse
+     * @return RecycleInventoryItemResponse
      */
     public function recycle($itemId, $count)
     {
         // Retrieve the item from the inventory
-        $item = $this->getInventoryItems()->getItemById($itemId);
+        $item = $this->data->getItemById($itemId);
 
         // Retrieve the item from the inventory, validate the capacity
         if ($item == null || $item->getCount() < $count) {
@@ -91,7 +101,8 @@ class Inventory extends Procedure {
         // Check if the request was successfully executed
         if ($response->getResult() !== RecycleInventoryItemResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during item recycle. Result: \'%s\' Code: \'%s\'',
-                $response->getResult(), RecycleInventoryItemResponse_Result::toString($response->getResult())));
+                $response->getResult(),
+                GenericEnum::name(RecycleInventoryItemResponse_Result::class, $response->getResult())));
         }
 
         // Update inventory to reflect on the changes
@@ -105,8 +116,7 @@ class Inventory extends Procedure {
      *
      * @param int $itemId
      * @throws Exception
-     *
-     * @return  UseIncenseResponse
+     * @return UseIncenseResponse
      */
     public function useIncense($itemId)
     {
@@ -116,7 +126,7 @@ class Inventory extends Procedure {
         // Check if the request was successfully executed
         if ($response->getResult() !== UseIncenseResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during item usage. Result: \'%s\' Code: \'%s\'',
-                $response->getResult(), UseIncenseResponse_Result::toString($response->getResult())));
+                $response->getResult(), GenericEnum::name(UseIncenseResponse_Result::class, $response->getResult())));
         }
 
         // Update inventory
@@ -130,8 +140,7 @@ class Inventory extends Procedure {
      *
      * @param int $itemId
      * @throws Exception
-     *
-     * @return  UseItemXpBoostResponse
+     * @return UseItemXpBoostResponse
      */
     public function useItemXpBoost($itemId)
     {
@@ -141,7 +150,8 @@ class Inventory extends Procedure {
         // Check if the request was successfully executed
         if ($response->getResult() !== UseItemXpBoostResponse_Result::SUCCESS) {
             throw new Exception(sprintf('Invalid response during item usage. Result: \'%s\' Code: \'%s\'',
-                $response->getResult(), UseItemXpBoostResponse_Result::toString($response->getResult())));
+                $response->getResult(),
+                GenericEnum::name(UseItemXpBoostResponse_Result::class, $response->getResult())));
         }
 
         // Update inventory

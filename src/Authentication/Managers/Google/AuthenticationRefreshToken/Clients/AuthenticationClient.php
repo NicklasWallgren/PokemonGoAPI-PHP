@@ -6,6 +6,7 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Cookie\CookieJar;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Parsers\OauthTokenParser;
 use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Parsers\Results\AuthenticationTokenResult;
+use NicklasW\PkmGoApi\Facades\App;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 

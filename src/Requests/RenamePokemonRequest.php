@@ -2,11 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\NicknamePokemonMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\NicknamePokemonResponse;
-use ProtobufMessage;
 
 class RenamePokemonRequest extends Request {
 
@@ -16,7 +16,7 @@ class RenamePokemonRequest extends Request {
     protected $type = RequestType::NICKNAME_POKEMON;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -51,15 +51,13 @@ class RenamePokemonRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
         $nicknamePokemonMessage = new NicknamePokemonMessage();
         $nicknamePokemonMessage->setPokemonId($this->pokemonId);
         $nicknamePokemonMessage->setNickname($this->name);
-
-        var_dump($nicknamePokemonMessage);
 
         return $nicknamePokemonMessage;
     }
@@ -79,7 +77,7 @@ class RenamePokemonRequest extends Request {
         $nicknamePokemonResponse = new NicknamePokemonResponse();
 
         // Unmarshall the response
-        $nicknamePokemonResponse->read($requestData[0]);
+        $nicknamePokemonResponse->decode($requestData[0]);
 
         $this->setData($nicknamePokemonResponse);
     }

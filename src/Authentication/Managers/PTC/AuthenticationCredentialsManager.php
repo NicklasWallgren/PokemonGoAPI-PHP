@@ -5,7 +5,6 @@ namespace NicklasW\PkmGoApi\Authentication\Managers\PTC;
 use NicklasW\PkmGoApi\Authentication\AccessToken;
 use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Authenticator;
-use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\PTCAuthenticator;
 
 class AuthenticationCredentialsManager extends Manager {
 

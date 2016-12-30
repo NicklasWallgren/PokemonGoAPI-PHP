@@ -2,7 +2,8 @@
 
 namespace NicklasW\PkmGoApi\Requests\Envelops;
 
-use NicklasW\PkmGoApi\Authenticators\AccessToken;
+use Google\Protobuf\Internal\Message;
+use NicklasW\PkmGoApi\Authentication\AccessToken;
 use POGOProtos\Networking\Envelopes\RequestEnvelope_AuthInfo;
 use POGOProtos\Networking\Envelopes\RequestEnvelope_AuthInfo_JWT;
 
@@ -18,7 +19,7 @@ class Factory {
      *
      * @param string $type
      * @param array  ...$parameters
-     * @return ProtobufMessage|null
+     * @return Message|null
      */
     public function create($type, ...$parameters)
     {

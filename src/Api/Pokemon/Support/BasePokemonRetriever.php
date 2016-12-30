@@ -1,11 +1,11 @@
 <?php
 
-
 namespace NicklasW\PkmGoApi\Api\Pokemon\Support;
 
-use POGOProtos\Enums\PokemonFamilyId;
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonFamilyId;
 
-class BasePokemonRetriever {
+class BasePokemonRetriever
+{
 
     /**
      * Returns the pokemon family id.

@@ -2,6 +2,7 @@
 
 namespace NicklasW\PkmGoApi\Services\Request;
 
+use NicklasW\PkmGoApi\Handlers\Exception;
 use NicklasW\PkmGoApi\Requests\GetJournalRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
 use POGOProtos\Networking\Responses\SfidaActionLogResponse;
@@ -11,7 +12,7 @@ class JournalRequestService extends RequestService {
     /**
      * Returns the player metadata.
      *
-     * @throws \NicklasW\PkmGoApi\Handlers\Exception
+     * @throws Exception
      * @returns SfidaActionLogResponse
      */
     public function getJournal()

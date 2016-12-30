@@ -4,7 +4,7 @@
 namespace NicklasW\PkmGoApi\Api\Player\Data\Inventory;
 
 use NicklasW\PkmGoApi\Api\Data\Data;
-use NicklasW\PkmGoApi\Api\Support\PokemonId;
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonId;
 use POGOProtos\Data\PokedexEntry;
 
 /**
@@ -41,7 +41,7 @@ class Pokedex extends Data {
     public function get($pokemonId)
     {
         // Check whether a valid pokemon id was provided
-        if (PokemonId::isValid($pokemonId)) {
+        if (!PokemonId::isValid($pokemonId)) {
             return null;
         }
 

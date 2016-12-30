@@ -3,6 +3,7 @@
 namespace NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Parsers;
 
 use NicklasW\PkmGoApi\Authentication\Exceptions\ResponseException;
+use NicklasW\PkmGoApi\Authentication\Managers\Google\AuthenticationRefreshToken\Parsers\Results\Result;
 use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;

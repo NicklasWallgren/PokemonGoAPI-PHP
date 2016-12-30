@@ -52,6 +52,7 @@ class OauthTokenParser extends Parser {
      * Validate the request response.
      *
      * @param ResponseInterface $response
+     * @throws AuthenticationException
      * @throws ResponseException
      */
     protected function validateResponse($response)

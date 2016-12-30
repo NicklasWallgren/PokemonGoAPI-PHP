@@ -2,11 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\ReleasePokemonMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse;
-use ProtobufMessage;
 
 class TransferPokemonRequest extends Request {
 
@@ -16,7 +16,7 @@ class TransferPokemonRequest extends Request {
     protected $type = RequestType::RELEASE_POKEMON;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -44,7 +44,7 @@ class TransferPokemonRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
@@ -69,7 +69,7 @@ class TransferPokemonRequest extends Request {
         $releasePokemonResponse = new ReleasePokemonResponse();
 
         // Unmarshall the response
-        $releasePokemonResponse->read($requestData[0]);
+        $releasePokemonResponse->decode($requestData[0]);
 
         $this->setData($releasePokemonResponse);
     }

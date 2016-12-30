@@ -4,8 +4,6 @@ namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredential
 
 use NicklasW\PkmGoApi\Authentication\AccessToken;
 use NicklasW\PkmGoApi\Authentication\Contracts\Authentication;
-use NicklasW\PkmGoApi\Authentication\Contracts\Authenticator as AuthenticatorContract;
-use NicklasW\PkmGoApi\Authentication\Manager;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Clients\AuthenticationClient;
 use NicklasW\PkmGoApi\Facades\Log;
 

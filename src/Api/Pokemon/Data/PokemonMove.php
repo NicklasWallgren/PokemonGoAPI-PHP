@@ -5,6 +5,7 @@
 
 namespace NicklasW\PkmGoApi\Api\Pokemon\Data;
 
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonMove as PokemonMoveEnumSupport;
 use POGOProtos\Enums\PokemonMove as PokemonMoveEnum;
 
 class PokemonMove
@@ -40,7 +41,7 @@ class PokemonMove
     public function getMovesStrings()
     {
         return array_map(function ($move) {
-            return PokemonMoveEnum::toString($move);
+            return PokemonMoveEnumSupport::name($move);
         }, $this->getMoves());
     }
 }

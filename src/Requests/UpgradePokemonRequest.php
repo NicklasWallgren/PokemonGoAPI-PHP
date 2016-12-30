@@ -2,11 +2,11 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\UpgradePokemonMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\UpgradePokemonResponse;
-use ProtobufMessage;
 
 class UpgradePokemonRequest extends Request {
 
@@ -16,7 +16,7 @@ class UpgradePokemonRequest extends Request {
     protected $type = RequestType::UPGRADE_POKEMON;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -44,7 +44,7 @@ class UpgradePokemonRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
@@ -69,7 +69,7 @@ class UpgradePokemonRequest extends Request {
         $upgradePokemonResponse = new UpgradePokemonResponse();
 
         // Unmarshall the response
-        $upgradePokemonResponse->read($requestData[0]);
+        $upgradePokemonResponse->decode($requestData[0]);
 
         $this->setData($upgradePokemonResponse);
     }

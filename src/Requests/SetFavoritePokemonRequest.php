@@ -2,13 +2,14 @@
 
 namespace NicklasW\PkmGoApi\Requests;
 
+use Google\Protobuf\Internal\Message;
 use POGOProtos\Networking\Envelopes\ResponseEnvelope;
 use POGOProtos\Networking\Requests\Messages\SetFavoritePokemonMessage;
 use POGOProtos\Networking\Requests\RequestType;
 use POGOProtos\Networking\Responses\SetFavoritePokemonResponse;
-use ProtobufMessage;
 
-class SetFavoritePokemonRequest extends Request {
+class SetFavoritePokemonRequest extends Request
+{
 
     /**
      * @var integer The request type
@@ -16,7 +17,7 @@ class SetFavoritePokemonRequest extends Request {
     protected $type = RequestType::SET_FAVORITE_POKEMON;
 
     /**
-     * @var ProtobufMessage The request message
+     * @var Message The request message
      */
     protected $message;
 
@@ -34,6 +35,7 @@ class SetFavoritePokemonRequest extends Request {
      * TransferPokemonRequest constructor.
      *
      * @param integer $pokemonId
+     * @param boolean $favorite
      */
     public function __construct($pokemonId, $favorite)
     {
@@ -50,7 +52,7 @@ class SetFavoritePokemonRequest extends Request {
     }
 
     /**
-     * @return ProtobufMessage
+     * @return Message
      */
     public function getMessage()
     {
@@ -76,7 +78,7 @@ class SetFavoritePokemonRequest extends Request {
         $setFavoritePokemonResponse = new SetFavoritePokemonResponse();
 
         // Unmarshall the response
-        $setFavoritePokemonResponse->read($requestData[0]);
+        $setFavoritePokemonResponse->decode($requestData[0]);
 
         $this->setData($setFavoritePokemonResponse);
     }

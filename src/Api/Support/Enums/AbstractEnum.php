@@ -1,6 +1,6 @@
 <?php
 
-namespace NicklasW\PkmGoApi\Api\Support;
+namespace NicklasW\PkmGoApi\Api\Support\Enums;
 
 use ReflectionClass;
 
@@ -8,9 +8,9 @@ abstract class AbstractEnum
 {
 
     /**
-     * @var array List of cached pokemon ids and corresponding name.
+     * @var array List of cached entries and corresponding name.
      */
-    protected static $POKEMON_IDS;
+    protected static $CACHED_ENTRIES;
 
     /**
      * @var string The enum class
@@ -45,11 +45,10 @@ abstract class AbstractEnum
     public static function isValid($id)
     {
         // Retrieve the list of enum ids
-        $pokemon = self::getCachedEnumEntries();
+        $entry = self::getCachedEnumEntries();
 
-        return array_key_exists($id, $pokemon);
+        return array_key_exists($id, $entry);
     }
-
 
     /**
      * Returns defined enum ids.
@@ -59,13 +58,12 @@ abstract class AbstractEnum
     protected static function getCachedEnumEntries()
     {
         // Check if the pokemon ids has been cached since earlier
-        if (self::$POKEMON_IDS == null) {
+        if (self::$CACHED_ENTRIES == null) {
             $reflectClass = new ReflectionClass(static::$class);
-            self::$POKEMON_IDS = array_flip($reflectClass->getConstants());
-
+            self::$CACHED_ENTRIES = array_flip($reflectClass->getConstants());
         }
 
-        return self::$POKEMON_IDS;
+        return self::$CACHED_ENTRIES;
     }
 
 }

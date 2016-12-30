@@ -15,7 +15,7 @@ class ApplicationKernel extends Kernel
 {
 
     /**
-     * @var AuthenticationManager
+     * @var Manager
      */
     protected $manager;
 
@@ -27,7 +27,7 @@ class ApplicationKernel extends Kernel
     /**
      * Kernel constructor.
      *
-     * @param AuthenticationManager $manager
+     * @param Manager $manager
      */
     public function __construct($manager)
     {

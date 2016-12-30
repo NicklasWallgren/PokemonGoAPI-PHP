@@ -11,7 +11,11 @@ use NicklasW\PkmGoApi\Requests\SetFavoritePokemonRequest;
 use NicklasW\PkmGoApi\Requests\TransferPokemonRequest;
 use NicklasW\PkmGoApi\Requests\UpgradePokemonRequest;
 use NicklasW\PkmGoApi\Services\RequestService;
+use POGOProtos\Networking\Responses\EvolvePokemonResponse;
+use POGOProtos\Networking\Responses\NicknamePokemonResponse;
 use POGOProtos\Networking\Responses\ReleasePokemonResponse;
+use POGOProtos\Networking\Responses\SetFavoritePokemonResponse;
+use POGOProtos\Networking\Responses\UpgradePokemonResponse;
 
 class PokemonRequestService extends RequestService {
 

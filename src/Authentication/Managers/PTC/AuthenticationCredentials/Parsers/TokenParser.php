@@ -4,6 +4,7 @@ namespace NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredential
 
 use NicklasW\PkmGoApi\Authentication\Exceptions\AuthenticationException;
 use NicklasW\PkmGoApi\Authentication\Managers\PTC\AuthenticationCredentials\Parsers\Results\TokenResult;
+use NicklasW\PkmGoApi\Facades\Log;
 use PHPHtmlParser\Dom;
 use Psr\Http\Message\ResponseInterface;
 

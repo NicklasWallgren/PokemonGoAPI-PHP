@@ -2,8 +2,8 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use NicklasW\PkmGoApi\Api\Support\ItemId;
-use NicklasW\PkmGoApi\Api\Support\PokemonId;
+use NicklasW\PkmGoApi\Api\Support\Enums\ItemId;
+use NicklasW\PkmGoApi\Api\Support\Enums\PokemonId;
 use NicklasW\PkmGoApi\Authentication\Config\Config;
 use NicklasW\PkmGoApi\Authentication\Factory\Factory;
 use NicklasW\PkmGoApi\Kernels\ApplicationKernel;

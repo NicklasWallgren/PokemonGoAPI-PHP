@@ -27,7 +27,7 @@ use POGOProtos\Data\PlayerData;
  * @method array getPokemonStorage()
  * @method array getItemStorage()
  * @method DailyBonus getDailyBonus()
- * @method setContactSettings getBadge()
+ * @method ContactSettings getBadge()
  * @method ContactSettings getContactSettings()
  * @method Currencies getCurrencies()
  */

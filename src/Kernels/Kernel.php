@@ -5,7 +5,6 @@ namespace NicklasW\PkmGoApi\Kernels;
 use DI\Container;
 use DI\ContainerBuilder;
 use Dotenv\Dotenv;
-use Exception;
 use Interop\Container\ContainerInterface;
 use Monolog\Formatter\LineFormatter;
 use Monolog\Handler\NullHandler;

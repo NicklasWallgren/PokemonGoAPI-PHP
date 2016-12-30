@@ -7,7 +7,8 @@ use NicklasW\PkmGoApi\Api\Data\Data;
 use NicklasW\PkmGoApi\Api\Support\Traits\MakeApiResourcesAvailable;
 use NicklasW\PkmGoApi\Services\RequestService;
 
-abstract class Procedure {
+abstract class Procedure
+{
 
     use MakeApiResourcesAvailable;
 
@@ -40,8 +41,9 @@ abstract class Procedure {
     }
 
     /**
-     * @param $name
-     * @param $arguments
+     * @param string $name
+     * @param mixed $arguments
+     * @return mixed
      */
     public function __call($name, $arguments)
     {
@@ -62,6 +64,5 @@ abstract class Procedure {
     {
         return $this->getPokemonGoApi()->getRequestService();
     }
-
 
 }
