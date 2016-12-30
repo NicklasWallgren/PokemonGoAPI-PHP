@@ -41,7 +41,7 @@ class AppliedItems extends Data {
         $instance = new static();
 
         // Retrieve the items
-        $items = $data->getItemArray();
+        $items = $data->getItem();
 
         // Iterate through the list of items
         foreach ($items as $item) {
