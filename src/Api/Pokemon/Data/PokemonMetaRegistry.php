@@ -6504,6 +6504,4055 @@ class PokemonMetaRegistry {
         )));
         $pokemonMeta->setNumber(151);
         self::$POKEMON_META[PokemonId::MEW] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0152_POKEMON_CHIKORITA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CHIKORITA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.89);
+        $pokemonMeta->setHeightStdDev(0.11125);
+        $pokemonMeta->setBaseStamina(90);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(92);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(6.4);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1.11);
+        $pokemonMeta->setUniqueId("V0152_POKEMON_CHIKORITA");
+        $pokemonMeta->setBaseDefense(122);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.8);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(25);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.32);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::RAZOR_LEAF_FAST,
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(152);
+        self::$POKEMON_META[PokemonId::CHIKORITA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0153_POKEMON_BAYLEEF");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CHIKORITA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.19);
+        $pokemonMeta->setHeightStdDev(0.14875);
+        $pokemonMeta->setBaseStamina(120);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(122);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(15.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(0.75);
+        $pokemonMeta->setUniqueId("V0153_POKEMON_BAYLEEF");
+        $pokemonMeta->setBaseDefense(155);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.975);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(100);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.25);
+        $pokemonMeta->setParentId(PokemonId::CHIKORITA);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::RAZOR_LEAF_FAST,
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(153);
+        self::$POKEMON_META[PokemonId::BAYLEEF] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0154_POKEMON_MEGANIUM");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CHIKORITA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.8);
+        $pokemonMeta->setHeightStdDev(0.225);
+        $pokemonMeta->setBaseStamina(160);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(168);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(100.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(0.7);
+        $pokemonMeta->setUniqueId("V0154_POKEMON_MEGANIUM");
+        $pokemonMeta->setBaseDefense(202);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(12.5625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(0);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::BAYLEEF);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::RAZOR_LEAF_FAST,
+            PokemonMove::VINE_WHIP_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(154);
+        self::$POKEMON_META[PokemonId::MEGANIUM] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0155_POKEMON_CYNDAQUIL");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CYNDAQUIL);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.51);
+        $pokemonMeta->setHeightStdDev(0.06375);
+        $pokemonMeta->setBaseStamina(78);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(116);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(7.9);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0155_POKEMON_CYNDAQUIL");
+        $pokemonMeta->setBaseDefense(96);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.9875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::EMBER_FAST,
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(155);
+        self::$POKEMON_META[PokemonId::CYNDAQUIL] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0156_POKEMON_QUILAVA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CYNDAQUIL);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.89);
+        $pokemonMeta->setHeightStdDev(0.11125);
+        $pokemonMeta->setBaseStamina(116);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(158);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(19);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0156_POKEMON_QUILAVA");
+        $pokemonMeta->setBaseDefense(129);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(2.375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::CYNDAQUIL);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::EMBER_FAST,
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(156);
+        self::$POKEMON_META[PokemonId::QUILAVA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0157_POKEMON_TYPHLOSION");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CYNDAQUIL);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.7);
+        $pokemonMeta->setHeightStdDev(0.2125);
+        $pokemonMeta->setBaseStamina(156);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(223);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(79.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0157_POKEMON_TYPHLOSION");
+        $pokemonMeta->setBaseDefense(176);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(9.9375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::QUILAVA);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::EMBER_FAST,
+            PokemonMove::SHADOW_CLAW_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(157);
+        self::$POKEMON_META[PokemonId::TYPHLOSION] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0158_POKEMON_TOTODILE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TOTODILE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(100);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(117);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(9.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0158_POKEMON_TOTODILE");
+        $pokemonMeta->setBaseDefense(116);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.1875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::WATER_GUN_FAST,
+            PokemonMove::SCRATCH_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(158);
+        self::$POKEMON_META[PokemonId::TOTODILE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0159_POKEMON_CROCONAW");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TOTODILE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.09);
+        $pokemonMeta->setHeightStdDev(0.13625);
+        $pokemonMeta->setBaseStamina(130);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(150);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(25);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0159_POKEMON_CROCONAW");
+        $pokemonMeta->setBaseDefense(151);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(3.125);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::TOTODILE);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::WATER_GUN_FAST,
+            PokemonMove::SCRATCH_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(159);
+        self::$POKEMON_META[PokemonId::CROCONAW] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0160_POKEMON_FERALIGATR");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TOTODILE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(2.31);
+        $pokemonMeta->setHeightStdDev(0.28875);
+        $pokemonMeta->setBaseStamina(170);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(205);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(88.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0160_POKEMON_FERALIGATR");
+        $pokemonMeta->setBaseDefense(197);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(11.1);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::CROCONAW);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::WATER_GUN_FAST,
+            PokemonMove::BITE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(160);
+        self::$POKEMON_META[PokemonId::FERALIGATR] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0161_POKEMON_SENTRET");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SENTRET);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.79);
+        $pokemonMeta->setHeightStdDev(0.09875);
+        $pokemonMeta->setBaseStamina(70);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(79);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(6);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0161_POKEMON_SENTRET");
+        $pokemonMeta->setBaseDefense(77);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.75);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::SCRATCH_FAST,
+            PokemonMove::QUICK_ATTACK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(161);
+        self::$POKEMON_META[PokemonId::SENTRET] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0162_POKEMON_FURRET");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SENTRET);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.8);
+        $pokemonMeta->setHeightStdDev(0.225);
+        $pokemonMeta->setBaseStamina(170);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(148);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(32.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0162_POKEMON_FURRET");
+        $pokemonMeta->setBaseDefense(130);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.0625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SENTRET);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::QUICK_ATTACK_FAST,
+            PokemonMove::SUCKER_PUNCH_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(162);
+        self::$POKEMON_META[PokemonId::FURRET] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0163_POKEMON_HOOTHOOT");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HOOTHOOT);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.71);
+        $pokemonMeta->setHeightStdDev(0.08875);
+        $pokemonMeta->setBaseStamina(120);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(67);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(21.2);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0163_POKEMON_HOOTHOOT");
+        $pokemonMeta->setBaseDefense(101);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(2.65);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+            PokemonMove::PECK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(163);
+        self::$POKEMON_META[PokemonId::HOOTHOOT] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0164_POKEMON_NOCTOWL");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HOOTHOOT);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(1.6);
+        $pokemonMeta->setHeightStdDev(0.2);
+        $pokemonMeta->setBaseStamina(200);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(145);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(40.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0164_POKEMON_NOCTOWL");
+        $pokemonMeta->setBaseDefense(179);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(5.1);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::HOOTHOOT);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+            PokemonMove::PECK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(164);
+        self::$POKEMON_META[PokemonId::NOCTOWL] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0165_POKEMON_LEDYBA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_LEDYBA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.99);
+        $pokemonMeta->setHeightStdDev(0.12375);
+        $pokemonMeta->setBaseStamina(80);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(72);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(10.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0165_POKEMON_LEDYBA");
+        $pokemonMeta->setBaseDefense(142);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.35);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+            PokemonMove::BUG_BITE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(165);
+        self::$POKEMON_META[PokemonId::LEDYBA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0166_POKEMON_LEDIAN");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_LEDYBA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(1.4);
+        $pokemonMeta->setHeightStdDev(0.175);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(107);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(35.6);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0166_POKEMON_LEDIAN");
+        $pokemonMeta->setBaseDefense(209);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.45);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::LEDYBA);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+            PokemonMove::BUG_BITE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(166);
+        self::$POKEMON_META[PokemonId::LEDIAN] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0167_POKEMON_SPINARAK");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SPINARAK);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_POISON);
+        $pokemonMeta->setPokedexHeightM(0.51);
+        $pokemonMeta->setHeightStdDev(0.06375);
+        $pokemonMeta->setBaseStamina(80);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(105);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(8.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0167_POKEMON_SPINARAK");
+        $pokemonMeta->setBaseDefense(73);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.0625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::POISON_STING_FAST,
+            PokemonMove::BUG_BITE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(167);
+        self::$POKEMON_META[PokemonId::SPINARAK] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0168_POKEMON_ARIADOS");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SPINARAK);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_POISON);
+        $pokemonMeta->setPokedexHeightM(1.09);
+        $pokemonMeta->setHeightStdDev(0.13625);
+        $pokemonMeta->setBaseStamina(140);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(161);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(33.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0168_POKEMON_ARIADOS");
+        $pokemonMeta->setBaseDefense(128);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.1875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SPINARAK);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::POISON_STING_FAST,
+            PokemonMove::BUG_BITE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(168);
+        self::$POKEMON_META[PokemonId::ARIADOS] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0169_POKEMON_CROBAT");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_ZUBAT);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(1.8);
+        $pokemonMeta->setHeightStdDev(0.225);
+        $pokemonMeta->setBaseStamina(170);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(194);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(75);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_POISON);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0169_POKEMON_CROBAT");
+        $pokemonMeta->setBaseDefense(178);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(9.375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::GOLBAT);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::WING_ATTACK_FAST,
+            PokemonMove::BITE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(169);
+        self::$POKEMON_META[PokemonId::CROBAT] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0170_POKEMON_CHINCHOU");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CHINCHOU);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_ELECTRIC);
+        $pokemonMeta->setPokedexHeightM(0.51);
+        $pokemonMeta->setHeightStdDev(0.06375);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(106);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(12);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0170_POKEMON_CHINCHOU");
+        $pokemonMeta->setBaseDefense(106);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.5);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::BUBBLE_FAST,
+            PokemonMove::SPARK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(170);
+        self::$POKEMON_META[PokemonId::CHINCHOU] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0171_POKEMON_LANTURN");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CHINCHOU);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_ELECTRIC);
+        $pokemonMeta->setPokedexHeightM(1.19);
+        $pokemonMeta->setHeightStdDev(0.14875);
+        $pokemonMeta->setBaseStamina(250);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(146);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(22.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0171_POKEMON_LANTURN");
+        $pokemonMeta->setBaseDefense(146);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(2.8125);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::CHINCHOU);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::WATER_GUN_FAST,
+            PokemonMove::SPARK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(171);
+        self::$POKEMON_META[PokemonId::LANTURN] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0172_POKEMON_PICHU");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_PIKACHU);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.3);
+        $pokemonMeta->setHeightStdDev(0.0375);
+        $pokemonMeta->setBaseStamina(40);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(77);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.185);
+        $pokemonMeta->setPokedexWeightKg(2);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1.76);
+        $pokemonMeta->setUniqueId("V0172_POKEMON_PICHU");
+        $pokemonMeta->setBaseDefense(63);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.25);
+        $pokemonMeta->setCylHeightM(0.65);
+        $pokemonMeta->setCandyToEvolve(25);
+        $pokemonMeta->setCollisionHeightM(0.42);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::THUNDER_SHOCK_FAST,
+            PokemonMove::QUICK_ATTACK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::THUNDERBOLT,
+            PokemonMove::DISARMING_VOICE,
+            PokemonMove::THUNDER_PUNCH,
+        )));
+        $pokemonMeta->setNumber(172);
+        self::$POKEMON_META[PokemonId::PICHU] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0173_POKEMON_CLEFFA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CLEFAIRY);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.3);
+        $pokemonMeta->setHeightStdDev(0.0375);
+        $pokemonMeta->setBaseStamina(100);
+        $pokemonMeta->setCylRadiusM(0.45);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(75);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.2);
+        $pokemonMeta->setPokedexWeightKg(3);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
+        $pokemonMeta->setCollisionHeadRadiusM(0.215);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(0.9);
+        $pokemonMeta->setModelScale(2);
+        $pokemonMeta->setUniqueId("V0173_POKEMON_CLEFFA");
+        $pokemonMeta->setBaseDefense(91);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.375);
+        $pokemonMeta->setCylHeightM(0.65);
+        $pokemonMeta->setCandyToEvolve(25);
+        $pokemonMeta->setCollisionHeightM(0.52);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::POUND_FAST,
+            PokemonMove::ZEN_HEADBUTT_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::BODY_SLAM,
+            PokemonMove::PSYCHIC,
+            PokemonMove::SIGNAL_BEAM,
+        )));
+        $pokemonMeta->setNumber(173);
+        self::$POKEMON_META[PokemonId::CLEFFA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0174_POKEMON_IGGLYBUFF");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_JIGGLYPUFF);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FAIRY);
+        $pokemonMeta->setPokedexHeightM(0.3);
+        $pokemonMeta->setHeightStdDev(0.0375);
+        $pokemonMeta->setBaseStamina(180);
+        $pokemonMeta->setCylRadiusM(0.4);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(69);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.2);
+        $pokemonMeta->setPokedexWeightKg(1);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.45);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(0.2);
+        $pokemonMeta->setModelScale(1.88);
+        $pokemonMeta->setUniqueId("V0174_POKEMON_IGGLYBUFF");
+        $pokemonMeta->setBaseDefense(34);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.125);
+        $pokemonMeta->setCylHeightM(0.74);
+        $pokemonMeta->setCandyToEvolve(25);
+        $pokemonMeta->setCollisionHeightM(0.42);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0.4);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::POUND_FAST,
+            PokemonMove::FEINT_ATTACK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::BODY_SLAM,
+            PokemonMove::SHADOW_BALL,
+            PokemonMove::PSYCHIC,
+        )));
+        $pokemonMeta->setNumber(174);
+        self::$POKEMON_META[PokemonId::IGGLYBUFF] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0175_POKEMON_TOGEPI");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TOGEPI);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.3);
+        $pokemonMeta->setHeightStdDev(0.0375);
+        $pokemonMeta->setBaseStamina(70);
+        $pokemonMeta->setCylRadiusM(0.4);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(67);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.2);
+        $pokemonMeta->setPokedexWeightKg(1.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
+        $pokemonMeta->setCollisionHeadRadiusM(0.185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(0.8);
+        $pokemonMeta->setModelScale(2);
+        $pokemonMeta->setUniqueId("V0175_POKEMON_TOGEPI");
+        $pokemonMeta->setBaseDefense(116);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.1875);
+        $pokemonMeta->setCylHeightM(0.65);
+        $pokemonMeta->setCandyToEvolve(50);
+        $pokemonMeta->setCollisionHeightM(0.45);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::ZEN_HEADBUTT_FAST,
+            PokemonMove::PECK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::ANCIENT_POWER,
+            PokemonMove::PSYSHOCK,
+            PokemonMove::DAZZLING_GLEAM,
+        )));
+        $pokemonMeta->setNumber(175);
+        self::$POKEMON_META[PokemonId::TOGEPI] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0176_POKEMON_TOGETIC");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TOGEPI);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.45);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(139);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.2);
+        $pokemonMeta->setPokedexWeightKg(3.2);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
+        $pokemonMeta->setCollisionHeadRadiusM(0.185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(0.2);
+        $pokemonMeta->setModelScale(1.33);
+        $pokemonMeta->setUniqueId("V0176_POKEMON_TOGETIC");
+        $pokemonMeta->setBaseDefense(191);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.4);
+        $pokemonMeta->setCylHeightM(0.8);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.7);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::TOGEPI);
+        $pokemonMeta->setCylGroundM(0.4);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::ZEN_HEADBUTT_FAST,
+            PokemonMove::STEEL_WING_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::ANCIENT_POWER,
+            PokemonMove::DAZZLING_GLEAM,
+            PokemonMove::AERIAL_ACE,
+        )));
+        $pokemonMeta->setNumber(176);
+        self::$POKEMON_META[PokemonId::TOGETIC] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0177_POKEMON_NATU");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_NATU);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.2);
+        $pokemonMeta->setHeightStdDev(0.025);
+        $pokemonMeta->setBaseStamina(80);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(134);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(2);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0177_POKEMON_NATU");
+        $pokemonMeta->setBaseDefense(89);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.25);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::PECK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(177);
+        self::$POKEMON_META[PokemonId::NATU] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0178_POKEMON_XATU");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_NATU);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(1.5);
+        $pokemonMeta->setHeightStdDev(0.1875);
+        $pokemonMeta->setBaseStamina(130);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(192);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(15);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0178_POKEMON_XATU");
+        $pokemonMeta->setBaseDefense(146);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::NATU);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(178);
+        self::$POKEMON_META[PokemonId::XATU] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0179_POKEMON_MAREEP");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MAREEP);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(114);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(7.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0179_POKEMON_MAREEP");
+        $pokemonMeta->setBaseDefense(82);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.975);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(179);
+        self::$POKEMON_META[PokemonId::MAREEP] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0180_POKEMON_FLAAFFY");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MAREEP);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.79);
+        $pokemonMeta->setHeightStdDev(0.09875);
+        $pokemonMeta->setBaseStamina(140);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(145);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(13.3);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0180_POKEMON_FLAAFFY");
+        $pokemonMeta->setBaseDefense(112);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.6625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MAREEP);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(180);
+        self::$POKEMON_META[PokemonId::FLAAFFY] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0181_POKEMON_AMPHAROS");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MAREEP);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.4);
+        $pokemonMeta->setHeightStdDev(0.175);
+        $pokemonMeta->setBaseStamina(180);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(211);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(61.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0181_POKEMON_AMPHAROS");
+        $pokemonMeta->setBaseDefense(172);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(7.6875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::FLAAFFY);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(181);
+        self::$POKEMON_META[PokemonId::AMPHAROS] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0182_POKEMON_BELLOSSOM");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_ODDISH);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.41);
+        $pokemonMeta->setHeightStdDev(0.05125);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(169);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(5.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0182_POKEMON_BELLOSSOM");
+        $pokemonMeta->setBaseDefense(189);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.725);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::GLOOM);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(182);
+        self::$POKEMON_META[PokemonId::BELLOSSOM] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0183_POKEMON_MARILL");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MARILL);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FAIRY);
+        $pokemonMeta->setPokedexHeightM(0.41);
+        $pokemonMeta->setHeightStdDev(0.05125);
+        $pokemonMeta->setBaseStamina(140);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(37);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(8.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0183_POKEMON_MARILL");
+        $pokemonMeta->setBaseDefense(93);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.0625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(183);
+        self::$POKEMON_META[PokemonId::MARILL] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0184_POKEMON_AZUMARILL");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MARILL);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FAIRY);
+        $pokemonMeta->setPokedexHeightM(0.79);
+        $pokemonMeta->setHeightStdDev(0.09875);
+        $pokemonMeta->setBaseStamina(200);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(112);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(28.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0184_POKEMON_AZUMARILL");
+        $pokemonMeta->setBaseDefense(152);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(3.5625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MARILL);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(184);
+        self::$POKEMON_META[PokemonId::AZUMARILL] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0185_POKEMON_SUDOWOODO");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SUDOWOODO);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.19);
+        $pokemonMeta->setHeightStdDev(0.14875);
+        $pokemonMeta->setBaseStamina(140);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(167);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(38);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ROCK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0185_POKEMON_SUDOWOODO");
+        $pokemonMeta->setBaseDefense(198);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.75);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(185);
+        self::$POKEMON_META[PokemonId::SUDOWOODO] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0186_POKEMON_POLITOED");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_POLIWAG);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(10.9);
+        $pokemonMeta->setHeightStdDev(1.3625);
+        $pokemonMeta->setBaseStamina(180);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(174);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(33.9);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0186_POKEMON_POLITOED");
+        $pokemonMeta->setBaseDefense(192);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.2375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::POLIWHIRL);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(186);
+        self::$POKEMON_META[PokemonId::POLITOED] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0187_POKEMON_HOPPIP");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HOPPIP);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.41);
+        $pokemonMeta->setHeightStdDev(0.05125);
+        $pokemonMeta->setBaseStamina(70);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(67);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(0.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0187_POKEMON_HOPPIP");
+        $pokemonMeta->setBaseDefense(101);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.0625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SKIPLOOM);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(187);
+        self::$POKEMON_META[PokemonId::HOPPIP] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0188_POKEMON_SKIPLOOM");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HOPPIP);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(91);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(1);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0188_POKEMON_SKIPLOOM");
+        $pokemonMeta->setBaseDefense(127);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.125);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::JUMPLUFF);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(188);
+        self::$POKEMON_META[PokemonId::SKIPLOOM] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0189_POKEMON_JUMPLUFF");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HOPPIP);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.79);
+        $pokemonMeta->setHeightStdDev(0.09875);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(118);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(3);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0189_POKEMON_JUMPLUFF");
+        $pokemonMeta->setBaseDefense(197);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(189);
+        self::$POKEMON_META[PokemonId::JUMPLUFF] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0190_POKEMON_AIPOM");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_AIPOM);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.79);
+        $pokemonMeta->setHeightStdDev(0.09875);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(136);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(11.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0190_POKEMON_AIPOM");
+        $pokemonMeta->setBaseDefense(112);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.4375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(190);
+        self::$POKEMON_META[PokemonId::AIPOM] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0191_POKEMON_SUNKERN");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SUNKERN);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.3);
+        $pokemonMeta->setHeightStdDev(0.0375);
+        $pokemonMeta->setBaseStamina(60);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(55);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(1.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0191_POKEMON_SUNKERN");
+        $pokemonMeta->setBaseDefense(55);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.225);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SUNFLORA);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(191);
+        self::$POKEMON_META[PokemonId::SUNKERN] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0192_POKEMON_SUNFLORA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SUNKERN);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.79);
+        $pokemonMeta->setHeightStdDev(0.09875);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(185);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(8.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0192_POKEMON_SUNFLORA");
+        $pokemonMeta->setBaseDefense(148);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.0625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(192);
+        self::$POKEMON_META[PokemonId::SUNFLORA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0193_POKEMON_YANMA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_YANMA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(1.19);
+        $pokemonMeta->setHeightStdDev(0.14875);
+        $pokemonMeta->setBaseStamina(130);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(154);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(38);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0193_POKEMON_YANMA");
+        $pokemonMeta->setBaseDefense(94);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.75);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(193);
+        self::$POKEMON_META[PokemonId::YANMA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0194_POKEMON_WOOPER");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_WOOPER);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setPokedexHeightM(0.41);
+        $pokemonMeta->setHeightStdDev(0.05125);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(75);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(8.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0194_POKEMON_WOOPER");
+        $pokemonMeta->setBaseDefense(75);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.0625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::QUAGSIRE);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(194);
+        self::$POKEMON_META[PokemonId::WOOPER] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0195_POKEMON_QUAGSIRE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_WOOPER);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setPokedexHeightM(1.4);
+        $pokemonMeta->setHeightStdDev(0.175);
+        $pokemonMeta->setBaseStamina(190);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(152);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(75);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0195_POKEMON_QUAGSIRE");
+        $pokemonMeta->setBaseDefense(152);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(9.375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(195);
+        self::$POKEMON_META[PokemonId::QUAGSIRE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0196_POKEMON_ESPEON");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_EEVEE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.89);
+        $pokemonMeta->setHeightStdDev(0.11125);
+        $pokemonMeta->setBaseStamina(130);
+        $pokemonMeta->setCylRadiusM(0.4);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(261);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.2525);
+        $pokemonMeta->setPokedexWeightKg(26.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1.1);
+        $pokemonMeta->setModelScale(1.25);
+        $pokemonMeta->setUniqueId("V0196_POKEMON_ESPEON");
+        $pokemonMeta->setBaseDefense(194);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(3.3125);
+        $pokemonMeta->setCylHeightM(1);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.9);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::EEVEE);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::CONFUSION_FAST,
+            PokemonMove::ZEN_HEADBUTT_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(196);
+        self::$POKEMON_META[PokemonId::ESPEON] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0197_POKEMON_UMBREON");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_EEVEE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.99);
+        $pokemonMeta->setHeightStdDev(0.12375);
+        $pokemonMeta->setBaseStamina(190);
+        $pokemonMeta->setCylRadiusM(0.4);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(126);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.2525);
+        $pokemonMeta->setPokedexWeightKg(27);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1.1);
+        $pokemonMeta->setModelScale(1.01);
+        $pokemonMeta->setUniqueId("V0197_POKEMON_UMBREON");
+        $pokemonMeta->setBaseDefense(250);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(3.375);
+        $pokemonMeta->setCylHeightM(0.85);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.8);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::EEVEE);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::FEINT_ATTACK_FAST,
+            PokemonMove::BITE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(197);
+        self::$POKEMON_META[PokemonId::UMBREON] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0198_POKEMON_MURKROW");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MURKROW);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.51);
+        $pokemonMeta->setHeightStdDev(0.06375);
+        $pokemonMeta->setBaseStamina(120);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(175);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(2.1);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0198_POKEMON_MURKROW");
+        $pokemonMeta->setBaseDefense(87);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.2625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(198);
+        self::$POKEMON_META[PokemonId::MURKROW] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0199_POKEMON_SLOWKING");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SLOWPOKE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setPokedexHeightM(2.01);
+        $pokemonMeta->setHeightStdDev(0.25125);
+        $pokemonMeta->setBaseStamina(190);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(177);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(79.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0199_POKEMON_SLOWKING");
+        $pokemonMeta->setBaseDefense(194);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(9.9375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SLOWPOKE);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(199);
+        self::$POKEMON_META[PokemonId::SLOWKING] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0200_POKEMON_MISDREAVUS");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MISDREAVUS);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.71);
+        $pokemonMeta->setHeightStdDev(0.08875);
+        $pokemonMeta->setBaseStamina(120);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(167);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(1);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_PSYCHIC);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GHOST);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0200_POKEMON_MISDREAVUS");
+        $pokemonMeta->setBaseDefense(167);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.125);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(200);
+        self::$POKEMON_META[PokemonId::MISDREAVUS] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0201_POKEMON_UNOWN");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_UNOWN);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.51);
+        $pokemonMeta->setHeightStdDev(0.06375);
+        $pokemonMeta->setBaseStamina(96);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(136);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_PSYCHIC);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0201_POKEMON_UNOWN");
+        $pokemonMeta->setBaseDefense(91);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(201);
+        self::$POKEMON_META[PokemonId::UNOWN] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0202_POKEMON_WOBBUFFET");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_WOBBUFFET);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.3);
+        $pokemonMeta->setHeightStdDev(0.1625);
+        $pokemonMeta->setBaseStamina(380);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(60);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(28.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0202_POKEMON_WOBBUFFET");
+        $pokemonMeta->setBaseDefense(106);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(3.5625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(202);
+        self::$POKEMON_META[PokemonId::WOBBUFFET] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0203_POKEMON_GIRAFARIG");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_GIRAFARIG);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setPokedexHeightM(1.5);
+        $pokemonMeta->setHeightStdDev(0.1875);
+        $pokemonMeta->setBaseStamina(140);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(182);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(41.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0203_POKEMON_GIRAFARIG");
+        $pokemonMeta->setBaseDefense(133);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(5.1875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(203);
+        self::$POKEMON_META[PokemonId::GIRAFARIG] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0204_POKEMON_PINECO");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_PINECO);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(100);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(108);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(7.2);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0204_POKEMON_PINECO");
+        $pokemonMeta->setBaseDefense(146);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.9);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(204);
+        self::$POKEMON_META[PokemonId::PINECO] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0205_POKEMON_FORRETRESS");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_PINECO);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_STEEL);
+        $pokemonMeta->setPokedexHeightM(1.19);
+        $pokemonMeta->setHeightStdDev(0.14875);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(161);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(125.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0205_POKEMON_FORRETRESS");
+        $pokemonMeta->setBaseDefense(242);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(15.725);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::PINECO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(205);
+        self::$POKEMON_META[PokemonId::FORRETRESS] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0206_POKEMON_DUNSPARCE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_DUNSPARCE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.5);
+        $pokemonMeta->setHeightStdDev(0.1875);
+        $pokemonMeta->setBaseStamina(200);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(131);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(14);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0206_POKEMON_DUNSPARCE");
+        $pokemonMeta->setBaseDefense(131);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.75);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(206);
+        self::$POKEMON_META[PokemonId::DUNSPARCE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0207_POKEMON_GLIGAR");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_GLIGAR);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(1.09);
+        $pokemonMeta->setHeightStdDev(0.13625);
+        $pokemonMeta->setBaseStamina(130);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(143);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(64.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0207_POKEMON_GLIGAR");
+        $pokemonMeta->setBaseDefense(204);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(8.1);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(207);
+        self::$POKEMON_META[PokemonId::GLIGAR] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0208_POKEMON_STEELIX");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_ONIX);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setPokedexHeightM(9.19);
+        $pokemonMeta->setHeightStdDev(1.14875);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(148);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(400);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_STEEL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0208_POKEMON_STEELIX");
+        $pokemonMeta->setBaseDefense(333);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(50);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::ONIX);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(208);
+        self::$POKEMON_META[PokemonId::STEELIX] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0209_POKEMON_SNUBBULL");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SNUBBULL);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(120);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(137);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(7.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0209_POKEMON_SNUBBULL");
+        $pokemonMeta->setBaseDefense(89);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.975);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(209);
+        self::$POKEMON_META[PokemonId::SNUBBULL] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0210_POKEMON_GRANBULL");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SNUBBULL);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.4);
+        $pokemonMeta->setHeightStdDev(0.175);
+        $pokemonMeta->setBaseStamina(180);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(212);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(48.7);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0210_POKEMON_GRANBULL");
+        $pokemonMeta->setBaseDefense(137);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(6.0875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SNUBBULL);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(210);
+        self::$POKEMON_META[PokemonId::GRANBULL] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0211_POKEMON_QWILFISH");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_QWILFISH);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_POISON);
+        $pokemonMeta->setPokedexHeightM(0.51);
+        $pokemonMeta->setHeightStdDev(0.06375);
+        $pokemonMeta->setBaseStamina(130);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(184);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(3.9);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0211_POKEMON_QWILFISH");
+        $pokemonMeta->setBaseDefense(148);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.4875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(211);
+        self::$POKEMON_META[PokemonId::QWILFISH] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0212_POKEMON_SCIZOR");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SCYTHER);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_STEEL);
+        $pokemonMeta->setPokedexHeightM(2.01);
+        $pokemonMeta->setHeightStdDev(0.25125);
+        $pokemonMeta->setBaseStamina(140);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(236);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(125);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0212_POKEMON_SCIZOR");
+        $pokemonMeta->setBaseDefense(191);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(15.625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SCYTHER);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(212);
+        self::$POKEMON_META[PokemonId::SCIZOR] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0213_POKEMON_SHUCKLE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SHUCKLE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_ROCK);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(40);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(17);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(20.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0213_POKEMON_SHUCKLE");
+        $pokemonMeta->setBaseDefense(396);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(2.5625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(213);
+        self::$POKEMON_META[PokemonId::SHUCKLE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0214_POKEMON_HERACROSS");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HERACROSS);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FIGHTING);
+        $pokemonMeta->setPokedexHeightM(1.5);
+        $pokemonMeta->setHeightStdDev(0.1875);
+        $pokemonMeta->setBaseStamina(160);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(234);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(54);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0214_POKEMON_HERACROSS");
+        $pokemonMeta->setBaseDefense(189);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(6.75);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(214);
+        self::$POKEMON_META[PokemonId::HERACROSS] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0215_POKEMON_SNEASEL");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SNEASEL);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_ICE);
+        $pokemonMeta->setPokedexHeightM(0.89);
+        $pokemonMeta->setHeightStdDev(0.11125);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(189);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(28);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0215_POKEMON_SNEASEL");
+        $pokemonMeta->setBaseDefense(157);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(3.5);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(215);
+        self::$POKEMON_META[PokemonId::SNEASEL] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0216_POKEMON_TEDDIURSA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TEDDIURSA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(120);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(142);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(8.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0216_POKEMON_TEDDIURSA");
+        $pokemonMeta->setBaseDefense(93);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.1);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(216);
+        self::$POKEMON_META[PokemonId::TEDDIURSA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0217_POKEMON_URSARING");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TEDDIURSA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.8);
+        $pokemonMeta->setHeightStdDev(0.225);
+        $pokemonMeta->setBaseStamina(180);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(236);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(125.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0217_POKEMON_URSARING");
+        $pokemonMeta->setBaseDefense(144);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(15.725);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::TEDDIURSA);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(217);
+        self::$POKEMON_META[PokemonId::URSARING] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0218_POKEMON_SLUGMA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SLUGMA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.71);
+        $pokemonMeta->setHeightStdDev(0.08875);
+        $pokemonMeta->setBaseStamina(80);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(118);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(35);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0218_POKEMON_SLUGMA");
+        $pokemonMeta->setBaseDefense(71);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(218);
+        self::$POKEMON_META[PokemonId::SLUGMA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0219_POKEMON_MAGCARGO");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SLUGMA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_ROCK);
+        $pokemonMeta->setPokedexHeightM(0.79);
+        $pokemonMeta->setHeightStdDev(0.09875);
+        $pokemonMeta->setBaseStamina(100);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(139);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(55);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0219_POKEMON_MAGCARGO");
+        $pokemonMeta->setBaseDefense(209);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(6.875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SLUGMA);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(219);
+        self::$POKEMON_META[PokemonId::MAGCARGO] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0220_POKEMON_SWINUB");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SWINUB);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setPokedexHeightM(0.41);
+        $pokemonMeta->setHeightStdDev(0.05125);
+        $pokemonMeta->setBaseStamina(100);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(90);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(6.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ICE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0220_POKEMON_SWINUB");
+        $pokemonMeta->setBaseDefense(74);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.8125);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(220);
+        self::$POKEMON_META[PokemonId::SWINUB] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0221_POKEMON_PILOSWINE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SWINUB);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setPokedexHeightM(1.09);
+        $pokemonMeta->setHeightStdDev(0.13625);
+        $pokemonMeta->setBaseStamina(200);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(181);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(55.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ICE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0221_POKEMON_PILOSWINE");
+        $pokemonMeta->setBaseDefense(147);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(6.975);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::SWINUB);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(221);
+        self::$POKEMON_META[PokemonId::PILOSWINE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0222_POKEMON_CORSOLA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CORSOLA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_ROCK);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(118);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0222_POKEMON_CORSOLA");
+        $pokemonMeta->setBaseDefense(156);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(222);
+        self::$POKEMON_META[PokemonId::CORSOLA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0223_POKEMON_REMORAID");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_REMORAID);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(70);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(127);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(12);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0223_POKEMON_REMORAID");
+        $pokemonMeta->setBaseDefense(69);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.5);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(223);
+        self::$POKEMON_META[PokemonId::REMORAID] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0224_POKEMON_OCTILLERY");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_REMORAID);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.89);
+        $pokemonMeta->setHeightStdDev(0.11125);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(197);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(28.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0224_POKEMON_OCTILLERY");
+        $pokemonMeta->setBaseDefense(141);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(3.5625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::REMORAID);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(224);
+        self::$POKEMON_META[PokemonId::OCTILLERY] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0225_POKEMON_DELIBIRD");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_DELIBIRD);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(0.89);
+        $pokemonMeta->setHeightStdDev(0.11125);
+        $pokemonMeta->setBaseStamina(90);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(128);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(16);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ICE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0225_POKEMON_DELIBIRD");
+        $pokemonMeta->setBaseDefense(90);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(2);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(225);
+        self::$POKEMON_META[PokemonId::DELIBIRD] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0226_POKEMON_MANTINE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MANTINE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(2.11);
+        $pokemonMeta->setHeightStdDev(0.26375);
+        $pokemonMeta->setBaseStamina(130);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(148);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(220);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0226_POKEMON_MANTINE");
+        $pokemonMeta->setBaseDefense(260);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(27.5);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(226);
+        self::$POKEMON_META[PokemonId::MANTINE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0227_POKEMON_SKARMORY");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SKARMORY);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(1.7);
+        $pokemonMeta->setHeightStdDev(0.2125);
+        $pokemonMeta->setBaseStamina(130);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(148);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(50.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_STEEL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0227_POKEMON_SKARMORY");
+        $pokemonMeta->setBaseDefense(260);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(6.3125);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(227);
+        self::$POKEMON_META[PokemonId::SKARMORY] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0228_POKEMON_HOUNDOUR");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HOUNDOUR);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(90);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(152);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(10.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0228_POKEMON_HOUNDOUR");
+        $pokemonMeta->setBaseDefense(93);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(1.35);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(228);
+        self::$POKEMON_META[PokemonId::HOUNDOUR] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0229_POKEMON_HOUNDOOM");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HOUNDOUR);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setPokedexHeightM(1.4);
+        $pokemonMeta->setHeightStdDev(0.175);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(224);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(35);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0229_POKEMON_HOUNDOOM");
+        $pokemonMeta->setBaseDefense(159);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::HOUNDOUR);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(229);
+        self::$POKEMON_META[PokemonId::HOUNDOOM] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0230_POKEMON_KINGDRA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HORSEA);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_DRAGON);
+        $pokemonMeta->setPokedexHeightM(1.8);
+        $pokemonMeta->setHeightStdDev(0.225);
+        $pokemonMeta->setBaseStamina(150);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(194);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(152);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0230_POKEMON_KINGDRA");
+        $pokemonMeta->setBaseDefense(194);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(19);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(230);
+        self::$POKEMON_META[PokemonId::KINGDRA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0231_POKEMON_PHANPY");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_PHANPY);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.51);
+        $pokemonMeta->setHeightStdDev(0.06375);
+        $pokemonMeta->setBaseStamina(180);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(107);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(33.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0231_POKEMON_PHANPY");
+        $pokemonMeta->setBaseDefense(107);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.1875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(231);
+        self::$POKEMON_META[PokemonId::PHANPY] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0232_POKEMON_DONPHAN");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_PHANPY);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.09);
+        $pokemonMeta->setHeightStdDev(0.13625);
+        $pokemonMeta->setBaseStamina(180);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(214);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(120);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0232_POKEMON_DONPHAN");
+        $pokemonMeta->setBaseDefense(214);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(15);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::PHANPY);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(232);
+        self::$POKEMON_META[PokemonId::DONPHAN] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0233_POKEMON_PORYGON2");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_PORYGON);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(170);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(198);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(32.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0233_POKEMON_PORYGON2");
+        $pokemonMeta->setBaseDefense(183);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(4.0625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::PORYGON);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(233);
+        self::$POKEMON_META[PokemonId::PORYGON2] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0234_POKEMON_STANTLER");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_STANTLER);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.4);
+        $pokemonMeta->setHeightStdDev(0.175);
+        $pokemonMeta->setBaseStamina(146);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(192);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(71.2);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0234_POKEMON_STANTLER");
+        $pokemonMeta->setBaseDefense(132);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(8.9);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(234);
+        self::$POKEMON_META[PokemonId::STANTLER] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0235_POKEMON_SMEARGLE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SMEARGLE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.19);
+        $pokemonMeta->setHeightStdDev(0.14875);
+        $pokemonMeta->setBaseStamina(110);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(40);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(58);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0235_POKEMON_SMEARGLE");
+        $pokemonMeta->setBaseDefense(88);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(7.25);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(235);
+        self::$POKEMON_META[PokemonId::SMEARGLE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0236_POKEMON_TYROGUE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TYROGUE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.71);
+        $pokemonMeta->setHeightStdDev(0.08875);
+        $pokemonMeta->setBaseStamina(70);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(64);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.2);
+        $pokemonMeta->setPokedexWeightKg(21);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIGHTING);
+        $pokemonMeta->setCollisionHeadRadiusM(0.185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1.1);
+        $pokemonMeta->setModelScale(1.23);
+        $pokemonMeta->setUniqueId("V0236_POKEMON_TYROGUE");
+        $pokemonMeta->setBaseDefense(64);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(2.625);
+        $pokemonMeta->setCylHeightM(0.85);
+        $pokemonMeta->setCandyToEvolve(25);
+        $pokemonMeta->setCollisionHeightM(0.75);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::ROCK_SMASH_FAST,
+            PokemonMove::LOW_KICK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::BRICK_BREAK,
+            PokemonMove::BODY_SLAM,
+            PokemonMove::LOW_SWEEP,
+        )));
+        $pokemonMeta->setNumber(236);
+        self::$POKEMON_META[PokemonId::TYROGUE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0237_POKEMON_HITMONTOP");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_TYROGUE);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.4);
+        $pokemonMeta->setHeightStdDev(0.175);
+        $pokemonMeta->setBaseStamina(100);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(173);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(48);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIGHTING);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0237_POKEMON_HITMONTOP");
+        $pokemonMeta->setBaseDefense(214);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(6);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::TYROGUE);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(237);
+        self::$POKEMON_META[PokemonId::HITMONTOP] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0238_POKEMON_SMOOCHUM");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_JYNX);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setPokedexHeightM(0.41);
+        $pokemonMeta->setHeightStdDev(0.05125);
+        $pokemonMeta->setBaseStamina(90);
+        $pokemonMeta->setCylRadiusM(0.4);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(153);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.35);
+        $pokemonMeta->setPokedexWeightKg(6);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ICE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.215);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1.52);
+        $pokemonMeta->setUniqueId("V0238_POKEMON_SMOOCHUM");
+        $pokemonMeta->setBaseDefense(116);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.75);
+        $pokemonMeta->setCylHeightM(0.075);
+        $pokemonMeta->setCandyToEvolve(25);
+        $pokemonMeta->setCollisionHeightM(0.6);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::FROST_BREATH_FAST,
+            PokemonMove::POUND_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::ICE_BEAM,
+            PokemonMove::ICE_PUNCH,
+            PokemonMove::PSYSHOCK,
+        )));
+        $pokemonMeta->setNumber(238);
+        self::$POKEMON_META[PokemonId::SMOOCHUM] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0239_POKEMON_ELEKID");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_ELECTABUZZ);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(90);
+        $pokemonMeta->setCylRadiusM(0.4);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(135);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.3);
+        $pokemonMeta->setPokedexWeightKg(23.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.215);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1.1);
+        $pokemonMeta->setModelScale(1.33);
+        $pokemonMeta->setUniqueId("V0239_POKEMON_ELEKID");
+        $pokemonMeta->setBaseDefense(110);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(2.9375);
+        $pokemonMeta->setCylHeightM(0.85);
+        $pokemonMeta->setCandyToEvolve(25);
+        $pokemonMeta->setCollisionHeightM(0.6);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::THUNDER_SHOCK_FAST,
+            PokemonMove::LOW_KICK_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::THUNDER_PUNCH,
+            PokemonMove::THUNDERBOLT,
+            PokemonMove::DISCHARGE,
+        )));
+        $pokemonMeta->setNumber(239);
+        self::$POKEMON_META[PokemonId::ELEKID] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0240_POKEMON_MAGBY");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MAGMAR);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(0.71);
+        $pokemonMeta->setHeightStdDev(0.08875);
+        $pokemonMeta->setBaseStamina(90);
+        $pokemonMeta->setCylRadiusM(0.4);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(151);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.35);
+        $pokemonMeta->setPokedexWeightKg(21.4);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.215);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1.1);
+        $pokemonMeta->setModelScale(1.23);
+        $pokemonMeta->setUniqueId("V0240_POKEMON_MAGBY");
+        $pokemonMeta->setBaseDefense(108);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(2.675);
+        $pokemonMeta->setCylHeightM(0.9);
+        $pokemonMeta->setCandyToEvolve(25);
+        $pokemonMeta->setCollisionHeightM(0.9);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::EMBER_FAST,
+            PokemonMove::KARATE_CHOP_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::BRICK_BREAK,
+            PokemonMove::FIRE_PUNCH,
+            PokemonMove::FLAMETHROWER,
+        )));
+        $pokemonMeta->setNumber(240);
+        self::$POKEMON_META[PokemonId::MAGBY] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0241_POKEMON_MILTANK");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_MILTANK);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.19);
+        $pokemonMeta->setHeightStdDev(0.14875);
+        $pokemonMeta->setBaseStamina(190);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(157);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(75.5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0241_POKEMON_MILTANK");
+        $pokemonMeta->setBaseDefense(211);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(9.4375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(241);
+        self::$POKEMON_META[PokemonId::MILTANK] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0242_POKEMON_BLISSEY");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CHANSEY);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.5);
+        $pokemonMeta->setHeightStdDev(0.1875);
+        $pokemonMeta->setBaseStamina(510);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(129);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(46.8);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0242_POKEMON_BLISSEY");
+        $pokemonMeta->setBaseDefense(229);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(5.85);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::CHANSEY);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(242);
+        self::$POKEMON_META[PokemonId::BLISSEY] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0243_POKEMON_RAIKOU");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_RAIKOU);
+        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(1.91);
+        $pokemonMeta->setHeightStdDev(0.23875);
+        $pokemonMeta->setBaseStamina(180);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(241);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(178);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0243_POKEMON_RAIKOU");
+        $pokemonMeta->setBaseDefense(210);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(22.25);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(243);
+        self::$POKEMON_META[PokemonId::RAIKOU] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0244_POKEMON_ENTEI");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_ENTEI);
+        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(2.11);
+        $pokemonMeta->setHeightStdDev(0.26375);
+        $pokemonMeta->setBaseStamina(230);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(235);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(198);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0244_POKEMON_ENTEI");
+        $pokemonMeta->setBaseDefense(176);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(24.75);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(244);
+        self::$POKEMON_META[PokemonId::ENTEI] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0245_POKEMON_SUICUNE");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SUICUNE);
+        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
+        $pokemonMeta->setPokedexHeightM(2.01);
+        $pokemonMeta->setHeightStdDev(0.25125);
+        $pokemonMeta->setBaseStamina(200);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(180);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(187);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0245_POKEMON_SUICUNE");
+        $pokemonMeta->setBaseDefense(235);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(23.375);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(245);
+        self::$POKEMON_META[PokemonId::SUICUNE] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0246_POKEMON_LARVITAR");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_LARVITAR);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(100);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(115);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(72);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ROCK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0246_POKEMON_LARVITAR");
+        $pokemonMeta->setBaseDefense(93);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(9);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(246);
+        self::$POKEMON_META[PokemonId::LARVITAR] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0247_POKEMON_PUPITAR");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_LARVITAR);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GROUND);
+        $pokemonMeta->setPokedexHeightM(1.19);
+        $pokemonMeta->setHeightStdDev(0.14875);
+        $pokemonMeta->setBaseStamina(140);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(155);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(152);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ROCK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0247_POKEMON_PUPITAR");
+        $pokemonMeta->setBaseDefense(133);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(19);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::LARVITAR);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(247);
+        self::$POKEMON_META[PokemonId::PUPITAR] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0248_POKEMON_TYRANITAR");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_LARVITAR);
+        $pokemonMeta->setPokemonClass(PokemonClass::NONE);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_DARK);
+        $pokemonMeta->setPokedexHeightM(2.01);
+        $pokemonMeta->setHeightStdDev(0.25125);
+        $pokemonMeta->setBaseStamina(200);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(251);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(202);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ROCK);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0248_POKEMON_TYRANITAR");
+        $pokemonMeta->setBaseDefense(212);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(25.25);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::PUPITAR);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(248);
+        self::$POKEMON_META[PokemonId::TYRANITAR] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0249_POKEMON_LUGIA");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_LUGIA);
+        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(5.21);
+        $pokemonMeta->setHeightStdDev(0.65125);
+        $pokemonMeta->setBaseStamina(212);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(193);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(216);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0249_POKEMON_LUGIA");
+        $pokemonMeta->setBaseDefense(323);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(27);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(249);
+        self::$POKEMON_META[PokemonId::LUGIA] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0250_POKEMON_HO_OH");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HO_OH);
+        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
+        $pokemonMeta->setPokedexHeightM(3.81);
+        $pokemonMeta->setHeightStdDev(0.47625);
+        $pokemonMeta->setBaseStamina(212);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(263);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(199);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0250_POKEMON_HO_OH");
+        $pokemonMeta->setBaseDefense(301);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(24.875);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(250);
+        self::$POKEMON_META[PokemonId::HO_OH] = $pokemonMeta;
+        
+        $pokemonMeta = new PokemonMeta();
+        $pokemonMeta->setTemplateId("V0251_POKEMON_CELEBI");
+        $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CELEBI);
+        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_MYTHIC);
+        $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GRASS);
+        $pokemonMeta->setPokedexHeightM(0.61);
+        $pokemonMeta->setHeightStdDev(0.07625);
+        $pokemonMeta->setBaseStamina(200);
+        $pokemonMeta->setCylRadiusM(0.37);
+        $pokemonMeta->setBaseFleeRate(0.05);
+        $pokemonMeta->setBaseAttack(210);
+        $pokemonMeta->setDiskRadiusM(0.555);
+        $pokemonMeta->setCollisionRadiusM(0.364);
+        $pokemonMeta->setPokedexWeightKg(5);
+        $pokemonMeta->setMovementType(MovementType::MOVEMENT_PSYCHIC);
+        $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
+        $pokemonMeta->setCollisionHeadRadiusM(0.3185);
+        $pokemonMeta->setMovementTimerS(11);
+        $pokemonMeta->setJumpTimeS(1);
+        $pokemonMeta->setModelScale(1);
+        $pokemonMeta->setUniqueId("V0251_POKEMON_CELEBI");
+        $pokemonMeta->setBaseDefense(210);
+        $pokemonMeta->setAttackTimerS(20);
+        $pokemonMeta->setWeightStdDev(0.625);
+        $pokemonMeta->setCylHeightM(1.48);
+        $pokemonMeta->setCandyToEvolve(1);
+        $pokemonMeta->setCollisionHeightM(0.91);
+        $pokemonMeta->setShoulderModeScale(0.5);
+        $pokemonMeta->setBaseCaptureRate(0.12);
+        $pokemonMeta->setParentId(PokemonId::MISSINGNO);
+        $pokemonMeta->setCylGroundM(0);
+        $pokemonMeta->setQuickMoves(new PokemonMoveData(array(
+            PokemonMove::TACKLE_FAST,
+        )));
+        $pokemonMeta->setCinematicMoves(new PokemonMoveData(array(
+            PokemonMove::STRUGGLE,
+        )));
+        $pokemonMeta->setNumber(251);
+        self::$POKEMON_META[PokemonId::CELEBI] = $pokemonMeta;
 
     }
 
