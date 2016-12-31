@@ -6519,7 +6519,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(6.4);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6560,7 +6560,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(15.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6601,7 +6601,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(100.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6642,7 +6642,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(7.9);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6683,7 +6683,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(19);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6724,7 +6724,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(79.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6765,7 +6765,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(9.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6806,7 +6806,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(25);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6847,7 +6847,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(88.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6888,7 +6888,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(6);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6929,7 +6929,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(32.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -6970,7 +6970,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(21.2);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7011,7 +7011,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(40.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7052,7 +7052,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(10.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7093,7 +7093,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(35.6);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7134,7 +7134,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(8.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7175,7 +7175,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(33.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7216,7 +7216,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(75);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_POISON);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7257,7 +7257,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(12);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7298,7 +7298,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(22.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7339,7 +7339,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.185);
         $pokemonMeta->setPokedexWeightKg(2);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7382,7 +7382,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.2);
         $pokemonMeta->setPokedexWeightKg(3);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
         $pokemonMeta->setCollisionHeadRadiusM(0.215);
         $pokemonMeta->setMovementTimerS(11);
@@ -7425,7 +7425,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.2);
         $pokemonMeta->setPokedexWeightKg(1);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.45);
         $pokemonMeta->setMovementTimerS(11);
@@ -7468,7 +7468,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.2);
         $pokemonMeta->setPokedexWeightKg(1.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
         $pokemonMeta->setCollisionHeadRadiusM(0.185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7511,7 +7511,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.2);
         $pokemonMeta->setPokedexWeightKg(3.2);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
         $pokemonMeta->setCollisionHeadRadiusM(0.185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7554,7 +7554,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(2);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7594,7 +7594,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(15);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7634,7 +7634,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(7.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7674,7 +7674,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(13.3);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7714,7 +7714,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(61.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7754,7 +7754,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(5.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7794,7 +7794,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(8.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7834,7 +7834,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(28.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7874,7 +7874,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(38);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ROCK);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7914,7 +7914,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(33.9);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7954,7 +7954,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(0.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -7994,7 +7994,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(1);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8034,7 +8034,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(3);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8074,7 +8074,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(11.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8114,7 +8114,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(1.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8154,7 +8154,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(8.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8194,7 +8194,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(38);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8234,7 +8234,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(8.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8274,7 +8274,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(75);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8314,7 +8314,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.2525);
         $pokemonMeta->setPokedexWeightKg(26.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8355,7 +8355,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.2525);
         $pokemonMeta->setPokedexWeightKg(27);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
         $pokemonMeta->setCollisionHeadRadiusM(0.185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8396,7 +8396,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(2.1);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8436,7 +8436,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(79.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8476,7 +8476,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(1);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_PSYCHIC);
+        $pokemonMeta->setMovementType(MovementType::PSYCHIC);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GHOST);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8516,7 +8516,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_PSYCHIC);
+        $pokemonMeta->setMovementType(MovementType::PSYCHIC);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8556,7 +8556,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(28.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8596,7 +8596,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(41.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8636,7 +8636,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(7.2);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8676,7 +8676,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(125.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8716,7 +8716,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(14);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8756,7 +8756,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(64.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GROUND);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8796,7 +8796,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(400);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_STEEL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8836,7 +8836,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(7.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8876,7 +8876,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(48.7);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FAIRY);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8916,7 +8916,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(3.9);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8956,7 +8956,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(125);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -8996,7 +8996,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(20.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9036,7 +9036,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(54);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_BUG);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9076,7 +9076,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(28);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9116,7 +9116,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(8.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9156,7 +9156,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(125.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9196,7 +9196,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(35);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9236,7 +9236,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(55);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9276,7 +9276,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(6.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ICE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9316,7 +9316,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(55.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ICE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9356,7 +9356,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9396,7 +9396,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(12);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9436,7 +9436,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(28.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9476,7 +9476,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(16);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ICE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9516,7 +9516,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(220);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9556,7 +9556,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(50.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_STEEL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9596,7 +9596,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(10.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9636,7 +9636,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(35);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_DARK);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9676,7 +9676,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(152);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9716,7 +9716,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(33.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GROUND);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9756,7 +9756,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(120);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_GROUND);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9796,7 +9796,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(32.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_HOVERING);
+        $pokemonMeta->setMovementType(MovementType::HOVERING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9836,7 +9836,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(71.2);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9876,7 +9876,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(58);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9916,7 +9916,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.2);
         $pokemonMeta->setPokedexWeightKg(21);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIGHTING);
         $pokemonMeta->setCollisionHeadRadiusM(0.185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9959,7 +9959,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(48);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIGHTING);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -9999,7 +9999,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.35);
         $pokemonMeta->setPokedexWeightKg(6);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ICE);
         $pokemonMeta->setCollisionHeadRadiusM(0.215);
         $pokemonMeta->setMovementTimerS(11);
@@ -10042,7 +10042,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.3);
         $pokemonMeta->setPokedexWeightKg(23.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.215);
         $pokemonMeta->setMovementTimerS(11);
@@ -10085,7 +10085,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.35);
         $pokemonMeta->setPokedexWeightKg(21.4);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
         $pokemonMeta->setCollisionHeadRadiusM(0.215);
         $pokemonMeta->setMovementTimerS(11);
@@ -10128,7 +10128,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(75.5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10168,7 +10168,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(46.8);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_NORMAL);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10197,7 +10197,7 @@ class PokemonMetaRegistry {
         $pokemonMeta = new PokemonMeta();
         $pokemonMeta->setTemplateId("V0243_POKEMON_RAIKOU");
         $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_RAIKOU);
-        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setPokemonClass(PokemonClass::LEGENDARY);
         $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
         $pokemonMeta->setPokedexHeightM(1.91);
         $pokemonMeta->setHeightStdDev(0.23875);
@@ -10208,7 +10208,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(178);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ELECTRIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10237,7 +10237,7 @@ class PokemonMetaRegistry {
         $pokemonMeta = new PokemonMeta();
         $pokemonMeta->setTemplateId("V0244_POKEMON_ENTEI");
         $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_ENTEI);
-        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setPokemonClass(PokemonClass::LEGENDARY);
         $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
         $pokemonMeta->setPokedexHeightM(2.11);
         $pokemonMeta->setHeightStdDev(0.26375);
@@ -10248,7 +10248,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(198);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10277,7 +10277,7 @@ class PokemonMetaRegistry {
         $pokemonMeta = new PokemonMeta();
         $pokemonMeta->setTemplateId("V0245_POKEMON_SUICUNE");
         $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_SUICUNE);
-        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setPokemonClass(PokemonClass::LEGENDARY);
         $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_NONE);
         $pokemonMeta->setPokedexHeightM(2.01);
         $pokemonMeta->setHeightStdDev(0.25125);
@@ -10288,7 +10288,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(187);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_WATER);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10328,7 +10328,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(72);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ROCK);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10368,7 +10368,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(152);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ROCK);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10408,7 +10408,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(202);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_JUMP);
+        $pokemonMeta->setMovementType(MovementType::JUMP);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_ROCK);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10437,7 +10437,7 @@ class PokemonMetaRegistry {
         $pokemonMeta = new PokemonMeta();
         $pokemonMeta->setTemplateId("V0249_POKEMON_LUGIA");
         $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_LUGIA);
-        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setPokemonClass(PokemonClass::LEGENDARY);
         $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
         $pokemonMeta->setPokedexHeightM(5.21);
         $pokemonMeta->setHeightStdDev(0.65125);
@@ -10448,7 +10448,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(216);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10477,7 +10477,7 @@ class PokemonMetaRegistry {
         $pokemonMeta = new PokemonMeta();
         $pokemonMeta->setTemplateId("V0250_POKEMON_HO_OH");
         $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_HO_OH);
-        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_LEGENDARY);
+        $pokemonMeta->setPokemonClass(PokemonClass::LEGENDARY);
         $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_FLYING);
         $pokemonMeta->setPokedexHeightM(3.81);
         $pokemonMeta->setHeightStdDev(0.47625);
@@ -10488,7 +10488,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(199);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_FLYING);
+        $pokemonMeta->setMovementType(MovementType::FLYING);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_FIRE);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
@@ -10517,7 +10517,7 @@ class PokemonMetaRegistry {
         $pokemonMeta = new PokemonMeta();
         $pokemonMeta->setTemplateId("V0251_POKEMON_CELEBI");
         $pokemonMeta->setFamily(PokemonFamilyId::FAMILY_CELEBI);
-        $pokemonMeta->setPokemonClass(PokemonClass::POKEMON_RARITY_MYTHIC);
+        $pokemonMeta->setPokemonClass(PokemonClass::MYTHIC);
         $pokemonMeta->setType2(PokemonType::POKEMON_TYPE_GRASS);
         $pokemonMeta->setPokedexHeightM(0.61);
         $pokemonMeta->setHeightStdDev(0.07625);
@@ -10528,7 +10528,7 @@ class PokemonMetaRegistry {
         $pokemonMeta->setDiskRadiusM(0.555);
         $pokemonMeta->setCollisionRadiusM(0.364);
         $pokemonMeta->setPokedexWeightKg(5);
-        $pokemonMeta->setMovementType(MovementType::MOVEMENT_PSYCHIC);
+        $pokemonMeta->setMovementType(MovementType::PSYCHIC);
         $pokemonMeta->setType1(PokemonType::POKEMON_TYPE_PSYCHIC);
         $pokemonMeta->setCollisionHeadRadiusM(0.3185);
         $pokemonMeta->setMovementTimerS(11);
