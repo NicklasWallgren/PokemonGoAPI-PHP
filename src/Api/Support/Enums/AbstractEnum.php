@@ -26,7 +26,7 @@ abstract class AbstractEnum
     public static function name($id)
     {
         // Retrieve the list of enum ids
-        $enum = self::getCachedEnumEntries();
+        $enum = static::getCachedEnumEntries();
 
         // Check if we retrieved a valid enu id
         if (array_key_exists($id, $enum)) {
@@ -45,9 +45,9 @@ abstract class AbstractEnum
     public static function isValid($id)
     {
         // Retrieve the list of enum ids
-        $entry = self::getCachedEnumEntries();
+        $pokemon = static::getCachedEnumEntries();
 
-        return array_key_exists($id, $entry);
+        return array_key_exists($id, $pokemon);
     }
 
     /**
@@ -58,12 +58,12 @@ abstract class AbstractEnum
     protected static function getCachedEnumEntries()
     {
         // Check if the pokemon ids has been cached since earlier
-        if (self::$CACHED_ENTRIES == null) {
+        if (static::$CACHED_ENTRIES == null) {
             $reflectClass = new ReflectionClass(static::$class);
-            self::$CACHED_ENTRIES = array_flip($reflectClass->getConstants());
+            static::$CACHED_ENTRIES = array_flip($reflectClass->getConstants());
         }
 
-        return self::$CACHED_ENTRIES;
+        return static::$CACHED_ENTRIES;
     }
 
 }

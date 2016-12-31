@@ -10,4 +10,9 @@ class ItemId extends AbstractEnum
      */
     protected static $class = \POGOProtos\Inventory\Item\ItemId::class;
 
+    /**
+     * @var array List of cached entries and corresponding name.
+     */
+    protected static $CACHED_ENTRIES;
+
 }

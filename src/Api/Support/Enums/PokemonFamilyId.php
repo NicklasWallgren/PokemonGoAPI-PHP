@@ -10,4 +10,9 @@ class PokemonFamilyId extends AbstractEnum
      */
     protected static $class = \POGOProtos\Enums\PokemonFamilyId::class;
 
+    /**
+     * @var array List of cached entries and corresponding name.
+     */
+    protected static $CACHED_ENTRIES;
+
 }

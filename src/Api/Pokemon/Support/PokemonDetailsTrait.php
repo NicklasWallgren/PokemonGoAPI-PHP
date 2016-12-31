@@ -41,6 +41,19 @@ trait PokemonDetailsTrait
     }
 
     /**
+     * Returns the pokemon second type.
+     *
+     * @return string
+     */
+    public function getType2String()
+    {
+        // Retrieve the pokemon metadata
+        $data = PokemonMetaRegistry::getByPokemonId($this->getPokemonId());
+
+        return PokemonType::name($data->getType2());
+    }
+
+    /**
      * Returns the pokemon move1.
      *
      * @return string

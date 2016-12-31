@@ -10,4 +10,9 @@ class PokemonType extends AbstractEnum
      */
     protected static $class = \POGOProtos\Enums\PokemonType::class;
 
+    /**
+     * @var array List of cached entries and corresponding name.
+     */
+    protected static $CACHED_ENTRIES;
+
 }
