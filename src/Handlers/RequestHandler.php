@@ -267,6 +267,10 @@ class RequestHandler
         // Execute the request
         $response = $this->client()->send($request);
 
+        // Check if response is valid
+        if($response->getStatusCode() != 200)
+            throw new Exception(sprintf('Connection problem. Please try again later. (%d:%s)', $response->getStatusCode(), $response->getReasonPhrase()));
+
         // Validate the retrieved response
         $this->validateResponse($response);
 
